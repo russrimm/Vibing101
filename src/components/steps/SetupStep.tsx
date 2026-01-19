@@ -131,7 +131,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                   href="vscode://github.copilot-chat"
                   className="inline-block px-6 py-3 bg-purple-700 text-slate-50 font-black text-lg rounded-lg hover:bg-purple-800 transition-colors shadow-xl shadow-purple-500/50 border-2 border-purple-400"
                 >
-                  <span className="text-slate-50">Launch GitHub Copilot Chat →</span>
+                  <span className="text-slate-50">
+                    Launch GitHub Copilot Chat →
+                  </span>
                 </a>
                 <div className="flex items-start gap-2 text-sm text-purple-300 bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
                   <span className="text-lg">ℹ️</span>
@@ -176,7 +178,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     href="vscode://ms-azure-tools.microsoft-learn-mcp"
                     className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
                   >
-                    <span className="text-slate-50">Install Microsoft Learn MCP →</span>
+                    <span className="text-slate-50">
+                      Install Microsoft Learn MCP →
+                    </span>
                   </a>
                 </div>
                 <div>
@@ -191,7 +195,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     href="vscode://upstash.context7-mcp"
                     className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
                   >
-                    <span className="text-slate-50">Install Context7 MCP →</span>
+                    <span className="text-slate-50">
+                      Install Context7 MCP →
+                    </span>
                   </a>
                 </div>
                 <div className="flex items-start gap-2 text-sm text-blue-300 bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
