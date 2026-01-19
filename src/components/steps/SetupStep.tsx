@@ -175,7 +175,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     Access official Microsoft and Azure documentation
                   </p>
                   <a
-                    href="https://github.com/microsoft/learn-mcp"
+                    href="https://vscode.dev/redirect/mcp/install?name=microsoft-learn&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
@@ -194,7 +194,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     framework
                   </p>
                   <a
-                    href="https://github.com/upstash/context7-mcp"
+                    href="https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22context7%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40upstash%2Fcontext7-mcp%40latest%22%5D%7D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
