@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       {!wizardStarted ? (
         <IndustrySelector onSelectIndustry={handleIndustrySelect} />
       ) : selectedIndustry ? (

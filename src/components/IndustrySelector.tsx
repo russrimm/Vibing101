@@ -99,7 +99,7 @@ export default function IndustrySelector({
                 </div>
 
                 {/* CTA */}
-                <div className="relative overflow-hidden rounded-lg bg-linear-to-r from-cyan-600 to-blue-600 p-[1px] group-hover:from-cyan-500 group-hover:to-purple-600 transition-all duration-300">
+                <div className="relative overflow-hidden rounded-lg bg-linear-to-r from-cyan-600 to-blue-600 p-px group-hover:from-cyan-500 group-hover:to-purple-600 transition-all duration-300">
                   <div className="bg-slate-900 rounded-lg px-4 py-2.5 text-center group-hover:bg-transparent transition-all duration-300">
                     <span className="text-white font-semibold text-sm tracking-wide">
                       Start Building →
