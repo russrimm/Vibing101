@@ -102,7 +102,7 @@ export default function CompletionStep({
         <h3 className="text-xl font-semibold text-amber-300 mb-4">
           🚀 Next Steps to Enhance Your App
         </h3>
-        <ul className="space-y-2 text-sm text-slate-300">
+        <ul className="space-y-2 text-sm text-slate-300 mb-4">
           <li className="flex items-start gap-2">
             <span className="flex-shrink-0">•</span>
             <span>Add user authentication and authorization</span>
@@ -136,6 +136,32 @@ export default function CompletionStep({
             <span>Set up CI/CD pipeline for automated deployments</span>
           </li>
         </ul>
+        
+        {/* Power Apps Code First Button */}
+        <div className="mt-6 pt-6 border-t border-amber-500/30">
+          <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+            <div className="flex items-start gap-3 mb-3">
+              <span className="text-2xl">⚡</span>
+              <div>
+                <h4 className="font-semibold text-purple-300 mb-1">
+                  Deploy as Power Apps Code-First App
+                </h4>
+                <p className="text-sm text-slate-300 mb-3">
+                  Transform your React app into a Power Apps custom page with Dataverse integration. Run on localhost, no PAC CLI required.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://github.com/github/awesome-copilot/blob/main/instructions/power-apps-code-apps.instructions.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold shadow-lg shadow-purple-500/30 text-sm"
+            >
+              <span>📱</span>
+              <span>Deploy with Power Apps →</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Resources */}
@@ -191,7 +217,7 @@ export default function CompletionStep({
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 6 of 6</div>
+        <div className="text-sm text-slate-400">Step 5 of 5</div>
         <button
           onClick={onReset}
           className="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold shadow-lg shadow-purple-500/30"
