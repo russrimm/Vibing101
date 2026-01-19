@@ -18,7 +18,8 @@ export default function ComponentsStep({
         Build Your Components
       </h2>
       <p className="text-slate-300 mb-8">
-        Let AI generate all the components for your {industry.sampleApp.name} in one step.
+        Let AI generate all the components for your {industry.sampleApp.name} in
+        one step.
       </p>
 
       {/* What You'll Get */}
@@ -42,76 +43,201 @@ export default function ComponentsStep({
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500 mt-1">▸</span>
-            <span>All necessary code, types, and styling automatically generated</span>
+            <span>
+              All necessary code, types, and styling automatically generated
+            </span>
           </li>
         </ul>
       </div>
 
-      {/* Step 1: Ask Mode */}
+      {/* Step 0: Verify MCP Servers */}
+      <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6 mb-6">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">🔧</span>
+          Step 0: Verify MCP Servers Are Running
+        </h3>
+        <p className="text-slate-300 mb-4">
+          Before building, make sure the required MCP servers are installed and running:
+        </p>
+        
+        <div className="space-y-4">
+          <div>
+            <p className="text-sm font-semibold text-orange-400 mb-2">
+              Check installed MCP servers:
+            </p>
+            <ol className="space-y-2 text-slate-300 text-sm ml-4">
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500">1.</span>
+                <span>Open VS Code Command Palette (Ctrl+Shift+P or F1)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500">2.</span>
+                <span>Type and select: <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">MCP: List Servers</code></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500">3.</span>
+                <span>Verify these servers are listed and running:</span>
+              </li>
+            </ol>
+          </div>
+
+          <div className="bg-slate-900/50 border border-orange-500/20 rounded-lg p-4">
+            <p className="text-sm font-semibold text-orange-400 mb-2">Required MCP Servers:</p>
+            <ul className="space-y-1.5 text-slate-300 text-sm">
+              <li className="flex items-center gap-2">
+                <span className="text-green-500">✓</span>
+                <code className="text-cyan-400">microsoft-learn</code> - Access to Microsoft documentation and code samples
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-green-500">✓</span>
+                <code className="text-cyan-400">context7</code> - Library documentation and examples
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+            <p className="text-sm text-yellow-300 flex items-start gap-2">
+              <span className="text-lg mt-0.5">⚠️</span>
+              <div>
+                <strong className="block mb-1">If servers are missing:</strong>
+                <span>Install them using the VS Code Command Palette: <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">MCP: Install Server</code> and search for "microsoft-learn" and "context7"</span>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Step 1: Start with Simple Request */}
       <div className="bg-linear-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">💬</span>
-          Step 1: Use GitHub Copilot Ask Mode
+          Step 1: Start with a Simple Request (Ask Mode)
         </h3>
         <p className="text-slate-300 mb-4">
-          Open GitHub Copilot Chat (Ctrl+Shift+I) and describe what you want in simple terms:
+          Open GitHub Copilot Chat (Ctrl+Shift+I) and start with a basic description. The agent will ask questions to understand what you need:
         </p>
         <CodeBlock
-          code={`I want to build a ${industry.sampleApp.name.toLowerCase()} with:
+          code={`I want to create a ${industry.sampleApp.name.toLowerCase()} that manages ${industry.name.toLowerCase()} data and has a table view, forms, and detail pages.
 
-- A table showing all items with search and sorting
-- A form to add and edit items with validation  
-- A detail page for each item
-- Dark theme with good colors
-- Mobile friendly
-
-Can you create a comprehensive prompt for Agent Mode that will build all of this?`}
+Please ask me questions to understand what I need, then create a comprehensive prompt for Agent Mode.`}
           language="text"
         />
+      </div>
+
+      {/* The Conversation */}
+      <div className="bg-slate-900/50 border border-cyan-500/30 rounded-xl p-6 mb-6">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">🗨️</span>
+          The Agent Will Ask Questions
+        </h3>
+        <p className="text-slate-300 mb-4">
+          The AI will have a conversation with you. Here's an example:
+        </p>
+        
+        <div className="space-y-4">
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-slate-300 text-sm">"What data fields do you need? For example, names, dates, status, etc.?"</p>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
+            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-slate-300 text-sm">"I need: name, type/category, status, dates, and location."</p>
+          </div>
+
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-slate-300 text-sm">"What validation do you need? Required fields, email formats?"</p>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
+            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-slate-300 text-sm">"Required fields can't be empty, dates must be valid."</p>
+          </div>
+
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-slate-300 text-sm">"Form library preferences?"</p>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
+            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-slate-300 text-sm">"Use whatever works best."</p>
+          </div>
+        </div>
+
         <div className="mt-4 bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-4">
           <p className="text-sm text-cyan-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
-            <span><strong>Ask Mode</strong> will analyze your request and generate a detailed technical prompt that covers all requirements, dependencies, and best practices.</span>
+            <span>
+              <strong>The agent learns</strong> and automatically chooses libraries (React Hook Form, Zod), TypeScript types, design system, and accessibility.
+            </span>
           </p>
         </div>
       </div>
 
-      {/* Step 2: Agent Mode */}
-      <div className="bg-slate-900/50 border border-white/10 rounded-xl p-6 mb-8">
+      {/* Step 2: Generated Prompt */}
+      <div className="bg-slate-900/50 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="text-2xl">🤖</span>
-          Step 2: Copy the Generated Prompt to Agent Mode
+          <span className="text-2xl">✨</span>
+          Step 2: Agent Generates Complete Prompt
         </h3>
         <p className="text-slate-300 mb-4">
-          Copilot Ask Mode will give you a comprehensive prompt. Here's an example of what it generates:
+          After the conversation, you'll get a complete technical prompt:
         </p>
         <CodeBlock
-          code={`@workspace Build a complete ${industry.sampleApp.name.toLowerCase()} for me.
+          code={`@workspace Build a ${industry.sampleApp.name.toLowerCase()} for ${industry.name.toLowerCase()} data.
 
-I need a full-featured application for managing ${industry.name.toLowerCase()} data with:
+User Requirements:
+- Table view with search, filter, sorting
+- Form for create/edit with validation
+- Detail view for items
+- Fields: name, type, status, dates, location
+- Validation: required fields, valid dates
 
-Components needed:
-- List/table component with search, filtering, and column sorting
-- Form component with validation for creating and editing items
-- Detail component for viewing full item information
+Technical:
+- React + TypeScript (strict)
+- React Hook Form + Zod validation
+- Tailwind: slate-900/800 bg, white/slate-300 text, cyan-500 accents
+- Responsive, accessible (WCAG AA)
+- Loading/error states
 
-Technical requirements:
-- TypeScript with proper type definitions
-- React Hook Form and Zod for form validation
-- Tailwind CSS with dark theme (slate backgrounds, cyan accents)
-- Responsive design that works on mobile
-- Accessibility standards (WCAG AA compliance)
-- Proper error handling and loading states
-
-Install any required packages and update App.tsx to display the components.
-
-After building, verify everything with lint and build checks.`}
+Create types, install packages, build components, update App.tsx.
+Use MCP servers for best practices.`}
           language="text"
         />
-        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-          <p className="text-sm text-purple-300 flex items-start gap-2">
-            <span className="text-lg mt-0.5">⚡</span>
-            <span><strong>Agent Mode</strong> (using @workspace) will now build everything automatically - creating files, installing packages, and setting up your entire application.</span>
+      </div>
+
+      {/* Step 3: Agent Mode */}
+      <div className="bg-linear-to-br from-cyan-900/30 to-blue-900/30 border border-cyan-500/30 rounded-xl p-6 mb-8">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">🤖</span>
+          Step 3: Copy to Agent Mode and Build
+        </h3>
+        <p className="text-slate-300 mb-4">
+          Copy the generated prompt and paste it into Agent Mode:
+        </p>
+        <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">1.</span>
+            <span>Copy the entire prompt the agent generated</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">2.</span>
+            <span>Make sure <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">@workspace</code> is in the chat</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">3.</span>
+            <span>Paste and send</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">4.</span>
+            <span>Watch Agent Mode build your entire app!</span>
+          </li>
+        </ol>
+        <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+          <p className="text-sm text-green-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">🎉</span>
+            <span>
+              <strong>Agent Mode</strong> creates files, installs dependencies, builds components, and verifies everything works!
+            </span>
           </p>
         </div>
       </div>
@@ -120,31 +246,37 @@ After building, verify everything with lint and build checks.`}
       <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-8">
         <h4 className="text-lg font-semibold text-green-400 mb-3 flex items-center gap-2">
           <span className="text-xl">🎯</span>
-          Why This Two-Step Approach Works
+          Why This Conversation Approach Works
         </h4>
         <ul className="space-y-3 text-slate-300 text-sm">
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Ask Mode = Planning:</strong> Understands your needs and creates a complete technical specification
+              <strong className="text-white">Start simple:</strong> Just describe what you want in plain English - no technical jargon required
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Agent Mode = Building:</strong> Executes the plan by creating files, installing packages, and writing code
+              <strong className="text-white">Agent learns your needs:</strong> Through questions, the agent understands your data model, validation rules, and UI preferences
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">No technical knowledge needed:</strong> Just describe your vision in plain English
+              <strong className="text-white">Smart defaults applied:</strong> Agent automatically chooses best practices (React Hook Form, Zod validation, TypeScript types, WCAG AA accessibility)
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Everything handled automatically:</strong> Dependencies, types, styling, validation, accessibility - all included
+              <strong className="text-white">Holistic prompt generated:</strong> The final prompt includes all prerequisites - types, components, validation, styling, tests - in one comprehensive instruction
+            </div>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-500 mt-1">✓</span>
+            <div>
+              <strong className="text-white">Agent Mode builds everything:</strong> Paste the prompt into Agent Mode (@workspace) and it creates all files, installs dependencies, and verifies it works
             </div>
           </li>
         </ul>
