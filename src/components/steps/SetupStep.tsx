@@ -123,7 +123,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 4. Enable GitHub Copilot (Required)
               </h3>
               <p className="text-slate-300 mb-3">
-                GitHub Copilot is pre-installed in VS Code. Click below to launch Copilot Chat and sign in if needed.
+                GitHub Copilot is pre-installed in VS Code. Click below to
+                launch Copilot Chat and sign in if needed.
               </p>
               <div className="space-y-3">
                 <a
@@ -135,8 +136,13 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 <div className="flex items-start gap-2 text-sm text-purple-300 bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
                   <span className="text-lg">ℹ️</span>
                   <div>
-                    <p className="font-medium mb-1">First time using Copilot?</p>
-                    <p className="text-slate-400">You'll be prompted to sign in with your GitHub account. A free trial is available for new users.</p>
+                    <p className="font-medium mb-1">
+                      First time using Copilot?
+                    </p>
+                    <p className="text-slate-400">
+                      You'll be prompted to sign in with your GitHub account. A
+                      free trial is available for new users.
+                    </p>
                   </div>
                 </div>
               </div>
