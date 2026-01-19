@@ -136,7 +136,7 @@ export default function CompletionStep({
             <span>Set up CI/CD pipeline for automated deployments</span>
           </li>
         </ul>
-        
+
         {/* Power Apps Code First Button */}
         <div className="mt-6 pt-6 border-t border-amber-500/30">
           <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
@@ -147,7 +147,8 @@ export default function CompletionStep({
                   Deploy as Power Apps Code-First App
                 </h4>
                 <p className="text-sm text-slate-300 mb-3">
-                  Transform your React app into a Power Apps custom page with Dataverse integration. Run on localhost, no PAC CLI required.
+                  Transform your React app into a Power Apps custom page with
+                  Dataverse integration. Run on localhost, no PAC CLI required.
                 </p>
               </div>
             </div>
