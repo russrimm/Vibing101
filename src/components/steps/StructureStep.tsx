@@ -46,21 +46,26 @@ Follow all technical standards in copilot-instructions.md.`
         project structure. You just describe what you want in plain English!
       </p>
 
-      {/* Step 0: Create copilot-instructions.md */}
+      {/* Step 0: Set up project infrastructure */}
       <div className="bg-linear-to-br from-amber-900/30 to-orange-900/30 border border-amber-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">📋</span>
-          Step 0: Create copilot-instructions.md (First!)
+          Step 0: Set Up Your Project Infrastructure (First!)
         </h3>
         <p className="text-slate-300 mb-4">
-          Before building your app, create a file that tells Copilot how to code
-          for this project:
+          Before building your app, set up your project folder and instruction files:
         </p>
-        <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
+        <ol className="space-y-3 text-slate-300 text-sm ml-4 mb-4">
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono">1.</span>
+            <span className="text-cyan-400 font-mono font-semibold">1.</span>
             <span>
-              Create a new folder for your project (e.g.,{' '}
+              In VS Code, click the <strong className="text-white">Explorer</strong> button at the top of the left toolbar
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">2.</span>
+            <span>
+              Select <strong className="text-white">"Open Folder"</strong> and create a new folder (e.g.,{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                 my-{industry.name.toLowerCase()}-app
               </code>
@@ -68,36 +73,115 @@ Follow all technical standards in copilot-instructions.md.`
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono">2.</span>
-            <span>Open that folder in VS Code</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono">3.</span>
+            <span className="text-cyan-400 font-mono font-semibold">3.</span>
             <span>
-              Create a file named{' '}
-              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
-                copilot-instructions.md
-              </code>{' '}
-              in the root
+              Click the <strong className="text-white">"Yes I trust the authors"</strong> button and optionally check <strong className="text-white">"Trust all authors"</strong>
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono">4.</span>
+            <span className="text-cyan-400 font-mono font-semibold">4.</span>
             <span>
-              Copy the content from:{' '}
+              Make sure the agent mode is set to <strong className="text-white">"Beast Mode"</strong>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">5.</span>
+            <span>
+              Click <strong className="text-white">"Terminal"</strong> in the top menu
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">6.</span>
+            <span>
+              Click <strong className="text-white">"New Terminal"</strong>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">7.</span>
+            <span>
+              Enter <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">git init</code> in the terminal window
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">8.</span>
+            <span>
+              Right-click in the Explorer pane and click <strong className="text-white">"New Folder"</strong>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">9.</span>
+            <span>
+              Name the folder <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">.github</code>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">10.</span>
+            <span>
+              Right-click on the <strong className="text-white">.github</strong> folder and select <strong className="text-white">"New File"</strong>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">11.</span>
+            <span>
+              Name the file <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">12.</span>
+            <span>
+              Right-click on the <strong className="text-white">.github</strong> folder and select <strong className="text-white">"New Folder"</strong>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">13.</span>
+            <span>
+              Name the folder <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">instructions</code>
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">14.</span>
+            <span>
+              Download{' '}
               <a
-                href="https://raw.githubusercontent.com/russrimm/Vibing101/main/copilot-instructions-template.md"
+                href="https://github.com/github/awesome-copilot/blob/main/instructions/power-apps-code-apps.instructions.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline"
               >
-                copilot-instructions template
-              </a>
+                power-apps-code-apps.instructions.md
+              </a>{' '}
+              and put it in the <strong className="text-white">instructions</strong> directory
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono">5.</span>
-            <span>Save the file</span>
+            <span className="text-cyan-400 font-mono font-semibold">15.</span>
+            <span>
+              Download{' '}
+              <a
+                href="https://github.com/github/awesome-copilot/blob/main/agents/4.1-Beast.agent.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                4.1-Beast.agent.md
+              </a>{' '}
+              and save it as <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> in the <strong className="text-white">.github</strong> folder
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono font-semibold">16.</span>
+            <span>
+              Download{' '}
+              <a
+                href="https://github.com/github/awesome-copilot/blob/main/instructions/typescript-5-es2022.instructions.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                typescript-5-es2022.instructions.md
+              </a>{' '}
+              and save it in the <strong className="text-white">instructions</strong> folder
+            </span>
           </li>
         </ol>
         <div className="space-y-3">
@@ -392,9 +476,9 @@ Follow all technical standards in copilot-instructions.md.`
         <div className="text-sm text-slate-400">Step 2 of 6</div>
         <button
           onClick={onNext}
-          className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold shadow-lg shadow-cyan-500/30"
+          className="px-6 py-3 bg-cyan-700 text-slate-50 font-black text-lg rounded-lg hover:bg-cyan-800 transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400"
         >
-          Build Components →
+          <span className="text-slate-50">Build Components →</span>
         </button>
       </div>
     </div>

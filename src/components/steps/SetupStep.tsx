@@ -29,7 +29,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
               </h3>
               <p className="text-slate-300 mb-3">
                 Download and install VS Code, the editor where you'll do all
-                your work.
+                your work. Accept all default options during installation.
               </p>
               <a
                 href="https://code.visualstudio.com/"
@@ -61,15 +61,16 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
               </h3>
               <p className="text-slate-300 mb-3">
                 Node.js lets you run JavaScript locally and use npm to install
-                packages.
+                packages. Download the Windows Installer (.msi) and accept all
+                default options during installation.
               </p>
               <a
-                href="https://nodejs.org/"
+                href="https://nodejs.org/en/download/package-manager"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-green-700 text-slate-50 font-black text-lg rounded-lg hover:bg-green-800 transition-colors shadow-xl shadow-green-500/50 border-2 border-green-400"
               >
-                <span className="text-slate-50">Download Node.js →</span>
+                <span className="text-slate-50">Download Node.js (Windows Installer) →</span>
               </a>
               <div className="mt-4">
                 <p className="text-sm text-slate-400 mb-2">
@@ -120,40 +121,85 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-white mb-2">
-                4. Enable GitHub Copilot (Required)
+                4. Setup GitHub Copilot & MCP Servers (Required)
               </h3>
               <p className="text-slate-300 mb-3">
-                GitHub Copilot is pre-installed in VS Code. Click below to
-                launch Copilot Chat and sign in if needed.
+                Configure GitHub Copilot with Beast Mode custom agent and enable MCP servers.
               </p>
               <div className="space-y-3">
-                <a
-                  href="vscode://github.copilot-chat"
-                  className="inline-block px-6 py-3 bg-purple-700 text-slate-50 font-black text-lg rounded-lg hover:bg-purple-800 transition-colors shadow-xl shadow-purple-500/50 border-2 border-purple-400"
-                >
-                  <span className="text-slate-50">
-                    Launch GitHub Copilot Chat →
-                  </span>
-                </a>
-                <div className="flex items-start gap-2 text-sm text-purple-300 bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
-                  <span className="text-lg">ℹ️</span>
-                  <div>
-                    <p className="font-medium mb-1">
-                      First time using Copilot?
-                    </p>
-                    <p className="text-slate-400">
-                      You'll be prompted to sign in with your GitHub account. A
-                      free trial is available for new users.
-                    </p>
-                  </div>
+                <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
+                  <ol className="space-y-2 text-sm text-slate-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">1.</span>
+                      <span>After launching VS Code, click <strong className="text-white">"Use AI Features"</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">2.</span>
+                      <span>Close the walkthrough steps window</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">3.</span>
+                      <span>In the GitHub Copilot chat, select the <strong className="text-white">Ask mode</strong> and select <strong className="text-white">"Configure Custom Agents"</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">4.</span>
+                      <span>Select <strong className="text-white">"Create new Custom Agents"</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">5.</span>
+                      <span>Select <strong className="text-white">"User Data"</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">6.</span>
+                      <span>Enter <strong className="text-white">"Beastmode"</strong> and hit Enter</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">7.</span>
+                      <span>Download the .md from the link below, select <strong className="text-white">Raw</strong> in the top right, paste it into the custom agent, and save it</span>
+                    </li>
+                  </ol>
+                  <a
+                    href="https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf#file-beastmode-install-md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 px-4 py-2 bg-purple-700 text-slate-50 font-black text-sm rounded-lg hover:bg-purple-800 transition-colors shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+                  >
+                    <span className="text-slate-50">Get Beast Mode Instructions →</span>
+                  </a>
+                  <ol className="space-y-2 text-sm text-slate-300 mt-4" start={8}>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">8.</span>
+                      <span>Change the mode to <strong className="text-white">BeastMode</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">9.</span>
+                      <span>Click on the <strong className="text-white">sprocket</strong> at the top of the GitHub Copilot chat window</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">10.</span>
+                      <span>Select <strong className="text-white">MCP Servers</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">11.</span>
+                      <span>Click <strong className="text-white">"Enable MCP Servers Marketplace"</strong> on the left and click <strong className="text-white">"Enable"</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">12.</span>
+                      <span>Go to <a href="https://www.github.com/mcp" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">github.com/mcp</a>, click <strong className="text-white">"Install"</strong> and <strong className="text-white">"Install in VSCode"</strong> for <strong className="text-white">Context7</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">13.</span>
+                      <span>Do the same for the <strong className="text-white">"Microsoft Learn"</strong> MCP</span>
+                    </li>
+                  </ol>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* MCP Servers */}
-        <div className="border border-blue-500/30 bg-blue-900/20 rounded-xl p-6 hover:border-blue-500/50 transition-colors">
+        {/* MCP Servers - Remove this section since it's now part of step 4 */}
+        <div className="hidden border border-blue-500/30 bg-blue-900/20 rounded-xl p-6 hover:border-blue-500/50 transition-colors">
           <div className="flex items-start gap-4">
             <div className="shrink-0 w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-2xl">
               🔌
