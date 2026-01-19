@@ -35,9 +35,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 href="https://code.visualstudio.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-cyan-600 text-white font-black text-base rounded-lg hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-500/50"
+                className="inline-block px-6 py-3 bg-cyan-700 text-slate-50 font-black text-lg rounded-lg hover:bg-cyan-800 transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400"
               >
-                Download VS Code →
+                <span className="text-slate-50">Download VS Code →</span>
               </a>
               <div className="mt-4">
                 <p className="text-sm text-slate-400 mb-2">
@@ -67,9 +67,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 href="https://nodejs.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-green-600 text-white font-black text-base rounded-lg hover:bg-green-700 transition-colors shadow-lg shadow-green-500/50"
+                className="inline-block px-6 py-3 bg-green-700 text-slate-50 font-black text-lg rounded-lg hover:bg-green-800 transition-colors shadow-xl shadow-green-500/50 border-2 border-green-400"
               >
-                Download Node.js →
+                <span className="text-slate-50">Download Node.js →</span>
               </a>
               <div className="mt-4">
                 <p className="text-sm text-slate-400 mb-2">
@@ -98,9 +98,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 href="https://git-scm.com/downloads"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-orange-600 text-white font-black text-base rounded-lg hover:bg-orange-700 transition-colors shadow-lg shadow-orange-500/50"
+                className="inline-block px-6 py-3 bg-orange-700 text-slate-50 font-black text-lg rounded-lg hover:bg-orange-800 transition-colors shadow-xl shadow-orange-500/50 border-2 border-orange-400"
               >
-                Download Git →
+                <span className="text-slate-50">Download Git →</span>
               </a>
               <div className="mt-4">
                 <p className="text-sm text-slate-400 mb-2">
@@ -226,9 +226,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
         <div className="text-sm text-slate-400">Step 1 of 5</div>
         <button
           onClick={onNext}
-          className="px-6 py-3 bg-cyan-600 text-white font-black text-base rounded-lg hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-500/50"
+          className="px-6 py-3 bg-cyan-700 text-slate-50 font-black text-lg rounded-lg hover:bg-cyan-800 transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400"
         >
-          Continue to Project Setup →
+          <span className="text-slate-50">Continue to Project Setup →</span>
         </button>
       </div>
     </div>
