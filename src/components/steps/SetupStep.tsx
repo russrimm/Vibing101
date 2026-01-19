@@ -149,11 +149,70 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
             </div>
           </div>
         </div>
+
+        {/* MCP Servers */}
+        <div className="border border-blue-500/30 bg-blue-900/20 rounded-xl p-6 hover:border-blue-500/50 transition-colors">
+          <div className="flex items-start gap-4">
+            <div className="shrink-0 w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-2xl">
+              🔌
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl font-semibold text-white mb-2">
+                5. Install MCP Servers (Required)
+              </h3>
+              <p className="text-slate-300 mb-3">
+                MCP servers give Copilot access to up-to-date documentation and
+                code examples.
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm font-medium text-white mb-2">
+                    Microsoft Learn MCP Server
+                  </p>
+                  <p className="text-sm text-slate-400 mb-2">
+                    Access official Microsoft and Azure documentation
+                  </p>
+                  <a
+                    href="vscode://ms-azure-tools.microsoft-learn-mcp"
+                    className="inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30 text-sm"
+                  >
+                    Install Microsoft Learn MCP →
+                  </a>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-white mb-2">
+                    Context7 MCP Server
+                  </p>
+                  <p className="text-sm text-slate-400 mb-2">
+                    Access documentation for any programming library or framework
+                  </p>
+                  <a
+                    href="vscode://upstash.context7-mcp"
+                    className="inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30 text-sm"
+                  >
+                    Install Context7 MCP →
+                  </a>
+                </div>
+                <div className="flex items-start gap-2 text-sm text-blue-300 bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
+                  <span className="text-lg">ℹ️</span>
+                  <div>
+                    <p className="font-medium mb-1">Why MCP Servers?</p>
+                    <p className="text-slate-400">
+                      MCP (Model Context Protocol) servers extend Copilot's
+                      knowledge with real-time access to documentation, ensuring
+                      code suggestions use the latest APIs and best practices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Navigation */}
       <div className="flex justify-between items-center pt-6 border-t border-white/10">
-        <div className="text-sm text-slate-400">Step 1 of 6</div>
+        <div className="text-sm text-slate-400">Step 1 of 5</div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold shadow-lg shadow-cyan-500/30"

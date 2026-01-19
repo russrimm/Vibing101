@@ -46,6 +46,57 @@ Follow all technical standards in copilot-instructions.md.`
         project structure. You just describe what you want in plain English!
       </p>
 
+      {/* Step 0: Create copilot-instructions.md */}
+      <div className="bg-linear-to-br from-amber-900/30 to-orange-900/30 border border-amber-500/30 rounded-xl p-6 mb-6">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">📋</span>
+          Step 0: Create copilot-instructions.md (First!)
+        </h3>
+        <p className="text-slate-300 mb-4">
+          Before building your app, create a file that tells Copilot how to code for this project:
+        </p>
+        <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono">1.</span>
+            <span>Create a new folder for your project (e.g., <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">my-{industry.name.toLowerCase()}-app</code>)</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono">2.</span>
+            <span>Open that folder in VS Code</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono">3.</span>
+            <span>Create a file named <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> in the root</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono">4.</span>
+            <span>Copy the content from: <a href="https://raw.githubusercontent.com/russrimm/Vibing101/main/copilot-instructions-template.md" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">copilot-instructions template</a></span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-400 font-mono">5.</span>
+            <span>Save the file</span>
+          </li>
+        </ol>
+        <div className="space-y-3">
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4">
+            <p className="text-sm text-amber-300 flex items-start gap-2">
+              <span className="text-lg mt-0.5">⚠️</span>
+              <span>
+                <strong>Why do this first?</strong> This file teaches Copilot your project's standards (TypeScript-only, Vite, React, Tailwind, etc.) so it builds everything correctly from the start!
+              </span>
+            </p>
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm text-blue-300 flex items-start gap-2">
+              <span className="text-lg mt-0.5">📚</span>
+              <span>
+                <strong>Want more examples?</strong> Check out <a href="https://github.com/github/awesome-copilot" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">GitHub's Awesome Copilot repository</a> for many starter instruction files for different languages and frameworks!
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Step 1: Simple Request */}
       <div className="bg-linear-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
