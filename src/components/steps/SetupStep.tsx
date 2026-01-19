@@ -120,37 +120,25 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-white mb-2">
-                4. Install GitHub Copilot (Required)
+                4. Enable GitHub Copilot (Required)
               </h3>
               <p className="text-slate-300 mb-3">
-                GitHub Copilot is the AI that will write most of your code. This
-                lab won't work without it!
+                GitHub Copilot is pre-installed in VS Code. Click below to launch Copilot Chat and sign in if needed.
               </p>
-              <div className="space-y-2 mb-3">
+              <div className="space-y-3">
                 <a
-                  href="https://github.com/features/copilot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors mr-2 shadow-lg shadow-purple-500/30"
+                  href="vscode://github.copilot-chat"
+                  className="inline-block px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors shadow-lg shadow-purple-500/30"
                 >
-                  Get GitHub Copilot →
+                  Launch GitHub Copilot Chat →
                 </a>
-                <p className="text-sm text-purple-300 mt-2">
-                  ⭐ Free trial available for new users
-                </p>
-              </div>
-              <div className="mt-4 space-y-2">
-                <p className="text-sm font-medium text-slate-200">
-                  In VS Code:
-                </p>
-                <ol className="list-decimal list-inside space-y-1 text-sm text-slate-300">
-                  <li>Open Extensions (Ctrl+Shift+X)</li>
-                  <li>Search for "GitHub Copilot"</li>
-                  <li>
-                    Install both "GitHub Copilot" and "GitHub Copilot Chat"
-                  </li>
-                  <li>Sign in when prompted</li>
-                </ol>
+                <div className="flex items-start gap-2 text-sm text-purple-300 bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
+                  <span className="text-lg">ℹ️</span>
+                  <div>
+                    <p className="font-medium mb-1">First time using Copilot?</p>
+                    <p className="text-slate-400">You'll be prompted to sign in with your GitHub account. A free trial is available for new users.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
