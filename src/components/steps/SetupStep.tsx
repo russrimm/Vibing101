@@ -35,7 +35,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 href="https://code.visualstudio.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors shadow-lg shadow-cyan-500/30"
+                className="inline-block px-6 py-3 bg-cyan-600 text-white font-black text-base rounded-lg hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-500/50"
               >
                 Download VS Code →
               </a>
@@ -67,7 +67,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 href="https://nodejs.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors shadow-lg shadow-green-500/30"
+                className="inline-block px-6 py-3 bg-green-600 text-white font-black text-base rounded-lg hover:bg-green-700 transition-colors shadow-lg shadow-green-500/50"
               >
                 Download Node.js →
               </a>
@@ -98,7 +98,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 href="https://git-scm.com/downloads"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/30"
+                className="inline-block px-6 py-3 bg-orange-600 text-white font-black text-base rounded-lg hover:bg-orange-700 transition-colors shadow-lg shadow-orange-500/50"
               >
                 Download Git →
               </a>
@@ -129,9 +129,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
               <div className="space-y-3">
                 <a
                   href="vscode://github.copilot-chat"
-                  className="inline-block px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors shadow-lg shadow-purple-500/30"
+                  className="inline-block px-6 py-3 bg-purple-700 text-slate-50 font-black text-lg rounded-lg hover:bg-purple-800 transition-colors shadow-xl shadow-purple-500/50 border-2 border-purple-400"
                 >
-                  Launch GitHub Copilot Chat →
+                  <span className="text-slate-50">Launch GitHub Copilot Chat →</span>
                 </a>
                 <div className="flex items-start gap-2 text-sm text-purple-300 bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
                   <span className="text-lg">ℹ️</span>
@@ -174,9 +174,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                   </p>
                   <a
                     href="vscode://ms-azure-tools.microsoft-learn-mcp"
-                    className="inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30 text-sm"
+                    className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
                   >
-                    Install Microsoft Learn MCP →
+                    <span className="text-slate-50">Install Microsoft Learn MCP →</span>
                   </a>
                 </div>
                 <div>
@@ -189,9 +189,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                   </p>
                   <a
                     href="vscode://upstash.context7-mcp"
-                    className="inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30 text-sm"
+                    className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
                   >
-                    Install Context7 MCP →
+                    <span className="text-slate-50">Install Context7 MCP →</span>
                   </a>
                 </div>
                 <div className="flex items-start gap-2 text-sm text-blue-300 bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
@@ -216,7 +216,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
         <div className="text-sm text-slate-400">Step 1 of 5</div>
         <button
           onClick={onNext}
-          className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold shadow-lg shadow-cyan-500/30"
+          className="px-6 py-3 bg-cyan-600 text-white font-black text-base rounded-lg hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-500/50"
         >
           Continue to Project Setup →
         </button>
