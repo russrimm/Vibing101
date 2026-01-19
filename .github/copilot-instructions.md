@@ -730,6 +730,7 @@ Make it look professional and fully accessible (WCAG AA compliant).
 ### Color Contrast (WCAG AA: 4.5:1 minimum)
 
 **Verified Accessible Color Combinations:**
+
 - ✅ White text (#FFFFFF) on dark backgrounds (slate-900 #0f172a): 15.5:1
 - ✅ Light text (slate-300 #cbd5e1) on dark backgrounds (slate-900): 10.1:1
 - ✅ Cyan-500 (#06b6d4) on slate-900: 6.2:1 - PASSES AA
@@ -737,12 +738,14 @@ Make it look professional and fully accessible (WCAG AA compliant).
 - ⚠️ For buttons: Use white text on cyan-500 for 18px+ text, or add darker cyan (cyan-600 #0891b2) for smaller text
 
 **Testing Color Contrast:**
+
 - Use browser DevTools Accessibility Inspector (F12 > Accessibility tab)
 - Or use online tool: https://webaim.org/resources/contrastchecker/
 - All text must be readable without relying on color alone
 - Include icons or text labels alongside color indicators
 
 ### Semantic HTML Requirements
+
 - Use proper heading hierarchy (h1 → h2 → h3, no skipping)
 - Use `<button>` for interactive elements (not `<div onclick>`)
 - Use `<nav>` for navigation menus
@@ -752,6 +755,7 @@ Make it look professional and fully accessible (WCAG AA compliant).
 - Use `<form>` for all forms
 
 ### ARIA Labels & Attributes
+
 - Add `aria-label` to icon-only buttons: `<button aria-label="Close dialog">`
 - Use `aria-labelledby` to associate headings with sections
 - Add `aria-describedby` for additional context
@@ -761,6 +765,7 @@ Make it look professional and fully accessible (WCAG AA compliant).
 - Use `role="alert"` for error messages
 
 ### Keyboard Navigation
+
 - All interactive elements must be keyboard accessible
 - Test with Tab (forward), Shift+Tab (backward), Enter (activate), Escape (cancel)
 - Focus order must be logical (top to bottom, left to right)
@@ -768,7 +773,8 @@ Make it look professional and fully accessible (WCAG AA compliant).
 - Skip links for navigation: `<a href="#main" class="sr-only focus:not-sr-only">Skip to main content</a>`
 - Trap focus in modals (prevent Tab from leaving modal)
 
-### Screen Reader Support  
+### Screen Reader Support
+
 - Test with NVDA (Windows), JAWS (Windows), or VoiceOver (Mac)
 - All images must have `alt` text (or `alt=""` if decorative)
 - Form errors must be announced: `<div role="alert" aria-live="polite">`
@@ -776,6 +782,7 @@ Make it look professional and fully accessible (WCAG AA compliant).
 - Success messages announced: `<div role="alert" aria-live="polite">Form submitted successfully</div>`
 
 ### Visual Requirements
+
 - Clear headings with proper hierarchy
 - Consistent spacing and padding
 - Error messages visible and associated with fields
@@ -785,6 +792,7 @@ Make it look professional and fully accessible (WCAG AA compliant).
 - Minimum touch target size: 44x44px for mobile
 
 ### Responsive Design
+
 - Mobile-first approach (320px minimum width)
 - Test at: 320px, 375px, 768px, 1024px, 1920px
 - No horizontal scrolling at any breakpoint
@@ -792,10 +800,11 @@ Make it look professional and fully accessible (WCAG AA compliant).
 - Buttons and inputs appropriately sized for touch
 
 ### Testing Checklist Before Commit
+
 - [ ] Run browser DevTools Accessibility Inspector - no critical issues
 - [ ] Navigate entire app with keyboard only (no mouse)
 - [ ] Tab order is logical and complete
-- [ ] All interactive elements have visible focus indicators  
+- [ ] All interactive elements have visible focus indicators
 - [ ] All images have alt text
 - [ ] All forms have associated labels
 - [ ] Color contrast meets 4.5:1 minimum (verified with tool)
@@ -808,19 +817,22 @@ Make it look professional and fully accessible (WCAG AA compliant).
 ```tsx
 <form onSubmit={handleSubmit} aria-labelledby="form-title">
   <h2 id="form-title">Contact Form</h2>
-  
+
   {/* Input with label */}
   <div>
     <label htmlFor="name" className="block text-sm font-medium">
-      Name <span className="text-red-500" aria-label="required">*</span>
+      Name{' '}
+      <span className="text-red-500" aria-label="required">
+        *
+      </span>
     </label>
     <input
       id="name"
       type="text"
       required
       aria-required="true"
-      aria-invalid={errors.name ? "true" : "false"}
-      aria-describedby={errors.name ? "name-error" : undefined}
+      aria-invalid={errors.name ? 'true' : 'false'}
+      aria-describedby={errors.name ? 'name-error' : undefined}
       className="mt-1 block w-full rounded border-2 border-gray-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500 focus:outline-none"
     />
     {errors.name && (
@@ -848,6 +860,7 @@ Make it look professional and fully accessible (WCAG AA compliant).
   </button>
 </form>
 ```
+
 - Consistent spacing
 - Keyboard navigation works
 - Error messages are visible and associated with fields
@@ -856,22 +869,26 @@ Make it look professional and fully accessible (WCAG AA compliant).
 ## [REQUIRED] Accessibility Testing Tools
 
 ### Browser DevTools
+
 - **Edge/Chrome:** F12 > More Tools > Accessibility Inspector
 - **Firefox:** F12 > Accessibility tab
 - Shows: ARIA attributes, contrast ratios, keyboard accessibility
 
 ### Online Tools
+
 - **Contrast Checker:** https://webaim.org/resources/contrastchecker/
 - **WAVE:** https://wave.webaim.org/ (paste URL to scan)
 - **axe DevTools:** Browser extension for automated testing
 
 ### Screen Readers (Test with these)
+
 - **NVDA:** Free, Windows - https://www.nvaccess.org/
 - **JAWS:** Commercial, Windows - https://www.freedomscientific.com/products/software/jaws/
 - **VoiceOver:** Built-in, Mac/iOS (Cmd+F5 to enable)
 - **Narrator:** Built-in, Windows (Ctrl+Win+Enter)
 
 ### Keyboard Testing Checklist
+
 - Tab through entire page - reaches all interactive elements
 - Shift+Tab works in reverse
 - Enter activates buttons/links
