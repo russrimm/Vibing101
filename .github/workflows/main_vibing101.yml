@@ -70,3 +70,6 @@ jobs:
           slot-name: 'Production'
           package: .
           startup-command: 'npm start'
+        env:
+          SCM_DO_BUILD_DURING_DEPLOYMENT: false
+          WEBSITE_NODE_DEFAULT_VERSION: '24.x'
