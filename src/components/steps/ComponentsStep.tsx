@@ -130,7 +130,8 @@ export default function ComponentsStep({
           Step 1: Start with a Simple Request (Ask Mode)
         </h3>
         <p className="text-slate-300 mb-4">
-          Open GitHub Copilot Chat (Ctrl+Shift+I) and describe what you want in plain English. No technical knowledge needed:
+          Open GitHub Copilot Chat (Ctrl+Shift+I) and describe what you want in
+          plain English. No technical knowledge needed:
         </p>
         <CodeBlock
           code={`Create a ${industry.sampleApp.name.toLowerCase()} that displays and tracks ${industry.name.toLowerCase()} data. Users should be able to view items in a list, add new items, edit existing items, and see details for each item.
@@ -142,7 +143,12 @@ Please ask me questions about what I need, then create a prompt for Agent Mode.`
           <p className="text-sm text-purple-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              Notice: You don't mention React, Tailwind, TypeScript, or any libraries. The agent will read <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">copilot-instructions.md</code> and apply those automatically!
+              Notice: You don't mention React, Tailwind, TypeScript, or any
+              libraries. The agent will read{' '}
+              <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
+                copilot-instructions.md
+              </code>{' '}
+              and apply those automatically!
             </span>
           </p>
         </div>
@@ -172,7 +178,8 @@ Please ask me questions about what I need, then create a prompt for Agent Mode.`
               👤 You answer:
             </p>
             <p className="text-slate-300 text-sm">
-              "Each item needs a name, category, status, created date, and location."
+              "Each item needs a name, category, status, created date, and
+              location."
             </p>
           </div>
 
@@ -189,7 +196,8 @@ Please ask me questions about what I need, then create a prompt for Agent Mode.`
               👤 You answer:
             </p>
             <p className="text-slate-300 text-sm">
-              "Add new items, edit existing ones, delete items, search and filter the list."
+              "Add new items, edit existing ones, delete items, search and
+              filter the list."
             </p>
           </div>
 
@@ -205,7 +213,9 @@ Please ask me questions about what I need, then create a prompt for Agent Mode.`
             <p className="text-sm font-semibold text-green-400 mb-2">
               👤 You answer:
             </p>
-            <p className="text-slate-300 text-sm">"Name and category are required. Dates should be valid dates."</p>
+            <p className="text-slate-300 text-sm">
+              "Name and category are required. Dates should be valid dates."
+            </p>
           </div>
         </div>
 
@@ -213,7 +223,13 @@ Please ask me questions about what I need, then create a prompt for Agent Mode.`
           <p className="text-sm text-cyan-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              <strong>Behind the scenes:</strong> The agent reads <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> which tells it to use React, TypeScript, Tailwind CSS, proper validation libraries, and accessibility standards. You just describe your business needs!
+              <strong>Behind the scenes:</strong> The agent reads{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                copilot-instructions.md
+              </code>{' '}
+              which tells it to use React, TypeScript, Tailwind CSS, proper
+              validation libraries, and accessibility standards. You just
+              describe your business needs!
             </span>
           </p>
         </div>
@@ -226,7 +242,8 @@ Please ask me questions about what I need, then create a prompt for Agent Mode.`
           Step 2: Agent Generates Simple Prompt
         </h3>
         <p className="text-slate-300 mb-4">
-          After the conversation, the agent creates a clean, simple prompt focused on your business needs:
+          After the conversation, the agent creates a clean, simple prompt
+          focused on your business needs:
         </p>
         <CodeBlock
           code={`@workspace Build a ${industry.sampleApp.name.toLowerCase()} that tracks ${industry.name.toLowerCase()} data.
@@ -250,7 +267,16 @@ Follow the project's technical standards in copilot-instructions.md.`}
           <p className="text-sm text-purple-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">🎯</span>
             <span>
-              <strong>Key insight:</strong> The prompt mentions <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> at the end. When Agent Mode sees <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">@workspace</code>, it automatically reads that file and applies React, TypeScript, Tailwind CSS, validation rules, and accessibility standards!
+              <strong>Key insight:</strong> The prompt mentions{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                copilot-instructions.md
+              </code>{' '}
+              at the end. When Agent Mode sees{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                @workspace
+              </code>
+              , it automatically reads that file and applies React, TypeScript,
+              Tailwind CSS, validation rules, and accessibility standards!
             </span>
           </p>
         </div>
@@ -310,31 +336,56 @@ Follow the project's technical standards in copilot-instructions.md.`}
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">No technical knowledge needed:</strong> You only describe business requirements (data fields, user actions, validation rules) - no React, TypeScript, or Tailwind knowledge required
+              <strong className="text-white">
+                No technical knowledge needed:
+              </strong>{' '}
+              You only describe business requirements (data fields, user
+              actions, validation rules) - no React, TypeScript, or Tailwind
+              knowledge required
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">copilot-instructions.md does the heavy lifting:</strong> This file contains all technical standards - React patterns, TypeScript config, Tailwind design system, accessibility rules, validation libraries
+              <strong className="text-white">
+                copilot-instructions.md does the heavy lifting:
+              </strong>{' '}
+              This file contains all technical standards - React patterns,
+              TypeScript config, Tailwind design system, accessibility rules,
+              validation libraries
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Agent asks business questions:</strong> "What data do you track?" "What actions can users perform?" - not "What form library?" or "What CSS framework?"
+              <strong className="text-white">
+                Agent asks business questions:
+              </strong>{' '}
+              "What data do you track?" "What actions can users perform?" - not
+              "What form library?" or "What CSS framework?"
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">@workspace is the magic:</strong> When you use <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">@workspace</code> in Agent Mode, it reads copilot-instructions.md and automatically applies all technical decisions
+              <strong className="text-white">@workspace is the magic:</strong>{' '}
+              When you use{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                @workspace
+              </code>{' '}
+              in Agent Mode, it reads copilot-instructions.md and automatically
+              applies all technical decisions
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Simple prompt, professional results:</strong> Your prompt stays simple (business focused), but Agent Mode builds production-quality code with proper types, validation, styling, and accessibility
+              <strong className="text-white">
+                Simple prompt, professional results:
+              </strong>{' '}
+              Your prompt stays simple (business focused), but Agent Mode builds
+              production-quality code with proper types, validation, styling,
+              and accessibility
             </div>
           </li>
         </ul>

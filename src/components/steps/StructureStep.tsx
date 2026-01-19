@@ -42,7 +42,8 @@ Follow all technical standards in copilot-instructions.md.`
         Set Up Your Project Structure
       </h2>
       <p className="text-slate-300 mb-8">
-        Let GitHub Copilot Agent build your entire {industry.sampleApp.name} project structure. You just describe what you want in plain English!
+        Let GitHub Copilot Agent build your entire {industry.sampleApp.name}{' '}
+        project structure. You just describe what you want in plain English!
       </p>
 
       {/* Step 1: Simple Request */}
@@ -54,15 +55,13 @@ Follow all technical standards in copilot-instructions.md.`
         <p className="text-slate-300 mb-4">
           Open GitHub Copilot Chat (Ctrl+Shift+I) and describe what you want:
         </p>
-        <CodeBlock
-          code={initialPrompt}
-          language="text"
-        />
+        <CodeBlock code={initialPrompt} language="text" />
         <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
           <p className="text-sm text-purple-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              Notice: No mention of Vite, React, TypeScript, Tailwind, or folder structure. The agent figures all that out!
+              Notice: No mention of Vite, React, TypeScript, Tailwind, or folder
+              structure. The agent figures all that out!
             </span>
           </p>
         </div>
@@ -80,52 +79,69 @@ Follow all technical standards in copilot-instructions.md.`
 
         <div className="space-y-4">
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-sm font-semibold text-blue-400 mb-2">
+              🤖 Agent asks:
+            </p>
             <p className="text-slate-300 text-sm">
               "What type of data will you be managing?"
             </p>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
-            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-sm font-semibold text-green-400 mb-2">
+              👤 You answer:
+            </p>
             <p className="text-slate-300 text-sm">
               "{industry.sampleApp.entities.join(', ')}"
             </p>
           </div>
 
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-sm font-semibold text-blue-400 mb-2">
+              🤖 Agent asks:
+            </p>
             <p className="text-slate-300 text-sm">
               "What features do you need?"
             </p>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
-            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-sm font-semibold text-green-400 mb-2">
+              👤 You answer:
+            </p>
             <p className="text-slate-300 text-sm">
               "View lists, add/edit forms, detail pages, search and filter."
             </p>
           </div>
 
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-sm font-semibold text-blue-400 mb-2">
+              🤖 Agent asks:
+            </p>
             <p className="text-slate-300 text-sm">
               "Do you need real data storage or just prototype with mock data?"
             </p>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
-            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-sm font-semibold text-green-400 mb-2">
+              👤 You answer:
+            </p>
             <p className="text-slate-300 text-sm">
               "Start with mock data, save to browser localStorage."
             </p>
           </div>
 
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-sm font-semibold text-blue-400 mb-2">
+              🤖 Agent asks:
+            </p>
             <p className="text-slate-300 text-sm">
-              "What colors or style do you prefer? (e.g., dark theme, blue accents, modern/professional)"
+              "What colors or style do you prefer? (e.g., dark theme, blue
+              accents, modern/professional)"
             </p>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
-            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-sm font-semibold text-green-400 mb-2">
+              👤 You answer:
+            </p>
             <p className="text-slate-300 text-sm">
               "Dark theme with blue/cyan accents, modern and professional."
             </p>
@@ -136,7 +152,13 @@ Follow all technical standards in copilot-instructions.md.`
           <p className="text-sm text-cyan-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              <strong>Behind the scenes:</strong> The agent reads <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> to know it should use Vite, React, TypeScript, Tailwind CSS, proper folder structure, data management patterns, and React hooks - all configured automatically!
+              <strong>Behind the scenes:</strong> The agent reads{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                copilot-instructions.md
+              </code>{' '}
+              to know it should use Vite, React, TypeScript, Tailwind CSS,
+              proper folder structure, data management patterns, and React hooks
+              - all configured automatically!
             </span>
           </p>
         </div>
@@ -149,17 +171,18 @@ Follow all technical standards in copilot-instructions.md.`
           Step 2: Agent Generates ONE Complete Prompt
         </h3>
         <p className="text-slate-300 mb-4">
-          After learning your needs, the agent creates ONE comprehensive prompt that builds your ENTIRE application:
+          After learning your needs, the agent creates ONE comprehensive prompt
+          that builds your ENTIRE application:
         </p>
-        <CodeBlock
-          code={finalPrompt}
-          language="text"
-        />
+        <CodeBlock code={finalPrompt} language="text" />
         <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
           <p className="text-sm text-purple-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">🎯</span>
             <span>
-              <strong>This ONE prompt builds everything:</strong> Project setup, folder structure, all components (list, forms, details), TypeScript types, mock data service, React hooks for data management, AND connects it all together into a working app!
+              <strong>This ONE prompt builds everything:</strong> Project setup,
+              folder structure, all components (list, forms, details),
+              TypeScript types, mock data service, React hooks for data
+              management, AND connects it all together into a working app!
             </span>
           </p>
         </div>
@@ -181,7 +204,13 @@ Follow all technical standards in copilot-instructions.md.`
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">2.</span>
-            <span>Make sure <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">@workspace</code> is in the chat</span>
+            <span>
+              Make sure{' '}
+              <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
+                @workspace
+              </code>{' '}
+              is in the chat
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">3.</span>
@@ -189,14 +218,20 @@ Follow all technical standards in copilot-instructions.md.`
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">4.</span>
-            <span>Agent builds your ENTIRE application - structure, components, data, everything!</span>
+            <span>
+              Agent builds your ENTIRE application - structure, components,
+              data, everything!
+            </span>
           </li>
         </ol>
         <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
           <p className="text-sm text-green-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">🎉</span>
             <span>
-              <strong>One prompt. Complete app.</strong> Agent Mode creates project files, installs packages, builds all components, sets up data management, connects everything, and verifies it works. You get a fully functional application!
+              <strong>One prompt. Complete app.</strong> Agent Mode creates
+              project files, installs packages, builds all components, sets up
+              data management, connects everything, and verifies it works. You
+              get a fully functional application!
             </span>
           </p>
         </div>
@@ -212,31 +247,48 @@ Follow all technical standards in copilot-instructions.md.`
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Complete in one shot:</strong> Instead of multiple steps (setup, then components, then data), ONE prompt builds your entire working application
+              <strong className="text-white">Complete in one shot:</strong>{' '}
+              Instead of multiple steps (setup, then components, then data), ONE
+              prompt builds your entire working application
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">copilot-instructions.md is your expert:</strong> Contains ALL technical knowledge - React patterns, TypeScript setup, Tailwind design, data management, hooks, validation, accessibility
+              <strong className="text-white">
+                copilot-instructions.md is your expert:
+              </strong>{' '}
+              Contains ALL technical knowledge - React patterns, TypeScript
+              setup, Tailwind design, data management, hooks, validation,
+              accessibility
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">You focus on business needs:</strong> "I need to track Products and Orders" - not "I need useState and useEffect hooks with localStorage"
+              <strong className="text-white">
+                You focus on business needs:
+              </strong>{' '}
+              "I need to track Products and Orders" - not "I need useState and
+              useEffect hooks with localStorage"
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Agent Mode is comprehensive:</strong> Reads copilot-instructions.md and builds project structure + components + data layer + everything connected and working
+              <strong className="text-white">
+                Agent Mode is comprehensive:
+              </strong>{' '}
+              Reads copilot-instructions.md and builds project structure +
+              components + data layer + everything connected and working
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">From zero to working app:</strong> Start with empty folder, one conversation, one prompt, and get a complete, functional, production-ready application
+              <strong className="text-white">From zero to working app:</strong>{' '}
+              Start with empty folder, one conversation, one prompt, and get a
+              complete, functional, production-ready application
             </div>
           </li>
         </ul>
