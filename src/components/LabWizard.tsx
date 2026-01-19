@@ -4,7 +4,6 @@ import StepProgress from './StepProgress'
 import SetupStep from './steps/SetupStep'
 import StructureStep from './steps/StructureStep'
 import ComponentsStep from './steps/ComponentsStep'
-import DataStep from './steps/DataStep'
 import TestingStep from './steps/TestingStep'
 import CompletionStep from './steps/CompletionStep'
 
@@ -17,7 +16,6 @@ export type WizardStep =
   | 'setup'
   | 'structure'
   | 'components'
-  | 'data'
   | 'testing'
   | 'completion'
 
@@ -30,14 +28,13 @@ const steps: { id: WizardStep; title: string; description: string }[] = [
   {
     id: 'structure',
     title: 'Project Structure',
-    description: 'Create app foundation',
+    description: 'Create complete app',
   },
   {
     id: 'components',
-    title: 'Build Components',
-    description: 'Create UI components',
+    title: 'Understanding Components',
+    description: 'Learn what was built',
   },
-  { id: 'data', title: 'Add Data Layer', description: 'Connect to data' },
   { id: 'testing', title: 'Test & Deploy', description: 'Verify and deploy' },
   { id: 'completion', title: 'Complete!', description: 'Your app is ready' },
 ]
@@ -73,7 +70,7 @@ export default function LabWizard({ industry, onReset }: LabWizardProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header */}
       <header className="bg-slate-800/50 backdrop-blur-xl border-b border-white/10 shadow-lg">
         <div className="container mx-auto px-4 py-4">
@@ -124,13 +121,6 @@ export default function LabWizard({ industry, onReset }: LabWizardProps) {
           )}
           {currentStep === 'components' && (
             <ComponentsStep
-              industry={industry}
-              onNext={handleNext}
-              onPrevious={handlePrevious}
-            />
-          )}
-          {currentStep === 'data' && (
-            <DataStep
               industry={industry}
               onNext={handleNext}
               onPrevious={handlePrevious}

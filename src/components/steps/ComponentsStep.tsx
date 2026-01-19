@@ -113,7 +113,7 @@ export default function ComponentsStep({
                 <span>
                   Install them using the VS Code Command Palette:{' '}
                   <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
-                    MCP: Install Server
+                    MCP: Add Server
                   </code>{' '}
                   and search for "microsoft-learn" and "context7"
                 </span>
@@ -399,12 +399,12 @@ Follow the project's technical standards in copilot-instructions.md.`}
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 3 of 6</div>
+        <div className="text-sm text-slate-400">Step 3 of 5</div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold shadow-lg shadow-cyan-500/30"
         >
-          Add Data Layer →
+          Test & Deploy →
         </button>
       </div>
     </div>

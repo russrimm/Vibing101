@@ -32,6 +32,7 @@ jobs:
         run: |
           cd dist
           echo '{"name":"vibing101","version":"1.0.0","scripts":{"start":"npx serve -s . -l 8080"},"dependencies":{"serve":"^14.2.0"}}' > package.json
+          npm install --production
           cd ..
 
       - name: Upload artifact for deployment job
@@ -52,9 +53,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-
-      - name: Install production dependencies
-        run: npm install --production
 
       - name: Login to Azure
         uses: azure/login@v2

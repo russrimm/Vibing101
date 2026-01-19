@@ -206,7 +206,7 @@ export default function TestingStep({
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 5 of 6</div>
+        <div className="text-sm text-slate-400">Step 4 of 5</div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold shadow-lg shadow-green-500/30"
