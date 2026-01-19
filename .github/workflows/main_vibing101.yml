@@ -62,6 +62,10 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6FAB4B0DCF2A4F24AF8372599302D88B }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6EAD6B2768BC42E6B371E4F666DE2064 }}
 
+      - name: Configure App Service settings
+        run: |
+          az webapp config appsettings set --name Vibing101 --resource-group Vibing101_group --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false WEBSITE_NODE_DEFAULT_VERSION="24-lts"
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
