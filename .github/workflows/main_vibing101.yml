@@ -33,6 +33,7 @@ jobs:
           cd dist
           echo '{"name":"vibing101","version":"1.0.0","scripts":{"start":"npx serve -s . -l 8080"},"dependencies":{"serve":"^14.2.0"}}' > package.json
           cp ../.deployment .
+          cp ../web.config .
           npm install --production
           cd ..
 
@@ -61,10 +62,6 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A679FE05EC2E40B5AA8F0B4D9345AD23 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6FAB4B0DCF2A4F24AF8372599302D88B }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6EAD6B2768BC42E6B371E4F666DE2064 }}
-
-      - name: Configure App Service settings
-        run: |
-          az webapp config appsettings set --name Vibing101 --resource-group Vibing101_group --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false WEBSITE_NODE_DEFAULT_VERSION="24-lts"
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
