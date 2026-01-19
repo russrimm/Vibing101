@@ -175,7 +175,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     Access official Microsoft and Azure documentation
                   </p>
                   <a
-                    href="vscode://ms-azure-tools.microsoft-learn-mcp"
+                    href="https://github.com/microsoft/learn-mcp"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
                   >
                     <span className="text-slate-50">
@@ -192,7 +194,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     framework
                   </p>
                   <a
-                    href="vscode://upstash.context7-mcp"
+                    href="https://github.com/upstash/context7-mcp"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block px-6 py-3 bg-blue-700 text-slate-50 font-black text-lg rounded-lg hover:bg-blue-800 transition-colors shadow-xl shadow-blue-500/50 border-2 border-blue-400"
                   >
                     <span className="text-slate-50">
