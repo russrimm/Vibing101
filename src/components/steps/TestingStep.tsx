@@ -50,7 +50,9 @@ export default function TestingStep({
             <input type="checkbox" className="mt-1" />
             <div>
               <p className="font-medium text-white">Edit existing items</p>
-              <p className="text-sm text-slate-400">Test update functionality</p>
+              <p className="text-sm text-slate-400">
+                Test update functionality
+              </p>
             </div>
           </label>
           <label className="flex items-start gap-3 p-3 bg-slate-900/30 rounded-lg hover:bg-slate-800/50 cursor-pointer border border-white/10 hover:border-cyan-500/30 transition-colors">
@@ -89,8 +91,10 @@ export default function TestingStep({
           <CodeBlock code="npm run build" language="bash" />
           <p className="text-sm text-slate-400 mt-2">
             This creates a{' '}
-            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">dist/</code> folder
-            with optimized files ready to deploy.
+            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+              dist/
+            </code>{' '}
+            folder with optimized files ready to deploy.
           </p>
         </div>
       </div>
