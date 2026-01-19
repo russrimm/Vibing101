@@ -57,9 +57,10 @@ export default function ComponentsStep({
           Step 0: Verify MCP Servers Are Running
         </h3>
         <p className="text-slate-300 mb-4">
-          Before building, make sure the required MCP servers are installed and running:
+          Before building, make sure the required MCP servers are installed and
+          running:
         </p>
-        
+
         <div className="space-y-4">
           <div>
             <p className="text-sm font-semibold text-orange-400 mb-2">
@@ -72,7 +73,12 @@ export default function ComponentsStep({
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange-500">2.</span>
-                <span>Type and select: <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">MCP: List Servers</code></span>
+                <span>
+                  Type and select:{' '}
+                  <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
+                    MCP: List Servers
+                  </code>
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange-500">3.</span>
@@ -82,15 +88,19 @@ export default function ComponentsStep({
           </div>
 
           <div className="bg-slate-900/50 border border-orange-500/20 rounded-lg p-4">
-            <p className="text-sm font-semibold text-orange-400 mb-2">Required MCP Servers:</p>
+            <p className="text-sm font-semibold text-orange-400 mb-2">
+              Required MCP Servers:
+            </p>
             <ul className="space-y-1.5 text-slate-300 text-sm">
               <li className="flex items-center gap-2">
                 <span className="text-green-500">✓</span>
-                <code className="text-cyan-400">microsoft-learn</code> - Access to Microsoft documentation and code samples
+                <code className="text-cyan-400">microsoft-learn</code> - Access
+                to Microsoft documentation and code samples
               </li>
               <li className="flex items-center gap-2">
                 <span className="text-green-500">✓</span>
-                <code className="text-cyan-400">context7</code> - Library documentation and examples
+                <code className="text-cyan-400">context7</code> - Library
+                documentation and examples
               </li>
             </ul>
           </div>
@@ -100,7 +110,13 @@ export default function ComponentsStep({
               <span className="text-lg mt-0.5">⚠️</span>
               <div>
                 <strong className="block mb-1">If servers are missing:</strong>
-                <span>Install them using the VS Code Command Palette: <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">MCP: Install Server</code> and search for "microsoft-learn" and "context7"</span>
+                <span>
+                  Install them using the VS Code Command Palette:{' '}
+                  <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
+                    MCP: Install Server
+                  </code>{' '}
+                  and search for "microsoft-learn" and "context7"
+                </span>
               </div>
             </p>
           </div>
@@ -114,14 +130,22 @@ export default function ComponentsStep({
           Step 1: Start with a Simple Request (Ask Mode)
         </h3>
         <p className="text-slate-300 mb-4">
-          Open GitHub Copilot Chat (Ctrl+Shift+I) and start with a basic description. The agent will ask questions to understand what you need:
+          Open GitHub Copilot Chat (Ctrl+Shift+I) and describe what you want in plain English. No technical knowledge needed:
         </p>
         <CodeBlock
-          code={`I want to create a ${industry.sampleApp.name.toLowerCase()} that manages ${industry.name.toLowerCase()} data and has a table view, forms, and detail pages.
+          code={`Create a ${industry.sampleApp.name.toLowerCase()} that displays and tracks ${industry.name.toLowerCase()} data. Users should be able to view items in a list, add new items, edit existing items, and see details for each item.
 
-Please ask me questions to understand what I need, then create a comprehensive prompt for Agent Mode.`}
+Please ask me questions about what I need, then create a prompt for Agent Mode.`}
           language="text"
         />
+        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+          <p className="text-sm text-purple-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">💡</span>
+            <span>
+              Notice: You don't mention React, Tailwind, TypeScript, or any libraries. The agent will read <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">copilot-instructions.md</code> and apply those automatically!
+            </span>
+          </p>
+        </div>
       </div>
 
       {/* The Conversation */}
@@ -133,33 +157,55 @@ Please ask me questions to understand what I need, then create a comprehensive p
         <p className="text-slate-300 mb-4">
           The AI will have a conversation with you. Here's an example:
         </p>
-        
+
         <div className="space-y-4">
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
-            <p className="text-slate-300 text-sm">"What data fields do you need? For example, names, dates, status, etc.?"</p>
+            <p className="text-sm font-semibold text-blue-400 mb-2">
+              🤖 Agent asks:
+            </p>
+            <p className="text-slate-300 text-sm">
+              "What information do you need to track for each item?"
+            </p>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
-            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
-            <p className="text-slate-300 text-sm">"I need: name, type/category, status, dates, and location."</p>
+            <p className="text-sm font-semibold text-green-400 mb-2">
+              👤 You answer:
+            </p>
+            <p className="text-slate-300 text-sm">
+              "Each item needs a name, category, status, created date, and location."
+            </p>
           </div>
 
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
-            <p className="text-slate-300 text-sm">"What validation do you need? Required fields, email formats?"</p>
+            <p className="text-sm font-semibold text-blue-400 mb-2">
+              🤖 Agent asks:
+            </p>
+            <p className="text-slate-300 text-sm">
+              "What actions should users be able to perform?"
+            </p>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
-            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
-            <p className="text-slate-300 text-sm">"Required fields can't be empty, dates must be valid."</p>
+            <p className="text-sm font-semibold text-green-400 mb-2">
+              👤 You answer:
+            </p>
+            <p className="text-slate-300 text-sm">
+              "Add new items, edit existing ones, delete items, search and filter the list."
+            </p>
           </div>
 
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
-            <p className="text-slate-300 text-sm">"Form library preferences?"</p>
+            <p className="text-sm font-semibold text-blue-400 mb-2">
+              🤖 Agent asks:
+            </p>
+            <p className="text-slate-300 text-sm">
+              "Any required fields or validation rules?"
+            </p>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
-            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
-            <p className="text-slate-300 text-sm">"Use whatever works best."</p>
+            <p className="text-sm font-semibold text-green-400 mb-2">
+              👤 You answer:
+            </p>
+            <p className="text-slate-300 text-sm">"Name and category are required. Dates should be valid dates."</p>
           </div>
         </div>
 
@@ -167,7 +213,7 @@ Please ask me questions to understand what I need, then create a comprehensive p
           <p className="text-sm text-cyan-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              <strong>The agent learns</strong> and automatically chooses libraries (React Hook Form, Zod), TypeScript types, design system, and accessibility.
+              <strong>Behind the scenes:</strong> The agent reads <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> which tells it to use React, TypeScript, Tailwind CSS, proper validation libraries, and accessibility standards. You just describe your business needs!
             </span>
           </p>
         </div>
@@ -177,32 +223,37 @@ Please ask me questions to understand what I need, then create a comprehensive p
       <div className="bg-slate-900/50 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">✨</span>
-          Step 2: Agent Generates Complete Prompt
+          Step 2: Agent Generates Simple Prompt
         </h3>
         <p className="text-slate-300 mb-4">
-          After the conversation, you'll get a complete technical prompt:
+          After the conversation, the agent creates a clean, simple prompt focused on your business needs:
         </p>
         <CodeBlock
-          code={`@workspace Build a ${industry.sampleApp.name.toLowerCase()} for ${industry.name.toLowerCase()} data.
+          code={`@workspace Build a ${industry.sampleApp.name.toLowerCase()} that tracks ${industry.name.toLowerCase()} data.
 
-User Requirements:
-- Table view with search, filter, sorting
-- Form for create/edit with validation
-- Detail view for items
-- Fields: name, type, status, dates, location
-- Validation: required fields, valid dates
+Features:
+- List view with search, filter, and sort
+- Add/edit form with validation
+- Detail view for each item
 
-Technical:
-- React + TypeScript (strict)
-- React Hook Form + Zod validation
-- Tailwind: slate-900/800 bg, white/slate-300 text, cyan-500 accents
-- Responsive, accessible (WCAG AA)
-- Loading/error states
+Data fields:
+- Name (required)
+- Category (required)
+- Status
+- Created date
+- Location
 
-Create types, install packages, build components, update App.tsx.
-Use MCP servers for best practices.`}
+Follow the project's technical standards in copilot-instructions.md.`}
           language="text"
         />
+        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+          <p className="text-sm text-purple-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">🎯</span>
+            <span>
+              <strong>Key insight:</strong> The prompt mentions <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> at the end. When Agent Mode sees <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">@workspace</code>, it automatically reads that file and applies React, TypeScript, Tailwind CSS, validation rules, and accessibility standards!
+            </span>
+          </p>
+        </div>
       </div>
 
       {/* Step 3: Agent Mode */}
@@ -221,7 +272,13 @@ Use MCP servers for best practices.`}
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">2.</span>
-            <span>Make sure <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">@workspace</code> is in the chat</span>
+            <span>
+              Make sure{' '}
+              <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
+                @workspace
+              </code>{' '}
+              is in the chat
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">3.</span>
@@ -236,7 +293,8 @@ Use MCP servers for best practices.`}
           <p className="text-sm text-green-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">🎉</span>
             <span>
-              <strong>Agent Mode</strong> creates files, installs dependencies, builds components, and verifies everything works!
+              <strong>Agent Mode</strong> creates files, installs dependencies,
+              builds components, and verifies everything works!
             </span>
           </p>
         </div>
@@ -252,31 +310,31 @@ Use MCP servers for best practices.`}
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Start simple:</strong> Just describe what you want in plain English - no technical jargon required
+              <strong className="text-white">No technical knowledge needed:</strong> You only describe business requirements (data fields, user actions, validation rules) - no React, TypeScript, or Tailwind knowledge required
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Agent learns your needs:</strong> Through questions, the agent understands your data model, validation rules, and UI preferences
+              <strong className="text-white">copilot-instructions.md does the heavy lifting:</strong> This file contains all technical standards - React patterns, TypeScript config, Tailwind design system, accessibility rules, validation libraries
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Smart defaults applied:</strong> Agent automatically chooses best practices (React Hook Form, Zod validation, TypeScript types, WCAG AA accessibility)
+              <strong className="text-white">Agent asks business questions:</strong> "What data do you track?" "What actions can users perform?" - not "What form library?" or "What CSS framework?"
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Holistic prompt generated:</strong> The final prompt includes all prerequisites - types, components, validation, styling, tests - in one comprehensive instruction
+              <strong className="text-white">@workspace is the magic:</strong> When you use <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">@workspace</code> in Agent Mode, it reads copilot-instructions.md and automatically applies all technical decisions
             </div>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-green-500 mt-1">✓</span>
             <div>
-              <strong className="text-white">Agent Mode builds everything:</strong> Paste the prompt into Agent Mode (@workspace) and it creates all files, installs dependencies, and verifies it works
+              <strong className="text-white">Simple prompt, professional results:</strong> Your prompt stays simple (business focused), but Agent Mode builds production-quality code with proper types, validation, styling, and accessibility
             </div>
           </li>
         </ul>

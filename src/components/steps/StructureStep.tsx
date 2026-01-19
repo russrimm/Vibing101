@@ -12,197 +12,234 @@ export default function StructureStep({
   onNext,
   onPrevious,
 }: StructureStepProps) {
-  const projectName = industry.sampleApp.name.toLowerCase().replace(/\s+/g, '-')
+  const initialPrompt = `Create a ${industry.sampleApp.name} application that tracks ${industry.name.toLowerCase()} data.
 
-  const copilotPrompt = `Create a new Vite + React + TypeScript project for a ${industry.sampleApp.name} application with the following requirements:
+Please ask me questions about what I need (features, data, colors/theme/style, etc), then create a complete prompt for Agent Mode.`
 
-1. Project Setup:
-   - Create a new Vite project named "${projectName}" using the react-ts template
-   - Install all dependencies
+  const finalPrompt = `@workspace Build a complete ${industry.sampleApp.name} application.
 
-2. Install and Configure Tailwind CSS:
-   - Install tailwindcss, postcss, and autoprefixer
-   - Configure tailwind.config.js with proper content paths for all tsx/jsx files
-   - Configure postcss.config.cjs
-   - Update src/index.css with Tailwind directives
+What I need:
+- Track and manage: ${industry.sampleApp.entities.join(', ')}
+- List/table views with search and filtering
+- Forms to add and edit items
+- Detail pages for each item
+- Data management with mock data (localStorage)
+- Dark theme with blue/cyan accents, modern professional style
 
-3. Create Project Structure:
-   - src/components/ for reusable UI components
-   - src/types/ for TypeScript type definitions
-   - src/hooks/ for custom React hooks
-   - src/services/ for API and data services
+Build the complete application including:
+- Project structure and configuration
+- All components (list, form, detail views)
+- TypeScript types for all data
+- Mock data service with CRUD operations
+- React hooks for data management
+- Connected and working UI
 
-4. Industry-Specific Setup for ${industry.name}:
-   - Create types for: ${industry.sampleApp.entities.join(', ')}
-   - Set up initial component structure for the ${industry.sampleApp.name}
-
-5. Test the Setup:
-   - Run npm run dev to verify everything works
-   - Confirm the dev server starts at http://localhost:5173
-
-Please create all necessary files, install all dependencies, and verify the setup is working correctly.`
+Follow all technical standards in copilot-instructions.md.`
 
   return (
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
       <h2 className="text-3xl font-bold text-white mb-4">
-        Let GitHub Copilot Build Your Project
+        Set Up Your Project Structure
       </h2>
       <p className="text-slate-300 mb-8">
-        Instead of manually typing commands, let GitHub Copilot agent do all the
-        work! It will create your {industry.sampleApp.name}, install
-        dependencies, configure everything, and verify it's working.
+        Let GitHub Copilot Agent build your entire {industry.sampleApp.name} project structure. You just describe what you want in plain English!
       </p>
 
-      {/* What Copilot Will Do */}
-      <div className="mb-8 bg-slate-900/50 rounded-xl p-6 border border-cyan-500/20">
+      {/* Step 1: Simple Request */}
+      <div className="bg-linear-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="text-2xl">🤖</span>
-          What GitHub Copilot Will Do For You
+          <span className="text-2xl">💬</span>
+          Step 1: Start with a Simple Request (Ask Mode)
         </h3>
-        <ul className="space-y-3 text-slate-300 ml-6">
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 mt-1">✓</span>
-            <span>
-              Create a new Vite + React + TypeScript project named{' '}
-              <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-                {projectName}
-              </code>
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 mt-1">✓</span>
-            <span>Install and configure Tailwind CSS with proper settings</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 mt-1">✓</span>
-            <span>
-              Create organized folder structure (components, types, hooks,
-              services)
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 mt-1">✓</span>
-            <span>
-              Set up TypeScript types for{' '}
-              {industry.sampleApp.entities.slice(0, 2).join(' and ')}
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 mt-1">✓</span>
-            <span>Test that everything works by running the dev server</span>
-          </li>
-        </ul>
-      </div>
-
-      {/* How to Use Copilot */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            1
-          </span>
-          Open GitHub Copilot Chat
-        </h3>
-        <p className="text-slate-300 mb-4 ml-10">
-          Press{' '}
-          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-            Ctrl+Shift+I
-          </code>{' '}
-          (Windows/Linux) or{' '}
-          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-            Cmd+Shift+I
-          </code>{' '}
-          (Mac) to open Copilot Chat in VS Code.
+        <p className="text-slate-300 mb-4">
+          Open GitHub Copilot Chat (Ctrl+Shift+I) and describe what you want:
         </p>
-      </div>
-
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            2
-          </span>
-          Copy & Paste This Prompt
-        </h3>
-        <p className="text-slate-300 mb-4 ml-10">
-          Copy the prompt below and paste it into GitHub Copilot Chat. Copilot
-          will read the Beast Mode instructions from{' '}
-          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-            .github/copilot-instructions.md
-          </code>{' '}
-          and autonomously complete all the steps.
-        </p>
-        <div className="ml-10">
-          <CodeBlock code={copilotPrompt} language="markdown" />
-        </div>
-      </div>
-
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            3
-          </span>
-          Watch Copilot Work
-        </h3>
-        <p className="text-slate-300 mb-4 ml-10">GitHub Copilot will:</p>
-        <ul className="ml-10 space-y-2 text-slate-300">
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400">→</span>
-            <span>Run all necessary terminal commands</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400">→</span>
-            <span>Create and edit all configuration files</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400">→</span>
-            <span>Set up the folder structure</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400">→</span>
-            <span>Verify everything is working</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400">→</span>
-            <span>Tell you when it's done!</span>
-          </li>
-        </ul>
-      </div>
-
-      {/* Beast Mode Info */}
-      <div className="mb-8 bg-purple-900/20 border border-purple-500/30 rounded-xl p-6">
-        <h4 className="text-lg font-semibold text-purple-300 mb-3 flex items-center gap-2">
-          <span className="text-2xl">⚡</span>
-          Beast Mode Enabled
-        </h4>
-        <p className="text-purple-200 text-sm mb-3">
-          This project includes Beast Mode instructions in{' '}
-          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-            .github/copilot-instructions.md
-          </code>
-          . This tells GitHub Copilot to work autonomously, handle errors,
-          research best practices, and keep working until the task is complete.
-        </p>
-        <div className="bg-slate-800/50 rounded-lg p-4">
-          <p className="text-slate-300 text-sm">
-            <strong className="text-cyan-400">What this means:</strong> You
-            don't need to micromanage or provide step-by-step instructions.
-            Copilot will figure out what needs to be done, handle any errors it
-            encounters, and work through the entire setup process on its own.
+        <CodeBlock
+          code={initialPrompt}
+          language="text"
+        />
+        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+          <p className="text-sm text-purple-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">💡</span>
+            <span>
+              Notice: No mention of Vite, React, TypeScript, Tailwind, or folder structure. The agent figures all that out!
+            </span>
           </p>
         </div>
       </div>
 
-      {/* Industry-Specific Tip */}
-      <div className="bg-cyan-900/20 border border-cyan-500/30 rounded-xl p-6 mb-8">
-        <h4 className="text-lg font-semibold text-cyan-300 mb-2">
-          {industry.icon} {industry.name} Pro Tip
-        </h4>
-        <p className="text-cyan-200 text-sm">
-          After Copilot finishes the setup, you'll have a complete project
-          structure ready for building your {industry.sampleApp.name}. The next
-          step will be creating the actual components for{' '}
-          {industry.sampleApp.entities.slice(0, 2).join(', ')}, and more.
-          Copilot will handle all of that too!
+      {/* Conversation */}
+      <div className="bg-slate-900/50 border border-cyan-500/30 rounded-xl p-6 mb-6">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">🗨️</span>
+          The Agent Asks Questions
+        </h3>
+        <p className="text-slate-300 mb-4">
+          The agent will have a conversation with you:
         </p>
+
+        <div className="space-y-4">
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-slate-300 text-sm">
+              "What type of data will you be managing?"
+            </p>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
+            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-slate-300 text-sm">
+              "{industry.sampleApp.entities.join(', ')}"
+            </p>
+          </div>
+
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-slate-300 text-sm">
+              "What features do you need?"
+            </p>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
+            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-slate-300 text-sm">
+              "View lists, add/edit forms, detail pages, search and filter."
+            </p>
+          </div>
+
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-slate-300 text-sm">
+              "Do you need real data storage or just prototype with mock data?"
+            </p>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
+            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-slate-300 text-sm">
+              "Start with mock data, save to browser localStorage."
+            </p>
+          </div>
+
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-sm font-semibold text-blue-400 mb-2">🤖 Agent asks:</p>
+            <p className="text-slate-300 text-sm">
+              "What colors or style do you prefer? (e.g., dark theme, blue accents, modern/professional)"
+            </p>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 ml-4">
+            <p className="text-sm font-semibold text-green-400 mb-2">👤 You answer:</p>
+            <p className="text-slate-300 text-sm">
+              "Dark theme with blue/cyan accents, modern and professional."
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-4">
+          <p className="text-sm text-cyan-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">💡</span>
+            <span>
+              <strong>Behind the scenes:</strong> The agent reads <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> to know it should use Vite, React, TypeScript, Tailwind CSS, proper folder structure, data management patterns, and React hooks - all configured automatically!
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Step 2: Generated Prompt */}
+      <div className="bg-slate-900/50 border border-purple-500/30 rounded-xl p-6 mb-6">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">✨</span>
+          Step 2: Agent Generates ONE Complete Prompt
+        </h3>
+        <p className="text-slate-300 mb-4">
+          After learning your needs, the agent creates ONE comprehensive prompt that builds your ENTIRE application:
+        </p>
+        <CodeBlock
+          code={finalPrompt}
+          language="text"
+        />
+        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+          <p className="text-sm text-purple-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">🎯</span>
+            <span>
+              <strong>This ONE prompt builds everything:</strong> Project setup, folder structure, all components (list, forms, details), TypeScript types, mock data service, React hooks for data management, AND connects it all together into a working app!
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Step 3: Agent Mode */}
+      <div className="bg-linear-to-br from-cyan-900/30 to-blue-900/30 border border-cyan-500/30 rounded-xl p-6 mb-8">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">🤖</span>
+          Step 3: Paste in Agent Mode - Watch It Build Everything
+        </h3>
+        <p className="text-slate-300 mb-4">
+          Copy the prompt and paste into Agent Mode:
+        </p>
+        <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">1.</span>
+            <span>Copy the generated prompt</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">2.</span>
+            <span>Make sure <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">@workspace</code> is in the chat</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">3.</span>
+            <span>Paste and send</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-cyan-500">4.</span>
+            <span>Agent builds your ENTIRE application - structure, components, data, everything!</span>
+          </li>
+        </ol>
+        <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+          <p className="text-sm text-green-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">🎉</span>
+            <span>
+              <strong>One prompt. Complete app.</strong> Agent Mode creates project files, installs packages, builds all components, sets up data management, connects everything, and verifies it works. You get a fully functional application!
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Why This Works */}
+      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-8">
+        <h4 className="text-lg font-semibold text-green-400 mb-3 flex items-center gap-2">
+          <span className="text-xl">🎯</span>
+          Why One Prompt Builds Everything
+        </h4>
+        <ul className="space-y-3 text-slate-300 text-sm">
+          <li className="flex items-start gap-2">
+            <span className="text-green-500 mt-1">✓</span>
+            <div>
+              <strong className="text-white">Complete in one shot:</strong> Instead of multiple steps (setup, then components, then data), ONE prompt builds your entire working application
+            </div>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-500 mt-1">✓</span>
+            <div>
+              <strong className="text-white">copilot-instructions.md is your expert:</strong> Contains ALL technical knowledge - React patterns, TypeScript setup, Tailwind design, data management, hooks, validation, accessibility
+            </div>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-500 mt-1">✓</span>
+            <div>
+              <strong className="text-white">You focus on business needs:</strong> "I need to track Products and Orders" - not "I need useState and useEffect hooks with localStorage"
+            </div>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-500 mt-1">✓</span>
+            <div>
+              <strong className="text-white">Agent Mode is comprehensive:</strong> Reads copilot-instructions.md and builds project structure + components + data layer + everything connected and working
+            </div>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-500 mt-1">✓</span>
+            <div>
+              <strong className="text-white">From zero to working app:</strong> Start with empty folder, one conversation, one prompt, and get a complete, functional, production-ready application
+            </div>
+          </li>
+        </ul>
       </div>
 
       {/* Navigation */}
