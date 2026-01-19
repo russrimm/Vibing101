@@ -1,16 +1,19 @@
 # copilot-instructions.md
 
 ## Purpose
+
 You are with to building a modern web application using **TypeScript-only** with **Node.js (v24+)**, **Vite**, **React**, **Tailwind CSS**, and **shadcn/ui**. Optimize for clarity, maintainability, and repeatability. Keep changes minimal and aligned with the lab steps.
 
 ---
 
 ## Expertise Expectations
+
 You are an expert in **TypeScript, Node.js, Vite, React, shadcn/ui, and Tailwind CSS**.
 
 ---
 
 ## Non-Negotiables
+
 - **TypeScript only.** No JavaScript source files.
   - Prefer: `.ts`, `.tsx`, `.mts` (when needed for ESM clarity). Use `.cts` only if a tool forces CJS.
 - **Node.js v24+**, **ESM modules** by default.
@@ -18,11 +21,12 @@ You are an expert in **TypeScript, Node.js, Vite, React, shadcn/ui, and Tailwind
 - **Tailwind CSS latest**.
 - Prefer **built-in Node modules** and **platform features**. Avoid external dependencies where possible.
 - If additional dependencies are needed:
-  - **Ask first** and justify *why* they are needed and what alternatives exist.
+  - **Ask first** and justify _why_ they are needed and what alternatives exist.
 
 ---
 
 ## MCP Usage Requirements (Context7 + Microsoft Learn)
+
 When you need authoritative guidance (APIs, configuration, official patterns), do not guess—use MCPs.
 
 1. **Context7 MCP**
@@ -43,6 +47,7 @@ When you need authoritative guidance (APIs, configuration, official patterns), d
 ---
 
 ## Language & Output Rules
+
 - Always respond in the **same language as the user's question**.
 - **Generated artifacts** (code, docs, config files, commit messages) must be in **English**.
 - Provide exact file edits (paths + contents) when helpful.
@@ -50,6 +55,7 @@ When you need authoritative guidance (APIs, configuration, official patterns), d
 ---
 
 ## Code Style and Structure
+
 - Write concise, technical TypeScript with accurate examples.
 - Use functional and declarative patterns; **avoid classes**.
 - Prefer iteration and modularization over duplication.
@@ -57,7 +63,9 @@ When you need authoritative guidance (APIs, configuration, official patterns), d
 - Keep code simple and maintainable.
 
 ### File Structure (components/modules)
+
 When editing or creating a module, structure the file in this order where applicable:
+
 1. exported component / exported functions
 2. subcomponents
 3. helpers
@@ -65,6 +73,7 @@ When editing or creating a module, structure the file in this order where applic
 5. types/interfaces
 
 ### TSX Size Limit (Maintainability Rule)
+
 - Keep `.tsx` files **small and focused**.
 - **Target:** under **300 lines** per `.tsx` file whenever reasonably possible.
 - If a file approaches the limit:
@@ -77,6 +86,7 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## TypeScript Rules
+
 - Use TypeScript everywhere; keep settings **strict**.
 - Prefer **interfaces** over types (use `type` only when it's the better fit, e.g., unions).
 - Avoid `enum`; prefer `as const` objects and maps.
@@ -86,6 +96,7 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## Syntax and Formatting
+
 - Prefer **functions over classes**.
 - Use the **`function` keyword for pure functions** (helpers/utilities).
 - Keep conditionals concise for simple statements; avoid extra braces when it improves readability.
@@ -94,6 +105,7 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## React Component Conventions
+
 - Use **functional components**.
 - Favor **named exports** for components.
 - Keep state minimal and local; lift state only when required.
@@ -102,6 +114,7 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## UI and Styling
+
 - Use **shadcn/ui** for UI primitives and **Tailwind** for styling.
 - Mobile-first responsive design with Tailwind.
 - Keep UI consistent and accessible:
@@ -110,11 +123,13 @@ When editing or creating a module, structure the file in this order where applic
   - readable contrast
 
 ### Placeholder Images (seed/demo data)
+
 - Use `https://placekitten.com/` for placeholder images.
 
 ---
 
 ## Performance Guidelines (Vite + React)
+
 - Minimize unnecessary renders and state updates.
 - Prefer code-splitting for non-critical UI:
   - Use `React.lazy()` and `Suspense` for lazy-loaded chunks when appropriate.
@@ -126,12 +141,14 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## URL Search Parameter State
+
 - Use `nuqs` **only if the lab already uses it** or if the user explicitly wants it.
 - If adding `nuqs` would require installing a new dependency, **ask first** and explain alternatives.
 
 ---
 
 ## Node.js and Async Rules
+
 - Always use `async/await` for asynchronous code.
 - Avoid callbacks.
 - When adapting callback APIs, use `node:util` `promisify`.
@@ -139,6 +156,7 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## Dependency Policy
+
 - Prefer zero-dependency solutions first.
 - If dependencies are needed:
   - Ask before adding
@@ -148,6 +166,7 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## Testing Policy (Vitest)
+
 - Use **Vitest** for all tests.
 - Write tests for:
   - all new features
@@ -161,12 +180,14 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## Documentation Policy
+
 - When adding new features or making significant changes, update `README.md`.
 - Keep documentation concise and step-based for lab users.
 
 ---
 
 ## Security Basics
+
 - Never commit secrets.
 - Don't leak secrets into client-side code.
 - Avoid unsafe patterns (`eval`, dangerous HTML injection).
@@ -175,7 +196,9 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## Repository Conventions (Vite Lab Default)
+
 ### Recommended structure
+
 - `src/` – app code
 - `src/components/` – reusable components
 - `src/components/ui/` – shadcn/ui components
@@ -184,6 +207,7 @@ When editing or creating a module, structure the file in this order where applic
 - tests: either colocated `*.test.ts(x)` or a top-level `tests/` folder (pick one and be consistent)
 
 ### Component naming and placement
+
 - All reusable components go in `src/components/`
 - Component filenames use **lowercase with dashes**:
   - `src/components/new-component.tsx`
@@ -191,6 +215,7 @@ When editing or creating a module, structure the file in this order where applic
   - `src/components/auth-wizard/`
 
 ### Organization approaches
+
 - By type (ui/forms/layout) or by feature (auth-wizard, tenant-reports, etc.)
 - Private per-page components (used only in one screen/route):
   - create a local folder near that screen/route (name it `_components` if it improves clarity)
@@ -198,6 +223,7 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## Environment Variables (Vite)
+
 - Use `import.meta.env`.
 - Document required vars in `README.md` with safe placeholders.
 - Do not store secrets in client-side environment variables.
@@ -205,7 +231,9 @@ When editing or creating a module, structure the file in this order where applic
 ---
 
 ## Interaction Rules (When to Ask Questions)
+
 Ask questions if you are unsure about:
+
 - requirements or acceptance criteria
 - design choices
 - adding dependencies
@@ -216,7 +244,9 @@ If blocked, propose 1–2 viable options and ask the user to choose.
 ---
 
 ## "Do This First" (Bootstrapping Defaults)
+
 Use lab-aligned commands and verify exact setup steps via MCPs:
+
 - Create app:
   - `npm create vite@latest <app-name> -- --template react-ts`
 - Install:
@@ -231,7 +261,9 @@ Do not guess Tailwind/Vitest configuration details—confirm with MCPs.
 ---
 
 ## Final Check Before You Respond
+
 Before outputting anything, verify:
+
 - No JavaScript-only guidance was introduced
 - No `null` was introduced
 - Async uses `async/await`

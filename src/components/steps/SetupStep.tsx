@@ -184,7 +184,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     Context7 MCP Server
                   </p>
                   <p className="text-sm text-slate-400 mb-2">
-                    Access documentation for any programming library or framework
+                    Access documentation for any programming library or
+                    framework
                   </p>
                   <a
                     href="vscode://upstash.context7-mcp"

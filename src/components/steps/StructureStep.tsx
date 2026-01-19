@@ -53,12 +53,19 @@ Follow all technical standards in copilot-instructions.md.`
           Step 0: Create copilot-instructions.md (First!)
         </h3>
         <p className="text-slate-300 mb-4">
-          Before building your app, create a file that tells Copilot how to code for this project:
+          Before building your app, create a file that tells Copilot how to code
+          for this project:
         </p>
         <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono">1.</span>
-            <span>Create a new folder for your project (e.g., <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">my-{industry.name.toLowerCase()}-app</code>)</span>
+            <span>
+              Create a new folder for your project (e.g.,{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                my-{industry.name.toLowerCase()}-app
+              </code>
+              )
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono">2.</span>
@@ -66,11 +73,27 @@ Follow all technical standards in copilot-instructions.md.`
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono">3.</span>
-            <span>Create a file named <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot-instructions.md</code> in the root</span>
+            <span>
+              Create a file named{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                copilot-instructions.md
+              </code>{' '}
+              in the root
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono">4.</span>
-            <span>Copy the content from: <a href="https://raw.githubusercontent.com/russrimm/Vibing101/main/copilot-instructions-template.md" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">copilot-instructions template</a></span>
+            <span>
+              Copy the content from:{' '}
+              <a
+                href="https://raw.githubusercontent.com/russrimm/Vibing101/main/copilot-instructions-template.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                copilot-instructions template
+              </a>
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono">5.</span>
@@ -82,7 +105,10 @@ Follow all technical standards in copilot-instructions.md.`
             <p className="text-sm text-amber-300 flex items-start gap-2">
               <span className="text-lg mt-0.5">⚠️</span>
               <span>
-                <strong>Why do this first?</strong> This file teaches Copilot your project's standards (TypeScript-only, Vite, React, Tailwind, etc.) so it builds everything correctly from the start!
+                <strong>Why do this first?</strong> This file teaches Copilot
+                your project's standards (TypeScript-only, Vite, React,
+                Tailwind, etc.) so it builds everything correctly from the
+                start!
               </span>
             </p>
           </div>
@@ -90,7 +116,17 @@ Follow all technical standards in copilot-instructions.md.`
             <p className="text-sm text-blue-300 flex items-start gap-2">
               <span className="text-lg mt-0.5">📚</span>
               <span>
-                <strong>Want more examples?</strong> Check out <a href="https://github.com/github/awesome-copilot" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">GitHub's Awesome Copilot repository</a> for many starter instruction files for different languages and frameworks!
+                <strong>Want more examples?</strong> Check out{' '}
+                <a
+                  href="https://github.com/github/awesome-copilot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-cyan-300 underline"
+                >
+                  GitHub's Awesome Copilot repository
+                </a>{' '}
+                for many starter instruction files for different languages and
+                frameworks!
               </span>
             </p>
           </div>
