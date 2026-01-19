@@ -48,9 +48,9 @@ Please create all necessary files, install all dependencies, and verify the setu
         Let GitHub Copilot Build Your Project
       </h2>
       <p className="text-slate-300 mb-8">
-        Instead of manually typing commands, let GitHub Copilot agent do all the work!
-        It will create your {industry.sampleApp.name}, install dependencies, configure
-        everything, and verify it's working.
+        Instead of manually typing commands, let GitHub Copilot agent do all the
+        work! It will create your {industry.sampleApp.name}, install
+        dependencies, configure everything, and verify it's working.
       </p>
 
       {/* What Copilot Will Do */}
@@ -62,7 +62,12 @@ Please create all necessary files, install all dependencies, and verify the setu
         <ul className="space-y-3 text-slate-300 ml-6">
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 mt-1">✓</span>
-            <span>Create a new Vite + React + TypeScript project named <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">{projectName}</code></span>
+            <span>
+              Create a new Vite + React + TypeScript project named{' '}
+              <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+                {projectName}
+              </code>
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 mt-1">✓</span>
@@ -70,11 +75,17 @@ Please create all necessary files, install all dependencies, and verify the setu
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 mt-1">✓</span>
-            <span>Create organized folder structure (components, types, hooks, services)</span>
+            <span>
+              Create organized folder structure (components, types, hooks,
+              services)
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 mt-1">✓</span>
-            <span>Set up TypeScript types for {industry.sampleApp.entities.slice(0, 2).join(' and ')}</span>
+            <span>
+              Set up TypeScript types for{' '}
+              {industry.sampleApp.entities.slice(0, 2).join(' and ')}
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 mt-1">✓</span>
@@ -92,8 +103,15 @@ Please create all necessary files, install all dependencies, and verify the setu
           Open GitHub Copilot Chat
         </h3>
         <p className="text-slate-300 mb-4 ml-10">
-          Press <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">Ctrl+Shift+I</code> (Windows/Linux) or{' '}
-          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">Cmd+Shift+I</code> (Mac) to open Copilot Chat in VS Code.
+          Press{' '}
+          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+            Ctrl+Shift+I
+          </code>{' '}
+          (Windows/Linux) or{' '}
+          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+            Cmd+Shift+I
+          </code>{' '}
+          (Mac) to open Copilot Chat in VS Code.
         </p>
       </div>
 
@@ -105,9 +123,12 @@ Please create all necessary files, install all dependencies, and verify the setu
           Copy & Paste This Prompt
         </h3>
         <p className="text-slate-300 mb-4 ml-10">
-          Copy the prompt below and paste it into GitHub Copilot Chat. Copilot will read the Beast Mode
-          instructions from <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">.github/copilot-instructions.md</code> and
-          autonomously complete all the steps.
+          Copy the prompt below and paste it into GitHub Copilot Chat. Copilot
+          will read the Beast Mode instructions from{' '}
+          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+            .github/copilot-instructions.md
+          </code>{' '}
+          and autonomously complete all the steps.
         </p>
         <div className="ml-10">
           <CodeBlock code={copilotPrompt} language="markdown" />
@@ -121,9 +142,7 @@ Please create all necessary files, install all dependencies, and verify the setu
           </span>
           Watch Copilot Work
         </h3>
-        <p className="text-slate-300 mb-4 ml-10">
-          GitHub Copilot will:
-        </p>
+        <p className="text-slate-300 mb-4 ml-10">GitHub Copilot will:</p>
         <ul className="ml-10 space-y-2 text-slate-300">
           <li className="flex items-start gap-2">
             <span className="text-cyan-400">→</span>
@@ -155,15 +174,19 @@ Please create all necessary files, install all dependencies, and verify the setu
           Beast Mode Enabled
         </h4>
         <p className="text-purple-200 text-sm mb-3">
-          This project includes Beast Mode instructions in <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">.github/copilot-instructions.md</code>.
-          This tells GitHub Copilot to work autonomously, handle errors, research best practices, and
-          keep working until the task is complete.
+          This project includes Beast Mode instructions in{' '}
+          <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+            .github/copilot-instructions.md
+          </code>
+          . This tells GitHub Copilot to work autonomously, handle errors,
+          research best practices, and keep working until the task is complete.
         </p>
         <div className="bg-slate-800/50 rounded-lg p-4">
           <p className="text-slate-300 text-sm">
-            <strong className="text-cyan-400">What this means:</strong> You don't need to micromanage or
-            provide step-by-step instructions. Copilot will figure out what needs to be done, handle any
-            errors it encounters, and work through the entire setup process on its own.
+            <strong className="text-cyan-400">What this means:</strong> You
+            don't need to micromanage or provide step-by-step instructions.
+            Copilot will figure out what needs to be done, handle any errors it
+            encounters, and work through the entire setup process on its own.
           </p>
         </div>
       </div>
@@ -174,9 +197,11 @@ Please create all necessary files, install all dependencies, and verify the setu
           {industry.icon} {industry.name} Pro Tip
         </h4>
         <p className="text-cyan-200 text-sm">
-          After Copilot finishes the setup, you'll have a complete project structure ready for building
-          your {industry.sampleApp.name}. The next step will be creating the actual components for{' '}
-          {industry.sampleApp.entities.slice(0, 2).join(', ')}, and more. Copilot will handle all of that too!
+          After Copilot finishes the setup, you'll have a complete project
+          structure ready for building your {industry.sampleApp.name}. The next
+          step will be creating the actual components for{' '}
+          {industry.sampleApp.entities.slice(0, 2).join(', ')}, and more.
+          Copilot will handle all of that too!
         </p>
       </div>
 

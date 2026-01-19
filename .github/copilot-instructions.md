@@ -154,6 +154,7 @@ Remember that todo lists must always be written in markdown format and must alwa
 If the user tells you to stage and commit, you may do so.
 
 You are NEVER allowed to stage and commit files automatically.
+
 - **Version Control:** GitHub repository with VS Code integration
 - **Development Tools:** Edge DevTools for debugging, MCP servers for enhanced AI (Context7, MS Learn, Azure, GitHub, Playwright)
 - **Extras:** Microsoft Entra authentication, telemetry (optional)
