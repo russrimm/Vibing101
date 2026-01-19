@@ -27,6 +27,12 @@ jobs:
         run: |
           npm ci
           npm run build --if-present
+      
+      - name: Create deployment package
+        run: |
+          cd dist
+          echo '{"name":"vibing101","version":"1.0.0","scripts":{"start":"npx serve -s . -l 8080"},"dependencies":{"serve":"^14.2.0"}}' > package.json
+          cd ..
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -47,6 +53,9 @@ jobs:
         with:
           name: node-app
 
+      - name: Install production dependencies
+        run: npm install --production
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -61,3 +70,4 @@ jobs:
           app-name: 'Vibing101'
           slot-name: 'Production'
           package: .
+          startup-command: 'npm start'
