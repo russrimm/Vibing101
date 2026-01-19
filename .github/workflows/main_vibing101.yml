@@ -32,6 +32,7 @@ jobs:
         run: |
           cd dist
           echo '{"name":"vibing101","version":"1.0.0","scripts":{"start":"npx serve -s . -l 8080"},"dependencies":{"serve":"^14.2.0"}}' > package.json
+          cp ../.deployment .
           npm install --production
           cd ..
 
