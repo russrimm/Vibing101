@@ -32,14 +32,18 @@ export default function TestingStep({
             <input type="checkbox" className="mt-1" />
             <div>
               <p className="font-medium text-gray-900">Create new items</p>
-              <p className="text-sm text-gray-600">Test the form submission and validation</p>
+              <p className="text-sm text-gray-600">
+                Test the form submission and validation
+              </p>
             </div>
           </label>
           <label className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
             <input type="checkbox" className="mt-1" />
             <div>
               <p className="font-medium text-gray-900">View and search items</p>
-              <p className="text-sm text-gray-600">Test the list view, filtering, and sorting</p>
+              <p className="text-sm text-gray-600">
+                Test the list view, filtering, and sorting
+              </p>
             </div>
           </label>
           <label className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
@@ -53,14 +57,18 @@ export default function TestingStep({
             <input type="checkbox" className="mt-1" />
             <div>
               <p className="font-medium text-gray-900">Delete items</p>
-              <p className="text-sm text-gray-600">Test delete with confirmation</p>
+              <p className="text-sm text-gray-600">
+                Test delete with confirmation
+              </p>
             </div>
           </label>
           <label className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
             <input type="checkbox" className="mt-1" />
             <div>
               <p className="font-medium text-gray-900">Mobile responsiveness</p>
-              <p className="text-sm text-gray-600">Test on different screen sizes</p>
+              <p className="text-sm text-gray-600">
+                Test on different screen sizes
+              </p>
             </div>
           </label>
         </div>
@@ -75,10 +83,14 @@ export default function TestingStep({
           Build for Production
         </h3>
         <div className="ml-10">
-          <p className="text-gray-600 mb-4">Create an optimized production build:</p>
+          <p className="text-gray-600 mb-4">
+            Create an optimized production build:
+          </p>
           <CodeBlock code="npm run build" language="bash" />
           <p className="text-sm text-gray-600 mt-2">
-            This creates a <code className="bg-gray-100 px-2 py-1 rounded">dist/</code> folder with optimized files ready to deploy.
+            This creates a{' '}
+            <code className="bg-gray-100 px-2 py-1 rounded">dist/</code> folder
+            with optimized files ready to deploy.
           </p>
         </div>
       </div>
@@ -94,7 +106,9 @@ export default function TestingStep({
         <div className="ml-10 grid gap-4 md:grid-cols-2">
           {/* Vercel */}
           <div className="border border-gray-200 rounded-lg p-4">
-            <h4 className="font-semibold text-gray-900 mb-2">Vercel (Recommended)</h4>
+            <h4 className="font-semibold text-gray-900 mb-2">
+              Vercel (Recommended)
+            </h4>
             <p className="text-sm text-gray-600 mb-3">
               Free hosting with automatic deployments from GitHub
             </p>
@@ -136,7 +150,9 @@ export default function TestingStep({
 
           {/* Azure Static Web Apps */}
           <div className="border border-gray-200 rounded-lg p-4">
-            <h4 className="font-semibold text-gray-900 mb-2">Azure Static Web Apps</h4>
+            <h4 className="font-semibold text-gray-900 mb-2">
+              Azure Static Web Apps
+            </h4>
             <p className="text-sm text-gray-600 mb-3">
               Enterprise hosting with Azure integration
             </p>

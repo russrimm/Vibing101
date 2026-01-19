@@ -7,12 +7,17 @@ interface DataStepProps {
   onPrevious: () => void
 }
 
-export default function DataStep({ industry, onNext, onPrevious }: DataStepProps) {
+export default function DataStep({
+  industry,
+  onNext,
+  onPrevious,
+}: DataStepProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-8">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">Add Data Layer</h2>
       <p className="text-gray-600 mb-8">
-        Connect your components to data using mock data for prototyping or real APIs for production.
+        Connect your components to data using mock data for prototyping or real
+        APIs for production.
       </p>
 
       {/* Option 1: Mock Data */}
@@ -25,7 +30,11 @@ export default function DataStep({ industry, onNext, onPrevious }: DataStepProps
         </h3>
         <div className="ml-10">
           <p className="text-gray-600 mb-4">
-            Create <code className="bg-gray-100 px-2 py-1 rounded">src/services/mockData.ts</code>:
+            Create{' '}
+            <code className="bg-gray-100 px-2 py-1 rounded">
+              src/services/mockData.ts
+            </code>
+            :
           </p>
           <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-6 mb-4">
             <p className="text-sm font-semibold text-green-900 mb-2">

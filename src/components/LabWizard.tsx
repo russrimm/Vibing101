@@ -13,7 +13,7 @@ interface LabWizardProps {
   onReset: () => void
 }
 
-export type WizardStep = 
+export type WizardStep =
   | 'setup'
   | 'structure'
   | 'components'
@@ -22,9 +22,21 @@ export type WizardStep =
   | 'completion'
 
 const steps: { id: WizardStep; title: string; description: string }[] = [
-  { id: 'setup', title: 'Environment Setup', description: 'Install required tools' },
-  { id: 'structure', title: 'Project Structure', description: 'Create app foundation' },
-  { id: 'components', title: 'Build Components', description: 'Create UI components' },
+  {
+    id: 'setup',
+    title: 'Environment Setup',
+    description: 'Install required tools',
+  },
+  {
+    id: 'structure',
+    title: 'Project Structure',
+    description: 'Create app foundation',
+  },
+  {
+    id: 'components',
+    title: 'Build Components',
+    description: 'Create UI components',
+  },
   { id: 'data', title: 'Add Data Layer', description: 'Connect to data' },
   { id: 'testing', title: 'Test & Deploy', description: 'Verify and deploy' },
   { id: 'completion', title: 'Complete!', description: 'Your app is ready' },
@@ -32,7 +44,9 @@ const steps: { id: WizardStep; title: string; description: string }[] = [
 
 export default function LabWizard({ industry, onReset }: LabWizardProps) {
   const [currentStep, setCurrentStep] = useState<WizardStep>('setup')
-  const [completedSteps, setCompletedSteps] = useState<Set<WizardStep>>(new Set())
+  const [completedSteps, setCompletedSteps] = useState<Set<WizardStep>>(
+    new Set()
+  )
 
   const handleNext = () => {
     const currentIndex = steps.findIndex((s) => s.id === currentStep)
@@ -52,7 +66,7 @@ export default function LabWizard({ industry, onReset }: LabWizardProps) {
   const handleStepClick = (stepId: WizardStep) => {
     const stepIndex = steps.findIndex((s) => s.id === stepId)
     const currentIndex = steps.findIndex((s) => s.id === currentStep)
-    
+
     if (stepIndex <= currentIndex || completedSteps.has(stepId)) {
       setCurrentStep(stepId)
     }

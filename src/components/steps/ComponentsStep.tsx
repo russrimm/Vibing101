@@ -22,7 +22,7 @@ const getIndustryComponents = (industry: Industry) => {
   location: string
   lastInspection: Date
   nextMaintenance: Date
-}`
+}`,
       }
     case 'retail':
       return {
@@ -37,7 +37,7 @@ const getIndustryComponents = (industry: Industry) => {
   price: number
   stock: number
   reorderLevel: number
-}`
+}`,
       }
     case 'transportation':
       return {
@@ -52,7 +52,7 @@ const getIndustryComponents = (industry: Industry) => {
   status: 'scheduled' | 'in-transit' | 'delivered' | 'delayed'
   pickupTime: Date
   deliveryTime: Date
-}`
+}`,
       }
     case 'manufacturing':
       return {
@@ -67,7 +67,7 @@ const getIndustryComponents = (industry: Industry) => {
   startDate: Date
   targetDate: Date
   qualityScore?: number
-}`
+}`,
       }
     case 'healthcare':
       return {
@@ -82,7 +82,7 @@ const getIndustryComponents = (industry: Industry) => {
   date: Date
   duration: number
   status: 'scheduled' | 'confirmed' | 'completed' | 'cancelled'
-}`
+}`,
       }
     case 'finance':
       return {
@@ -97,7 +97,7 @@ const getIndustryComponents = (industry: Industry) => {
   description: string
   status: 'pending' | 'approved' | 'rejected' | 'needs-review'
   submittedDate: Date
-}`
+}`,
       }
     default:
       return {
@@ -109,7 +109,7 @@ const getIndustryComponents = (industry: Industry) => {
   name: string
   status: string
   createdDate: Date
-}`
+}`,
       }
   }
 }
@@ -127,7 +127,8 @@ export default function ComponentsStep({
         Build Your Components
       </h2>
       <p className="text-gray-600 mb-8">
-        Use GitHub Copilot to generate the components for your {industry.sampleApp.name}.
+        Use GitHub Copilot to generate the components for your{' '}
+        {industry.sampleApp.name}.
       </p>
 
       {/* TypeScript Types */}
@@ -139,7 +140,11 @@ export default function ComponentsStep({
           Define Your Data Types
         </h3>
         <p className="text-gray-600 mb-4 ml-10">
-          Create <code className="bg-gray-100 px-2 py-1 rounded">src/types/index.ts</code>:
+          Create{' '}
+          <code className="bg-gray-100 px-2 py-1 rounded">
+            src/types/index.ts
+          </code>
+          :
         </p>
         <div className="ml-10">
           <CodeBlock code={components.exampleCode} language="typescript" />

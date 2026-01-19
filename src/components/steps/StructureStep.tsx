@@ -12,15 +12,16 @@ export default function StructureStep({
   onNext,
   onPrevious,
 }: StructureStepProps) {
-  const projectName = industry.sampleApp.name
-    .toLowerCase()
-    .replace(/\s+/g, '-')
+  const projectName = industry.sampleApp.name.toLowerCase().replace(/\s+/g, '-')
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">Create Your Project</h2>
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        Create Your Project
+      </h2>
       <p className="text-gray-600 mb-8">
-        Let's create your {industry.sampleApp.name} using Vite, React, and TypeScript.
+        Let's create your {industry.sampleApp.name} using Vite, React, and
+        TypeScript.
       </p>
 
       {/* Step 1: Create Project */}
@@ -32,7 +33,8 @@ export default function StructureStep({
           Create the Project
         </h3>
         <p className="text-gray-600 mb-4 ml-10">
-          Open your terminal and run this command to create a new Vite project with React and TypeScript:
+          Open your terminal and run this command to create a new Vite project
+          with React and TypeScript:
         </p>
         <div className="ml-10">
           <CodeBlock
@@ -59,7 +61,11 @@ export default function StructureStep({
             language="bash"
           />
           <p className="text-sm text-gray-600">
-            Update <code className="bg-gray-100 px-2 py-1 rounded">tailwind.config.js</code>:
+            Update{' '}
+            <code className="bg-gray-100 px-2 py-1 rounded">
+              tailwind.config.js
+            </code>
+            :
           </p>
           <CodeBlock
             code={`export default {
@@ -75,7 +81,9 @@ export default function StructureStep({
             language="javascript"
           />
           <p className="text-sm text-gray-600">
-            Update <code className="bg-gray-100 px-2 py-1 rounded">src/index.css</code>:
+            Update{' '}
+            <code className="bg-gray-100 px-2 py-1 rounded">src/index.css</code>
+            :
           </p>
           <CodeBlock
             code={`@tailwind base;\n@tailwind components;\n@tailwind utilities;`}
@@ -101,9 +109,11 @@ export default function StructureStep({
             language="bash"
           />
           <div className="mt-4 bg-gray-50 rounded-lg p-4">
-            <p className="text-sm font-medium text-gray-700 mb-2">Your structure:</p>
+            <p className="text-sm font-medium text-gray-700 mb-2">
+              Your structure:
+            </p>
             <pre className="text-sm text-gray-600">
-{`src/
+              {`src/
   ├── components/     # Reusable UI components
   ├── types/          # TypeScript types
   ├── hooks/          # Custom React hooks
@@ -128,8 +138,11 @@ export default function StructureStep({
         <div className="ml-10">
           <CodeBlock code="npm run dev" language="bash" />
           <p className="text-sm text-gray-600 mt-2">
-            Open <code className="bg-gray-100 px-2 py-1 rounded">http://localhost:5173</code> in your browser.
-            You should see the Vite + React welcome screen.
+            Open{' '}
+            <code className="bg-gray-100 px-2 py-1 rounded">
+              http://localhost:5173
+            </code>{' '}
+            in your browser. You should see the Vite + React welcome screen.
           </p>
         </div>
       </div>
@@ -141,7 +154,8 @@ export default function StructureStep({
         </h4>
         <p className="text-blue-800 text-sm">
           For your {industry.sampleApp.name}, we'll create components for:{' '}
-          {industry.sampleApp.entities.slice(0, 2).join(', ')}, and more. Get ready to build something awesome!
+          {industry.sampleApp.entities.slice(0, 2).join(', ')}, and more. Get
+          ready to build something awesome!
         </p>
       </div>
 

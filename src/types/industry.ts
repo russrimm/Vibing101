@@ -1,4 +1,4 @@
-export type IndustryType = 
+export type IndustryType =
   | 'oil-gas-energy'
   | 'retail'
   | 'transportation'
@@ -27,12 +27,22 @@ export const industries: Industry[] = [
     description: 'Manage assets, maintenance, and safety inspections',
     icon: '⚡',
     primaryColor: 'orange',
-    features: ['Asset tracking', 'Maintenance scheduling', 'Safety inspections', 'Equipment monitoring'],
+    features: [
+      'Asset tracking',
+      'Maintenance scheduling',
+      'Safety inspections',
+      'Equipment monitoring',
+    ],
     sampleApp: {
       name: 'Field Asset Manager',
       description: 'Track and manage field equipment and maintenance schedules',
-      entities: ['Equipment', 'Maintenance Records', 'Inspection Reports', 'Work Orders']
-    }
+      entities: [
+        'Equipment',
+        'Maintenance Records',
+        'Inspection Reports',
+        'Work Orders',
+      ],
+    },
   },
   {
     id: 'retail',
@@ -40,12 +50,17 @@ export const industries: Industry[] = [
     description: 'Inventory management and customer orders',
     icon: '🛒',
     primaryColor: 'blue',
-    features: ['Inventory tracking', 'Order management', 'Customer profiles', 'Sales analytics'],
+    features: [
+      'Inventory tracking',
+      'Order management',
+      'Customer profiles',
+      'Sales analytics',
+    ],
     sampleApp: {
       name: 'Store Inventory Portal',
       description: 'Manage inventory levels, orders, and customer information',
-      entities: ['Products', 'Orders', 'Customers', 'Inventory Locations']
-    }
+      entities: ['Products', 'Orders', 'Customers', 'Inventory Locations'],
+    },
   },
   {
     id: 'transportation',
@@ -53,12 +68,17 @@ export const industries: Industry[] = [
     description: 'Fleet management and shipment tracking',
     icon: '🚚',
     primaryColor: 'green',
-    features: ['Vehicle tracking', 'Route optimization', 'Delivery scheduling', 'Driver management'],
+    features: [
+      'Vehicle tracking',
+      'Route optimization',
+      'Delivery scheduling',
+      'Driver management',
+    ],
     sampleApp: {
       name: 'Fleet Operations Dashboard',
       description: 'Monitor vehicles, routes, and delivery schedules',
-      entities: ['Vehicles', 'Drivers', 'Routes', 'Deliveries']
-    }
+      entities: ['Vehicles', 'Drivers', 'Routes', 'Deliveries'],
+    },
   },
   {
     id: 'manufacturing',
@@ -66,12 +86,22 @@ export const industries: Industry[] = [
     description: 'Production tracking and quality control',
     icon: '🏭',
     primaryColor: 'purple',
-    features: ['Production monitoring', 'Quality checks', 'Material tracking', 'Workflow management'],
+    features: [
+      'Production monitoring',
+      'Quality checks',
+      'Material tracking',
+      'Workflow management',
+    ],
     sampleApp: {
       name: 'Production Tracker',
       description: 'Track production lines, materials, and quality metrics',
-      entities: ['Production Lines', 'Materials', 'Quality Reports', 'Work Orders']
-    }
+      entities: [
+        'Production Lines',
+        'Materials',
+        'Quality Reports',
+        'Work Orders',
+      ],
+    },
   },
   {
     id: 'healthcare',
@@ -79,12 +109,17 @@ export const industries: Industry[] = [
     description: 'Patient scheduling and records management',
     icon: '🏥',
     primaryColor: 'red',
-    features: ['Appointment scheduling', 'Patient records', 'Resource allocation', 'Compliance tracking'],
+    features: [
+      'Appointment scheduling',
+      'Patient records',
+      'Resource allocation',
+      'Compliance tracking',
+    ],
     sampleApp: {
       name: 'Patient Appointment System',
       description: 'Schedule appointments and manage patient information',
-      entities: ['Patients', 'Appointments', 'Providers', 'Medical Records']
-    }
+      entities: ['Patients', 'Appointments', 'Providers', 'Medical Records'],
+    },
   },
   {
     id: 'finance',
@@ -92,11 +127,16 @@ export const industries: Industry[] = [
     description: 'Request processing and approvals',
     icon: '💰',
     primaryColor: 'indigo',
-    features: ['Request tracking', 'Approval workflows', 'Document management', 'Reporting'],
+    features: [
+      'Request tracking',
+      'Approval workflows',
+      'Document management',
+      'Reporting',
+    ],
     sampleApp: {
       name: 'Financial Request Portal',
       description: 'Submit and track financial requests and approvals',
-      entities: ['Requests', 'Approvals', 'Documents', 'Audit Logs']
-    }
-  }
+      entities: ['Requests', 'Approvals', 'Documents', 'Audit Logs'],
+    },
+  },
 ]

@@ -25,10 +25,7 @@ export default function StepProgress({
             index <= steps.findIndex((s) => s.id === currentStep)
 
           return (
-            <li
-              key={step.id}
-              className="flex-1 flex items-center"
-            >
+            <li key={step.id} className="flex-1 flex items-center">
               <button
                 onClick={() => isClickable && onStepClick(step.id)}
                 disabled={!isClickable}
@@ -46,10 +43,10 @@ export default function StepProgress({
                       isCompleted
                         ? 'bg-green-500 border-green-500 text-white'
                         : isCurrent
-                        ? 'bg-blue-500 border-blue-500 text-white'
-                        : isClickable
-                        ? 'bg-gray-200 border-gray-300 text-gray-600'
-                        : 'bg-gray-100 border-gray-200 text-gray-400'
+                          ? 'bg-blue-500 border-blue-500 text-white'
+                          : isClickable
+                            ? 'bg-gray-200 border-gray-300 text-gray-600'
+                            : 'bg-gray-100 border-gray-200 text-gray-400'
                     }
                   `}
                 >
@@ -79,10 +76,10 @@ export default function StepProgress({
                         isCurrent
                           ? 'text-blue-600'
                           : isCompleted
-                          ? 'text-green-600'
-                          : isClickable
-                          ? 'text-gray-700'
-                          : 'text-gray-400'
+                            ? 'text-green-600'
+                            : isClickable
+                              ? 'text-gray-700'
+                              : 'text-gray-400'
                       }
                     `}
                   >

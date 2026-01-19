@@ -7,7 +7,7 @@
 >
 > **Total Lab Time:** ~74 minutes (core modules)
 >
-> **Guiding principle:** *The agent does 95% of the work. The human copies/pastes prompts, watches, verifies, and learns.*
+> **Guiding principle:** _The agent does 95% of the work. The human copies/pastes prompts, watches, verifies, and learns._
 >
 > **How this works:**
 >
@@ -65,6 +65,7 @@ Steps are labeled:
 - **[OPTIONAL]** nice-to-have / stretch goal (not included in time estimate)
 
 ### Module Breakdown:
+
 - **Module -1**: Installation & Setup **(20 min)**
 - **Module 0**: Safety, Configuration & Beastmode **(14 min)** - includes Vibe Coding tips, context window, usage monitoring, model selection, secrets management
 - **Module 1**: MCP Servers & GitHub Setup **(5 min)**
@@ -396,6 +397,7 @@ After explaining, verify Beastmode is working by:
 - When full, older context gets "forgotten"
 
 **Why this matters:**
+
 - If the agent seems to "forget" something you mentioned earlier, the context window may be full
 - Solution: Start a new chat or re-reference important files/context
 - Use `@workspace` to help Copilot find relevant files automatically
@@ -406,7 +408,7 @@ After explaining, verify Beastmode is working by:
 
 1. **In VS Code:** Click the Copilot icon in the status bar (bottom right)
 2. **View status:** Shows if Copilot is active, paused, or has errors
-3. **Check usage:** 
+3. **Check usage:**
    - Open Command Palette (Ctrl+Shift+P)
    - Type "Copilot: Check Status"
    - See your plan details and usage
@@ -414,6 +416,7 @@ After explaining, verify Beastmode is working by:
 5. **Chat usage:** Each chat message counts toward your quota
 
 **Best practices:**
+
 - Don't start multiple chats for the same task - continue the conversation
 - Use inline suggestions (Tab to accept) when appropriate
 - Clear old chats you're no longer using
@@ -442,6 +445,7 @@ Help me understand how to monitor and optimize my Copilot usage.
 **GitHub Copilot Chat** lets you select different AI models for different tasks. Here's how to choose:
 
 **Recommended Models:**
+
 - **Claude Sonnet 4.5** - Best for most tasks, fast and accurate
 - **Claude Opus** - Best for complex reasoning and architecture decisions
 - **GPT-4** or **GPT-5.x** - Great for creative solutions and broad knowledge
@@ -449,6 +453,7 @@ Help me understand how to monitor and optimize my Copilot usage.
 ### When to Use Each Model:
 
 **Claude Sonnet 4.5 (Default for most work):**
+
 - ✅ Day-to-day coding tasks
 - ✅ Writing components and functions
 - ✅ Bug fixes and refactoring
@@ -456,6 +461,7 @@ Help me understand how to monitor and optimize my Copilot usage.
 - ✅ Good balance of speed and quality
 
 **Claude Opus (Complex tasks):**
+
 - ✅ Architectural decisions
 - ✅ Complex debugging scenarios
 - ✅ Large refactoring projects
@@ -464,6 +470,7 @@ Help me understand how to monitor and optimize my Copilot usage.
 - ⚠️ Slower but more thorough
 
 **GPT-4/GPT-5.x (Alternative perspective):**
+
 - ✅ Creative problem-solving
 - ✅ Multiple solution approaches
 - ✅ Explaining complex concepts
@@ -503,70 +510,89 @@ For this lab, recommend which model I should use for each type of task.
 ### Essential Vibe Coding Tips:
 
 #### 1. **Be the Agent's Eyes 👀**
+
 The agent can't see your screen unless you help it:
+
 - **Paste screenshots directly into Copilot Chat** (Ctrl+V works!)
 - Screenshot errors, UI issues, console output, network errors
 - The agent will "see" the image and help diagnose
 - Example: Take a screenshot of a broken layout and paste it with "Why does this look wrong?"
 
 #### 2. **Explain What You Want in Detail 📝**
+
 The more context you provide, the better the results:
+
 - ❌ Bad: "add a form"
 - ✅ Good: "add a multi-step form with validation for collecting user requests. Fields should include: title, category, description, priority, and due date"
 - Include: what you're building, why, expected behavior, any constraints
 
 #### 3. **Use Ask Mode for Questions 🤔**
+
 Copilot has different modes:
+
 - **@workspace** (Beastmode) - for doing work (editing files, running commands)
 - **Ask Mode** - for questions and learning (no file changes)
 - Use Ask Mode when you want to understand something without changing code
 - Example: "How does React Hook Form work?" (no @workspace needed)
 
 #### 4. **Start with Latest Versions 🚀**
+
 Always specify you want the latest stable versions:
+
 - Prevents immediate upgrade cycles
 - Gets latest features and security fixes
 - Example: "Install the latest stable version of React"
 - This lab already does this by using Node.js v24+
 
 #### 5. **Ask the Agent to Add Comments 💬**
+
 Make code self-documenting:
+
 - "Add comments explaining what each function does"
 - "Add JSDoc comments to this component"
 - "Explain this validation schema with inline comments"
 - Great for learning and future reference
 
 #### 6. **Find and Apply Rules from Similar Projects 📚**
+
 Leverage existing best practices:
+
 - "Search GitHub for popular React + TypeScript + Tailwind project structures"
 - "What are the common folder structures for Vite projects?"
 - "Find coding standards from well-known React projects"
 - "Look for .cursorrules or .github/copilot-instructions.md files in similar projects"
 
 #### 7. **Use AI to Help Build Instructions 🤖**
+
 Meta tip - AI can help create instructions for AI:
+
 - This very file was created with AI assistance!
 - "Help me write instructions for building a React form component"
 - "Create a troubleshooting guide for common Vite errors"
 - "Generate a checklist for deploying to Power Platform"
 
 #### 8. **Plan Comprehensively to Avoid Fragmentation 📋**
+
 **CRITICAL for success:**
+
 - **Write detailed copilot-instructions.md files** - the more complete, the better
 - **Send comprehensive initial prompts** - describe the full feature, not just pieces
 - **Avoid fragmentation** - lots of little tweaks lead to inconsistent code
 
 **Why this matters:**
+
 - ❌ Bad: "Add a button" → "Make it blue" → "Add click handler" → "Style differently"
 - ✅ Good: "Add a blue button with hover effects, click handler that opens a modal, follows our design system, accessible, and responsive"
 
 **Best practices:**
+
 - Before starting, think through what you want the complete feature to do
 - Include all requirements in one prompt (design, behavior, accessibility, responsiveness)
 - Reference your copilot-instructions.md for project standards
 - The agent can handle complex requests - don't break them into tiny pieces unnecessarily
 
 **Example of a comprehensive prompt:**
+
 ```text
 @workspace Create a complete user profile component that:
 - Displays user avatar, name, email, role
@@ -582,12 +608,14 @@ Meta tip - AI can help create instructions for AI:
 This prevents fragmentation and produces cohesive, well-architected code!
 
 #### 9. **Describe the Outcome, Not the Steps 🎯**
+
 **Until you're fluent with the entire process**, focus on describing what you want to achieve rather than how to do it:
 
 - ❌ Bad (micromanaging): "First create a state variable, then add a useEffect hook, then fetch data from the API, then map over the results..."
 - ✅ Good (outcome-focused): "Display a list of users from the API with loading states and error handling"
 
 **Why this works better:**
+
 - The agent knows best practices you might not
 - Prevents you from limiting the solution with your assumptions
 - Lets the agent choose optimal implementation patterns
@@ -604,6 +632,7 @@ This prevents fragmentation and produces cohesive, well-architected code!
 **Say:** "Create a validated contact form with real-time error feedback for name, email, and message fields"
 
 **When to be specific:**
+
 - Once you understand the full process
 - When you need a specific technology or pattern
 - When the agent's approach isn't working
@@ -634,6 +663,7 @@ For each example, explain why it's effective and what results to expect.
 **TypeScript** is a superset of JavaScript that adds type checking. For this project, we use TypeScript exclusively (except for config files).
 
 **TypeScript Pros:**
+
 - ✅ **Catches errors before you run the code** - type errors show up in VS Code immediately
 - ✅ **Better autocomplete (IntelliSense)** - VS Code knows what properties and methods exist
 - ✅ **Self-documenting** - types show what data is expected (e.g., `string`, `number`, `User`)
@@ -643,11 +673,13 @@ For each example, explain why it's effective and what results to expect.
 - ✅ **Prevents common bugs** - typos, wrong data types, missing properties caught early
 
 **JavaScript Pros:**
+
 - ✅ **Simpler to start** - no type annotations needed
 - ✅ **More flexible** - can be faster for prototypes
 - ✅ **No compilation step** - runs directly in browser (though Vite compiles both)
 
 **Why TypeScript for this lab:**
+
 - You're learning best practices from day one
 - Copilot writes better TypeScript code (understands types)
 - Power Apps Code Apps benefit from type safety
@@ -655,12 +687,13 @@ For each example, explain why it's effective and what results to expect.
 - Professional React projects use TypeScript
 
 **What "type safety" means for beginners:**
+
 ```typescript
 // TypeScript catches this error immediately:
-const age: number = "25"; // ❌ Error: Type 'string' is not assignable to type 'number'
+const age: number = '25' // ❌ Error: Type 'string' is not assignable to type 'number'
 
 // JavaScript lets this through, causes bugs later:
-const age = "25"; // ✅ No error, but math breaks: age + 5 = "255" 🐛
+const age = '25' // ✅ No error, but math breaks: age + 5 = "255" 🐛
 ```
 
 ---
@@ -668,6 +701,7 @@ const age = "25"; // ✅ No error, but math breaks: age + 5 = "255" 🐛
 ### Understanding Secrets and .env Files
 
 **What are .env files?**
+
 - `.env` and `.env.local` files store environment variables
 - Contain sensitive data: API keys, passwords, connection strings, tokens
 - Example: `VITE_API_KEY=abc123`, `DATABASE_URL=postgres://...`
@@ -675,12 +709,14 @@ const age = "25"; // ✅ No error, but math breaks: age + 5 = "255" 🐛
 - `.env` can be a template with placeholder values (safe to commit)
 
 **Why protect secrets?**
+
 - **Security risk**: Exposed secrets can be used by attackers
 - **Compliance**: Violates security policies and regulations
 - **Cost**: Someone could use your API keys and charge to your account
 - **Reputation**: Data breaches harm your organization's reputation
 
 **What is .gitignore?**
+
 - Special file that tells Git which files to ignore
 - Prevents sensitive files from being committed to GitHub
 - Should include: `.env.local`, `node_modules/`, `dist/`, `*.log`, etc.
@@ -737,6 +773,7 @@ If you find potential secrets, STOP and warn me immediately.
 ```
 
 **The agent will:**
+
 1. Create a comprehensive `.gitignore` file
 2. Create a `.env.example` template (safe to commit)
 3. Explain how to use `.env.local` for real secrets (NEVER commit)
@@ -745,6 +782,7 @@ If you find potential secrets, STOP and warn me immediately.
 **CRITICAL Security Rules:**
 
 ✅ **DO:**
+
 - Use `.env.local` for all secrets (ignored by Git)
 - Commit `.env.example` with placeholder values
 - Add `.env.local` to `.gitignore`
@@ -752,6 +790,7 @@ If you find potential secrets, STOP and warn me immediately.
 - Share secrets securely (password manager, Azure Key Vault)
 
 ❌ **DON'T:**
+
 - Commit `.env.local` to GitHub
 - Hard-code API keys in source code
 - Share secrets in chat, email, or Slack
@@ -801,6 +840,7 @@ Walk me through each step carefully.
 **Security Risk:** Debug logging and console statements often expose sensitive information that users can see in Edge DevTools (F12). Developers frequently turn on debugging during development and forget to remove it.
 
 **What users can see:**
+
 - API keys and tokens logged for debugging
 - User data and personal information
 - Database queries and connection strings
@@ -833,6 +873,7 @@ For production error tracking, use proper logging services (Application Insights
 ```
 
 **The agent will:**
+
 1. Find all console statements
 2. Remove or replace with proper logging
 3. Verify nothing sensitive is exposed
@@ -840,6 +881,7 @@ For production error tracking, use proper logging services (Application Insights
 5. Confirm production build is clean
 
 **Best practices:**
+
 - ✅ Use environment variables to control logging (only in development)
 - ✅ Use proper logging services for production errors
 - ✅ Never log sensitive data
@@ -900,6 +942,7 @@ Create or update .vscode/settings.json with all recommended settings.
 
 **Instructions for AI Agent (embedded in this document):**
 When a user pastes an error message, automatically:
+
 1. Explain what caused the error in simple terms
 2. Show exactly how to fix it
 3. Run the fix if possible (commands, file edits, etc.)
@@ -923,6 +966,7 @@ Error: Cannot find module 'react'
 ```
 
 **Agent automatically responds:**
+
 - Explains: "This error means the 'react' package isn't installed"
 - Fixes: Runs `npm install react`
 - Verifies: Confirms the package is now installed
@@ -945,6 +989,7 @@ Error: Cannot read property 'data' of undefined
 ```
 
 **Agent automatically responds:**
+
 - Explains: "The error happens because the submit handler is trying to access a property on an undefined response"
 - Identifies: "Since it only occurs on submit, the issue is in the form submission logic"
 - Fixes: Updates the submit handler to check if response exists before accessing `.data`
@@ -965,6 +1010,7 @@ You've tried this same fix 3 times and the error is still happening. Let's think
 ```
 
 **Agent automatically responds:**
+
 - Acknowledges the pattern
 - Steps back to analyze from a different angle
 - Considers alternative root causes
@@ -972,6 +1018,7 @@ You've tried this same fix 3 times and the error is still happening. Let's think
 - Tries a completely different approach
 
 **Why this works:**
+
 - Breaks the agent out of its current reasoning pattern
 - Prompts deeper analysis
 - Helps the agent explore alternative solutions
@@ -1420,6 +1467,7 @@ Be specific about what to change and why.
 ```
 
 **The agent will:**
+
 - Analyze your screenshots
 - Point out strengths and weaknesses
 - Suggest specific improvements
@@ -1447,6 +1495,7 @@ Be specific about what to change and why.
 ```
 
 **The agent will:**
+
 1. Create a comprehensive implementation prompt
 2. Show you exactly what will change
 3. Ask for your approval
@@ -1458,6 +1507,7 @@ Be specific about what to change and why.
 **You:** [Paste screenshots]
 
 **Agent:** "The layout looks clean, but I notice:
+
 - Header spacing is inconsistent
 - Button colors don't have enough contrast (accessibility issue)
 - Mobile navigation needs a hamburger menu
@@ -1486,6 +1536,7 @@ How does it look now? Any remaining issues?
 ```
 
 **Best practices:**
+
 - ✅ Take screenshots from multiple pages (home, forms, etc.)
 - ✅ Test on different screen sizes (resize browser window)
 - ✅ Take screenshots of both light and dark areas
@@ -1664,7 +1715,7 @@ Once your app is working, systematically improve it without breaking what works.
    - How to test it
    - Ask if I want to proceed
 
-IMPORTANT: 
+IMPORTANT:
 - Only suggest one improvement at a time
 - Check for console.log statements and debug code that should be removed (security)
 - Ensure no sensitive information is being logged to browser console
@@ -1672,6 +1723,7 @@ IMPORTANT:
 ```
 
 **The agent will:**
+
 1. Analyze your code for improvement opportunities
 2. Prioritize by value and safety
 3. Suggest one improvement at a time
@@ -1689,6 +1741,7 @@ IMPORTANT:
 ### Example Improvements the Agent Might Suggest
 
 **Low Risk, High Value:**
+
 - Remove console.log and debug statements (security)
 - Add loading skeletons for better UX
 - Improve error messages to be more helpful
@@ -1699,12 +1752,14 @@ IMPORTANT:
 - Add keyboard shortcuts for power users
 
 **Medium Risk, High Value:**
+
 - Add optimistic UI updates
 - Implement caching for API responses
 - Add offline support
 - Refactor duplicate code into reusable hooks
 
 **Higher Risk (save for later):**
+
 - Major architecture changes
 - Database schema migrations
 - Changing authentication methods
@@ -1751,6 +1806,7 @@ This helps future you and future developers learn from this project!
 ```
 
 **The agent will:**
+
 1. Create a detailed change log for the feature
 2. Document decisions and patterns
 3. Identify gaps in copilot-instructions.md
@@ -1815,6 +1871,7 @@ Learn how to undo changes when something goes wrong.
 ## [CRITICAL] When to Roll Back
 
 **Roll back if:**
+
 - The app stops working after changes
 - You see errors you can't fix quickly
 - Changes made things worse
@@ -1841,6 +1898,7 @@ If I only want to revert specific files, ask me which ones.
 ```
 
 **The agent will:**
+
 - Run `git status` to show changes
 - Run `git restore .` or `git restore <file>` to undo changes
 - Verify the revert worked
@@ -1863,6 +1921,7 @@ I want to keep my changes so I can fix them and commit again.
 ```
 
 **The agent will:**
+
 - Run `git log --oneline -5` to show recent commits
 - Run `git reset --soft HEAD~1` to undo commit but keep changes
 - Or `git reset --hard HEAD~1` if you want to discard changes too
@@ -1889,6 +1948,7 @@ I want the safest option that preserves history.
 ```
 
 **The agent will:**
+
 - Run `git log --oneline -10` to show commit history
 - Recommend `git revert <commit-hash>` (safest for pushed commits)
 - Or `git reset --hard <commit-hash>` followed by `git push --force` (more drastic)
@@ -1912,6 +1972,7 @@ Files I need to recover: [list files if you know them, or say "all deleted files
 ```
 
 **The agent will:**
+
 - Run `git status` to see deleted files
 - Run `git restore <file>` or `git checkout HEAD -- <file>`
 - Verify files are restored
@@ -1921,6 +1982,7 @@ Files I need to recover: [list files if you know them, or say "all deleted files
 ## [BEST PRACTICE] Prevention Tips
 
 **Commit frequently:**
+
 ```text
 @workspace Help me commit my current working code:
 
@@ -1933,15 +1995,18 @@ This is a checkpoint - the app is working now.
 ```
 
 **Test before committing:**
+
 - Run `npm run dev` and verify app works
 - Run `npm run build` to check for build errors
 - Test the specific feature you just added
 
 **Use descriptive commit messages:**
+
 - ✅ Good: "Add form validation for email field with Zod schema"
 - ❌ Bad: "update"
 
 **Create branches for experiments:**
+
 ```text
 @workspace I want to try something experimental:
 
@@ -1956,15 +2021,15 @@ If the experiment works, we'll merge it. If not, we'll just delete the branch.
 
 ## Quick Reference
 
-| Situation | Command (agent runs) | What it does |
-|-----------|---------------------|--------------|
-| Undo uncommitted changes | `git restore .` | Discard all uncommitted changes |
-| Undo specific file | `git restore <file>` | Discard changes to one file |
-| Undo last commit, keep changes | `git reset --soft HEAD~1` | Uncommit but keep changes |
-| Undo last commit, discard changes | `git reset --hard HEAD~1` | Uncommit and discard changes |
-| Revert pushed commit | `git revert <hash>` | Create new commit undoing changes |
-| Go back to specific commit | `git reset --hard <hash>` | Move back in time (careful!) |
-| Recover deleted file | `git restore <file>` | Bring back deleted file |
+| Situation                         | Command (agent runs)      | What it does                      |
+| --------------------------------- | ------------------------- | --------------------------------- |
+| Undo uncommitted changes          | `git restore .`           | Discard all uncommitted changes   |
+| Undo specific file                | `git restore <file>`      | Discard changes to one file       |
+| Undo last commit, keep changes    | `git reset --soft HEAD~1` | Uncommit but keep changes         |
+| Undo last commit, discard changes | `git reset --hard HEAD~1` | Uncommit and discard changes      |
+| Revert pushed commit              | `git revert <hash>`       | Create new commit undoing changes |
+| Go back to specific commit        | `git reset --hard <hash>` | Move back in time (careful!)      |
+| Recover deleted file              | `git restore <file>`      | Bring back deleted file           |
 
 **Always ask the agent to explain before running destructive commands!**
 
@@ -2171,6 +2236,7 @@ When you modify files, you'll see status indicators in the VS Code interface:
 ![Git Status Example](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/sourcecontrol/images/overview/scm-status.png)
 
 **What the indicators mean:**
+
 - **M** (Modified) - File has been changed but not staged
 - **U** (Untracked) - New file that Git doesn't know about yet
 - **A** (Added) - File is staged and ready to commit
@@ -2180,12 +2246,14 @@ When you modify files, you'll see status indicators in the VS Code interface:
 - **Checkmark** - Changes are staged and ready to commit
 
 **Where you'll see these:**
+
 - In the file explorer (left sidebar)
 - In the Source Control panel (Ctrl+Shift+G)
 - In the tab title of open files
 - In the status bar at the bottom
 
 **Example:** If you see `navModel.ts` with `+13 -9`, it means:
+
 - The file `navModel.ts` has been modified
 - 13 lines were added
 - 9 lines were removed
@@ -2374,11 +2442,11 @@ For each:
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000
+    port: 3000,
   },
   build: {
-    outDir: 'dist'
-  }
+    outDir: 'dist',
+  },
 })
 ```
 
@@ -2416,11 +2484,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#3B82F6'
-      }
-    }
+        primary: '#3B82F6',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 }
 ```
 
@@ -2453,8 +2521,8 @@ module.exports = {
 module.exports = {
   plugins: {
     tailwindcss: {},
-    autoprefixer: {}
-  }
+    autoprefixer: {},
+  },
 }
 ```
 
@@ -2839,7 +2907,7 @@ VITE_ENVIRONMENT=development
 **IMPORTANT:**
 
 - Always add to .gitignore
-- Use VITE_ prefix for Vite access
+- Use VITE\_ prefix for Vite access
 - Never commit secrets
 
 ### .env.example (create this, DO commit)
@@ -2872,18 +2940,18 @@ VITE_ENVIRONMENT=development
 
 ## Summary Cheat Sheet
 
-| File | Purpose | Edit Frequency | Critical? |
-|------|---------|----------------|-----------|
-| package.json | Dependencies & scripts | Often | Yes |
-| tsconfig.json | TypeScript config | Rarely | Yes |
-| vite.config.ts | Build tool config | Sometimes | Yes |
-| tailwind.config.js | Tailwind setup | Sometimes | Yes |
-| .gitignore | Git exclusions | Rarely | Yes |
-| .eslintrc.json | Linting rules | Rarely | No |
-| src/main.tsx | App entry point | Sometimes | Yes |
-| src/App.tsx | Root component | Often | Yes |
-| .vscode/settings.json | VS Code config | Sometimes | No |
-| .env.local | Secrets (local) | Sometimes | Critical |
+| File                  | Purpose                | Edit Frequency | Critical? |
+| --------------------- | ---------------------- | -------------- | --------- |
+| package.json          | Dependencies & scripts | Often          | Yes       |
+| tsconfig.json         | TypeScript config      | Rarely         | Yes       |
+| vite.config.ts        | Build tool config      | Sometimes      | Yes       |
+| tailwind.config.js    | Tailwind setup         | Sometimes      | Yes       |
+| .gitignore            | Git exclusions         | Rarely         | Yes       |
+| .eslintrc.json        | Linting rules          | Rarely         | No        |
+| src/main.tsx          | App entry point        | Sometimes      | Yes       |
+| src/App.tsx           | Root component         | Often          | Yes       |
+| .vscode/settings.json | VS Code config         | Sometimes      | No        |
+| .env.local            | Secrets (local)        | Sometimes      | Critical  |
 
 ---
 
@@ -3080,7 +3148,7 @@ Your lab is complete when:
 ✅ App works in Power Apps portal  
 ✅ GitHub repository is set up and synced  
 ✅ You understand how to debug with Edge DevTools  
-✅ You know what each configuration file does  
+✅ You know what each configuration file does
 
 ---
 
@@ -3125,6 +3193,7 @@ Your lab is complete when:
 **Congratulations on completing the Vibe Coding Lab! 🎉**
 
 You now know how to:
+
 - Build a Power Apps Code App from scratch
 - Use GitHub Copilot Beastmode effectively
 - Style with Tailwind CSS
@@ -3188,6 +3257,7 @@ Please guide me through each step, providing the exact YAML configuration and Az
 ```
 
 **The agent will:**
+
 1. Help you create Azure resources (App Service plan and web app)
 2. Generate a complete GitHub Actions workflow file
 3. Configure deployment settings
@@ -3195,6 +3265,7 @@ Please guide me through each step, providing the exact YAML configuration and Az
 5. Test the deployment end-to-end
 
 **What you'll learn:**
+
 - Azure App Service fundamentals
 - GitHub Actions CI/CD pipelines
 - Infrastructure as Code concepts
@@ -3202,6 +3273,7 @@ Please guide me through each step, providing the exact YAML configuration and Az
 - Environment variable management in Azure
 
 **Prerequisites:**
+
 - Azure subscription with permissions to create resources
 - GitHub repository already set up (you did this in Module 1!)
 - Azure CLI installed (optional, can use portal)
@@ -3370,29 +3442,35 @@ Guide me through authentication and API calls.
 ## Resources for Continued Learning
 
 **Power Apps Code Apps:**
+
 - [Power Apps Code Apps Documentation](https://learn.microsoft.com/power-apps/developer/code-apps/overview)
 - [Power Platform SDK](https://learn.microsoft.com/power-platform/developer/)
 - [Power Platform CLI](https://learn.microsoft.com/power-platform/developer/cli/introduction)
 
 **React & TypeScript:**
+
 - [React Documentation](https://react.dev/)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
 
 **Styling & UI:**
+
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Tailwind UI Components](https://tailwindui.com/)
 - [Headless UI (Accessible Components)](https://headlessui.com/)
 
 **Forms & Validation:**
+
 - [React Hook Form](https://react-hook-form.com/)
 - [Zod Validation](https://zod.dev/)
 
 **Azure:**
+
 - [Azure App Service Documentation](https://learn.microsoft.com/azure/app-service/)
 - [GitHub Actions for Azure](https://learn.microsoft.com/azure/developer/github/github-actions)
 
 **GitHub Copilot:**
+
 - [GitHub Copilot Documentation](https://docs.github.com/copilot)
 - [Copilot Chat Best Practices](https://docs.github.com/copilot/using-github-copilot/prompt-engineering-for-github-copilot)
 

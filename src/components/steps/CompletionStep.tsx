@@ -35,7 +35,9 @@ export default function CompletionStep({
             </div>
             <div>
               <p className="font-medium text-gray-900">Modern Tech Stack</p>
-              <p className="text-sm text-gray-600">Vite + React + TypeScript + Tailwind</p>
+              <p className="text-sm text-gray-600">
+                Vite + React + TypeScript + Tailwind
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -53,7 +55,9 @@ export default function CompletionStep({
             </div>
             <div>
               <p className="font-medium text-gray-900">Full CRUD Operations</p>
-              <p className="text-sm text-gray-600">Create, Read, Update, Delete</p>
+              <p className="text-sm text-gray-600">
+                Create, Read, Update, Delete
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -61,7 +65,9 @@ export default function CompletionStep({
               ✓
             </div>
             <div>
-              <p className="font-medium text-gray-900">AI-Powered Development</p>
+              <p className="font-medium text-gray-900">
+                AI-Powered Development
+              </p>
               <p className="text-sm text-gray-600">Built with GitHub Copilot</p>
             </div>
           </div>

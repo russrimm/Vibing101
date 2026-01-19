@@ -4,7 +4,9 @@ import LabWizard from './components/LabWizard'
 import { Industry } from './types/industry'
 
 function App() {
-  const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(null)
+  const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(
+    null
+  )
   const [wizardStarted, setWizardStarted] = useState(false)
 
   const handleIndustrySelect = (industry: Industry) => {

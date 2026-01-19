@@ -13,8 +13,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
         Environment Setup
       </h2>
       <p className="text-gray-600 mb-8">
-        Let's install the tools you need to build your {industry.sampleApp.name}.
-        Follow each step and verify the installation before moving forward.
+        Let's install the tools you need to build your {industry.sampleApp.name}
+        . Follow each step and verify the installation before moving forward.
       </p>
 
       {/* Tools List */}
@@ -30,7 +30,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 1. Install Visual Studio Code
               </h3>
               <p className="text-gray-600 mb-3">
-                Download and install VS Code, the editor where you'll do all your work.
+                Download and install VS Code, the editor where you'll do all
+                your work.
               </p>
               <a
                 href="https://code.visualstudio.com/"
@@ -41,7 +42,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 Download VS Code →
               </a>
               <div className="mt-4">
-                <p className="text-sm text-gray-500 mb-2">Verify installation:</p>
+                <p className="text-sm text-gray-500 mb-2">
+                  Verify installation:
+                </p>
                 <CodeBlock code="code --version" language="bash" />
               </div>
             </div>
@@ -59,7 +62,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 2. Install Node.js (v24+)
               </h3>
               <p className="text-gray-600 mb-3">
-                Node.js lets you run JavaScript locally and use npm to install packages.
+                Node.js lets you run JavaScript locally and use npm to install
+                packages.
               </p>
               <a
                 href="https://nodejs.org/"
@@ -70,7 +74,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 Download Node.js →
               </a>
               <div className="mt-4">
-                <p className="text-sm text-gray-500 mb-2">Verify installation:</p>
+                <p className="text-sm text-gray-500 mb-2">
+                  Verify installation:
+                </p>
                 <CodeBlock code="node -v\nnpm -v" language="bash" />
               </div>
             </div>
@@ -99,7 +105,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 Download Git →
               </a>
               <div className="mt-4">
-                <p className="text-sm text-gray-500 mb-2">Verify installation:</p>
+                <p className="text-sm text-gray-500 mb-2">
+                  Verify installation:
+                </p>
                 <CodeBlock code="git --version" language="bash" />
               </div>
             </div>
@@ -117,7 +125,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 4. Install GitHub Copilot (Required)
               </h3>
               <p className="text-gray-600 mb-3">
-                GitHub Copilot is the AI that will write most of your code. This lab won't work without it!
+                GitHub Copilot is the AI that will write most of your code. This
+                lab won't work without it!
               </p>
               <div className="space-y-2 mb-3">
                 <a
@@ -137,7 +146,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 <ol className="list-decimal list-inside space-y-1 text-sm text-gray-600">
                   <li>Open Extensions (Ctrl+Shift+X)</li>
                   <li>Search for "GitHub Copilot"</li>
-                  <li>Install both "GitHub Copilot" and "GitHub Copilot Chat"</li>
+                  <li>
+                    Install both "GitHub Copilot" and "GitHub Copilot Chat"
+                  </li>
                   <li>Sign in when prompted</li>
                 </ol>
               </div>
@@ -148,9 +159,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
 
       {/* Navigation */}
       <div className="flex justify-between items-center pt-6 border-t border-gray-200">
-        <div className="text-sm text-gray-500">
-          Step 1 of 6
-        </div>
+        <div className="text-sm text-gray-500">Step 1 of 6</div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold"
