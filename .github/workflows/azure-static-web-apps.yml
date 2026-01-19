@@ -4,40 +4,35 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true
 
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "dist" # Built app content directory
+          node-version: '24.x'
 
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Login to Azure
+        uses: azure/login@v2
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "close"
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A679FE05EC2E40B5AA8F0B4D9345AD23 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6FAB4B0DCF2A4F24AF8372599302D88B }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6EAD6B2768BC42E6B371E4F666DE2064 }}
+
+      - name: Deploy to Azure Static Web Apps
+        run: |
+          az staticwebapp deploy --name vibing101 --resource-group Vibing101_group --source ./dist --no-wait
