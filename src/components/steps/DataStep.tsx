@@ -13,17 +13,17 @@ export default function DataStep({
   onPrevious,
 }: DataStepProps) {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">Add Data Layer</h2>
-      <p className="text-gray-600 mb-8">
+    <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
+      <h2 className="text-3xl font-bold text-white mb-4">Add Data Layer</h2>
+      <p className="text-slate-300 mb-8">
         Connect your components to data using mock data for prototyping or real
         APIs for production.
       </p>
 
       {/* Option 1: Mock Data */}
       <div className="mb-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
             1
           </span>
           Create Mock Data (Recommended for Prototyping)

@@ -73,23 +73,23 @@ export default function LabWizard({ industry, onReset }: LabWizardProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-slate-800/50 backdrop-blur-xl border-b border-white/10 shadow-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <span className="text-4xl">{industry.icon}</span>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">
+                <h1 className="text-2xl font-bold text-white">
                   {industry.sampleApp.name}
                 </h1>
-                <p className="text-sm text-gray-600">{industry.name}</p>
+                <p className="text-sm text-cyan-400">{industry.name}</p>
               </div>
             </div>
             <button
               onClick={onReset}
-              className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-white/10 hover:border-cyan-500/50"
             >
               ← Change Industry
             </button>
@@ -98,7 +98,7 @@ export default function LabWizard({ industry, onReset }: LabWizardProps) {
       </header>
 
       {/* Progress Steps */}
-      <div className="bg-white border-b border-gray-200 py-6">
+      <div className="bg-slate-800/30 backdrop-blur-sm border-b border-white/5 py-6">
         <div className="container mx-auto px-4">
           <StepProgress
             steps={steps}

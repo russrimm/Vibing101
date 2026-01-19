@@ -12,63 +12,63 @@ export default function CompletionStep({
   onPrevious,
 }: CompletionStepProps) {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
+    <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
       <div className="text-center mb-8">
         <div className="text-6xl mb-4">🎉</div>
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-4xl font-bold text-white mb-4">
           Congratulations!
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-xl text-slate-300">
           You've built your {industry.sampleApp.name}
         </p>
       </div>
 
       {/* What You Built */}
-      <div className="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
-        <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+      <div className="mb-8 bg-linear-to-r from-cyan-900/30 to-purple-900/30 border border-cyan-500/20 rounded-xl p-6">
+        <h3 className="text-2xl font-semibold text-white mb-4">
           What You Built
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center">
+            <div className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/30">
               ✓
             </div>
             <div>
-              <p className="font-medium text-gray-900">Modern Tech Stack</p>
-              <p className="text-sm text-gray-600">
+              <p className="font-medium text-white">Modern Tech Stack</p>
+              <p className="text-sm text-slate-300">
                 Vite + React + TypeScript + Tailwind
               </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center">
+            <div className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/30">
               ✓
             </div>
             <div>
-              <p className="font-medium text-gray-900">Industry-Specific App</p>
-              <p className="text-sm text-gray-600">{industry.name} solution</p>
+              <p className="font-medium text-white">Industry-Specific App</p>
+              <p className="text-sm text-slate-300">{industry.name} solution</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center">
+            <div className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/30">
               ✓
             </div>
             <div>
-              <p className="font-medium text-gray-900">Full CRUD Operations</p>
-              <p className="text-sm text-gray-600">
+              <p className="font-medium text-white">Full CRUD Operations</p>
+              <p className="text-sm text-slate-300">
                 Create, Read, Update, Delete
               </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center">
+            <div className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/30">
               ✓
             </div>
             <div>
-              <p className="font-medium text-gray-900">
+              <p className="font-medium text-white">
                 AI-Powered Development
               </p>
-              <p className="text-sm text-gray-600">Built with GitHub Copilot</p>
+              <p className="text-sm text-slate-300">Built with GitHub Copilot</p>
             </div>
           </div>
         </div>
@@ -76,14 +76,14 @@ export default function CompletionStep({
 
       {/* Key Features */}
       <div className="mb-8">
-        <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h3 className="text-2xl font-semibold text-white mb-4">
           Key Features Implemented
         </h3>
         <div className="grid md:grid-cols-2 gap-3">
           {industry.features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-2 text-gray-700">
+            <div key={index} className="flex items-center gap-2 text-slate-300">
               <svg
-                className="w-5 h-5 text-green-500"
+                className="w-5 h-5 text-cyan-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -100,11 +100,11 @@ export default function CompletionStep({
       </div>
 
       {/* Next Steps */}
-      <div className="mb-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-        <h3 className="text-xl font-semibold text-yellow-900 mb-4">
+      <div className="mb-8 bg-amber-900/20 border border-amber-500/30 rounded-xl p-6">
+        <h3 className="text-xl font-semibold text-amber-300 mb-4">
           🚀 Next Steps to Enhance Your App
         </h3>
-        <ul className="space-y-2 text-sm text-yellow-800">
+        <ul className="space-y-2 text-sm text-slate-300">
           <li className="flex items-start gap-2">
             <span className="flex-shrink-0">•</span>
             <span>Add user authentication and authorization</span>
@@ -142,7 +142,7 @@ export default function CompletionStep({
 
       {/* Resources */}
       <div className="mb-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">
+        <h3 className="text-xl font-semibold text-white mb-4">
           📚 Continue Learning
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
@@ -150,53 +150,53 @@ export default function CompletionStep({
             href="https://react.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:bg-blue-50 transition-colors"
+            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
           >
-            <p className="font-semibold text-gray-900">React Documentation</p>
-            <p className="text-sm text-gray-600">Learn more about React</p>
+            <p className="font-semibold text-white">React Documentation</p>
+            <p className="text-sm text-slate-400">Learn more about React</p>
           </a>
           <a
             href="https://tailwindcss.com/docs"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:bg-blue-50 transition-colors"
+            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
           >
-            <p className="font-semibold text-gray-900">Tailwind CSS</p>
-            <p className="text-sm text-gray-600">Master utility-first CSS</p>
+            <p className="font-semibold text-white">Tailwind CSS</p>
+            <p className="text-sm text-slate-400">Master utility-first CSS</p>
           </a>
           <a
             href="https://www.typescriptlang.org/docs/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:bg-blue-50 transition-colors"
+            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
           >
-            <p className="font-semibold text-gray-900">TypeScript</p>
-            <p className="text-sm text-gray-600">Deep dive into types</p>
+            <p className="font-semibold text-white">TypeScript</p>
+            <p className="text-sm text-slate-400">Deep dive into types</p>
           </a>
           <a
             href="https://github.com/features/copilot"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:bg-blue-50 transition-colors"
+            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
           >
-            <p className="font-semibold text-gray-900">GitHub Copilot</p>
-            <p className="text-sm text-gray-600">AI-powered coding tips</p>
+            <p className="font-semibold text-white">GitHub Copilot</p>
+            <p className="text-sm text-slate-400">AI-powered coding tips</p>
           </a>
         </div>
       </div>
 
       {/* Navigation */}
-      <div className="flex justify-between items-center pt-6 border-t border-gray-200">
+      <div className="flex justify-between items-center pt-6 border-t border-white/10">
         <button
           onClick={onPrevious}
-          className="px-6 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors font-semibold"
+          className="px-6 py-3 text-slate-300 hover:bg-white/5 hover:text-white rounded-lg transition-colors font-semibold border border-white/10 hover:border-cyan-500/50"
         >
           ← Back
         </button>
-        <div className="text-sm text-gray-500">Step 6 of 6</div>
+        <div className="text-sm text-slate-400">Step 6 of 6</div>
         <button
           onClick={onReset}
-          className="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold"
+          className="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold shadow-lg shadow-purple-500/30"
         >
           Build Another App →
         </button>

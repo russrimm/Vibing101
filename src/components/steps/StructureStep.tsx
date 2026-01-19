@@ -15,24 +15,24 @@ export default function StructureStep({
   const projectName = industry.sampleApp.name.toLowerCase().replace(/\s+/g, '-')
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">
+    <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
+      <h2 className="text-3xl font-bold text-white mb-4">
         Create Your Project
       </h2>
-      <p className="text-gray-600 mb-8">
+      <p className="text-slate-300 mb-8">
         Let's create your {industry.sampleApp.name} using Vite, React, and
         TypeScript.
       </p>
 
       {/* Step 1: Create Project */}
       <div className="mb-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
             1
           </span>
           Create the Project
         </h3>
-        <p className="text-gray-600 mb-4 ml-10">
+        <p className="text-slate-300 mb-4 ml-10">
           Open your terminal and run this command to create a new Vite project
           with React and TypeScript:
         </p>
@@ -46,13 +46,13 @@ export default function StructureStep({
 
       {/* Step 2: Install Tailwind */}
       <div className="mb-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
             2
           </span>
           Install Tailwind CSS
         </h3>
-        <p className="text-gray-600 mb-4 ml-10">
+        <p className="text-slate-300 mb-4 ml-10">
           Install and configure Tailwind CSS for styling:
         </p>
         <div className="ml-10 space-y-4">
@@ -60,9 +60,9 @@ export default function StructureStep({
             code="npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p"
             language="bash"
           />
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-slate-400">
             Update{' '}
-            <code className="bg-gray-100 px-2 py-1 rounded">
+            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
               tailwind.config.js
             </code>
             :

@@ -13,9 +13,9 @@ export default function TestingStep({
   onPrevious,
 }: TestingStepProps) {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">Test & Deploy</h2>
-      <p className="text-gray-600 mb-8">
+    <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
+      <h2 className="text-3xl font-bold text-white mb-4">Test & Deploy</h2>
+      <p className="text-slate-300 mb-8">
         Test your {industry.sampleApp.name} and get it ready for users.
       </p>
 
@@ -28,11 +28,11 @@ export default function TestingStep({
           Manual Testing Checklist
         </h3>
         <div className="ml-10 space-y-3">
-          <label className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
+          <label className="flex items-start gap-3 p-3 bg-slate-900/30 rounded-lg hover:bg-slate-800/50 cursor-pointer border border-white/10 hover:border-cyan-500/30 transition-colors">
             <input type="checkbox" className="mt-1" />
             <div>
-              <p className="font-medium text-gray-900">Create new items</p>
-              <p className="text-sm text-gray-600">
+              <p className="font-medium text-white">Create new items</p>
+              <p className="text-sm text-slate-400">
                 Test the form submission and validation
               </p>
             </div>

@@ -122,11 +122,11 @@ export default function ComponentsStep({
   const components = getIndustryComponents(industry)
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">
+    <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
+      <h2 className="text-3xl font-bold text-white mb-4">
         Build Your Components
       </h2>
-      <p className="text-gray-600 mb-8">
+      <p className="text-slate-300 mb-8">
         Use GitHub Copilot to generate the components for your{' '}
         {industry.sampleApp.name}.
       </p>

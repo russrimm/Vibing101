@@ -41,12 +41,12 @@ export default function StepProgress({
                     border-2 transition-all duration-300 mb-2
                     ${
                       isCompleted
-                        ? 'bg-green-500 border-green-500 text-white'
+                        ? 'bg-cyan-500 border-cyan-500 text-white shadow-lg shadow-cyan-500/50'
                         : isCurrent
-                          ? 'bg-blue-500 border-blue-500 text-white'
+                          ? 'bg-blue-500 border-blue-400 text-white shadow-lg shadow-blue-500/50'
                           : isClickable
-                            ? 'bg-gray-200 border-gray-300 text-gray-600'
-                            : 'bg-gray-100 border-gray-200 text-gray-400'
+                            ? 'bg-slate-700 border-slate-600 text-slate-300'
+                            : 'bg-slate-800 border-slate-700 text-slate-500'
                     }
                   `}
                 >
@@ -74,18 +74,18 @@ export default function StepProgress({
                       text-xs font-medium transition-colors
                       ${
                         isCurrent
-                          ? 'text-blue-600'
+                          ? 'text-cyan-400'
                           : isCompleted
-                            ? 'text-green-600'
+                            ? 'text-cyan-300'
                             : isClickable
-                              ? 'text-gray-700'
-                              : 'text-gray-400'
+                              ? 'text-slate-300'
+                              : 'text-slate-500'
                       }
                     `}
                   >
                     {step.title}
                   </div>
-                  <div className="text-xs text-gray-500 mt-1 hidden sm:block">
+                  <div className="text-xs text-slate-400 mt-1 hidden sm:block">
                     {step.description}
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function StepProgress({
                 <div
                   className={`
                     flex-1 h-0.5 mx-2 transition-colors
-                    ${isCompleted ? 'bg-green-500' : 'bg-gray-300'}
+                    ${isCompleted ? 'bg-cyan-500/50' : 'bg-slate-700'}
                   `}
                 />
               )}
