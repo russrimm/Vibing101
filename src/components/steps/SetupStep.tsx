@@ -9,9 +9,7 @@ interface SetupStepProps {
 export default function SetupStep({ industry, onNext }: SetupStepProps) {
   return (
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
-      <h2 className="text-3xl font-bold text-white mb-4">
-        Environment Setup
-      </h2>
+      <h2 className="text-3xl font-bold text-white mb-4">Environment Setup</h2>
       <p className="text-slate-300 mb-8">
         Let's install the tools you need to build your {industry.sampleApp.name}
         . Follow each step and verify the installation before moving forward.
@@ -142,7 +140,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 </p>
               </div>
               <div className="mt-4 space-y-2">
-                <p className="text-sm font-medium text-slate-200">In VS Code:</p>
+                <p className="text-sm font-medium text-slate-200">
+                  In VS Code:
+                </p>
                 <ol className="list-decimal list-inside space-y-1 text-sm text-slate-300">
                   <li>Open Extensions (Ctrl+Shift+X)</li>
                   <li>Search for "GitHub Copilot"</li>

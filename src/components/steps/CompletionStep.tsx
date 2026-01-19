@@ -15,9 +15,7 @@ export default function CompletionStep({
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
       <div className="text-center mb-8">
         <div className="text-6xl mb-4">🎉</div>
-        <h2 className="text-4xl font-bold text-white mb-4">
-          Congratulations!
-        </h2>
+        <h2 className="text-4xl font-bold text-white mb-4">Congratulations!</h2>
         <p className="text-xl text-slate-300">
           You've built your {industry.sampleApp.name}
         </p>
@@ -65,10 +63,10 @@ export default function CompletionStep({
               ✓
             </div>
             <div>
-              <p className="font-medium text-white">
-                AI-Powered Development
+              <p className="font-medium text-white">AI-Powered Development</p>
+              <p className="text-sm text-slate-300">
+                Built with GitHub Copilot
               </p>
-              <p className="text-sm text-slate-300">Built with GitHub Copilot</p>
             </div>
           </div>
         </div>
