@@ -61,10 +61,339 @@ Implement features incrementally but do not skip any functional area
 Ensure the app can be run, navigated, and used end-to-end
 Build this as a complete retail application suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
 
-  const initialPrompt =
-    industry.id === 'retail'
-      ? retailPrompt
-      : `Create a ${industry.sampleApp.name} application that tracks ${industry.name.toLowerCase()} data.`
+  const oilGasPrompt = `Objective
+Build a fully functional, production-ready field asset management application, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
+Visual & UX Requirements
+Modern, professional orange-themed UI
+Mobile-first responsive design (field workers use tablets/phones)
+Accessible, clean layout with a persistent app shell (navigation, header, alerts)
+Functional Scope (ALL REQUIRED)
+Implement the following features completely, with working screens, forms, and logic:
+Equipment/Asset Management
+Create, edit, delete equipment records
+Equipment ID, type, location, status tracking
+Criticality levels (critical, high, medium, low)
+Installation date and expected lifecycle
+Maintenance Scheduling & Tracking
+Schedule preventive maintenance tasks
+Track maintenance history per asset
+Assign work orders to technicians
+Record labor hours and parts used
+Overdue maintenance alerts and notifications
+Safety Inspection Management
+Create and complete safety inspection forms
+Photo/documentation upload capability
+Pass/fail/conditional status tracking
+Inspector signature and timestamp
+Inspection history and audit trail
+Work Order Management
+Create, assign, and complete work orders
+Priority levels (emergency, urgent, routine)
+Status tracking (open, in-progress, completed, cancelled)
+Link work orders to specific assets
+Equipment Monitoring & Alerts
+Real-time status indicators (operational, down, maintenance)
+Alert dashboard for critical equipment issues
+Equipment downtime tracking
+Performance metrics and utilization rates
+Reporting & Analytics Dashboard
+High-level KPIs (total assets, maintenance compliance, overdue tasks, equipment uptime)
+Maintenance cost tracking
+Safety inspection compliance rates
+Asset health overview
+Architecture Expectations
+Clear data models for equipment, maintenance, inspections, work orders, and technicians
+A thin data-access layer suitable for swapping between mock storage and Dataverse
+Reusable components and modular feature folders
+No single .tsx file should exceed ~300 lines
+Delivery Expectations
+Scaffold the full app structure first (routes, layout, navigation)
+Implement features incrementally but do not skip any functional area
+Ensure the app can be run, navigated, and used end-to-end
+Build this as a complete field asset management application suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
+
+  const transportationPrompt = `Objective
+Build a fully functional, production-ready fleet operations application, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
+Visual & UX Requirements
+Modern, professional green-themed UI
+Mobile-first responsive design (drivers and dispatchers use mobile devices)
+Accessible, clean layout with a persistent app shell (navigation, header, alerts)
+Functional Scope (ALL REQUIRED)
+Implement the following features completely, with working screens, forms, and logic:
+Vehicle Management
+Create, edit, delete vehicle records
+VIN, make, model, year, license plate
+Vehicle type (truck, van, car, etc.)
+Status (available, in-use, maintenance, retired)
+Mileage and fuel tracking
+Driver Management
+Create, edit, delete driver profiles
+License number, expiration date, endorsements
+Contact information and emergency contacts
+Driver status (active, on-leave, inactive)
+Performance ratings and safety records
+Route Planning & Assignment
+Create and manage delivery routes
+Assign routes to drivers and vehicles
+Route optimization suggestions
+Estimated vs actual delivery times
+Multi-stop route support
+Delivery Management
+Create, track, and complete deliveries
+Customer information and delivery addresses
+Package details (weight, dimensions, special handling)
+Delivery status (pending, in-transit, delivered, failed)
+Proof of delivery (signature, photo, timestamp)
+Real-time delivery tracking
+Vehicle Maintenance Tracking
+Schedule preventive maintenance
+Track service history per vehicle
+Maintenance alerts based on mileage/date
+Parts and labor cost tracking
+Vehicle inspection checklists
+Reporting & Analytics Dashboard
+High-level KPIs (active deliveries, on-time rate, fleet utilization, maintenance costs)
+Driver performance metrics
+Route efficiency analysis
+Vehicle health and maintenance compliance
+Cost per mile/delivery analytics
+Architecture Expectations
+Clear data models for vehicles, drivers, routes, deliveries, and maintenance records
+A thin data-access layer suitable for swapping between mock storage and Dataverse
+Reusable components and modular feature folders
+No single .tsx file should exceed ~300 lines
+Delivery Expectations
+Scaffold the full app structure first (routes, layout, navigation)
+Implement features incrementally but do not skip any functional area
+Ensure the app can be run, navigated, and used end-to-end
+Build this as a complete fleet operations application suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
+
+  const manufacturingPrompt = `Objective
+Build a fully functional, production-ready manufacturing tracker application, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
+Visual & UX Requirements
+Modern, professional purple-themed UI
+Mobile-first responsive design (shop floor workers use tablets)
+Accessible, clean layout with a persistent app shell (navigation, header, alerts)
+Functional Scope (ALL REQUIRED)
+Implement the following features completely, with working screens, forms, and logic:
+Production Line Management
+Create, edit, delete production line configurations
+Line capacity and current utilization
+Active/inactive status and shift schedules
+Equipment and station assignments
+Production line health indicators
+Work Order Management
+Create and manage production work orders
+Priority levels (rush, standard, low-priority)
+Status tracking (queued, in-progress, completed, on-hold, cancelled)
+Target vs actual production quantities
+Start/end timestamps and cycle time tracking
+Material & Inventory Management
+Track raw materials and components
+Material consumption per work order
+Low-stock alerts and reorder points
+Material lot/batch tracking for traceability
+Bill of Materials (BOM) for each product
+Supplier information and lead times
+Quality Control & Inspection
+Create quality inspection checkpoints
+Record inspection results (pass/fail/rework)
+Defect tracking and categorization
+Quality metrics per production line
+Root cause analysis notes
+Corrective action tracking
+Production Scheduling
+Schedule work orders on production lines
+Capacity planning and resource allocation
+Visual production calendar
+Bottleneck identification
+Schedule optimization suggestions
+Real-time Production Monitoring
+Live production status dashboard
+Actual vs target production rates
+Downtime tracking and reasons
+Equipment status indicators
+Shift performance metrics
+Reporting & Analytics Dashboard
+High-level KPIs (units produced, OEE, yield rate, defect rate, on-time completion)
+Production cost analysis
+Quality trends and Pareto charts
+Resource utilization metrics
+Inventory turnover rates
+Architecture Expectations
+Clear data models for production lines, work orders, materials, quality inspections, and schedules
+A thin data-access layer suitable for swapping between mock storage and Dataverse
+Reusable components and modular feature folders
+No single .tsx file should exceed ~300 lines
+Delivery Expectations
+Scaffold the full app structure first (routes, layout, navigation)
+Implement features incrementally but do not skip any functional area
+Ensure the app can be run, navigated, and used end-to-end
+Build this as a complete manufacturing tracker application suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
+
+  const healthcarePrompt = `Objective
+Build a fully functional, production-ready patient appointment system, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
+Visual & UX Requirements
+Modern, professional red-themed UI
+Mobile-first responsive design
+Accessible, clean layout with a persistent app shell (navigation, header, alerts)
+HIPAA-aware design (no actual PHI, but structured as if handling sensitive data)
+Functional Scope (ALL REQUIRED)
+Implement the following features completely, with working screens, forms, and logic:
+Patient Management
+Create, edit, delete patient profiles
+Patient demographics (name, DOB, contact info)
+Insurance information (carrier, policy number, group)
+Emergency contact details
+Patient status (active, inactive, deceased)
+Medical history summary section
+Provider Management
+Create, edit, delete provider profiles
+Provider specialties and credentials
+Office locations and contact information
+Available appointment types
+Provider schedules and working hours
+Appointment Scheduling
+Schedule, reschedule, and cancel appointments
+Available time slot search by provider/specialty
+Appointment types (consultation, follow-up, procedure, etc.)
+Duration and buffer time configuration
+Recurring appointment support
+Appointment reminders and notifications
+Appointment Management
+Check-in/check-out workflow
+Appointment status (scheduled, checked-in, in-progress, completed, no-show, cancelled)
+Waiting room queue management
+Appointment history per patient
+Visit notes and reason for visit
+Insurance verification status
+Calendar & Availability Management
+Multi-provider calendar views (day/week/month)
+Color-coded appointment types
+Block time for breaks/lunch/meetings
+Holiday and vacation scheduling
+Resource conflict detection
+Medical Records Management
+Document upload and attachment
+Visit summaries and notes
+Medication lists
+Allergy and condition tracking
+Lab results and imaging reports
+Document version history
+Reporting & Analytics Dashboard
+High-level KPIs (daily appointments, no-show rate, provider utilization, wait times)
+Patient volume trends
+Revenue cycle metrics (insurance vs self-pay)
+Provider productivity
+Patient satisfaction scores
+Architecture Expectations
+Clear data models for patients, providers, appointments, medical records, and schedules
+A thin data-access layer suitable for swapping between mock storage and Dataverse
+Reusable components and modular feature folders
+No single .tsx file should exceed ~300 lines
+Security considerations for sensitive data
+Delivery Expectations
+Scaffold the full app structure first (routes, layout, navigation)
+Implement features incrementally but do not skip any functional area
+Ensure the app can be run, navigated, and used end-to-end
+Build this as a complete patient appointment system suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
+
+  const financePrompt = `Objective
+Build a fully functional, production-ready financial request portal, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
+Visual & UX Requirements
+Modern, professional indigo-themed UI
+Mobile-first responsive design
+Accessible, clean layout with a persistent app shell (navigation, header, alerts)
+Functional Scope (ALL REQUIRED)
+Implement the following features completely, with working screens, forms, and logic:
+Request Management
+Create, edit, delete financial requests
+Request types (reimbursement, budget, purchase, payment authorization, etc.)
+Amount and currency
+Business justification and description
+Urgency/priority levels
+Supporting documentation attachment
+Request status tracking
+Approval Workflow Management
+Multi-level approval routing (manager, director, finance, etc.)
+Approval chain visualization
+Approve, reject, or request more information
+Approval comments and conditions
+Delegate approval authority
+Escalation rules for overdue approvals
+Email notifications at each approval stage
+Document Management
+Upload and attach supporting documents
+Document versioning and history
+Document types (invoices, receipts, contracts, quotes)
+Secure document storage
+Document preview capability
+Audit trail of document access
+Budget & Cost Center Tracking
+Link requests to budget categories
+Cost center assignment
+Budget availability check
+Year-to-date spending vs budget
+Budget allocation and reallocation
+Historical spending analysis
+Request Tracking & Status
+Request status (draft, submitted, pending-approval, approved, rejected, completed, cancelled)
+Status history and timeline
+Estimated vs actual processing time
+Request aging and SLA monitoring
+Batch request processing
+User & Role Management
+Requester profiles
+Approver roles and hierarchies
+Delegation settings
+Out-of-office status
+Notification preferences
+Reporting & Analytics Dashboard
+High-level KPIs (total requests, approval rates, average processing time, pending value)
+Request volume trends by type
+Approval bottleneck analysis
+Budget utilization metrics
+Compliance and audit reports
+Expense category breakdown
+Audit & Compliance
+Complete audit trail of all actions
+Timestamp and user tracking
+Before/after state for edits
+Regulatory compliance fields
+Fraud detection flags
+SOX compliance considerations
+Architecture Expectations
+Clear data models for requests, approvals, documents, budgets, and users
+A thin data-access layer suitable for swapping between mock storage and Dataverse
+Reusable components and modular feature folders
+No single .tsx file should exceed ~300 lines
+Security and audit logging throughout
+Delivery Expectations
+Scaffold the full app structure first (routes, layout, navigation)
+Implement features incrementally but do not skip any functional area
+Ensure the app can be run, navigated, and used end-to-end
+Build this as a complete financial request portal suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
+
+  const getPromptForIndustry = (industryId: string) => {
+    switch (industryId) {
+      case 'retail':
+        return retailPrompt
+      case 'oil-gas-energy':
+        return oilGasPrompt
+      case 'transportation':
+        return transportationPrompt
+      case 'manufacturing':
+        return manufacturingPrompt
+      case 'healthcare':
+        return healthcarePrompt
+      case 'finance':
+        return financePrompt
+      default:
+        return `Create a ${industry.sampleApp.name} application that tracks ${industry.name.toLowerCase()} data.`
+    }
+  }
+
+  const initialPrompt = getPromptForIndustry(industry.id)
 
   return (
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
