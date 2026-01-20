@@ -194,7 +194,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono font-semibold">11.</span>
             <span>
-              Download{' '}
+              Go to{' '}
               <a
                 href="https://github.com/github/awesome-copilot/blob/main/instructions/power-apps-code-apps.instructions.md"
                 target="_blank"
@@ -202,15 +202,20 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
                 className="text-cyan-400 hover:text-cyan-300 underline"
               >
                 power-apps-code-apps.instructions.md
-              </a>{' '}
-              and put it in the{' '}
-              <strong className="text-white">instructions</strong> directory
+              </a>
+              , click the{' '}
+              <strong className="text-white">"Download"</strong> button (top right),
+              then move the file into the{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                .github\instructions
+              </code>{' '}
+              folder
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono font-semibold">12.</span>
             <span>
-              Download{' '}
+              Go to{' '}
               <a
                 href="https://github.com/github/awesome-copilot/blob/main/instructions/typescript-5-es2022.instructions.md"
                 target="_blank"
@@ -218,28 +223,39 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
                 className="text-cyan-400 hover:text-cyan-300 underline"
               >
                 typescript-5-es2022.instructions.md
-              </a>{' '}
-              and save it in the{' '}
-              <strong className="text-white">instructions</strong> folder
+              </a>
+              , click the{' '}
+              <strong className="text-white">"Download"</strong> button,
+              then move the file into the{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                .github\instructions
+              </code>{' '}
+              folder
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono font-semibold">13.</span>
             <span>
-              Download{' '}
+              Go to{' '}
               <a
                 href="https://github.com/github/awesome-copilot/blob/main/agents/4.1-Beast.agent.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline"
               >
-                it
-              </a>{' '}
-              and save it as{' '}
+                4.1-Beast.agent.md
+              </a>
+              , click the{' '}
+              <strong className="text-white">"Download"</strong> button,
+              rename it to{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                 copilot-instructions.md
+              </code>
+              , then move it into the{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                .github
               </code>{' '}
-              in the <strong className="text-white">.github</strong> folder
+              folder
             </span>
           </li>
         </ol>
