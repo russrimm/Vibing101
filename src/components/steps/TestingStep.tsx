@@ -108,54 +108,10 @@ export default function TestingStep({
           Deploy Your App
         </h3>
         <div className="ml-10 grid gap-4 md:grid-cols-2">
-          {/* Vercel */}
-          <div className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors">
-            <h4 className="font-semibold text-white mb-2">
-              Vercel (Recommended)
-            </h4>
-            <p className="text-sm text-slate-300 mb-3">
-              Free hosting with automatic deployments from GitHub
-            </p>
-            <ol className="text-sm text-slate-400 space-y-1 list-decimal list-inside">
-              <li>Push code to GitHub</li>
-              <li>Connect to Vercel</li>
-              <li>Auto-deploy on push</li>
-            </ol>
-            <a
-              href="https://vercel.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-3 text-sm text-cyan-400 hover:text-cyan-300 font-medium"
-            >
-              Deploy to Vercel →
-            </a>
-          </div>
-
-          {/* Netlify */}
-          <div className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors">
-            <h4 className="font-semibold text-white mb-2">Netlify</h4>
-            <p className="text-sm text-slate-300 mb-3">
-              Free hosting with drag-and-drop or Git integration
-            </p>
-            <ol className="text-sm text-slate-400 space-y-1 list-decimal list-inside">
-              <li>Drag dist folder</li>
-              <li>Or connect GitHub</li>
-              <li>Instant deploy</li>
-            </ol>
-            <a
-              href="https://netlify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-3 text-sm text-cyan-400 hover:text-cyan-300 font-medium"
-            >
-              Deploy to Netlify →
-            </a>
-          </div>
-
           {/* Azure Static Web Apps */}
           <div className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors">
             <h4 className="font-semibold text-white mb-2">
-              Azure Static Web Apps
+              Azure Static Web Apps (Recommended)
             </h4>
             <p className="text-sm text-slate-300 mb-3">
               Enterprise hosting with Azure integration
