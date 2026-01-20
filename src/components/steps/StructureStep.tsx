@@ -494,6 +494,23 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </p>
         </div>
+        <div className="mt-4 bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+          <p className="text-sm text-orange-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">🔒</span>
+            <span>
+              <strong>After the build completes:</strong> If you see a message like{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-yellow-400">
+                "9 vulnerabilities (1 low, 4 moderate, 3 high, 1 critical)"
+              </code>
+              , run{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                npm audit fix --force
+              </code>{' '}
+              in the terminal. This command automatically updates packages to secure versions 
+              and applies breaking changes if needed to fix security issues.
+            </span>
+          </p>
+        </div>
       </div>
 
       {/* Navigation */}
