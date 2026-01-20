@@ -105,9 +105,10 @@ Ensure the app can be run, navigated, and used end-to-end
 
 Build this as a complete retail application suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
 
-  const initialPrompt = industry.id === 'retail' 
-    ? retailPrompt
-    : `Create a ${industry.sampleApp.name} application that tracks ${industry.name.toLowerCase()} data.
+  const initialPrompt =
+    industry.id === 'retail'
+      ? retailPrompt
+      : `Create a ${industry.sampleApp.name} application that tracks ${industry.name.toLowerCase()} data.
 
 Please ask me questions about what I need (features, data, colors/theme/style, etc), then create a complete prompt for Agent Mode.`
 
@@ -369,14 +370,20 @@ Follow all technical standards in copilot-instructions.md.`
           Step 1: Enter the Build Prompt in Beast Mode
         </h3>
         <p className="text-slate-300 mb-4">
-          Open GitHub Copilot Chat (Ctrl+Shift+I), make sure you're in <strong className="text-white">Beast Mode</strong>, and enter this prompt:
+          Open GitHub Copilot Chat (Ctrl+Shift+I), make sure you're in{' '}
+          <strong className="text-white">Beast Mode</strong>, and enter this
+          prompt:
         </p>
         <CodeBlock code={initialPrompt} language="text" />
         <div className="mt-4 bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
           <p className="text-sm text-blue-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              <strong>Tip:</strong> If you prefer to start in Ask Mode, the agent can ask you questions about features, data, colors/theme/style, and other details before generating a comprehensive prompt. This lab uses Beast Mode with a complete prompt for faster results.
+              <strong>Tip:</strong> If you prefer to start in Ask Mode, the
+              agent can ask you questions about features, data,
+              colors/theme/style, and other details before generating a
+              comprehensive prompt. This lab uses Beast Mode with a complete
+              prompt for faster results.
             </span>
           </p>
         </div>
@@ -400,40 +407,65 @@ Follow all technical standards in copilot-instructions.md.`
         <p className="text-slate-300 mb-4">
           Beast Mode will build your ENTIRE application based on the prompt:
         </p>
-        
+
         <div className="space-y-3 mb-4">
           <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4">
             <p className="text-sm text-amber-300 flex items-start gap-2">
               <span className="text-lg mt-0.5">⚠️</span>
               <span>
-                <strong>During the build, you'll need to approve actions:</strong>
+                <strong>
+                  During the build, you'll need to approve actions:
+                </strong>
                 <ul className="mt-2 ml-4 space-y-1">
-                  <li>• Select <strong className="text-white">"Allow and Review"</strong> or <strong className="text-white">"Allow and Skip"</strong></li>
-                  <li>• <em>Optional:</em> Customize VS Code to auto-approve by going to <strong className="text-white">File → Preferences → Settings → Features → Chat</strong> and configuring <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">chat.tools.autoApprove</code></li>
+                  <li>
+                    • Select{' '}
+                    <strong className="text-white">"Allow and Review"</strong>{' '}
+                    or <strong className="text-white">"Allow and Skip"</strong>
+                  </li>
+                  <li>
+                    • <em>Optional:</em> Customize VS Code to auto-approve by
+                    going to{' '}
+                    <strong className="text-white">
+                      File → Preferences → Settings → Features → Chat
+                    </strong>{' '}
+                    and configuring{' '}
+                    <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                      chat.tools.autoApprove
+                    </code>
+                  </li>
                 </ul>
               </span>
             </p>
           </div>
-          
+
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
             <p className="text-sm text-blue-300 flex items-start gap-2">
               <span className="text-lg mt-0.5">📦</span>
               <span>
-                <strong>When prompted to install Vite:</strong> Type <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">y</code> and press Enter
+                <strong>When prompted to install Vite:</strong> Type{' '}
+                <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                  y
+                </code>{' '}
+                and press Enter
               </span>
             </p>
           </div>
-          
+
           <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
             <p className="text-sm text-green-300 flex items-start gap-2">
               <span className="text-lg mt-0.5">📁</span>
               <span>
-                <strong>When it says "current directory is not empty":</strong> Choose <strong className="text-white">"Ignore files and continue"</strong> and accept the defaults on remaining questions
+                <strong>When it says "current directory is not empty":</strong>{' '}
+                Choose{' '}
+                <strong className="text-white">
+                  "Ignore files and continue"
+                </strong>{' '}
+                and accept the defaults on remaining questions
               </span>
             </p>
           </div>
         </div>
-        
+
         <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-4">
           <p className="text-sm text-cyan-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
