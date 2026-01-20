@@ -276,17 +276,107 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
         </div>
       </div>
 
-      {/* Step 1: Enter the Prompt */}
+      {/* Step 1: Check Latest Versions */}
+      <div className="bg-linear-to-br from-green-900/30 to-teal-900/30 border border-green-500/30 rounded-xl p-6 mb-6">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="text-2xl">🔍</span>
+          Step 1: Identify Latest Technology Versions
+        </h3>
+        <p className="text-slate-300 mb-4">
+          Before building, check the latest major versions of key technologies:
+        </p>
+        <ol className="space-y-3 text-slate-300 text-sm ml-4 mb-4">
+          <li className="flex items-start gap-2">
+            <span className="text-green-400 font-mono font-semibold">1.</span>
+            <span>
+              Visit{' '}
+              <a
+                href="https://nodejs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                nodejs.org
+              </a>{' '}
+              to check the latest <strong className="text-white">Node.js</strong> LTS version
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-400 font-mono font-semibold">2.</span>
+            <span>
+              Visit{' '}
+              <a
+                href="https://vitejs.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                vitejs.dev
+              </a>{' '}
+              to check the latest <strong className="text-white">Vite</strong> version
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-400 font-mono font-semibold">3.</span>
+            <span>
+              Visit{' '}
+              <a
+                href="https://react.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                react.dev
+              </a>{' '}
+              to check the latest <strong className="text-white">React</strong> version
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-green-400 font-mono font-semibold">4.</span>
+            <span>
+              Visit{' '}
+              <a
+                href="https://tailwindcss.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                tailwindcss.com
+              </a>{' '}
+              to check the latest <strong className="text-white">Tailwind CSS</strong> version
+            </span>
+          </li>
+        </ol>
+        <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+          <p className="text-sm text-green-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">💡</span>
+            <span>
+              <strong>Why check versions?</strong> Specifying the latest versions in your prompt ensures Copilot uses the most current APIs, features, and best practices when building your application.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Step 2: Enter the Prompt */}
       <div className="bg-linear-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">💬</span>
-          Step 1: Enter the Build Prompt in Beast Mode
+          Step 2: Enter the Build Prompt in Beast Mode
         </h3>
         <p className="text-slate-300 mb-4">
           Open GitHub Copilot Chat (Ctrl+Shift+I), make sure you're in{' '}
           <strong className="text-white">Beast Mode</strong>, and enter this
-          prompt:
+          prompt with the versions you found:
         </p>
+        <div className="bg-indigo-500/10 border border-indigo-500/30 rounded-lg p-4 mb-4">
+          <p className="text-sm text-indigo-300">
+            <strong className="text-white">Add this to the beginning of your prompt:</strong>
+            <br />
+            <code className="text-cyan-400 text-xs">
+              Use Node.js [version], Vite [version], React [version], and Tailwind CSS [version].
+            </code>
+          </p>
+        </div>
         <CodeBlock code={initialPrompt} language="text" />
         <div className="mt-4 bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
           <p className="text-sm text-blue-300 flex items-start gap-2">
@@ -302,11 +392,11 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
         </div>
       </div>
 
-      {/* Step 2: Agent Builds */}
+      {/* Step 3: Agent Builds */}
       <div className="bg-slate-900/50 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">✨</span>
-          Step 2: Agent Builds Your Application
+          Step 3: Agent Builds Your Application
         </h3>
         <p className="text-slate-300 mb-4">
           Beast Mode will build your ENTIRE application based on the prompt:
