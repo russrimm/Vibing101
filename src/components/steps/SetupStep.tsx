@@ -271,25 +271,6 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                           className="text-cyan-400 hover:text-cyan-300 underline"
                         >
                           github.com/mcp
-                        </a>
-                        , click{' '}
-                        <strong className="text-white">"Install"</strong> and{' '}
-                        <strong className="text-white">
-                          "Install in VSCode"
-                        </strong>{' '}
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
-                        12.
-                      </span>
-                      <span>
-                        Go to{' '}
-                        <a
-                          href="https://www.github.com/mcp"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-cyan-400 hover:text-cyan-300 underline"
-                        >
-                          github.com/mcp
                         </a>{' '}
                         and select <strong className="text-white">"Install"</strong> for both{' '}
                         <strong className="text-white">Context7</strong> and{' '}

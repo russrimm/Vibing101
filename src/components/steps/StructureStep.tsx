@@ -15,94 +15,50 @@ export default function StructureStep({
   // Special prompt for retail industry
   const retailPrompt = `Objective
 Build a fully functional, production-ready retail management application, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
-
 Visual & UX Requirements
-
 Modern, professional blue-themed UI
-
 Mobile-first responsive design
-
 Accessible, clean layout with a persistent app shell (navigation, header, alerts)
-
 Functional Scope (ALL REQUIRED)
 Implement the following features completely, with working screens, forms, and logic:
-
 Product Management
-
 Create, edit, delete products
-
 SKU and optional barcode support
-
 Pricing, reorder point, active/inactive status
-
 Inventory & Stock Tracking
-
 Track on-hand stock per product
-
 Automatically calculate available stock
-
 Low-stock alerts when inventory falls at or below reorder point
-
 Prominent alert indicators in the UI
-
 Supplier Management
-
 Add, edit, delete suppliers
-
 Associate products with suppliers
-
 View supplier-related purchase orders
-
 Purchase Order Management
-
 Create and manage purchase orders
-
 Track status (draft, submitted, received, cancelled)
-
 Receive orders and automatically update inventory levels
-
 Sales Tracking
-
 Record sales transactions
-
 Support multiple line items per sale
-
 Automatically decrement inventory on sale completion
-
 Barcode / SKU Scanning
-
 Enable barcode or SKU-based product lookup
-
 Use browser-native APIs when available
-
 Provide manual input fallback
-
 Reporting & Analytics Dashboard
-
 High-level KPIs (total products, low-stock items, sales totals, open POs)
-
 Sales history and trends
-
 Inventory health overview
-
 Architecture Expectations
-
 Clear data models for products, inventory, suppliers, purchase orders, and sales
-
 A thin data-access layer suitable for swapping between mock storage and Dataverse
-
 Reusable components and modular feature folders
-
 No single .tsx file should exceed ~300 lines
-
 Delivery Expectations
-
 Scaffold the full app structure first (routes, layout, navigation)
-
 Implement features incrementally but do not skip any functional area
-
 Ensure the app can be run, navigated, and used end-to-end
-
 Build this as a complete retail application suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
 
   const initialPrompt =
@@ -398,11 +354,20 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
                     going to{' '}
                     <strong className="text-white">
                       File → Preferences → Settings → Features → Chat
-                    </strong>{' '}
-                    and configuring{' '}
+                    </strong>
+                    , configuring{' '}
                     <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                       chat.tools.autoApprove
+                    </code>{' '}
+                    and{' '}
+                    <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                      chat.tools.terminal.autoApprove
                     </code>
+                    , and selecting{' '}
+                    <strong className="text-white">
+                      "Enable Auto-Approve"
+                    </strong>{' '}
+                    if desired
                   </li>
                 </ul>
               </span>
