@@ -367,15 +367,6 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </p>
         </div>
-        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-          <p className="text-sm text-purple-300 flex items-start gap-2">
-            <span className="text-lg mt-0.5">💡</span>
-            <span>
-              Notice: No mention of Vite, React, TypeScript, Tailwind, or folder
-              structure. The agent figures all that out!
-            </span>
-          </p>
-        </div>
       </div>
 
       {/* Step 2: Agent Builds */}
@@ -520,63 +511,6 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </p>
         </div>
-      </div>
-
-      {/* Why This Works */}
-      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-8">
-        <h4 className="text-lg font-semibold text-green-400 mb-3 flex items-center gap-2">
-          <span className="text-xl">🎯</span>
-          Why One Prompt Builds Everything
-        </h4>
-        <ul className="space-y-3 text-slate-300 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="text-green-500 mt-1">✓</span>
-            <div>
-              <strong className="text-white">Complete in one shot:</strong>{' '}
-              Instead of multiple steps (setup, then components, then data), ONE
-              prompt builds your entire working application
-            </div>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-green-500 mt-1">✓</span>
-            <div>
-              <strong className="text-white">
-                copilot-instructions.md is your expert:
-              </strong>{' '}
-              Contains ALL technical knowledge - React patterns, TypeScript
-              setup, Tailwind design, data management, hooks, validation,
-              accessibility
-            </div>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-green-500 mt-1">✓</span>
-            <div>
-              <strong className="text-white">
-                You focus on business needs:
-              </strong>{' '}
-              "I need to track Products and Orders" - not "I need useState and
-              useEffect hooks with localStorage"
-            </div>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-green-500 mt-1">✓</span>
-            <div>
-              <strong className="text-white">
-                Agent Mode is comprehensive:
-              </strong>{' '}
-              Reads copilot-instructions.md and builds project structure +
-              components + data layer + everything connected and working
-            </div>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-green-500 mt-1">✓</span>
-            <div>
-              <strong className="text-white">From zero to working app:</strong>{' '}
-              Start with empty folder, one conversation, one prompt, and get a
-              complete, functional, production-ready application
-            </div>
-          </li>
-        </ul>
       </div>
 
       {/* Navigation */}
