@@ -144,35 +144,12 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
           <li className="flex items-start gap-2">
             <span className="text-cyan-400 font-mono font-semibold">5.</span>
             <span>
-              Click <strong className="text-white">"Terminal"</strong> in the
-              top menu
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">6.</span>
-            <span>
-              Click <strong className="text-white">"New Terminal"</strong>
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">7.</span>
-            <span>
-              Enter{' '}
-              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
-                git init
-              </code>{' '}
-              in the terminal window
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">8.</span>
-            <span>
               Right-click in the Explorer pane and click{' '}
               <strong className="text-white">"New Folder"</strong>
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">9.</span>
+            <span className="text-cyan-400 font-mono font-semibold">6.</span>
             <span>
               Name the folder{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
@@ -181,7 +158,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">10.</span>
+            <span className="text-cyan-400 font-mono font-semibold">7.</span>
             <span>
               Right-click on the <strong className="text-white">.github</strong>{' '}
               folder and select{' '}
@@ -189,7 +166,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">11.</span>
+            <span className="text-cyan-400 font-mono font-semibold">8.</span>
             <span>
               Name the file{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
@@ -198,7 +175,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">12.</span>
+            <span className="text-cyan-400 font-mono font-semibold">9.</span>
             <span>
               Right-click on the <strong className="text-white">.github</strong>{' '}
               folder and select{' '}
@@ -206,7 +183,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">13.</span>
+            <span className="text-cyan-400 font-mono font-semibold">10.</span>
             <span>
               Name the folder{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
@@ -215,7 +192,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">14.</span>
+            <span className="text-cyan-400 font-mono font-semibold">11.</span>
             <span>
               Download{' '}
               <a
@@ -231,7 +208,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">15.</span>
+            <span className="text-cyan-400 font-mono font-semibold">12.</span>
             <span>
               Download{' '}
               <a
@@ -247,7 +224,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-cyan-400 font-mono font-semibold">16.</span>
+            <span className="text-cyan-400 font-mono font-semibold">13.</span>
             <span>
               Download{' '}
               <a
@@ -433,35 +410,39 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
       <div className="bg-linear-to-br from-cyan-900/30 to-blue-900/30 border border-cyan-500/30 rounded-xl p-6 mb-8">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">🤖</span>
-          Step 3: Paste in Agent Mode - Watch It Build Everything
+          Step 3: Initialize Git Repository
         </h3>
         <p className="text-slate-300 mb-4">
-          Copy the prompt and paste into Agent Mode:
+          After the agent finishes building your application, initialize Git:
         </p>
         <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">1.</span>
-            <span>Copy the generated prompt</span>
+            <span>
+              Click <strong className="text-white">"Terminal"</strong> in the
+              top menu (if not already open)
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">2.</span>
             <span>
-              Make sure{' '}
-              <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
-                @workspace
-              </code>{' '}
-              is in the chat
+              Click <strong className="text-white">"New Terminal"</strong>
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">3.</span>
-            <span>Paste and send</span>
+            <span>
+              Enter{' '}
+              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                git init
+              </code>{' '}
+              in the terminal window
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-cyan-500">4.</span>
             <span>
-              Agent builds your ENTIRE application - structure, components,
-              data, everything!
+              Press <strong className="text-white">Enter</strong> to create the Git repository
             </span>
           </li>
         </ol>
@@ -469,10 +450,7 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
           <p className="text-sm text-green-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">🎉</span>
             <span>
-              <strong>One prompt. Complete app.</strong> Agent Mode creates
-              project files, installs packages, builds all components, sets up
-              data management, connects everything, and verifies it works. You
-              get a fully functional application!
+              <strong>Your app is now ready for version control!</strong> You can now commit your changes, push to GitHub, and track your development progress.
             </span>
           </p>
         </div>
