@@ -112,26 +112,6 @@ Build this as a complete retail application suitable for demonstrating a real Po
 
 Please ask me questions about what I need (features, data, colors/theme/style, etc), then create a complete prompt for Agent Mode.`
 
-  const finalPrompt = `@workspace Build a complete ${industry.sampleApp.name} application.
-
-What I need:
-- Track and manage: ${industry.sampleApp.entities.join(', ')}
-- List/table views with search and filtering
-- Forms to add and edit items
-- Detail pages for each item
-- Data management with mock data (localStorage)
-- Dark theme with blue/cyan accents, modern professional style
-
-Build the complete application including:
-- Project structure and configuration
-- All components (list, form, detail views)
-- TypeScript types for all data
-- Mock data service with CRUD operations
-- React hooks for data management
-- Connected and working UI
-
-Follow all technical standards in copilot-instructions.md.`
-
   return (
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
       <h2 className="text-3xl font-bold text-white mb-4">
