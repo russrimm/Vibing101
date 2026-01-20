@@ -170,22 +170,11 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       <span className="text-purple-400 font-semibold shrink-0">
                         4.
                       </span>
-                      <span>
-                        After installation, click{' '}
-                        <strong className="text-white">
-                          "Use AI Features"
-                        </strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
-                        5.
-                      </span>
                       <span>Close the walkthrough steps window</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        6.
+                        5.
                       </span>
                       <span>
                         In the GitHub Copilot chat, select the{' '}
@@ -198,7 +187,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        7.
+                        6.
                       </span>
                       <span>
                         Select{' '}
@@ -209,7 +198,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        8.
+                        7.
                       </span>
                       <span>
                         Select{' '}
@@ -218,7 +207,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        9.
+                        8.
                       </span>
                       <span>
                         Enter{' '}
@@ -228,7 +217,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        10.
+                        9.
                       </span>
                       <span>
                         Copy and paste the raw content from the link, select{' '}
@@ -249,11 +238,11 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                   </a>
                   <ol
                     className="space-y-2 text-sm text-slate-300 mt-4"
-                    start={11}
+                    start={10}
                   >
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        11.
+                        10.
                       </span>
                       <span>
                         Change the mode to{' '}
@@ -262,7 +251,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        12.
+                        11.
                       </span>
                       <span>
                         Click on the{' '}
@@ -272,7 +261,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        13.
+                        12.
                       </span>
                       <span>
                         Select{' '}
@@ -281,7 +270,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        11.
+                        13.
                       </span>
                       <span>
                         Click{' '}
@@ -294,7 +283,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        12.
+                        14.
                       </span>
                       <span>
                         Press{' '}
@@ -306,7 +295,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        13.
+                        15.
                       </span>
                       <span>
                         Type{' '}
@@ -318,7 +307,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        14.
+                        16.
                       </span>
                       <span>
                         Add{' '}
@@ -330,7 +319,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        15.
+                        17.
                       </span>
                       <span>
                         Go to{' '}
