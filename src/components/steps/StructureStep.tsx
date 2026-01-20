@@ -528,7 +528,7 @@ Build this as a complete retail application suitable for demonstrating a real Po
           onClick={onNext}
           className="px-6 py-3 bg-cyan-700 text-slate-50 font-black text-lg rounded-lg hover:bg-cyan-800 transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400"
         >
-          <span className="text-slate-50">Build Components →</span>
+          <span className="text-slate-50">Test & Deploy →</span>
         </button>
       </div>
     </div>
