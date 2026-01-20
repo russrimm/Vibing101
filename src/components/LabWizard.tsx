@@ -15,7 +15,6 @@ interface LabWizardProps {
 export type WizardStep =
   | 'setup'
   | 'structure'
-  | 'components'
   | 'testing'
   | 'completion'
 
@@ -29,11 +28,6 @@ const steps: { id: WizardStep; title: string; description: string }[] = [
     id: 'structure',
     title: 'Project Structure',
     description: 'Create complete app',
-  },
-  {
-    id: 'components',
-    title: 'Understanding Components',
-    description: 'Learn what was built',
   },
   { id: 'testing', title: 'Test & Deploy', description: 'Verify and deploy' },
   { id: 'completion', title: 'Complete!', description: 'Your app is ready' },
@@ -114,13 +108,6 @@ export default function LabWizard({ industry, onReset }: LabWizardProps) {
           )}
           {currentStep === 'structure' && (
             <StructureStep
-              industry={industry}
-              onNext={handleNext}
-              onPrevious={handlePrevious}
-            />
-          )}
-          {currentStep === 'components' && (
-            <ComponentsStep
               industry={industry}
               onNext={handleNext}
               onPrevious={handlePrevious}
