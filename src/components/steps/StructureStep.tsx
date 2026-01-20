@@ -406,56 +406,6 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
         </div>
       </div>
 
-      {/* Step 3: Agent Mode */}
-      <div className="bg-linear-to-br from-cyan-900/30 to-blue-900/30 border border-cyan-500/30 rounded-xl p-6 mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="text-2xl">🤖</span>
-          Step 3: Initialize Git Repository
-        </h3>
-        <p className="text-slate-300 mb-4">
-          After the agent finishes building your application, initialize Git:
-        </p>
-        <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-500">1.</span>
-            <span>
-              Click <strong className="text-white">"Terminal"</strong> in the
-              top menu (if not already open)
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-500">2.</span>
-            <span>
-              Click <strong className="text-white">"New Terminal"</strong>
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-500">3.</span>
-            <span>
-              Enter{' '}
-              <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
-                git init
-              </code>{' '}
-              in the terminal window
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-cyan-500">4.</span>
-            <span>
-              Press <strong className="text-white">Enter</strong> to create the Git repository
-            </span>
-          </li>
-        </ol>
-        <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-          <p className="text-sm text-green-300 flex items-start gap-2">
-            <span className="text-lg mt-0.5">🎉</span>
-            <span>
-              <strong>Your app is now ready for version control!</strong> You can now commit your changes, push to GitHub, and track your development progress.
-            </span>
-          </p>
-        </div>
-      </div>
-
       {/* Navigation */}
       <div className="flex justify-between items-center pt-6 border-t border-white/10">
         <button
