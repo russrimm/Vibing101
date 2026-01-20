@@ -530,9 +530,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
               >
                 power-apps-code-apps.instructions.md
               </a>
-              , click the{' '}
-              <strong className="text-white">"Download"</strong> button (top right),
-              then move the file into the{' '}
+              , click the <strong className="text-white">"Download"</strong>{' '}
+              button (top right), then move the file into the{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                 .github\instructions
               </code>{' '}
@@ -551,9 +550,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
               >
                 typescript-5-es2022.instructions.md
               </a>
-              , click the{' '}
-              <strong className="text-white">"Download"</strong> button,
-              then move the file into the{' '}
+              , click the <strong className="text-white">"Download"</strong>{' '}
+              button, then move the file into the{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                 .github\instructions
               </code>{' '}
@@ -572,9 +570,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
               >
                 4.1-Beast.agent.md
               </a>
-              , click the{' '}
-              <strong className="text-white">"Download"</strong> button,
-              rename it to{' '}
+              , click the <strong className="text-white">"Download"</strong>{' '}
+              button, rename it to{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                 copilot-instructions.md
               </code>
@@ -641,7 +638,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
               >
                 nodejs.org
               </a>{' '}
-              to check the latest <strong className="text-white">Node.js</strong> LTS version
+              to check the latest{' '}
+              <strong className="text-white">Node.js</strong> LTS version
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -656,7 +654,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
               >
                 vitejs.dev
               </a>{' '}
-              to check the latest <strong className="text-white">Vite</strong> version
+              to check the latest <strong className="text-white">Vite</strong>{' '}
+              version
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -671,7 +670,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
               >
                 react.dev
               </a>{' '}
-              to check the latest <strong className="text-white">React</strong> version
+              to check the latest <strong className="text-white">React</strong>{' '}
+              version
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -686,7 +686,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
               >
                 tailwindcss.com
               </a>{' '}
-              to check the latest <strong className="text-white">Tailwind CSS</strong> version
+              to check the latest{' '}
+              <strong className="text-white">Tailwind CSS</strong> version
             </span>
           </li>
         </ol>
@@ -694,7 +695,9 @@ Build this as a complete financial request portal suitable for demonstrating a r
           <p className="text-sm text-green-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              <strong>Why check versions?</strong> Specifying the latest versions in your prompt ensures Copilot uses the most current APIs, features, and best practices when building your application.
+              <strong>Why check versions?</strong> Specifying the latest
+              versions in your prompt ensures Copilot uses the most current
+              APIs, features, and best practices when building your application.
             </span>
           </p>
         </div>
@@ -713,10 +716,13 @@ Build this as a complete financial request portal suitable for demonstrating a r
         </p>
         <div className="bg-indigo-500/10 border border-indigo-500/30 rounded-lg p-4 mb-4">
           <p className="text-sm text-indigo-300">
-            <strong className="text-white">Add this to the beginning of your prompt:</strong>
+            <strong className="text-white">
+              Add this to the beginning of your prompt:
+            </strong>
             <br />
             <code className="text-cyan-400 text-xs">
-              Use Node.js [version], Vite [version], React [version], and Tailwind CSS [version].
+              Use Node.js [version], Vite [version], React [version], and
+              Tailwind CSS [version].
             </code>
           </p>
         </div>
@@ -829,7 +835,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
           <p className="text-sm text-orange-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">🔒</span>
             <span>
-              <strong>After the build completes:</strong> If you see a message like{' '}
+              <strong>After the build completes:</strong> If you see a message
+              like{' '}
               <code className="bg-slate-900 px-2 py-0.5 rounded text-yellow-400">
                 "9 vulnerabilities (1 low, 4 moderate, 3 high, 1 critical)"
               </code>
@@ -837,8 +844,9 @@ Build this as a complete financial request portal suitable for demonstrating a r
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                 npm audit fix --force
               </code>{' '}
-              in the terminal. This command automatically updates packages to secure versions 
-              and applies breaking changes if needed to fix security issues.
+              in the terminal. This command automatically updates packages to
+              secure versions and applies breaking changes if needed to fix
+              security issues.
             </span>
           </p>
         </div>
