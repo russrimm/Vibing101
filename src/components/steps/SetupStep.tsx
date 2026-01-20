@@ -126,7 +126,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 4. Setup GitHub Copilot & MCP Servers (Required)
               </h3>
               <p className="text-slate-300 mb-3">
-                Configure GitHub Copilot with Beast Mode custom agent and enable
+                Install GitHub Copilot extension, configure Beast Mode custom agent, and enable
                 MCP servers.
               </p>
               <div className="space-y-3">
@@ -137,7 +137,41 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         1.
                       </span>
                       <span>
-                        After launching VS Code, click{' '}
+                        In VS Code, click the{' '}
+                        <strong className="text-white">Extensions</strong>{' '}
+                        icon in the left sidebar (or press{' '}
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          Ctrl+Shift+X
+                        </code>
+                        )
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
+                        2.
+                      </span>
+                      <span>
+                        Search for{' '}
+                        <strong className="text-white">
+                          "GitHub Copilot"
+                        </strong>{' '}
+                        and click <strong className="text-white">Install</strong>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
+                        3.
+                      </span>
+                      <span>
+                        Sign in with your GitHub account when prompted
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
+                        4.
+                      </span>
+                      <span>
+                        After installation, click{' '}
                         <strong className="text-white">
                           "Use AI Features"
                         </strong>
@@ -145,13 +179,13 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        2.
+                        5.
                       </span>
                       <span>Close the walkthrough steps window</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        3.
+                        6.
                       </span>
                       <span>
                         In the GitHub Copilot chat, select the{' '}
@@ -164,7 +198,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        4.
+                        7.
                       </span>
                       <span>
                         Select{' '}
@@ -175,7 +209,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        5.
+                        8.
                       </span>
                       <span>
                         Select{' '}
@@ -184,7 +218,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        6.
+                        9.
                       </span>
                       <span>
                         Enter{' '}
@@ -194,7 +228,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        7.
+                        10.
                       </span>
                       <span>
                         Copy and paste the raw content from the link, select{' '}
@@ -215,11 +249,11 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                   </a>
                   <ol
                     className="space-y-2 text-sm text-slate-300 mt-4"
-                    start={8}
+                    start={11}
                   >
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        8.
+                        11.
                       </span>
                       <span>
                         Change the mode to{' '}
@@ -228,7 +262,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        9.
+                        12.
                       </span>
                       <span>
                         Click on the{' '}
@@ -238,7 +272,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        10.
+                        13.
                       </span>
                       <span>
                         Select{' '}
@@ -260,7 +294,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        12.
+                        14.
                       </span>
                       <span>
                         Go to{' '}
