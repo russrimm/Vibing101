@@ -3,7 +3,6 @@ import { Industry } from '../types/industry'
 import StepProgress from './StepProgress'
 import SetupStep from './steps/SetupStep'
 import StructureStep from './steps/StructureStep'
-import ComponentsStep from './steps/ComponentsStep'
 import TestingStep from './steps/TestingStep'
 import CompletionStep from './steps/CompletionStep'
 
