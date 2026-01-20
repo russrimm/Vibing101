@@ -134,9 +134,7 @@ export default function ComponentsStep({
           plain English. No technical knowledge needed:
         </p>
         <CodeBlock
-          code={`Create a ${industry.sampleApp.name.toLowerCase()} that displays and tracks ${industry.name.toLowerCase()} data. Users should be able to view items in a list, add new items, edit existing items, and see details for each item.
-
-Please ask me questions about what I need, then create a prompt for Agent Mode.`}
+          code={`Create a ${industry.sampleApp.name.toLowerCase()} that displays and tracks ${industry.name.toLowerCase()} data. Users should be able to view items in a list, add new items, edit existing items, and see details for each item.`}
           language="text"
         />
         <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">

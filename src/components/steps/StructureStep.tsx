@@ -64,9 +64,7 @@ Build this as a complete retail application suitable for demonstrating a real Po
   const initialPrompt =
     industry.id === 'retail'
       ? retailPrompt
-      : `Create a ${industry.sampleApp.name} application that tracks ${industry.name.toLowerCase()} data.
-
-Please ask me questions about what I need (features, data, colors/theme/style, etc), then create a complete prompt for Agent Mode.`
+      : `Create a ${industry.sampleApp.name} application that tracks ${industry.name.toLowerCase()} data.`
 
   return (
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
@@ -394,18 +392,6 @@ Please ask me questions about what I need (features, data, colors/theme/style, e
           </p>
         </div>
         <CodeBlock code={initialPrompt} language="text" />
-        <div className="mt-4 bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-          <p className="text-sm text-blue-300 flex items-start gap-2">
-            <span className="text-lg mt-0.5">💡</span>
-            <span>
-              <strong>Tip:</strong> If you prefer to start in Ask Mode, the
-              agent can ask you questions about features, data,
-              colors/theme/style, and other details before generating a
-              comprehensive prompt. This lab uses Beast Mode with a complete
-              prompt for faster results.
-            </span>
-          </p>
-        </div>
       </div>
 
       {/* Step 3: Agent Builds */}
