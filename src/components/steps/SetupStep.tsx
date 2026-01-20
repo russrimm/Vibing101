@@ -294,7 +294,43 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
+                        12.
+                      </span>
+                      <span>
+                        Press{' '}
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          Ctrl+Shift+P
+                        </code>{' '}
+                        to open the Command Palette
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
+                        13.
+                      </span>
+                      <span>
+                        Type{' '}
+                        <strong className="text-white">
+                          "Preferences: Open User Settings (JSON)"
+                        </strong>{' '}
+                        and select it
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
                         14.
+                      </span>
+                      <span>
+                        Add{' '}
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          "chat.agent.maxRequests": 200
+                        </code>{' '}
+                        to the settings file and save
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
+                        15.
                       </span>
                       <span>
                         Go to{' '}
