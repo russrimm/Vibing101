@@ -1,4 +1,4 @@
-# ViteBase
+# VibeCoding101
 
 A modern starter template for building React applications with Vite, TypeScript, and Tailwind CSS v4.
 
