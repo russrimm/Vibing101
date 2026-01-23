@@ -44,14 +44,17 @@ Follow these steps to get a local copy of this project:
    - Or use keyboard shortcut: `` Ctrl+` `` (backtick)
 
 5. Navigate to where you want to store the project:
+
    ```bash
    cd c:\repos
    ```
 
 6. Clone the repository:
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/Vibing101.git
    ```
+
    (Replace `YOUR-USERNAME` with your actual GitHub username)
 
 7. Navigate into the project folder:
