@@ -114,6 +114,7 @@ After installation, the MCP servers should start automatically. If they don't, o
 ❌ **If servers show as "Disconnected", restart them using MCP: Restart Servers**
 
 > **Pro Tip:** Check server status whenever you:
+>
 > - Open VS Code for a new session
 > - Notice Copilot isn't responding as expected
 > - Start working on the project after a break
@@ -170,6 +171,7 @@ Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough cod
 3. Select **Beast Mode** from the dropdown
 
 4. Enter your build prompt, for example:
+
    ```
    Create a new contact form component with validation
    ```
@@ -182,6 +184,7 @@ Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough cod
    - Detailed explanations
 
 > **Pro Tip:** Use Beast Mode when you need:
+>
 > - Complete feature implementations
 > - Complex problem solving
 > - Production-ready code with all best practices
