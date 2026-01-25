@@ -13,13 +13,13 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
       <div className="absolute top-2 right-2">
         <button
           onClick={handleCopy}
-          className="px-3 py-1 text-xs bg-gray-700 hover:bg-gray-600 text-white rounded transition-colors"
+          className="px-4 py-2 text-sm bg-cyan-700! hover:bg-cyan-800! text-white! font-black rounded-lg transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400!"
           title="Copy to clipboard"
         >
-          Copy
+          <span className="text-white!">Copy</span>
         </button>
       </div>
-      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+      <pre className="bg-slate-900! text-slate-300! p-4 rounded-lg overflow-x-auto border border-white/10">
         <code className={`language-${language}`}>{code}</code>
       </pre>
     </div>
