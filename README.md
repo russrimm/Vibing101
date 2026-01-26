@@ -28,7 +28,7 @@ Follow these steps to get a local copy of this project:
 
 #### 1. Fork the Repository on GitHub
 
-1. Navigate to the repository on GitHub: `https://github.com/[original-repo-url]`
+1. Navigate to the repository on GitHub: `git clone https://github.com/russrimm/Vibing101.git`
 2. Click the **Fork** button in the top-right corner of the page
 3. GitHub will create a copy of the repository in your account
 
@@ -84,13 +84,14 @@ This project uses Model Context Protocol (MCP) servers to enhance GitHub Copilot
 
 #### 1. Install MCP Servers
 
-In the VS Code terminal, run:
+1. Navigate to the MCP marketplace: [https://github.com/mcp](https://github.com/mcp)
 
-```bash
-npx -y @modelcontextprotocol/create-server install
-```
+2. Click the **Install** button for these recommended servers:
+   - **Context7** - For up-to-date library documentation
+   - **Microsoft Learn** - For official Microsoft/Azure documentation
+   - Any other MCP servers that interest you
 
-Follow the prompts to install recommended MCP servers for this project.
+3. Follow the installation prompts in VS Code
 
 #### 2. Start MCP Servers
 
