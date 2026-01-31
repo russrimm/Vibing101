@@ -71,7 +71,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 className="inline-block px-6 py-3 bg-green-700 text-slate-50 font-black text-lg rounded-lg hover:bg-green-800 transition-colors shadow-xl shadow-green-500/50 border-2 border-green-400"
               >
                 <span className="text-slate-50">
-                  Download Node.js (Windows Installer) →
+                  Download Node.js →
                 </span>
               </a>
               <div className="mt-4">
