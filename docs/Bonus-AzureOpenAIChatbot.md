@@ -67,11 +67,11 @@ Before starting this lab:
 
 ### Available Models (as of 2026)
 
-| Model              | Best For                                                    | Context Window |
-| ------------------ | ----------------------------------------------------------- | -------------- |
-| **Claude Sonnet**  | Balanced performance, fast responses, excellent for chat    | 200K tokens    |
-| **Claude Opus**    | Most capable, complex reasoning, best quality responses     | 200K tokens    |
-| **Claude Haiku**   | Ultra-fast, lightweight tasks, simple queries               | 200K tokens    |
+| Model             | Best For                                                 | Context Window |
+| ----------------- | -------------------------------------------------------- | -------------- |
+| **Claude Sonnet** | Balanced performance, fast responses, excellent for chat | 200K tokens    |
+| **Claude Opus**   | Most capable, complex reasoning, best quality responses  | 200K tokens    |
+| **Claude Haiku**  | Ultra-fast, lightweight tasks, simple queries            | 200K tokens    |
 
 **Recommendation for this lab:** Use **Claude Sonnet** for the best balance of speed and capability. Upgrade to **Claude Opus** if you need the highest quality responses for complex tasks.
 
