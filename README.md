@@ -137,17 +137,7 @@ This project uses Model Context Protocol (MCP) servers to enhance GitHub Copilot
 
 3. Follow the installation prompts in VS Code
 
-#### 2. Start MCP Servers
-
-After installation, the MCP servers should start automatically. If they don't, or if you need to restart them:
-
-1. Open the **Command Palette** in VS Code:
-   - Windows/Linux: `Ctrl+Shift+P`
-   - Mac: `Cmd+Shift+P`
-
-2. Type and select: **MCP: Restart Servers**
-
-#### 3. Verify MCP Servers Are Running
+#### 2. Verify MCP Servers Are Running
 
 **Important:** Always verify your MCP servers are running before starting development.
 
@@ -155,8 +145,8 @@ After installation, the MCP servers should start automatically. If they don't, o
 2. Type and select: **MCP: List Servers**
 3. You should see a list of active MCP servers with their status
 
-✅ **Running servers will show as "Connected"**  
-❌ **If servers show as "Disconnected", restart them using MCP: Restart Servers**
+✅ **Running servers will show as "Running"**  
+❌ **If servers show as "Disconnected", restart them using MCP: List Servers, select the MCP, and select *Start Server***
 
 > **Pro Tip:** Check server status whenever you:
 >
@@ -172,7 +162,7 @@ Start the development server:
 npm run dev
 ```
 
-The app will open at `http://localhost:3000`
+Open a browser and navigate to `http://localhost:3000`
 
 ### Using Beast Mode for Development
 
@@ -200,17 +190,6 @@ Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough cod
 
 ```markdown
 You are an expert developer. Provide thorough, production-ready solutions with detailed explanations. Always consider edge cases, error handling, accessibility, and best practices. Be comprehensive and leave no stone unturned.
-
-⚠️ IMPORTANT: Before starting any work, ALWAYS verify and confirm that the project uses the latest LTS versions of all packages:
-
-- Vite (latest stable)
-- React (latest stable)
-- Tailwind CSS (latest v4.x)
-- TypeScript (latest stable)
-- All other dependencies
-
-Check package.json and update any outdated packages. Never use old or deprecated versions.
-```
 
 8. Save the custom agent
 
@@ -256,14 +235,6 @@ Preview production build:
 
 ```bash
 npm run preview
-```
-
-### Lint
-
-Run ESLint:
-
-```bash
-npm run lint
 ```
 
 ## Project Structure
