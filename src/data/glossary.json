@@ -1,0 +1,233 @@
+{
+  "vibeCoding": {
+    "term": "Vibe Coding",
+    "emoji": "🎵",
+    "definition": "A development approach where AI agents handle most coding tasks while you provide guidance, make decisions, and verify the results. Think of it as pair programming with AI!",
+    "example": "Instead of memorizing syntax, you describe what you want and AI writes the code for you.",
+    "learnMore": "https://github.com/features/copilot"
+  },
+  "react": {
+    "term": "React",
+    "emoji": "⚛️",
+    "definition": "A JavaScript library for building user interfaces. It lets you create reusable components that update efficiently when your data changes.",
+    "example": "React powers apps like Facebook, Instagram, and Netflix.",
+    "learnMore": "https://react.dev"
+  },
+  "vite": {
+    "term": "Vite",
+    "emoji": "⚡",
+    "definition": "A lightning-fast build tool that starts your development server instantly and updates your changes in milliseconds. Much faster than older tools!",
+    "example": "When you save a file, Vite shows your changes almost immediately.",
+    "learnMore": "https://vitejs.dev"
+  },
+  "typescript": {
+    "term": "TypeScript",
+    "emoji": "📘",
+    "definition": "JavaScript with type safety. It catches errors before you even run your code, making development faster and less buggy.",
+    "example": "TypeScript knows if you're trying to use a number as text and warns you.",
+    "learnMore": "https://www.typescriptlang.org"
+  },
+  "api": {
+    "term": "API",
+    "emoji": "🔌",
+    "definition": "Application Programming Interface - a way for different software programs to talk to each other. Like a menu at a restaurant: you order from the menu, and the kitchen makes it.",
+    "example": "When you check weather on your phone, it uses an API to get data from a weather service.",
+    "learnMore": "https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces"
+  },
+  "restApi": {
+    "term": "REST API",
+    "emoji": "🌐",
+    "definition": "A common style of API that uses HTTP requests (like your web browser uses) to get, create, update, or delete data.",
+    "example": "GET /products fetches product data, POST /orders creates a new order.",
+    "learnMore": "https://restfulapi.net"
+  },
+  "microsoftGraph": {
+    "term": "Microsoft Graph",
+    "emoji": "📊",
+    "definition": "Microsoft's API that lets you access data from Microsoft 365 services like Teams, Outlook, OneDrive, and Azure Active Directory.",
+    "example": "Use Graph API to show a user's calendar or recent emails in your app.",
+    "learnMore": "https://learn.microsoft.com/graph"
+  },
+  "azure": {
+    "term": "Azure",
+    "emoji": "☁️",
+    "definition": "Microsoft's cloud computing platform. Think of it as renting powerful computers and services from Microsoft instead of buying and maintaining your own.",
+    "example": "Deploy your web app to Azure so anyone can access it on the internet.",
+    "learnMore": "https://azure.microsoft.com"
+  },
+  "tenant": {
+    "term": "Tenant",
+    "emoji": "🏢",
+    "definition": "In Microsoft 365/Azure, a tenant is your organization's instance. It's like your company's private section of Microsoft's cloud.",
+    "example": "When you sign in with your work email, you're accessing your company's tenant.",
+    "learnMore": "https://learn.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant"
+  },
+  "msal": {
+    "term": "MSAL",
+    "emoji": "🔐",
+    "definition": "Microsoft Authentication Library - code that handles signing users in with their Microsoft accounts and getting permission to access their data.",
+    "example": "MSAL shows the 'Sign in with Microsoft' button and handles the login process.",
+    "learnMore": "https://learn.microsoft.com/azure/active-directory/develop/msal-overview"
+  },
+  "environmentVariables": {
+    "term": "Environment Variables",
+    "emoji": "🔧",
+    "definition": "Secret configuration values that change based on where your code runs (development vs production). Never put passwords directly in code!",
+    "example": "VITE_API_KEY stores your API key separately from your code.",
+    "learnMore": "https://vitejs.dev/guide/env-and-mode.html"
+  },
+  "npm": {
+    "term": "npm",
+    "emoji": "📦",
+    "definition": "Node Package Manager - a huge library of free code packages that you can use in your projects. Why reinvent the wheel?",
+    "example": "'npm install react' downloads React so you can use it in your project.",
+    "learnMore": "https://www.npmjs.com"
+  },
+  "git": {
+    "term": "Git",
+    "emoji": "🔀",
+    "definition": "Version control system that tracks every change to your code. Like 'Track Changes' in Word, but way more powerful.",
+    "example": "If you break something, Git lets you go back to a working version.",
+    "learnMore": "https://git-scm.com"
+  },
+  "vscode": {
+    "term": "VS Code",
+    "emoji": "💻",
+    "definition": "Visual Studio Code - a free, powerful code editor from Microsoft. It's where you'll write, edit, and run your code.",
+    "example": "VS Code has autocomplete, debugging, and thousands of extensions.",
+    "learnMore": "https://code.visualstudio.com"
+  },
+  "mcpServers": {
+    "term": "MCP Servers",
+    "emoji": "🚀",
+    "definition": "Model Context Protocol servers that give GitHub Copilot access to specialized knowledge and up-to-date documentation.",
+    "example": "Context7 server provides Copilot with current library docs, so it suggests modern patterns.",
+    "learnMore": "https://github.com/mcp"
+  },
+  "beastMode": {
+    "term": "Beast Mode",
+    "emoji": "🦁",
+    "definition": "GitHub Copilot's power mode for complex tasks. It provides thorough, production-ready solutions with detailed explanations.",
+    "example": "Use Beast Mode when building complete features or solving complex problems.",
+    "learnMore": ""
+  },
+  "planMode": {
+    "term": "Plan Mode",
+    "emoji": "📋",
+    "definition": "A strategic approach to prompting where you describe the entire architecture before building. Gets AI thinking about the big picture.",
+    "example": "Describe your whole app structure, then let AI generate each piece.",
+    "learnMore": ""
+  },
+  "component": {
+    "term": "Component",
+    "emoji": "🧩",
+    "definition": "A reusable piece of UI in React. Like LEGO blocks - you build your app by combining components.",
+    "example": "A Button component can be reused throughout your app with different labels and colors.",
+    "learnMore": "https://react.dev/learn/your-first-component"
+  },
+  "props": {
+    "term": "Props",
+    "emoji": "📥",
+    "definition": "Short for 'properties' - data you pass into a React component. Like function parameters, but for UI.",
+    "example": "<Button color='blue' label='Click me' /> passes color and label as props.",
+    "learnMore": "https://react.dev/learn/passing-props-to-a-component"
+  },
+  "state": {
+    "term": "State",
+    "emoji": "🎭",
+    "definition": "Data that can change over time in your React component. When state changes, React re-renders the UI automatically.",
+    "example": "A counter's current value is state - click a button, state updates, UI updates.",
+    "learnMore": "https://react.dev/learn/state-a-components-memory"
+  },
+  "hook": {
+    "term": "Hook",
+    "emoji": "🪝",
+    "definition": "Special React functions that let you use features like state and lifecycle methods. They start with 'use'.",
+    "example": "useState, useEffect, useContext are all hooks.",
+    "learnMore": "https://react.dev/reference/react"
+  },
+  "tailwind": {
+    "term": "Tailwind CSS",
+    "emoji": "🎨",
+    "definition": "A utility-first CSS framework. Instead of writing CSS files, you apply style classes directly to HTML elements.",
+    "example": "<div className='bg-blue-500 text-white p-4 rounded'> styles a blue box.",
+    "learnMore": "https://tailwindcss.com"
+  },
+  "jsx": {
+    "term": "JSX",
+    "emoji": "⚡",
+    "definition": "JavaScript XML - a syntax that lets you write HTML-like code in JavaScript. React's secret sauce!",
+    "example": "const button = <button>Click me</button> looks like HTML but it's JavaScript.",
+    "learnMore": "https://react.dev/learn/writing-markup-with-jsx"
+  },
+  "deployment": {
+    "term": "Deployment",
+    "emoji": "🚀",
+    "definition": "The process of putting your app on the internet so others can use it. Like publishing a book, but for software.",
+    "example": "Deploy to Azure Static Web Apps to get a public URL for your app.",
+    "learnMore": "https://learn.microsoft.com/azure/static-web-apps"
+  },
+  "cicd": {
+    "term": "CI/CD",
+    "emoji": "🔄",
+    "definition": "Continuous Integration / Continuous Deployment - automatically testing and deploying your code when you make changes.",
+    "example": "Push code to GitHub, tests run automatically, if they pass, deploy to production.",
+    "learnMore": "https://github.com/features/actions"
+  },
+  "dataverse": {
+    "term": "Dataverse",
+    "emoji": "🗄️",
+    "definition": "Microsoft's cloud database designed for Power Platform apps. Stores your business data with built-in security and relationships.",
+    "example": "Store customer records, orders, and products in Dataverse tables.",
+    "learnMore": "https://learn.microsoft.com/power-apps/maker/data-platform"
+  },
+  "pcf": {
+    "term": "PCF",
+    "emoji": "🔌",
+    "definition": "PowerApps Component Framework - lets you create custom controls for Power Apps using React, Angular, or vanilla JavaScript.",
+    "example": "Build a fancy chart component in React and use it in your Power App.",
+    "learnMore": "https://learn.microsoft.com/power-apps/developer/component-framework/overview"
+  },
+  "powerApps": {
+    "term": "Power Apps",
+    "emoji": "⚡",
+    "definition": "Microsoft's low-code/no-code platform for building business apps. Now you can add custom code components too!",
+    "example": "Build an expense approval app without traditional coding (or enhance it with code components).",
+    "learnMore": "https://powerapps.microsoft.com"
+  },
+  "modelDrivenApp": {
+    "term": "Model-Driven App",
+    "emoji": "📊",
+    "definition": "A type of Power App that automatically generates UI based on your data model. Great for complex business apps.",
+    "example": "Define customer and order tables, Power Apps creates forms and views automatically.",
+    "learnMore": "https://learn.microsoft.com/power-apps/maker/model-driven-apps"
+  },
+  "canvasApp": {
+    "term": "Canvas App",
+    "emoji": "🎨",
+    "definition": "A type of Power App where you design the UI pixel-by-pixel. Maximum flexibility and creativity.",
+    "example": "Drag and drop buttons, forms, and galleries to design your app's exact look.",
+    "learnMore": "https://learn.microsoft.com/power-apps/maker/canvas-apps"
+  },
+  "solution": {
+    "term": "Solution",
+    "emoji": "📦",
+    "definition": "In Power Platform, a container for all your components (apps, tables, flows) that you can move between environments.",
+    "example": "Build in dev environment, export solution, import to production.",
+    "learnMore": "https://learn.microsoft.com/power-platform/alm/solution-concepts-alm"
+  },
+  "customPage": {
+    "term": "Custom Page",
+    "emoji": "📄",
+    "definition": "A full-screen page in model-driven apps where you can use React and custom code. Perfect for embedding Code Components!",
+    "example": "Add a custom dashboard page with interactive charts to your model-driven app.",
+    "learnMore": "https://learn.microsoft.com/power-apps/maker/model-driven-apps/model-app-page-overview"
+  },
+  "pacCli": {
+    "term": "PAC CLI",
+    "emoji": "🛠️",
+    "definition": "Power Platform CLI - command-line tools for developing, testing, and deploying Power Platform components.",
+    "example": "pac pcf init creates a new Code Component project.",
+    "learnMore": "https://learn.microsoft.com/power-platform/developer/cli/introduction"
+  }
+}

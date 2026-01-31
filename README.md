@@ -21,6 +21,14 @@ Before you begin, make sure you have these tools installed:
 2. **Node.js** (LTS version recommended) - Download from [https://nodejs.org/](https://nodejs.org/)
 3. **Git** - Download from [https://git-scm.com/](https://git-scm.com/)
 4. **GitHub Account** - Sign up at [https://github.com/](https://github.com/)
+5. **GitHub Copilot CLI** - Install using winget:
+   ```bash
+   winget install GitHub.Copilot.CLI
+   ```
+   After installation, authenticate with:
+   ```bash
+   gh auth login
+   ```
 
 ### Fork and Clone the Repository
 
@@ -136,30 +144,37 @@ Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough cod
 
 #### Step 1: Add Beast Mode as a Chat Mode
 
-1. Open **Settings** in VS Code:
-   - Windows/Linux: `Ctrl+,`
-   - Mac: `Cmd+,`
+1. Open **GitHub Copilot Chat** in VS Code:
+   - Windows/Linux: `Ctrl+Shift+I`
+   - Mac: `Cmd+Shift+I`
 
-2. Search for: `github.copilot.chat.customModes`
+2. Click the **Agent/Ask mode button** at the top of the chat panel
 
-3. Click **Edit in settings.json**
+3. Select **Configure Custom Agents**
 
-4. Add the Beast Mode configuration to the `github.copilot.chat.customModes` array:
+4. Click **Create new custom agent**
 
-```json
-{
-  "github.copilot.chat.customModes": [
-    {
-      "id": "beast",
-      "name": "Beast Mode",
-      "description": "Deep analysis and comprehensive code generation",
-      "instructions": "You are an expert developer. Provide thorough, production-ready solutions with detailed explanations. Always consider edge cases, error handling, accessibility, and best practices. Be comprehensive and leave no stone unturned.\n\n⚠️ IMPORTANT: Before starting any work, ALWAYS verify and confirm that the project uses the latest LTS versions of all packages:\n- Vite (latest stable)\n- React (latest stable)\n- Tailwind CSS (latest v4.x)\n- TypeScript (latest stable)\n- All other dependencies\n\nCheck package.json and update any outdated packages. Never use old or deprecated versions."
-    }
-  ]
-}
+5. Select **User Data**
+
+6. Enter **Beast Mode** as the agent name
+
+7. Paste the following Beast Mode instructions into the window:
+
+```markdown
+You are an expert developer. Provide thorough, production-ready solutions with detailed explanations. Always consider edge cases, error handling, accessibility, and best practices. Be comprehensive and leave no stone unturned.
+
+⚠️ IMPORTANT: Before starting any work, ALWAYS verify and confirm that the project uses the latest LTS versions of all packages:
+
+- Vite (latest stable)
+- React (latest stable)
+- Tailwind CSS (latest v4.x)
+- TypeScript (latest stable)
+- All other dependencies
+
+Check package.json and update any outdated packages. Never use old or deprecated versions.
 ```
 
-5. Save the settings file
+8. Save the custom agent
 
 #### Step 2: Enter the Build Prompt in Beast Mode
 
