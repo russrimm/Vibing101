@@ -6,6 +6,8 @@
 
 ### Prerequisites
 
+**New to coding?** Check out the [Glossary](GLOSSARY.md) for definitions of all technical terms used in this guide.
+
 Before you begin, make sure you have these tools installed:
 
 1. **Visual Studio Code** - Download from [https://code.visualstudio.com/](https://code.visualstudio.com/)
@@ -30,10 +32,10 @@ Before you begin, make sure you have these tools installed:
 
    After installation, restart your computer. WSL will automatically install Ubuntu by default.
 
-   **Use WSL in VS Code:**
-   - Open VS Code
-   - Install the "WSL" extension (search for `ms-vscode-remote.remote-wsl`)
-   - Click the green button in the bottom-left corner of VS Code
+   **Install the VS Code WSL Extension:**
+
+   - [Install WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+   - Click the button in the very bottom-left corner of VS Code
    - Select "Connect to WSL"
    - Your terminal will now run in Linux mode
 
@@ -62,7 +64,25 @@ Before you begin, make sure you have these tools installed:
       cd github-copilot-agent-mode-starter-kit
       code .
       ```
-   5. Follow the README instructions in that repository to configure custom agents
+   5. **Enable instruction files in VS Code:**
+      - Open VS Code Settings (Ctrl+, or Cmd+,)
+      - Search for: `github.copilot.chat.codeGeneration.useInstructionFiles`
+      - Check the box to enable it
+      - Also enable: `github.copilot.chat.agent.thinkingTool`
+   
+   6. **Copy configuration files to your workspace:**
+      - The starter kit includes `.vscode/settings.json` with optimized Copilot settings
+      - Copy `.vscode/mcp.json` if you want pre-configured MCP server examples
+      - The `.github/instructions/` folder contains instruction files that will automatically guide Copilot
+      - The `.github/prompts/` folder contains useful prompts like `/create-plan`, `/create-tasks`, `/create-readme`
+   
+   7. **Start using custom prompts:**
+      - In Copilot Chat, type `/` to see available prompts
+      - Try `/create-plan` to generate a project plan
+      - Try `/create-tasks` to convert plans into actionable tasks
+      - Try `/create-readme` to generate documentation
+
+   > **What you get:** Pre-configured prompts, instruction files that teach Copilot your standards, templates for planning/tasks, and MCP server configurations. The Memory Bank system enables sophisticated workflows with different complexity levels!
 
    This will give you pre-configured AI agents like "Beast Mode" for thorough development, "Plan Mode" for architecture, and more!
 
@@ -250,23 +270,6 @@ src/
 ├── main.tsx            # Application entry point
 └── index.css           # Global styles with Tailwind imports
 ```
-
-## Tailwind CSS v4
-
-This template uses Tailwind CSS v4 with the latest features:
-
-- Uses `@import "tailwindcss";` directive
-- PostCSS plugin: `@tailwindcss/postcss`
-- Updated gradient syntax: `bg-linear-to-r` instead of `bg-gradient-to-r`
-
-## Technologies
-
-- **React** - UI library
-- **Vite** - Build tool and dev server
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS v4** - Utility-first CSS
-- **ESLint** - Linting utility
-- **Prettier** - Code formatter
 
 ## License
 
