@@ -18,12 +18,6 @@ Before you begin, make sure you have these tools installed:
    winget install GitHub.Copilot.CLI
    ```
 
-   After installation, authenticate with:
-
-   ```bash
-   gh auth login
-   ```
-
 6. **Windows Subsystem for Linux (WSL)** - For Windows users:
 
    **What is WSL?** WSL lets you run a Linux environment directly on Windows without a virtual machine. This gives you access to powerful Linux tools and makes development easier.
