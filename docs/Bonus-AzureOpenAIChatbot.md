@@ -1,11 +1,11 @@
-# 🤖 Bonus Lab: AI Chat Assistant with Azure OpenAI
+# 🤖 Bonus Lab: AI Chat Assistant with Azure AI Foundry
 
 > **Difficulty:** Intermediate | **Duration:** 60-90 minutes | **Optional Module**
 
 ## 📚 What You'll Learn
 
-- Set up Azure OpenAI on Azure AI Foundry
-- Deploy GPT-4 or GPT-3.5-turbo models
+- Set up Azure AI Foundry
+- Deploy Claude Sonnet or Claude Opus models
 - Build an interactive chat interface
 - Implement streaming responses for real-time feel
 - Add conversation memory and context
@@ -51,13 +51,13 @@ Before starting this lab:
 
 **Azure AI Foundry** is Microsoft's unified platform for building, deploying, and managing AI applications. It brings together:
 
-- **Azure OpenAI Service** - GPT-4, GPT-3.5-turbo, DALL-E, and more
-- **Model Catalog** - Hundreds of pre-trained models
+- **Model Catalog** - Access to hundreds of AI models including Claude, GPT, Llama, and more
+- **Azure AI Services** - Enterprise-grade AI capabilities
 - **Prompt Flow** - Visual prompt engineering
 - **AI Studio** - Web-based development environment
 - **Content Safety** - Built-in moderation and filtering
 
-**Why use Foundry vs OpenAI directly?**
+**Why use Azure AI Foundry?**
 
 - ✅ Enterprise-grade security and compliance
 - ✅ Data stays in your Azure region (GDPR, privacy)
@@ -67,17 +67,17 @@ Before starting this lab:
 
 ### Available Models (as of 2026)
 
-| Model           | Best For                                         | Speed  |
-| --------------- | ------------------------------------------------ | ------ |
-| **GPT-4 Turbo** | Complex reasoning, code generation               | Medium |
-| **GPT-4o**      | Multi-modal (text + images), latest capabilities | Fast   |
-| **GPT-4**       | Best quality, creative tasks                     | Slower |
+| Model              | Best For                                                    | Context Window |
+| ------------------ | ----------------------------------------------------------- | -------------- |
+| **Claude Sonnet**  | Balanced performance, fast responses, excellent for chat    | 200K tokens    |
+| **Claude Opus**    | Most capable, complex reasoning, best quality responses     | 200K tokens    |
+| **Claude Haiku**   | Ultra-fast, lightweight tasks, simple queries               | 200K tokens    |
 
-**Recommendation for this lab:** Use **GPT-4 Turbo** or **GPT-4o** for the best experience with the latest capabilities.
+**Recommendation for this lab:** Use **Claude Sonnet** for the best balance of speed and capability. Upgrade to **Claude Opus** if you need the highest quality responses for complex tasks.
 
 ---
 
-## 🚀 Step 1: Create Azure OpenAI Resource
+## 🚀 Step 1: Create Azure AI Foundry Resource
 
 ### Option A: Using Azure Portal (Beginner-Friendly)
 
@@ -87,7 +87,7 @@ Before starting this lab:
 
 2. **Create Resource:**
    - Click **"+ Create a resource"**
-   - Search for **"Azure OpenAI"**
+   - Search for **"Azure AI Foundry"** or **"Azure AI Studio"**
    - Click **"Create"**
 
 3. **Configure Resource:**
@@ -95,8 +95,8 @@ Before starting this lab:
    ```
    Subscription: [Your subscription]
    Resource Group: [Create new: "vibing101-rg"]
-   Region: East US (or nearest with OpenAI availability)
-   Name: vibing101-openai
+   Region: East US (or nearest region)
+   Name: vibing101-ai
    Pricing Tier: Standard S0
    ```
 
@@ -156,7 +156,7 @@ az cognitiveservices account keys list \
 3. **Configure Deployment:**
 
    ```
-   Select a model: gpt-35-turbo (or gpt-4 if available)
+   Select a model: Claude Sonnet (or Claude Opus if available)
    Deployment name: vibing101-chat
    Model version: [Latest - auto-update recommended]
    Deployment type: Standard
@@ -466,7 +466,8 @@ Create src/hooks/useChatHistory.ts with:
 
 4. Calculate context window size:
    - Sum token count (rough estimate: ~4 chars = 1 token)
-   - Warn if approaching model limit (8K for GPT-3.5, 128K for GPT-4)
+   - Claude models support 200K token context window
+   - Warn if approaching limit for better UX
 
 5. Export hook with TypeScript types
 
@@ -907,10 +908,9 @@ await openAIService.sendStreamingMessage(messages, (chunk) => {
 **Solution:**
 
 1. Set up budget alerts (Step 15)
-2. Use GPT-3.5-turbo instead of GPT-4
-3. Reduce maxTokens in responses
-4. Implement caching for common questions
-5. Add authentication to prevent abuse
+2. Reduce maxTokens in responses
+3. Implement caching for common questions
+4. Add authentication to prevent abuse
 
 ---
 

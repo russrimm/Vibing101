@@ -1,15 +1,6 @@
 # VibeCoding101
 
-A modern starter template for building React applications with Vite, TypeScript, and Tailwind CSS v4.
-
-## Features
-
-- ⚡️ **Vite** - Lightning-fast build tool
-- ⚛️ **React 18** - Modern React with hooks
-- 🎨 **Tailwind CSS v4** - Utility-first CSS framework with latest version
-- 📘 **TypeScript** - Type safety and better developer experience
-- 🔍 **ESLint + Prettier** - Code quality and formatting
-- 🏗️ **Component Architecture** - Modular component structure with barrel exports
+**Welcome to the future of coding!** This is an interactive learning experience designed for non-professional coders who want to build real applications using AI-assisted development. No prior coding experience required—just bring your curiosity and let AI handle the heavy lifting. Learn "vibe coding" where you guide the AI to create modern, professional web applications without writing code from scratch.
 
 ## Getting Started
 
