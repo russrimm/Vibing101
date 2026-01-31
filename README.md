@@ -33,7 +33,6 @@ Before you begin, make sure you have these tools installed:
    After installation, restart your computer. WSL will automatically install Ubuntu by default.
 
    **Install the VS Code WSL Extension:**
-
    - [Install WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
    - Click the button in the very bottom-left corner of VS Code
    - Select "Connect to WSL"
@@ -69,13 +68,11 @@ Before you begin, make sure you have these tools installed:
       - Search for: `github.copilot.chat.codeGeneration.useInstructionFiles`
       - Check the box to enable it
       - Also enable: `github.copilot.chat.agent.thinkingTool`
-   
    6. **Copy configuration files to your workspace:**
       - The starter kit includes `.vscode/settings.json` with optimized Copilot settings
       - Copy `.vscode/mcp.json` if you want pre-configured MCP server examples
       - The `.github/instructions/` folder contains instruction files that will automatically guide Copilot
       - The `.github/prompts/` folder contains useful prompts like `/create-plan`, `/create-tasks`, `/create-readme`
-   
    7. **Start using custom prompts:**
       - In Copilot Chat, type `/` to see available prompts
       - Try `/create-plan` to generate a project plan
@@ -166,7 +163,7 @@ This project uses Model Context Protocol (MCP) servers to enhance GitHub Copilot
 3. You should see a list of active MCP servers with their status
 
 ✅ **Running servers will show as "Running"**  
-❌ **If servers show as "Disconnected", restart them using MCP: List Servers, select the MCP, and select *Start Server***
+❌ **If servers show as "Disconnected", restart them using MCP: List Servers, select the MCP, and select _Start Server_**
 
 > **Pro Tip:** Check server status whenever you:
 >
@@ -224,17 +221,18 @@ You are an expert developer. Provide thorough, production-ready solutions with d
 3. Select **Beast Mode** from the dropdown
 
 4. Enter your build prompt, for example:
+```
 
-   ```
-   Create a new contact form component with validation
-   ```
+Create a new contact form component with validation
+
+````
 
 5. Beast Mode will provide comprehensive solutions with:
-   - Complete, production-ready code
-   - Error handling and edge cases
-   - Accessibility considerations
-   - TypeScript type safety
-   - Detailed explanations
+- Complete, production-ready code
+- Error handling and edge cases
+- Accessibility considerations
+- TypeScript type safety
+- Detailed explanations
 
 > **Pro Tip:** Use Beast Mode when you need:
 >
@@ -249,7 +247,7 @@ Build for production:
 
 ```bash
 npm run build
-```
+````
 
 Preview production build:
 
