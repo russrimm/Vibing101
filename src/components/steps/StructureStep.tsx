@@ -412,7 +412,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
           Prerequisites: Set Up Your Development Environment
         </h3>
         <p className="text-slate-300 mb-6">
-          Before building your {industry.sampleApp.name} app, complete these essential setup steps:
+          Before building your {industry.sampleApp.name} app, complete these
+          essential setup steps:
         </p>
 
         {/* Fork Vibing101 Repository */}
@@ -442,7 +443,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">b.</span>
               <span>
-                Click the <strong className="text-white">Fork</strong> button (top-right corner)
+                Click the <strong className="text-white">Fork</strong> button
+                (top-right corner)
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -474,7 +476,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
             2. Enable Instruction Files in VS Code
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
-            Instruction files guide GitHub Copilot with project-specific rules and best practices:
+            Instruction files guide GitHub Copilot with project-specific rules
+            and best practices:
           </p>
           <ol className="space-y-2 text-slate-300 text-sm ml-4">
             <li className="flex items-start gap-2">
@@ -482,21 +485,35 @@ Build this as a complete financial request portal suitable for demonstrating a r
               <span>
                 Open VS Code Settings:
                 <ul className="ml-4 mt-1 space-y-1 text-xs">
-                  <li>• Windows/Linux: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Ctrl+,</kbd></li>
-                  <li>• Mac: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Cmd+,</kbd></li>
+                  <li>
+                    • Windows/Linux:{' '}
+                    <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
+                      Ctrl+,
+                    </kbd>
+                  </li>
+                  <li>
+                    • Mac:{' '}
+                    <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
+                      Cmd+,
+                    </kbd>
+                  </li>
                 </ul>
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">b.</span>
               <span>
-                Search for: <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot.chat.custom.instructionFiles.enabled</code>
+                Search for:{' '}
+                <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
+                  copilot.chat.custom.instructionFiles.enabled
+                </code>
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">c.</span>
               <span>
-                Check the box to <strong className="text-white">enable</strong> instruction files
+                Check the box to <strong className="text-white">enable</strong>{' '}
+                instruction files
               </span>
             </li>
           </ol>
@@ -504,9 +521,13 @@ Build this as a complete financial request portal suitable for demonstrating a r
             <p className="text-xs text-blue-300 flex items-start gap-2">
               <span className="text-base mt-0.5">💡</span>
               <span>
-                <strong>What are instruction files?</strong> These are special markdown files (like{' '}
-                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">.github/copilot-instructions.md</code>) 
-                that tell GitHub Copilot about your project's coding standards, architecture patterns, and design system.
+                <strong>What are instruction files?</strong> These are special
+                markdown files (like{' '}
+                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
+                  .github/copilot-instructions.md
+                </code>
+                ) that tell GitHub Copilot about your project's coding
+                standards, architecture patterns, and design system.
               </span>
             </p>
           </div>
@@ -519,14 +540,16 @@ Build this as a complete financial request portal suitable for demonstrating a r
             3. Set Up Beast Mode (Custom Agent)
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
-            Beast Mode is a powerful custom agent that provides thorough, production-ready code generation:
+            Beast Mode is a powerful custom agent that provides thorough,
+            production-ready code generation:
           </p>
-          
+
           <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3 mb-3">
             <p className="text-xs text-amber-300 flex items-start gap-2">
               <span className="text-base mt-0.5">⚡</span>
               <span>
-                <strong>What is Beast Mode?</strong> A custom GitHub Copilot chat mode that enables more thorough code generation with:
+                <strong>What is Beast Mode?</strong> A custom GitHub Copilot
+                chat mode that enables more thorough code generation with:
               </span>
             </p>
             <ul className="ml-6 mt-2 space-y-1 text-xs text-amber-200">
@@ -538,34 +561,50 @@ Build this as a complete financial request portal suitable for demonstrating a r
             </ul>
           </div>
 
-          <p className="text-slate-300 mb-2 text-sm font-semibold">How to Add Beast Mode:</p>
+          <p className="text-slate-300 mb-2 text-sm font-semibold">
+            How to Add Beast Mode:
+          </p>
           <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">a.</span>
               <span>
                 Open GitHub Copilot Chat:
                 <ul className="ml-4 mt-1 space-y-1 text-xs">
-                  <li>• Windows/Linux: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Ctrl+Shift+I</kbd></li>
-                  <li>• Mac: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Cmd+Shift+I</kbd></li>
+                  <li>
+                    • Windows/Linux:{' '}
+                    <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
+                      Ctrl+Shift+I
+                    </kbd>
+                  </li>
+                  <li>
+                    • Mac:{' '}
+                    <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
+                      Cmd+Shift+I
+                    </kbd>
+                  </li>
                 </ul>
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">b.</span>
               <span>
-                Click the <strong className="text-white">Agent/Ask mode button</strong> at the top
+                Click the{' '}
+                <strong className="text-white">Agent/Ask mode button</strong> at
+                the top
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">c.</span>
               <span>
-                Select <strong className="text-white">Configure Custom Agents</strong>
+                Select{' '}
+                <strong className="text-white">Configure Custom Agents</strong>
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">d.</span>
               <span>
-                Click <strong className="text-white">Create new custom agent</strong>
+                Click{' '}
+                <strong className="text-white">Create new custom agent</strong>
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -577,7 +616,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">f.</span>
               <span>
-                Enter <strong className="text-white">Beast Mode</strong> as the agent name
+                Enter <strong className="text-white">Beast Mode</strong> as the
+                agent name
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -585,7 +625,7 @@ Build this as a complete financial request portal suitable for demonstrating a r
               <span>
                 Paste these Beast Mode instructions:
                 <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto text-xs">
-{`You are an expert developer. Provide thorough, production-ready solutions with detailed explanations. Always consider edge cases, error handling, accessibility, and best practices. Be comprehensive and leave no stone unturned.
+                  {`You are an expert developer. Provide thorough, production-ready solutions with detailed explanations. Always consider edge cases, error handling, accessibility, and best practices. Be comprehensive and leave no stone unturned.
 
 ⚠️ IMPORTANT: Before starting any work, ALWAYS verify and confirm that the project uses the latest LTS versions of all packages:
 
@@ -611,7 +651,8 @@ Check package.json and update any outdated packages. Never use old or deprecated
             <p className="text-xs text-purple-300 flex items-start gap-2">
               <span className="text-base mt-0.5">📖</span>
               <span>
-                <strong>Learn More:</strong> For detailed instructions on creating custom agents, see the{' '}
+                <strong>Learn More:</strong> For detailed instructions on
+                creating custom agents, see the{' '}
                 <a
                   href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents"
                   target="_blank"
@@ -619,7 +660,8 @@ Check package.json and update any outdated packages. Never use old or deprecated
                   className="text-cyan-400 hover:text-cyan-300 underline"
                 >
                   official GitHub documentation
-                </a>.
+                </a>
+                .
               </span>
             </p>
           </div>
@@ -629,7 +671,9 @@ Check package.json and update any outdated packages. Never use old or deprecated
           <p className="text-sm text-green-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">✅</span>
             <span>
-              <strong>You're ready!</strong> Once you've completed these prerequisites, you can proceed with building your {industry.sampleApp.name} application below.
+              <strong>You're ready!</strong> Once you've completed these
+              prerequisites, you can proceed with building your{' '}
+              {industry.sampleApp.name} application below.
             </span>
           </p>
         </div>
