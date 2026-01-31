@@ -405,6 +405,236 @@ Build this as a complete financial request portal suitable for demonstrating a r
         project structure. You just describe what you want in plain English!
       </p>
 
+      {/* Prerequisites Section */}
+      <div className="bg-gradient-to-br from-purple-900/40 to-blue-900/40 border-2 border-purple-500/40 rounded-xl p-6 mb-8">
+        <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <span className="text-3xl">🚀</span>
+          Prerequisites: Set Up Your Development Environment
+        </h3>
+        <p className="text-slate-300 mb-6">
+          Before building your {industry.sampleApp.name} app, complete these essential setup steps:
+        </p>
+
+        {/* Fork Vibing101 Repository */}
+        <div className="bg-slate-800/60 border border-cyan-500/30 rounded-lg p-5 mb-5">
+          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+            <span className="text-xl">🍴</span>
+            1. Fork the Vibing101 Repository
+          </h4>
+          <p className="text-slate-300 mb-3 text-sm">
+            Get your own copy of this learning platform to use as a reference:
+          </p>
+          <ol className="space-y-2 text-slate-300 text-sm ml-4">
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">a.</span>
+              <span>
+                Navigate to{' '}
+                <a
+                  href="https://github.com/russrimm/Vibing101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-cyan-300 underline"
+                >
+                  github.com/russrimm/Vibing101
+                </a>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">b.</span>
+              <span>
+                Click the <strong className="text-white">Fork</strong> button (top-right corner)
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">c.</span>
+              <span>GitHub will create a copy in your account</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">d.</span>
+              <span>
+                Clone your fork to your local machine:
+                <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
+                  cd c:\repos{'\n'}
+                  git clone https://github.com/YOUR-USERNAME/Vibing101.git{'\n'}
+                  cd Vibing101{'\n'}
+                  code .
+                </pre>
+                <span className="text-xs text-slate-400 mt-1 block">
+                  Replace YOUR-USERNAME with your GitHub username
+                </span>
+              </span>
+            </li>
+          </ol>
+        </div>
+
+        {/* Enable Instruction Files */}
+        <div className="bg-slate-800/60 border border-green-500/30 rounded-lg p-5 mb-5">
+          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+            <span className="text-xl">⚙️</span>
+            2. Enable Instruction Files in VS Code
+          </h4>
+          <p className="text-slate-300 mb-3 text-sm">
+            Instruction files guide GitHub Copilot with project-specific rules and best practices:
+          </p>
+          <ol className="space-y-2 text-slate-300 text-sm ml-4">
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">a.</span>
+              <span>
+                Open VS Code Settings:
+                <ul className="ml-4 mt-1 space-y-1 text-xs">
+                  <li>• Windows/Linux: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Ctrl+,</kbd></li>
+                  <li>• Mac: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Cmd+,</kbd></li>
+                </ul>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">b.</span>
+              <span>
+                Search for: <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">copilot.chat.custom.instructionFiles.enabled</code>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">c.</span>
+              <span>
+                Check the box to <strong className="text-white">enable</strong> instruction files
+              </span>
+            </li>
+          </ol>
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 mt-3">
+            <p className="text-xs text-blue-300 flex items-start gap-2">
+              <span className="text-base mt-0.5">💡</span>
+              <span>
+                <strong>What are instruction files?</strong> These are special markdown files (like{' '}
+                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">.github/copilot-instructions.md</code>) 
+                that tell GitHub Copilot about your project's coding standards, architecture patterns, and design system.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* Beast Mode Setup */}
+        <div className="bg-slate-800/60 border border-orange-500/30 rounded-lg p-5">
+          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+            <span className="text-xl">🔥</span>
+            3. Set Up Beast Mode (Custom Agent)
+          </h4>
+          <p className="text-slate-300 mb-3 text-sm">
+            Beast Mode is a powerful custom agent that provides thorough, production-ready code generation:
+          </p>
+          
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3 mb-3">
+            <p className="text-xs text-amber-300 flex items-start gap-2">
+              <span className="text-base mt-0.5">⚡</span>
+              <span>
+                <strong>What is Beast Mode?</strong> A custom GitHub Copilot chat mode that enables more thorough code generation with:
+              </span>
+            </p>
+            <ul className="ml-6 mt-2 space-y-1 text-xs text-amber-200">
+              <li>• Complete, production-ready solutions</li>
+              <li>• Comprehensive error handling and edge cases</li>
+              <li>• Accessibility (WCAG AA) compliance</li>
+              <li>• TypeScript type safety</li>
+              <li>• Automatic latest version verification</li>
+            </ul>
+          </div>
+
+          <p className="text-slate-300 mb-2 text-sm font-semibold">How to Add Beast Mode:</p>
+          <ol className="space-y-2 text-slate-300 text-sm ml-4 mb-4">
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">a.</span>
+              <span>
+                Open GitHub Copilot Chat:
+                <ul className="ml-4 mt-1 space-y-1 text-xs">
+                  <li>• Windows/Linux: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Ctrl+Shift+I</kbd></li>
+                  <li>• Mac: <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">Cmd+Shift+I</kbd></li>
+                </ul>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">b.</span>
+              <span>
+                Click the <strong className="text-white">Agent/Ask mode button</strong> at the top
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">c.</span>
+              <span>
+                Select <strong className="text-white">Configure Custom Agents</strong>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">d.</span>
+              <span>
+                Click <strong className="text-white">Create new custom agent</strong>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">e.</span>
+              <span>
+                Select <strong className="text-white">User Data</strong>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">f.</span>
+              <span>
+                Enter <strong className="text-white">Beast Mode</strong> as the agent name
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">g.</span>
+              <span>
+                Paste these Beast Mode instructions:
+                <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto text-xs">
+{`You are an expert developer. Provide thorough, production-ready solutions with detailed explanations. Always consider edge cases, error handling, accessibility, and best practices. Be comprehensive and leave no stone unturned.
+
+⚠️ IMPORTANT: Before starting any work, ALWAYS verify and confirm that the project uses the latest LTS versions of all packages:
+
+- Vite (latest stable)
+- React (latest stable)
+- Tailwind CSS (latest v4.x)
+- TypeScript (latest stable)
+- All other dependencies
+
+Check package.json and update any outdated packages. Never use old or deprecated versions.`}
+                </pre>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">h.</span>
+              <span>
+                Click <strong className="text-white">Save</strong>
+              </span>
+            </li>
+          </ol>
+
+          <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+            <p className="text-xs text-purple-300 flex items-start gap-2">
+              <span className="text-base mt-0.5">📖</span>
+              <span>
+                <strong>Learn More:</strong> For detailed instructions on creating custom agents, see the{' '}
+                <a
+                  href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-cyan-300 underline"
+                >
+                  official GitHub documentation
+                </a>.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mt-5">
+          <p className="text-sm text-green-300 flex items-start gap-2">
+            <span className="text-lg mt-0.5">✅</span>
+            <span>
+              <strong>You're ready!</strong> Once you've completed these prerequisites, you can proceed with building your {industry.sampleApp.name} application below.
+            </span>
+          </p>
+        </div>
+      </div>
+
       {/* Step 0: Set up project infrastructure */}
       <div className="bg-linear-to-br from-amber-900/30 to-orange-900/30 border border-amber-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
@@ -616,124 +846,25 @@ Build this as a complete financial request portal suitable for demonstrating a r
         </div>
       </div>
 
-      {/* Step 1: Check Latest Versions */}
-      <div className="bg-linear-to-br from-green-900/30 to-teal-900/30 border border-green-500/30 rounded-xl p-6 mb-6">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="text-2xl">🔍</span>
-          Step 1: Identify Latest Technology Versions
-        </h3>
-        <p className="text-slate-300 mb-4">
-          Before building, check the latest major versions of key technologies:
-        </p>
-        <ol className="space-y-3 text-slate-300 text-sm ml-4 mb-4">
-          <li className="flex items-start gap-2">
-            <span className="text-green-400 font-mono font-semibold">1.</span>
-            <span>
-              Visit{' '}
-              <a
-                href="https://nodejs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 underline"
-              >
-                nodejs.org
-              </a>{' '}
-              to check the latest{' '}
-              <strong className="text-white">Node.js</strong> LTS version
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-green-400 font-mono font-semibold">2.</span>
-            <span>
-              Visit{' '}
-              <a
-                href="https://vitejs.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 underline"
-              >
-                vitejs.dev
-              </a>{' '}
-              to check the latest <strong className="text-white">Vite</strong>{' '}
-              version
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-green-400 font-mono font-semibold">3.</span>
-            <span>
-              Visit{' '}
-              <a
-                href="https://react.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 underline"
-              >
-                react.dev
-              </a>{' '}
-              to check the latest <strong className="text-white">React</strong>{' '}
-              version
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-green-400 font-mono font-semibold">4.</span>
-            <span>
-              Visit{' '}
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 underline"
-              >
-                tailwindcss.com
-              </a>{' '}
-              to check the latest{' '}
-              <strong className="text-white">Tailwind CSS</strong> version
-            </span>
-          </li>
-        </ol>
-        <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-          <p className="text-sm text-green-300 flex items-start gap-2">
-            <span className="text-lg mt-0.5">💡</span>
-            <span>
-              <strong>Why check versions?</strong> Specifying the latest
-              versions in your prompt ensures Copilot uses the most current
-              APIs, features, and best practices when building your application.
-            </span>
-          </p>
-        </div>
-      </div>
-
-      {/* Step 2: Enter the Prompt */}
+      {/* Step 1: Enter the Prompt */}
       <div className="bg-linear-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">💬</span>
-          Step 2: Enter the Build Prompt in Beast Mode
+          Step 1: Enter the Build Prompt in Beast Mode
         </h3>
         <p className="text-slate-300 mb-4">
           Open GitHub Copilot Chat (Ctrl+Shift+I), make sure you're in{' '}
           <strong className="text-white">Beast Mode</strong>, and enter this
-          prompt with the versions you found:
+          prompt:
         </p>
-        <div className="bg-indigo-500/10 border border-indigo-500/30 rounded-lg p-4 mb-4">
-          <p className="text-sm text-indigo-300">
-            <strong className="text-white">
-              Add this to the beginning of your prompt:
-            </strong>
-            <br />
-            <code className="text-cyan-400 text-xs">
-              Use Node.js [version], Vite [version], React [version], and
-              Tailwind CSS [version].
-            </code>
-          </p>
-        </div>
         <CodeBlock code={initialPrompt} language="text" />
       </div>
 
-      {/* Step 3: Agent Builds */}
+      {/* Step 2: Agent Builds */}
       <div className="bg-slate-900/50 border border-purple-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">✨</span>
-          Step 3: Agent Builds Your Application
+          Step 2: Agent Builds Your Application
         </h3>
         <p className="text-slate-300 mb-4">
           Beast Mode will build your ENTIRE application based on the prompt:
