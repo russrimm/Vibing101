@@ -1,85 +1,94 @@
-import { FC, useState, useRef, useEffect } from 'react';
-import { useFloating, offset, flip, shift, autoUpdate } from '@floating-ui/react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink } from 'lucide-react';
-import glossaryData from '../data/glossary.json';
+import { FC, useState, useRef, useEffect } from 'react'
+import {
+  useFloating,
+  offset,
+  flip,
+  shift,
+  autoUpdate,
+} from '@floating-ui/react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X, ExternalLink } from 'lucide-react'
+import glossaryData from '../data/glossary.json'
 
 interface GlossaryEntry {
-  term: string;
-  emoji: string;
-  definition: string;
-  example: string;
-  learnMore: string;
+  term: string
+  emoji: string
+  definition: string
+  example: string
+  learnMore: string
 }
 
 interface GlossaryTooltipProps {
-  term: string;
-  children: React.ReactNode;
+  term: string
+  children: React.ReactNode
 }
 
-export const GlossaryTooltip: FC<GlossaryTooltipProps> = ({ term, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const timeoutRef = useRef<number>();
+export const GlossaryTooltip: FC<GlossaryTooltipProps> = ({
+  term,
+  children,
+}) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const timeoutRef = useRef<number>()
 
-  const glossary = glossaryData as Record<string, GlossaryEntry>;
-  const entry = glossary[term];
+  const glossary = glossaryData as Record<string, GlossaryEntry>
+  const entry = glossary[term]
 
   const { refs, floatingStyles } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
     middleware: [offset(10), flip(), shift({ padding: 8 })],
     whileElementsMounted: autoUpdate,
-  });
+  })
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        clearTimeout(timeoutRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   if (!entry) {
-    return <>{children}</>;
+    return <>{children}</>
   }
 
   const handleMouseEnter = () => {
     if (!isMobile) {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        clearTimeout(timeoutRef.current)
       }
       timeoutRef.current = window.setTimeout(() => {
-        setIsOpen(true);
-      }, 300);
+        setIsOpen(true)
+      }, 300)
     }
-  };
+  }
 
   const handleMouseLeave = () => {
     if (!isMobile) {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        clearTimeout(timeoutRef.current)
       }
       timeoutRef.current = window.setTimeout(() => {
-        setIsOpen(false);
-      }, 200);
+        setIsOpen(false)
+      }, 200)
     }
-  };
+  }
 
   const handleClick = () => {
     if (isMobile) {
-      setIsOpen(!isOpen);
+      setIsOpen(!isOpen)
     }
-  };
+  }
 
   return (
     <>
@@ -104,7 +113,7 @@ export const GlossaryTooltip: FC<GlossaryTooltipProps> = ({ term, children }) =>
             role="tooltip"
             onMouseEnter={() => {
               if (!isMobile && timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
+                clearTimeout(timeoutRef.current)
               }
             }}
             onMouseLeave={handleMouseLeave}
@@ -122,9 +131,7 @@ export const GlossaryTooltip: FC<GlossaryTooltipProps> = ({ term, children }) =>
                   <span className="text-2xl" aria-hidden="true">
                     {entry.emoji}
                   </span>
-                  <h3 className="text-white font-bold text-sm">
-                    {entry.term}
-                  </h3>
+                  <h3 className="text-white font-bold text-sm">{entry.term}</h3>
                 </div>
                 {isMobile && (
                   <button
@@ -189,7 +196,7 @@ export const GlossaryTooltip: FC<GlossaryTooltipProps> = ({ term, children }) =>
         )}
       </AnimatePresence>
     </>
-  );
-};
+  )
+}
 
-export default GlossaryTooltip;
+export default GlossaryTooltip

@@ -1,28 +1,28 @@
 ---
-title: "Choose Your Vibe"
-description: "Select your industry and theme to personalize your learning journey"
-duration: "5 minutes"
+title: 'Choose Your Vibe'
+description: 'Select your industry and theme to personalize your learning journey'
+duration: '5 minutes'
 order: 1
-difficulty: "beginner"
+difficulty: 'beginner'
 quiz:
-  - question: "Why does choosing an industry theme matter?"
+  - question: 'Why does choosing an industry theme matter?'
     options:
       - "It doesn't, it's just for fun"
-      - "It makes learning more engaging and relevant to your interests"
+      - 'It makes learning more engaging and relevant to your interests'
       - "It determines what programming language you'll use"
-      - "It changes the difficulty level"
+      - 'It changes the difficulty level'
     correct: 1
     points: 10
     explanation: "Choosing a theme that resonates with you makes learning more engaging! When you're building something you care about, you'll stay motivated and retain more knowledge."
-  - question: "Can you change your theme later?"
+  - question: 'Can you change your theme later?'
     options:
-      - "No, your choice is permanent"
-      - "Yes, anytime you want!"
-      - "Only once"
-      - "Only with instructor permission"
+      - 'No, your choice is permanent'
+      - 'Yes, anytime you want!'
+      - 'Only once'
+      - 'Only with instructor permission'
     correct: 1
     points: 10
-    explanation: "Absolutely! You can explore different themes anytime. In fact, trying all themes unlocks a special achievement badge! 🎨"
+    explanation: 'Absolutely! You can explore different themes anytime. In fact, trying all themes unlocks a special achievement badge! 🎨'
 ---
 
 # 🎨 Choose Your Vibe
@@ -40,6 +40,7 @@ Choose the vertical that excites you most. Don't overthink it—you can always c
 **Build:** A modern product catalog and shopping experience
 
 **You'll Create:**
+
 - Product showcase with categories
 - Interactive shopping cart
 - Real-time inventory displays
@@ -58,6 +59,7 @@ Choose the vertical that excites you most. Don't overthink it—you can always c
 **Build:** A financial dashboard and analytics platform
 
 **You'll Create:**
+
 - Real-time stock/crypto tickers
 - Transaction history viewer
 - Portfolio analytics with charts
@@ -76,6 +78,7 @@ Choose the vertical that excites you most. Don't overthink it—you can always c
 **Build:** A patient care and appointment management system
 
 **You'll Create:**
+
 - Appointment scheduler
 - Patient information dashboard
 - Health metrics visualization
@@ -94,6 +97,7 @@ Choose the vertical that excites you most. Don't overthink it—you can always c
 **Build:** A production tracking and metrics dashboard
 
 **You'll Create:**
+
 - Production line monitoring
 - Inventory management
 - Quality control metrics
@@ -112,6 +116,7 @@ Choose the vertical that excites you most. Don't overthink it—you can always c
 **Build:** A shipment tracking and logistics platform
 
 **You'll Create:**
+
 - Live shipment tracker
 - Route optimization displays
 - Fleet management dashboard
@@ -130,6 +135,7 @@ Choose the vertical that excites you most. Don't overthink it—you can always c
 **Build:** An operations monitoring and analytics platform
 
 **You'll Create:**
+
 - Production metrics dashboard
 - Rig/facility status monitors
 - Resource tracking displays
@@ -152,7 +158,7 @@ Every theme gives you:
 ✅ **Tailored prompts** - AI instructions optimized for your industry  
 ✅ **Relevant features** - Functionality that matches real-world needs
 
-But here's the secret: **The underlying tech is the same!** 
+But here's the secret: **The underlying tech is the same!**
 
 You're learning React, APIs, and modern web development—the industry theme just makes it more fun and relevant to you.
 
@@ -195,4 +201,4 @@ Remember: **There's no wrong choice.** Pick what excites you and let's start bui
 
 ---
 
-*Estimated time: 5 minutes • Difficulty: Beginner • Next: Setup (Windows or Mac)*
+_Estimated time: 5 minutes • Difficulty: Beginner • Next: Setup (Windows or Mac)_

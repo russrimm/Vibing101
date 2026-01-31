@@ -13,6 +13,7 @@
 ## 🎯 What You'll Build
 
 A **Company Service Health Portal** that displays:
+
 - 📊 Real-time Azure service status
 - 📧 Microsoft 365 service health (Exchange, Teams, SharePoint, etc.)
 - 🔴 Active incidents and outages
@@ -46,6 +47,7 @@ Microsoft provides several APIs for monitoring service health:
 **Endpoint:** `https://graph.microsoft.com/v1.0/admin/serviceAnnouncement`
 
 **What it provides:**
+
 - Service health status (healthy, degraded, interrupted)
 - Service incidents and advisories
 - Message center communications
@@ -53,6 +55,7 @@ Microsoft provides several APIs for monitoring service health:
 - Historical data (last 30 days)
 
 **Requires:**
+
 - `ServiceHealth.Read.All` permission
 - Azure AD app registration
 - Tenant admin consent
@@ -64,12 +67,14 @@ Microsoft provides several APIs for monitoring service health:
 **Endpoint:** `https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.ResourceHealth`
 
 **What it provides:**
+
 - Azure resource availability status
 - Service health events affecting your resources
 - Planned maintenance for Azure services
 - Root cause analysis for incidents
 
 **Requires:**
+
 - Azure subscription
 - Resource health reader role
 - Azure Resource Manager authentication
@@ -81,6 +86,7 @@ Microsoft provides several APIs for monitoring service health:
 **URL:** `https://status.azure.com/en-us/status`
 
 **What it provides:**
+
 - Public Azure service status
 - No authentication required
 - Limited to public incidents
@@ -97,6 +103,7 @@ We'll build the same dashboard with **two popular charting libraries** so you ca
 ### Option 1: **Recharts** (Already Installed ✅)
 
 **Pros:**
+
 - ✅ Built specifically for React (declarative API)
 - ✅ Composable components (`<LineChart>`, `<BarChart>`)
 - ✅ TypeScript support out of the box
@@ -106,6 +113,7 @@ We'll build the same dashboard with **two popular charting libraries** so you ca
 - ✅ Easy to customize with CSS/Tailwind
 
 **Cons:**
+
 - ❌ Fewer chart types than Chart.js
 - ❌ Less community plugins
 - ❌ Performance can degrade with 1000+ data points
@@ -116,6 +124,7 @@ We'll build the same dashboard with **two popular charting libraries** so you ca
 ### Option 2: **Chart.js + react-chartjs-2** (We'll Install)
 
 **Pros:**
+
 - ✅ Most popular charting library (64M+ weekly downloads)
 - ✅ Extensive chart types (20+)
 - ✅ Rich plugin ecosystem
@@ -124,6 +133,7 @@ We'll build the same dashboard with **two popular charting libraries** so you ca
 - ✅ Framework-agnostic (can use outside React)
 
 **Cons:**
+
 - ❌ Imperative API (less "React-like")
 - ❌ Requires wrapper (`react-chartjs-2`) for React
 - ❌ More configuration needed
@@ -146,10 +156,12 @@ npm install chart.js react-chartjs-2
 ```
 
 **What this installs:**
+
 - `chart.js` - Core charting library (always verify you're installing the **latest stable version**)
 - `react-chartjs-2` - React wrapper components (always use the **latest version** compatible with Chart.js)
 
 **Expected output:**
+
 ```
 added 2 packages, and audited 658 packages in 15s
 ```
@@ -181,10 +193,11 @@ In **Azure Portal** → **App Registrations** → **Your App** → **API Permiss
 Update your `authConfig.ts` to request these scopes:
 
 **Copilot Prompt:**
+
 ```
 Update authConfig.ts to add Service Health API scopes:
 - ServiceHealth.Read.All
-- ServiceMessage.Read.All  
+- ServiceMessage.Read.All
 - ServiceAnnouncement.Read.All
 
 Keep existing scopes (User.Read, etc.) and add these new ones to the loginRequest.scopes array.
@@ -199,6 +212,7 @@ Create a service to fetch health data from Microsoft Graph.
 **Create file:** `src/services/serviceHealthService.ts`
 
 **Copilot Prompt (Beast Mode):**
+
 ```
 Create src/services/serviceHealthService.ts with these features:
 
@@ -210,15 +224,15 @@ Create src/services/serviceHealthService.ts with these features:
    - ServiceMessage { id, title, category, severity, actionRequiredByDateTime }
 
 3. Create functions:
-   - getServiceHealth(): Promise<ServiceHealth[]> 
+   - getServiceHealth(): Promise<ServiceHealth[]>
      Calls: GET /admin/serviceAnnouncement/healthOverviews
-   
+
    - getActiveIncidents(): Promise<ServiceIncident[]>
      Calls: GET /admin/serviceAnnouncement/issues?$filter=classification eq 'incident'
-   
+
    - getServiceMessages(): Promise<ServiceMessage[]>
      Calls: GET /admin/serviceAnnouncement/messages?$top=20
-   
+
    - getIncidentTrends(days: number): Promise<{date: string, count: number}[]>
      Calculate incident count per day from historical data
 
@@ -241,6 +255,7 @@ Create the main dashboard component that will show both chart libraries side-by-
 **Create file:** `src/components/ServiceHealthDashboard.tsx`
 
 **Copilot Prompt (Beast Mode):**
+
 ```
 Create src/components/ServiceHealthDashboard.tsx with:
 
@@ -280,6 +295,7 @@ Create charts using Recharts' declarative API.
 **Create file:** `src/components/charts/RechartsHealthCharts.tsx`
 
 **Copilot Prompt (Beast Mode):**
+
 ```
 Create src/components/charts/RechartsHealthCharts.tsx with:
 
@@ -295,14 +311,14 @@ Create src/components/charts/RechartsHealthCharts.tsx with:
       - Show data points
       - Tooltip with date and count
       - Height: 300px
-   
+
    b) ServiceBreakdownChart - Bar chart showing incidents by service
       - X-axis: Service name (Exchange, Teams, Azure, etc.)
       - Y-axis: Incident count
       - Bar color: cyan-500
       - Horizontal bars
       - Height: 400px
-   
+
    c) SeverityPieChart - Pie chart showing severity distribution
       - Slices: High, Medium, Low severity
       - Colors: red-500 (high), yellow-500 (medium), green-500 (low)
@@ -339,6 +355,7 @@ Create the same charts using Chart.js for comparison.
 **Create file:** `src/components/charts/ChartJsHealthCharts.tsx`
 
 **Copilot Prompt (Beast Mode):**
+
 ```
 Create src/components/charts/ChartJsHealthCharts.tsx with:
 
@@ -358,13 +375,13 @@ Create src/components/charts/ChartJsHealthCharts.tsx with:
         }
       - Line color: cyan (rgb(6, 182, 212))
       - Height: 300px
-   
+
    b) ServiceBreakdownChart - Horizontal bar chart
       - Same data as Recharts version
       - Options: { indexAxis: 'y', responsive: true }
       - Bar color: cyan
       - Height: 400px
-   
+
    c) SeverityPieChart - Pie chart
       - Same data as Recharts version
       - Colors: rgb(239, 68, 68), rgb(234, 179, 8), rgb(34, 197, 94)
@@ -403,6 +420,7 @@ Build status indicator cards for each Microsoft service.
 **Create file:** `src/components/ServiceStatusCard.tsx`
 
 **Copilot Prompt:**
+
 ```
 Create src/components/ServiceStatusCard.tsx with:
 
@@ -414,7 +432,7 @@ Create src/components/ServiceStatusCard.tsx with:
 
 2. Status indicator with colors:
    - healthy: green-500 dot + "Operational"
-   - degraded: yellow-500 dot + "Degraded Performance"  
+   - degraded: yellow-500 dot + "Degraded Performance"
    - interrupted: red-500 dot + "Service Interruption"
 
 3. Layout:
@@ -452,6 +470,7 @@ Add auto-refresh functionality to keep data current.
 **Update:** `src/components/ServiceHealthDashboard.tsx`
 
 **Copilot Prompt:**
+
 ```
 Update ServiceHealthDashboard.tsx to add auto-refresh:
 
@@ -485,12 +504,13 @@ Follow React 18 best practices for intervals and cleanup.
 Ensure the dashboard works on mobile devices.
 
 **Copilot Prompt:**
+
 ```
 Update ServiceHealthDashboard.tsx for mobile responsiveness:
 
 1. Change layout to stack on mobile:
    - Desktop (lg+): 3-column grid
-   - Tablet (md): 2-column grid  
+   - Tablet (md): 2-column grid
    - Mobile (sm): single column stack
 
 2. Adjust chart heights for mobile:
@@ -525,6 +545,7 @@ Integrate the Service Health Portal into your main application.
 **Update:** `src/App.tsx`
 
 **Copilot Prompt:**
+
 ```
 Add Service Health Portal as a route in App.tsx:
 
@@ -545,6 +566,7 @@ Use React Router v6 latest patterns.
 **Option B: Add as Dashboard Widget**
 
 **Copilot Prompt:**
+
 ```
 Add Service Health as a widget in the main dashboard:
 
@@ -573,15 +595,15 @@ Now test both visualizations side-by-side!
 
 Open your Service Health Portal and compare:
 
-| Feature | Recharts | Chart.js |
-|---------|----------|----------|
-| **Visual Style** | Clean, minimalist | Rich, feature-heavy |
-| **Animation** | Smooth, subtle | More dynamic options |
-| **Interactivity** | Hover tooltips | Zoom, pan, crosshairs |
-| **Customization** | Tailwind-friendly | Requires config objects |
-| **Responsiveness** | Built-in | Requires manual setup |
-| **Bundle Size** | ~100KB | ~200KB |
-| **TypeScript DX** | Excellent | Good (verbose types) |
+| Feature            | Recharts          | Chart.js                |
+| ------------------ | ----------------- | ----------------------- |
+| **Visual Style**   | Clean, minimalist | Rich, feature-heavy     |
+| **Animation**      | Smooth, subtle    | More dynamic options    |
+| **Interactivity**  | Hover tooltips    | Zoom, pan, crosshairs   |
+| **Customization**  | Tailwind-friendly | Requires config objects |
+| **Responsiveness** | Built-in          | Requires manual setup   |
+| **Bundle Size**    | ~100KB            | ~200KB                  |
+| **TypeScript DX**  | Excellent         | Good (verbose types)    |
 
 ### Performance Test
 
@@ -591,13 +613,16 @@ Test with large datasets:
 // Generate 365 days of incident data
 const generateTestData = (days: number) => {
   return Array.from({ length: days }, (_, i) => ({
-    date: new Date(Date.now() - i * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-    count: Math.floor(Math.random() * 10)
-  }));
-};
+    date: new Date(Date.now() - i * 24 * 60 * 60 * 1000)
+      .toISOString()
+      .split('T')[0],
+    count: Math.floor(Math.random() * 10),
+  }))
+}
 ```
 
 **Try:**
+
 - 30 days (both should be smooth)
 - 365 days (Chart.js should handle better)
 - 1000+ points (Chart.js significantly faster)
@@ -609,6 +634,7 @@ const generateTestData = (days: number) => {
 ### When to Use Recharts
 
 Choose Recharts when:
+
 - ✅ Building React-native dashboards
 - ✅ Need quick, declarative charts
 - ✅ TypeScript is a priority
@@ -619,6 +645,7 @@ Choose Recharts when:
 ### When to Use Chart.js
 
 Choose Chart.js when:
+
 - ✅ Need advanced interactions (zoom, pan)
 - ✅ Working with large datasets (1000+ points)
 - ✅ Require specific chart types
@@ -629,6 +656,7 @@ Choose Chart.js when:
 ### Hybrid Approach
 
 **Best of both worlds:**
+
 - Use **Recharts** for most dashboards (declarative, React-friendly)
 - Use **Chart.js** for specific heavy-duty charts (large data, complex interactions)
 - Keep both installed (~300KB total is acceptable for full dashboard app)
@@ -662,6 +690,7 @@ Choose Chart.js when:
 ### Additional Data Sources
 
 Integrate other status pages:
+
 - **GitHub Status**: https://www.githubstatus.com/api/v2/status.json
 - **AWS Status**: https://status.aws.amazon.com/
 - **Google Workspace**: https://www.google.com/appsstatus/dashboard/
@@ -675,6 +704,7 @@ Integrate other status pages:
 **Problem:** Can't fetch service health data
 
 **Solutions:**
+
 1. ✅ Verify API permissions in Azure Portal
 2. ✅ Grant admin consent (must be tenant admin)
 3. ✅ Wait 5-10 minutes after granting consent
@@ -684,6 +714,7 @@ Integrate other status pages:
 ### Chart Not Rendering
 
 **Recharts Issue:**
+
 ```typescript
 // Make sure ResponsiveContainer has explicit height
 <ResponsiveContainer width="100%" height={300}>
@@ -694,15 +725,17 @@ Integrate other status pages:
 ```
 
 **Chart.js Issue:**
+
 ```typescript
 // Register Chart.js components before use
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
+import { Chart, registerables } from 'chart.js'
+Chart.register(...registerables)
 ```
 
 ### Performance Issues
 
 **Too many data points:**
+
 - Aggregate data by week/month instead of daily
 - Implement pagination or virtual scrolling
 - Use Chart.js instead of Recharts for 1000+ points

@@ -15,6 +15,7 @@
 ## 🎯 What You'll Build
 
 An **AI Chat Assistant** that:
+
 - 💬 Answers visitor questions about your portal
 - 🧠 Maintains conversation context across messages
 - ⚡ Streams responses in real-time (like ChatGPT)
@@ -24,6 +25,7 @@ An **AI Chat Assistant** that:
 - 🔒 Protects API keys securely
 
 **Use cases:**
+
 - Help visitors navigate your site
 - Answer questions about vibe coding
 - Guide users through lab exercises
@@ -56,6 +58,7 @@ Before starting this lab:
 - **Content Safety** - Built-in moderation and filtering
 
 **Why use Foundry vs OpenAI directly?**
+
 - ✅ Enterprise-grade security and compliance
 - ✅ Data stays in your Azure region (GDPR, privacy)
 - ✅ Integration with Azure services (Key Vault, App Insights)
@@ -64,11 +67,11 @@ Before starting this lab:
 
 ### Available Models (as of 2026)
 
-| Model | Best For | Speed |
-|-------|----------|-------|
-| **GPT-4 Turbo** | Complex reasoning, code generation | Medium |
-| **GPT-4o** | Multi-modal (text + images), latest capabilities | Fast |
-| **GPT-4** | Best quality, creative tasks | Slower |
+| Model           | Best For                                         | Speed  |
+| --------------- | ------------------------------------------------ | ------ |
+| **GPT-4 Turbo** | Complex reasoning, code generation               | Medium |
+| **GPT-4o**      | Multi-modal (text + images), latest capabilities | Fast   |
+| **GPT-4**       | Best quality, creative tasks                     | Slower |
 
 **Recommendation for this lab:** Use **GPT-4 Turbo** or **GPT-4o** for the best experience with the latest capabilities.
 
@@ -88,6 +91,7 @@ Before starting this lab:
    - Click **"Create"**
 
 3. **Configure Resource:**
+
    ```
    Subscription: [Your subscription]
    Resource Group: [Create new: "vibing101-rg"]
@@ -150,6 +154,7 @@ az cognitiveservices account keys list \
    - Click **"+ Create new deployment"**
 
 3. **Configure Deployment:**
+
    ```
    Select a model: gpt-35-turbo (or gpt-4 if available)
    Deployment name: vibing101-chat
@@ -167,9 +172,10 @@ az cognitiveservices account keys list \
 ### Why Deployment Name Matters
 
 You'll use this exact name in your API calls:
+
 ```typescript
 // This must match your deployment name!
-const deploymentName = "vibing101-chat";
+const deploymentName = 'vibing101-chat'
 ```
 
 ---
@@ -190,7 +196,8 @@ VITE_AZURE_OPENAI_DEPLOYMENT=vibing101-chat
 VITE_AZURE_OPENAI_API_VERSION=2024-02-15-preview
 ```
 
-> ⚠️ **Important:** 
+> ⚠️ **Important:**
+>
 > - Always use the **latest API version** from [Azure OpenAI API docs](https://learn.microsoft.com/azure/ai-services/openai/reference)
 > - Replace `your-api-key-here` with your actual KEY 1 from Step 1
 > - `.env.local` is already in `.gitignore` by default
@@ -219,6 +226,7 @@ npm install @azure/openai
 > 💡 **Tip:** Always verify you're installing the **latest version** of `@azure/openai` (check npm for current version)
 
 **What this installs:**
+
 - Official Azure OpenAI client
 - TypeScript types
 - Streaming support
@@ -233,6 +241,7 @@ Build a service to interact with Azure OpenAI.
 **Create file:** `src/services/openAIService.ts`
 
 **Copilot Prompt (Beast Mode):**
+
 ```
 Create src/services/openAIService.ts with these features:
 
@@ -254,10 +263,10 @@ Create src/services/openAIService.ts with these features:
 
 6. Create sendMessage function:
    async sendMessage(
-     messages: ChatMessage[], 
+     messages: ChatMessage[],
      options?: ChatOptions
    ): Promise<ChatResponse>
-   
+
    - Call client.getChatCompletions()
    - Use deployment name from env
    - Handle errors gracefully
@@ -271,7 +280,7 @@ Create src/services/openAIService.ts with these features:
      onChunk: (text: string) => void,
      options?: ChatOptions
    ): Promise<void>
-   
+
    - Call client.streamChatCompletions()
    - Emit chunks via onChunk callback
    - Handle stream completion
@@ -298,6 +307,7 @@ Create the main chat UI component.
 **Create file:** `src/components/ChatAssistant.tsx`
 
 **Copilot Prompt (Beast Mode):**
+
 ```
 Create src/components/ChatAssistant.tsx with:
 
@@ -315,8 +325,8 @@ Create src/components/ChatAssistant.tsx with:
    - error: string | null
 
 5. Create system message with personality:
-   "You are a helpful AI assistant for VibeCoding101, a modern React learning platform. 
-   Help users learn vibe coding, navigate the site, and answer questions about React, 
+   "You are a helpful AI assistant for VibeCoding101, a modern React learning platform.
+   Help users learn vibe coding, navigate the site, and answer questions about React,
    Vite, TypeScript, and modern web development. Be friendly, encouraging, and concise."
 
 6. Create handleSendMessage function:
@@ -327,32 +337,32 @@ Create src/components/ChatAssistant.tsx with:
    - Handle errors with toast notification
 
 7. Create layout (dark theme, our colors):
-   
+
    Floating button (bottom-right):
    - <button> with Bot icon
    - onClick toggles isOpen
    - Pulsing animation when closed
    - Badge showing "AI Assistant"
-   
+
    Chat window (appears when isOpen):
    - Fixed position, bottom-right
    - Width: 400px desktop, 100% mobile
    - Height: 600px max
    - bg-slate-800 with border-cyan-500
    - Rounded corners, shadow
-   
+
    Header:
    - Title: "AI Assistant"
    - Minimize/Maximize button
    - Close button
-   
+
    Messages area:
    - Scrollable div (overflow-y-auto)
    - User messages: right-aligned, bg-cyan-500
    - Bot messages: left-aligned, bg-slate-700
    - Show Bot/User icons
    - Auto-scroll to bottom on new message
-   
+
    Input area:
    - Textarea (multi-line support)
    - Send button (disabled while loading)
@@ -391,6 +401,7 @@ Always use the latest React patterns and hooks.
 Enhance the chat with smooth animations.
 
 **Copilot Prompt:**
+
 ```
 Update ChatAssistant.tsx to add framer-motion animations:
 
@@ -434,6 +445,7 @@ Implement context awareness across messages.
 **Create file:** `src/hooks/useChatHistory.ts`
 
 **Copilot Prompt:**
+
 ```
 Create src/hooks/useChatHistory.ts with:
 
@@ -464,6 +476,7 @@ Use latest React hooks patterns.
 **Update ChatAssistant.tsx:**
 
 **Copilot Prompt:**
+
 ```
 Update ChatAssistant.tsx to use useChatHistory hook:
 
@@ -483,6 +496,7 @@ Keep existing functionality intact.
 Implement safety and content moderation.
 
 **Copilot Prompt (Beast Mode):**
+
 ```
 Update src/services/openAIService.ts to add content filtering:
 
@@ -517,6 +531,7 @@ Make the bot aware of your portal content.
 **Create file:** `src/data/chatContext.ts`
 
 **Copilot Prompt:**
+
 ```
 Create src/data/chatContext.ts with:
 
@@ -533,9 +548,9 @@ Create src/data/chatContext.ts with:
    - Returns comprehensive system message
 
 Example:
-"You are an AI assistant for VibeCoding101. 
-Available labs: [list]. User is currently on: [current]. 
-Industry focus: [selected industry]. 
+"You are an AI assistant for VibeCoding101.
+Available labs: [list]. User is currently on: [current].
+Industry focus: [selected industry].
 Answer questions about React, vibe coding, and help navigate the portal."
 
 3. Export contextual suggestions:
@@ -548,6 +563,7 @@ Use TypeScript for type safety.
 **Update ChatAssistant.tsx:**
 
 **Copilot Prompt:**
+
 ```
 Update ChatAssistant.tsx to use dynamic context:
 
@@ -578,6 +594,7 @@ Add the chat assistant to your main application.
 **Update:** `src/App.tsx`
 
 **Copilot Prompt:**
+
 ```
 Update App.tsx to include ChatAssistant:
 
@@ -606,6 +623,7 @@ Use latest React Router patterns if applicable.
 Ensure great experience on mobile devices.
 
 **Copilot Prompt:**
+
 ```
 Update ChatAssistant.tsx for mobile:
 
@@ -639,6 +657,7 @@ Verify everything works correctly.
 ### Manual Testing Checklist
 
 ✅ **Basic Functionality:**
+
 - [ ] Chat window opens and closes
 - [ ] Messages send successfully
 - [ ] Bot responds within 3-5 seconds
@@ -646,12 +665,14 @@ Verify everything works correctly.
 - [ ] Conversation history maintained
 
 ✅ **Error Handling:**
+
 - [ ] Graceful handling of network errors
 - [ ] Content filter responses
 - [ ] Rate limit handling
 - [ ] Empty message prevention
 
 ✅ **User Experience:**
+
 - [ ] Animations smooth
 - [ ] Mobile responsive
 - [ ] Keyboard shortcuts work
@@ -659,6 +680,7 @@ Verify everything works correctly.
 - [ ] Clear conversation works
 
 ✅ **Context Awareness:**
+
 - [ ] Bot mentions current page
 - [ ] Answers about available labs
 - [ ] Knows selected industry
@@ -669,16 +691,19 @@ Verify everything works correctly.
 Try these prompts:
 
 1. **Navigation help:**
+
    ```
    How do I get started with vibe coding?
    ```
 
 2. **Technical questions:**
+
    ```
    What's the difference between Vite and Create React App?
    ```
 
 3. **Lab-specific:**
+
    ```
    I'm stuck on Lab02, can you help?
    ```
@@ -695,6 +720,7 @@ Try these prompts:
 Make the assistant match your brand.
 
 **Copilot Prompt:**
+
 ```
 Update chatContext.ts to customize bot personality:
 
@@ -749,6 +775,7 @@ Track API usage and manage spending.
 ### Add Usage Display
 
 **Copilot Prompt:**
+
 ```
 Update ChatAssistant.tsx to show token usage:
 
@@ -769,9 +796,10 @@ Keep UI minimal and non-intrusive.
 ### Production Enhancements
 
 1. **Rate Limiting:**
+
    ```typescript
    // Limit to 10 messages per minute per user
-   const rateLimiter = new RateLimiter(10, 60000);
+   const rateLimiter = new RateLimiter(10, 60000)
    ```
 
 2. **Conversation Analytics:**
@@ -819,7 +847,7 @@ Current context:
 - User's industry: {{industry}}
 - Current page: {{currentPage}}
 - Completed labs: {{completedLabs}}
-`;
+`
 ```
 
 ---
@@ -831,6 +859,7 @@ Current context:
 **Problem:** Environment variables not loading
 
 **Solution:**
+
 1. Verify `.env.local` exists in project root
 2. Restart dev server: `npm run dev`
 3. Check variable names start with `VITE_`
@@ -841,6 +870,7 @@ Current context:
 **Problem:** Deployment name doesn't match
 
 **Solution:**
+
 1. Check deployment name in Azure AI Foundry
 2. Must exactly match (case-sensitive)
 3. Update `VITE_AZURE_OPENAI_DEPLOYMENT` in `.env.local`
@@ -850,6 +880,7 @@ Current context:
 **Problem:** Too many requests
 
 **Solution:**
+
 1. Increase rate limit in deployment settings (Azure portal)
 2. Add client-side throttling
 3. Implement request queue
@@ -860,15 +891,13 @@ Current context:
 **Problem:** Responses appear all at once
 
 **Solution:**
+
 ```typescript
 // Ensure you're using the streaming method
-await openAIService.sendStreamingMessage(
-  messages,
-  (chunk) => {
-    // This callback must update UI incrementally
-    setCurrentResponse(prev => prev + chunk);
-  }
-);
+await openAIService.sendStreamingMessage(messages, (chunk) => {
+  // This callback must update UI incrementally
+  setCurrentResponse((prev) => prev + chunk)
+})
 ```
 
 ### High Costs
@@ -876,6 +905,7 @@ await openAIService.sendStreamingMessage(
 **Problem:** Unexpected Azure bills
 
 **Solution:**
+
 1. Set up budget alerts (Step 15)
 2. Use GPT-3.5-turbo instead of GPT-4
 3. Reduce maxTokens in responses

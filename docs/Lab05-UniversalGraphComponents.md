@@ -1,31 +1,31 @@
 ---
-title: "Connect to Your Organization with Graph API"
-description: "Build universal components that display real Microsoft 365 data from any organization"
-duration: "30 minutes"
+title: 'Connect to Your Organization with Graph API'
+description: 'Build universal components that display real Microsoft 365 data from any organization'
+duration: '30 minutes'
 order: 5
-difficulty: "intermediate"
-vertical: "agnostic"
+difficulty: 'intermediate'
+vertical: 'agnostic'
 optional: true
 quiz:
   - question: "What makes this module 'vertical agnostic'?"
     options:
-      - "It only works with retail companies"
+      - 'It only works with retail companies'
       - "The components work with any organization's Microsoft 365 data, regardless of industry"
       - "It doesn't use APIs"
-      - "It requires special permissions"
+      - 'It requires special permissions'
     correct: 1
     points: 10
-    explanation: "These components fetch universal data like user profiles and org info that exists in every Microsoft 365 tenant, making them useful regardless of your industry choice!"
-  - question: "What is the /me endpoint in Microsoft Graph?"
+    explanation: 'These components fetch universal data like user profiles and org info that exists in every Microsoft 365 tenant, making them useful regardless of your industry choice!'
+  - question: 'What is the /me endpoint in Microsoft Graph?'
     options:
-      - "Information about Microsoft"
+      - 'Information about Microsoft'
       - "The currently authenticated user's profile"
-      - "A list of all users"
-      - "Email messages"
+      - 'A list of all users'
+      - 'Email messages'
     correct: 1
     points: 10
     explanation: "The /me endpoint returns profile information for whoever is currently signed in - perfect for showing 'My Profile' sections!"
-  - question: "Why use Microsoft Graph over custom databases?"
+  - question: 'Why use Microsoft Graph over custom databases?'
     options:
       - "It's always free"
       - "Your organization's data already exists there - no need to duplicate it"
@@ -73,9 +73,9 @@ This lab teaches you to build **vertical-agnostic components** that work for **a
 ```typescript
 // This only makes sense for retail
 interface Product {
-  sku: string;
-  price: number;
-  inventory: number;
+  sku: string
+  price: number
+  inventory: number
 }
 ```
 
@@ -84,10 +84,10 @@ interface Product {
 ```typescript
 // This works for EVERYONE
 interface User {
-  displayName: string;
-  mail: string;
-  jobTitle: string;
-  department: string;
+  displayName: string
+  mail: string
+  jobTitle: string
+  department: string
 }
 ```
 
@@ -125,6 +125,7 @@ npm install --save-dev @microsoft/microsoft-graph-types
 ### ✅ Verify Installation:
 
 Check your `package.json` - you should see:
+
 ```json
 {
   "dependencies": {
@@ -145,6 +146,7 @@ We need a way to manage Microsoft 365 sign-in across your entire app.
 ### Ask Copilot to Create the Auth Context:
 
 **Prompt (in Beast Mode)**:
+
 ```
 Create an AuthContext using MSAL for Microsoft 365 authentication.
 Include:
@@ -255,6 +257,7 @@ export const useAuth = () => {
 ### Add Environment Variables:
 
 Create `.env.local`:
+
 ```env
 VITE_AZURE_CLIENT_ID=your-client-id-here
 VITE_AZURE_TENANT_ID=your-tenant-id-or-common
@@ -271,6 +274,7 @@ Now let's create a service to make Graph API calls.
 ### Ask Copilot:
 
 **Prompt**:
+
 ```
 Create a Microsoft Graph service with these methods:
 - getCurrentUser() - get /me
@@ -287,66 +291,70 @@ Handle errors gracefully.
 
 ```typescript
 // src/services/graphService.ts
-import { Client } from '@microsoft/microsoft-graph-client';
-import { User, Organization, Presence } from '@microsoft/microsoft-graph-types';
+import { Client } from '@microsoft/microsoft-graph-client'
+import { User, Organization, Presence } from '@microsoft/microsoft-graph-types'
 
 export class GraphService {
-  private client: Client;
+  private client: Client
 
   constructor(getAccessToken: () => Promise<string>) {
     this.client = Client.init({
       authProvider: async (done) => {
         try {
-          const token = await getAccessToken();
-          done(null, token);
+          const token = await getAccessToken()
+          done(null, token)
         } catch (error) {
-          done(error as Error, null);
+          done(error as Error, null)
         }
       },
-    });
+    })
   }
 
   async getCurrentUser(): Promise<User> {
     try {
       const user = await this.client
         .api('/me')
-        .select('displayName,mail,jobTitle,department,officeLocation,mobilePhone')
-        .get();
-      return user;
+        .select(
+          'displayName,mail,jobTitle,department,officeLocation,mobilePhone'
+        )
+        .get()
+      return user
     } catch (error) {
-      console.error('Error fetching current user:', error);
-      throw error;
+      console.error('Error fetching current user:', error)
+      throw error
     }
   }
 
   async getOrganization(): Promise<Organization> {
     try {
-      const org = await this.client.api('/organization').get();
-      return org.value[0];
+      const org = await this.client.api('/organization').get()
+      return org.value[0]
     } catch (error) {
-      console.error('Error fetching organization:', error);
-      throw error;
+      console.error('Error fetching organization:', error)
+      throw error
     }
   }
 
   async getUserPhoto(userId?: string): Promise<string | null> {
     try {
-      const endpoint = userId ? `/users/${userId}/photo/$value` : '/me/photo/$value';
-      const blob = await this.client.api(endpoint).get();
-      return URL.createObjectURL(blob);
+      const endpoint = userId
+        ? `/users/${userId}/photo/$value`
+        : '/me/photo/$value'
+      const blob = await this.client.api(endpoint).get()
+      return URL.createObjectURL(blob)
     } catch (error) {
       // No photo available
-      return null;
+      return null
     }
   }
 
   async getUserPresence(userId: string): Promise<Presence> {
     try {
-      const presence = await this.client.api(`/users/${userId}/presence`).get();
-      return presence;
+      const presence = await this.client.api(`/users/${userId}/presence`).get()
+      return presence
     } catch (error) {
-      console.error('Error fetching presence:', error);
-      throw error;
+      console.error('Error fetching presence:', error)
+      throw error
     }
   }
 
@@ -354,14 +362,16 @@ export class GraphService {
     try {
       const result = await this.client
         .api('/users')
-        .filter(`startsWith(displayName,'${query}') or startsWith(mail,'${query}')`)
+        .filter(
+          `startsWith(displayName,'${query}') or startsWith(mail,'${query}')`
+        )
         .select('displayName,mail,jobTitle,department')
         .top(10)
-        .get();
-      return result.value;
+        .get()
+      return result.value
     } catch (error) {
-      console.error('Error searching users:', error);
-      return [];
+      console.error('Error searching users:', error)
+      return []
     }
   }
 }
@@ -376,6 +386,7 @@ Now for the fun part - building reusable components!
 ### Component 1: UserProfileCard
 
 **Prompt Copilot**:
+
 ```
 Create a UserProfileCard React component that:
 - Displays user's photo, name, job title, department
@@ -407,7 +418,7 @@ export const UserProfileCard = () => {
         const graphService = new GraphService(getAccessToken);
         const userData = await graphService.getCurrentUser();
         const userPhoto = await graphService.getUserPhoto();
-        
+
         setUser(userData);
         setPhoto(userPhoto);
       } catch (error) {
@@ -486,6 +497,7 @@ export const UserProfileCard = () => {
 ### Component 2: OrganizationBanner
 
 **Prompt Copilot**:
+
 ```
 Create an OrganizationBanner component that displays:
 - Organization name
@@ -499,6 +511,7 @@ Fetch from /organization endpoint.
 ### Component 3: PeoplePicker
 
 **Prompt Copilot**:
+
 ```
 Create a PeoplePicker component with:
 - Search input with debouncing
@@ -513,6 +526,7 @@ Use GraphService.searchUsers()
 ### Component 4: PresenceIndicator
 
 **Prompt Copilot**:
+
 ```
 Create a PresenceIndicator component that:
 - Shows online/offline/away/busy/donotdisturb status
@@ -532,6 +546,7 @@ Let's combine these components into a dashboard that works for any organization!
 ### Ask Copilot:
 
 **Prompt**:
+
 ```
 Create a UniversalDashboard component that:
 - Shows UserProfileCard at the top
@@ -572,7 +587,7 @@ export const UniversalDashboard = () => {
           {/* Right Column - Organization & Tools */}
           <div className="lg:col-span-2 space-y-6">
             <OrganizationBanner />
-            
+
             <div className="bg-slate-800 rounded-lg p-6 border border-cyan-500/20">
               <h2 className="text-xl font-bold text-white mb-4">
                 Find Colleagues
@@ -650,6 +665,7 @@ Cache Graph data for offline access:
 ### Ask Copilot:
 
 **Prompt**:
+
 ```
 Create a caching layer for GraphService that:
 - Caches responses in localStorage
@@ -672,7 +688,7 @@ Wrap the GraphService methods.
 // Works for retail, healthcare, finance, etc.
 const EmployeeDirectory = () => {
   const [employees, setEmployees] = useState<User[]>([]);
-  
+
   // Fetch all users
   const fetchEmployees = async () => {
     const graphService = new GraphService(getAccessToken);
@@ -696,7 +712,7 @@ const EmployeeDirectory = () => {
 // Check if someone is available - universal need!
 const OutOfOfficeChecker = ({ userId }: { userId: string }) => {
   const [presence, setPresence] = useState<Presence | null>(null);
-  
+
   useEffect(() => {
     const graphService = new GraphService(getAccessToken);
     graphService.getUserPresence(userId).then(setPresence);
@@ -717,7 +733,7 @@ const OutOfOfficeChecker = ({ userId }: { userId: string }) => {
 const OrgChart = () => {
   // Use /users/{id}/manager and /users/{id}/directReports
   // Build visual org chart
-};
+}
 ```
 
 ---
@@ -725,12 +741,14 @@ const OrgChart = () => {
 ## 🎯 Why This Matters
 
 ### Without Universal Components:
+
 - ❌ Rebuild user profiles for each vertical
 - ❌ Duplicate authentication logic
 - ❌ Manual data management
 - ❌ Maintenance nightmare
 
 ### With Universal Components:
+
 - ✅ Write once, use everywhere
 - ✅ Consistent user experience
 - ✅ Leverages existing M365 data
@@ -745,6 +763,7 @@ const OrgChart = () => {
 ### Issue: "Insufficient privileges"
 
 **Solution**: Request correct scopes during sign-in:
+
 ```typescript
 scopes: ['User.Read', 'User.ReadBasic.All', 'Presence.Read']
 ```
@@ -752,13 +771,15 @@ scopes: ['User.Read', 'User.ReadBasic.All', 'Presence.Read']
 ### Issue: Photo not loading
 
 **Solution**: Photos require `User.Read` scope. Check:
+
 1. Scope is requested
 2. Admin consent granted (if needed)
 3. User actually has a photo uploaded
 
 ### Issue: Search returns no results
 
-**Solution**: 
+**Solution**:
+
 - Check filter syntax in searchUsers()
 - Ensure `User.ReadBasic.All` permission
 - Try broader search terms
@@ -768,27 +789,33 @@ scopes: ['User.Read', 'User.ReadBasic.All', 'Presence.Read']
 ## 📚 Graph API Endpoints - Universal Cheat Sheet
 
 ### User Data:
+
 - `GET /me` - Current user profile
 - `GET /me/photo/$value` - Current user photo
 - `GET /users` - All users (with permissions)
 - `GET /users/{id}` - Specific user
 
 ### Organization:
+
 - `GET /organization` - Tenant info
 - `GET /domains` - Verified domains
 
 ### Presence:
+
 - `GET /users/{id}/presence` - Online status
 
 ### Calendar:
+
 - `GET /me/calendar/events` - My events
 - `GET /me/calendar/calendarView` - Events in date range
 
 ### Mail:
+
 - `GET /me/messages` - Recent emails
 - `GET /me/mailFolders/inbox/messages` - Inbox specifically
 
 ### People:
+
 - `GET /me/people` - Relevant people
 - `GET /users/{id}/manager` - Manager
 - `GET /users/{id}/directReports` - Direct reports
@@ -822,11 +849,12 @@ scopes: ['User.Read', 'User.ReadBasic.All', 'Presence.Read']
 🏆 Set up enterprise-grade authentication  
 🏆 Built a universal organization dashboard  
 🏆 Learned Graph API best practices  
-🏆 Made components that work offline  
+🏆 Made components that work offline
 
 ### The Power of Universal Design:
 
 These components can now be:
+
 - Dropped into any project
 - Shared across your team
 - Used regardless of industry
@@ -851,11 +879,12 @@ Ready to continue building? Head back to your industry-specific labs and see how
 
 ---
 
-*Estimated time: 30 minutes • Difficulty: Intermediate • Type: Optional • Works with: All Verticals*
+_Estimated time: 30 minutes • Difficulty: Intermediate • Type: Optional • Works with: All Verticals_
 
 ### 💡 Pro Tip
 
 These universal components form a "Component Library" you can reuse across all your projects. Consider:
+
 - Publishing them as an npm package
 - Creating Storybook documentation
 - Sharing with your development team

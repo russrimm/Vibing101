@@ -1,38 +1,38 @@
 ---
-title: "Setup Your Mac for Vibe Coding"
-description: "Get your Mac ready for AI-assisted development with all the right tools"
-duration: "20 minutes"
+title: 'Setup Your Mac for Vibe Coding'
+description: 'Get your Mac ready for AI-assisted development with all the right tools'
+duration: '20 minutes'
 order: 2
-difficulty: "beginner"
-platform: "mac"
+difficulty: 'beginner'
+platform: 'mac'
 quiz:
-  - question: "Why do we need Node.js?"
+  - question: 'Why do we need Node.js?'
     options:
-      - "To browse the internet"
-      - "To run JavaScript outside the browser and manage packages"
-      - "To write documents"
-      - "To play music"
+      - 'To browse the internet'
+      - 'To run JavaScript outside the browser and manage packages'
+      - 'To write documents'
+      - 'To play music'
     correct: 1
     points: 10
-    explanation: "Node.js lets us run JavaScript on our computer (not just in browsers) and includes npm, which manages all the code libraries our project needs!"
-  - question: "What does VS Code do?"
+    explanation: 'Node.js lets us run JavaScript on our computer (not just in browsers) and includes npm, which manages all the code libraries our project needs!'
+  - question: 'What does VS Code do?'
     options:
-      - "Creates videos"
+      - 'Creates videos'
       - "It's a powerful code editor where we write and edit code"
-      - "Manages our calendar"
-      - "Plays games"
+      - 'Manages our calendar'
+      - 'Plays games'
     correct: 1
     points: 10
-    explanation: "VS Code is our code editor—think of it like Microsoft Word, but designed specifically for writing code. It has tons of features to make coding easier!"
-  - question: "What are MCP Servers?"
+    explanation: 'VS Code is our code editor—think of it like Microsoft Word, but designed specifically for writing code. It has tons of features to make coding easier!'
+  - question: 'What are MCP Servers?'
     options:
-      - "Minecraft servers"
-      - "Tools that enhance GitHub Copilot with up-to-date documentation"
-      - "Email servers"
-      - "Game servers"
+      - 'Minecraft servers'
+      - 'Tools that enhance GitHub Copilot with up-to-date documentation'
+      - 'Email servers'
+      - 'Game servers'
     correct: 1
     points: 10
-    explanation: "MCP (Model Context Protocol) servers give Copilot access to current documentation and specialized knowledge, making it even smarter!"
+    explanation: 'MCP (Model Context Protocol) servers give Copilot access to current documentation and specialized knowledge, making it even smarter!'
 ---
 
 # 🍎 Setup Your Mac for Vibe Coding
@@ -101,17 +101,19 @@ Here's your toolkit:
    - Or press: `Ctrl + ` (backtick key, usually above Tab)
 
 2. **Check Node version**:
+
    ```bash
    node --version
    ```
-   
+
    You should see something like: `v20.11.0` (your numbers might be different—that's okay!)
 
 3. **Check npm version**:
+
    ```bash
    npm --version
    ```
-   
+
    You should see something like: `10.2.4`
 
 🎉 **Success!** Node.js and npm are installed!
@@ -127,17 +129,18 @@ Here's your toolkit:
 1. **Open Terminal** in VS Code (if not already open)
 
 2. **Check if Git is already installed**:
+
    ```bash
    git --version
    ```
-   
+
    - ✅ If you see a version number, **you're done!** Skip to Step 4.
    - ❌ If you see "command not found", continue below.
 
 3. **Install Git** (if needed):
-   
+
    When you run `git --version` above and it's not found, macOS will prompt you to install "Command Line Developer Tools". Click **Install** and wait for it to finish.
-   
+
    Or visit: [https://git-scm.com/download/mac](https://git-scm.com/download/mac) and download the installer.
 
 ### ✅ Verify It Worked:
@@ -201,11 +204,13 @@ You should see something like: `git version 2.39.2`
 ### ⚠️ Important Notes:
 
 **Always Install Latest Versions:**
+
 - Extensions update frequently with bug fixes and new features
 - Click "Update" if you see it next to the extension
 - Copilot works best with the latest VS Code version
 
 **Copilot Requires a Subscription:**
+
 - **Students/Teachers**: Free! Get verified at [education.github.com](https://education.github.com/)
 - **Individual**: $10/month or $100/year
 - **Free Trial**: 30 days available
@@ -228,13 +233,15 @@ You should see something like: `git version 2.39.2`
 1. **Open Terminal** (or VS Code terminal)
 
 2. **Install GitHub CLI using Homebrew:**
+
    ```bash
    brew install gh
    ```
-   
+
    > 💡 **Tip:** Always install the **latest version** of GitHub CLI (gh) to get the newest Copilot CLI features
 
 3. **Install GitHub Copilot CLI extension:**
+
    ```bash
    gh extension install github/gh-copilot
    ```
@@ -243,6 +250,7 @@ You should see something like: `git version 2.39.2`
    ```bash
    gh auth login
    ```
+
    - Choose "GitHub.com"
    - Select "HTTPS" protocol
    - Choose "Login with a web browser" and follow prompts
@@ -254,11 +262,13 @@ gh copilot --version
 ```
 
 **Expected result:**
+
 ```
 gh-copilot version X.X.X
 ```
 
 ✅ **Success!** You can now use Copilot in your terminal:
+
 - `gh copilot suggest` - Get command suggestions
 - `gh copilot explain` - Explain commands
 
@@ -302,6 +312,7 @@ gh-copilot version X.X.X
 ### 🔧 Troubleshooting:
 
 If servers show "Disconnected":
+
 - Try: `MCP: Restart Servers` again
 - Restart VS Code
 - Check your internet connection
@@ -319,9 +330,11 @@ If servers show "Disconnected":
 1. **Open Terminal** in VS Code
 
 2. **Set your name**:
+
    ```bash
    git config --global user.name "Your Name"
    ```
+
    (Use your real name or GitHub username)
 
 3. **Set your email**:
@@ -349,6 +362,7 @@ You should see your name and email in the output.
 ### Setup:
 
 1. **In Terminal**, create a projects folder:
+
    ```bash
    mkdir -p ~/Development/VibeProjects
    cd ~/Development/VibeProjects
@@ -372,13 +386,13 @@ You should see your name and email in the output.
 
 **You'll use these a lot:**
 
-| Action | Shortcut |
-|--------|----------|
-| Open Terminal | `Ctrl + `` ` |
+| Action               | Shortcut          |
+| -------------------- | ----------------- |
+| Open Terminal        | `Ctrl + `` `      |
 | Open Command Palette | `Cmd + Shift + P` |
-| Open Copilot Chat | `Cmd + Shift + I` |
-| Save File | `Cmd + S` |
-| Find in Files | `Cmd + Shift + F` |
+| Open Copilot Chat    | `Cmd + Shift + I` |
+| Save File            | `Cmd + S`         |
+| Find in Files        | `Cmd + Shift + F` |
 
 ---
 
@@ -408,7 +422,7 @@ Before moving on, make sure you have:
 ✅ Set up the JavaScript/Node.js ecosystem  
 ✅ Connected to the global developer community  
 ✅ Activated AI-assisted development  
-✅ Enhanced AI with specialized knowledge  
+✅ Enhanced AI with specialized knowledge
 
 **You're not just learning to code—you're learning to vibe code with AI as your partner.**
 
@@ -419,6 +433,7 @@ Before moving on, make sure you have:
 Ready to meet your AI partner and learn how to work together? Head to the next lab: **Meet Your AI Partner**!
 
 You'll learn:
+
 - How to talk to AI effectively
 - Beast Mode for complex tasks
 - Plan Mode for big-picture thinking
@@ -428,7 +443,7 @@ You'll learn:
 
 ---
 
-*Estimated time: 20 minutes • Difficulty: Beginner • Platform: macOS • Next: Meet Your AI Partner*
+_Estimated time: 20 minutes • Difficulty: Beginner • Platform: macOS • Next: Meet Your AI Partner_
 
 ### 💡 Pro Tip
 

@@ -1,34 +1,34 @@
 ---
-title: "Welcome to the Future of Coding"
-description: "Discover how vibe coding with AI makes programming accessible to everyone"
-duration: "10 minutes"
+title: 'Welcome to the Future of Coding'
+description: 'Discover how vibe coding with AI makes programming accessible to everyone'
+duration: '10 minutes'
 order: 0
-difficulty: "beginner"
+difficulty: 'beginner'
 quiz:
-  - question: "What is vibe coding?"
+  - question: 'What is vibe coding?'
     options:
-      - "Coding with music playing"
-      - "Using AI agents to help build software while you guide and verify"
-      - "A new programming language"
+      - 'Coding with music playing'
+      - 'Using AI agents to help build software while you guide and verify'
+      - 'A new programming language'
       - "Coding only when you're in the mood"
     correct: 1
     points: 10
     explanation: "Vibe coding is a development approach where AI agents handle most coding tasks while you provide guidance, make decisions, and verify the results. It's about collaboration between human creativity and AI capabilities!"
-  - question: "Who can learn to vibe code?"
+  - question: 'Who can learn to vibe code?'
     options:
-      - "Only experienced programmers"
-      - "Only people with computer science degrees"
-      - "Anyone and everyone!"
-      - "Only young people"
+      - 'Only experienced programmers'
+      - 'Only people with computer science degrees'
+      - 'Anyone and everyone!'
+      - 'Only young people'
     correct: 2
     points: 10
     explanation: "That's right! Vibe coding democratizes software development. If you can describe what you want to build, AI can help you build it. No prior coding experience required!"
-  - question: "What tool will we use for AI-assisted development?"
+  - question: 'What tool will we use for AI-assisted development?'
     options:
-      - "ChatGPT in a web browser"
-      - "GitHub Copilot in VS Code"
-      - "Google Bard"
-      - "Microsoft Excel"
+      - 'ChatGPT in a web browser'
+      - 'GitHub Copilot in VS Code'
+      - 'Google Bard'
+      - 'Microsoft Excel'
     correct: 1
     points: 10
     explanation: "We'll use GitHub Copilot integrated directly into Visual Studio Code, giving us AI assistance right where we code!"
@@ -45,6 +45,7 @@ Here's the exciting truth: **The future of coding is here, and it belongs to eve
 ## What is Vibe Coding? 🎵
 
 Imagine having a brilliant programming partner who:
+
 - Never gets tired or frustrated
 - Knows dozens of programming languages
 - Can write code faster than you can type
@@ -62,12 +63,14 @@ Think of it like this: You're the architect designing a beautiful building, and 
 ## Why This Changes Everything
 
 **Traditional Coding:**
+
 - Spent hours debugging syntax errors
 - Memorized complicated documentation
 - Googled "how to..." constantly
 - Felt stuck when encountering new technologies
 
 **Vibe Coding:**
+
 - AI catches errors before you even run the code
 - AI explains concepts in your own words
 - AI suggests solutions based on your goals
@@ -89,15 +92,19 @@ And here's the best part: **You'll do this with AI as your partner**, not by mem
 ## How This Lab Works
 
 ### 1. Choose Your Vibe
+
 Pick an industry that excites you (Retail, Finance, Healthcare, etc.) and we'll customize everything to match.
 
 ### 2. Learn by Doing
+
 Each lab guides you through hands-on building with AI assistance. No boring theory—just practical, real-world development.
 
 ### 3. Compete & Share
+
 Take quizzes, earn badges, compete with friends, and share your achievements with your team.
 
 ### 4. Build Your Portfolio
+
 Create something you're proud to show off—a real application that demonstrates your new skills.
 
 ## What You'll Learn
@@ -134,6 +141,7 @@ Remember when only a tiny fraction of people could read and write? Then the prin
 **AI has made software development accessible to everyone.**
 
 You don't need to become a "traditional programmer" to build amazing things. You need to:
+
 - Understand what you want to create
 - Learn how to communicate with AI
 - Verify that what's built matches your vision
@@ -160,6 +168,7 @@ Take a moment to think about:
 **What would you build if coding wasn't a barrier?**
 
 Maybe it's:
+
 - A tool to solve a problem at work
 - An app for a hobby or passion
 - Something to help your community
@@ -180,4 +189,4 @@ Remember: You don't need to know everything. You just need to start. AI will be 
 
 ---
 
-*Estimated time: 10 minutes • Difficulty: Beginner • Next: Choose Your Vibe*
+_Estimated time: 10 minutes • Difficulty: Beginner • Next: Choose Your Vibe_
