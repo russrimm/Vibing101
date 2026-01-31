@@ -76,7 +76,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 <p className="text-sm text-slate-400 mb-2">
                   Verify installation:
                 </p>
-                <CodeBlock code="node -v\nnpm -v" language="bash" />
+                <CodeBlock code="node -v" language="bash" />
               </div>
             </div>
           </div>
