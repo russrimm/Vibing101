@@ -156,7 +156,7 @@ export default function CompletionStep({
               href="https://github.com/github/awesome-copilot/blob/main/instructions/power-apps-code-apps.instructions.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold shadow-lg shadow-purple-500/30 text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-slate-50 rounded-lg hover:bg-purple-700 transition-colors font-semibold shadow-lg shadow-purple-500/30 text-sm"
             >
               <span>📱</span>
               <span>Deploy with Power Apps →</span>
@@ -172,33 +172,6 @@ export default function CompletionStep({
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
           <a
-            href="https://react.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
-          >
-            <p className="font-semibold text-white">React Documentation</p>
-            <p className="text-sm text-slate-400">Learn more about React</p>
-          </a>
-          <a
-            href="https://tailwindcss.com/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
-          >
-            <p className="font-semibold text-white">Tailwind CSS</p>
-            <p className="text-sm text-slate-400">Master utility-first CSS</p>
-          </a>
-          <a
-            href="https://www.typescriptlang.org/docs/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
-          >
-            <p className="font-semibold text-white">TypeScript</p>
-            <p className="text-sm text-slate-400">Deep dive into types</p>
-          </a>
-          <a
             href="https://github.com/features/copilot"
             target="_blank"
             rel="noopener noreferrer"
@@ -206,6 +179,17 @@ export default function CompletionStep({
           >
             <p className="font-semibold text-white">GitHub Copilot</p>
             <p className="text-sm text-slate-400">AI-powered coding tips</p>
+          </a>
+          <a
+            href="https://github.blog/changelog/2026-01-21-github-copilot-cli-plan-before-you-build-steer-as-you-go/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
+          >
+            <p className="font-semibold text-white">GitHub Copilot CLI</p>
+            <p className="text-sm text-slate-400">
+              Plan before you build, steer as you go
+            </p>
           </a>
         </div>
       </div>

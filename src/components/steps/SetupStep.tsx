@@ -70,9 +70,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-green-700 text-slate-50 font-black text-lg rounded-lg hover:bg-green-800 transition-colors shadow-xl shadow-green-500/50 border-2 border-green-400"
               >
-                <span className="text-slate-50">
-                  Download Node.js →
-                </span>
+                <span className="text-slate-50">Download Node.js →</span>
               </a>
               <div className="mt-4">
                 <p className="text-sm text-slate-400 mb-2">
@@ -126,8 +124,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 4. Setup GitHub Copilot & MCP Servers (Required)
               </h3>
               <p className="text-slate-300 mb-3">
-                Install GitHub Copilot extension, configure Beast Mode custom agent, and enable
-                MCP servers.
+                Install GitHub Copilot extension, configure Beast Mode custom
+                agent, and enable MCP servers.
               </p>
               <div className="space-y-3">
                 <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
@@ -138,8 +136,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         In VS Code, click the{' '}
-                        <strong className="text-white">Extensions</strong>{' '}
-                        icon in the left sidebar (or press{' '}
+                        <strong className="text-white">Extensions</strong> icon
+                        in the left sidebar (or press{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                           Ctrl+Shift+X
                         </code>
@@ -152,10 +150,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         Search for{' '}
-                        <strong className="text-white">
-                          "GitHub Copilot"
-                        </strong>{' '}
-                        and click <strong className="text-white">Install</strong>
+                        <strong className="text-white">"GitHub Copilot"</strong>{' '}
+                        and click{' '}
+                        <strong className="text-white">Install</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -193,7 +190,17 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         Select{' '}
                         <strong className="text-white">
                           "Create new Custom Agents"
-                        </strong>
+                        </strong>{' '}
+                        (
+                        <a
+                          href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents#creating-a-custom-agent-profile-in-visual-studio-code"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 underline"
+                        >
+                          learn more
+                        </a>
+                        )
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -331,8 +338,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         >
                           github.com/mcp
                         </a>{' '}
-                        and select <strong className="text-white">"Install"</strong> for both{' '}
-                        <strong className="text-white">Context7</strong> and{' '}
+                        and select{' '}
+                        <strong className="text-white">"Install"</strong> for
+                        both <strong className="text-white">Context7</strong>{' '}
+                        and{' '}
                         <strong className="text-white">Microsoft Learn</strong>
                       </span>
                     </li>
