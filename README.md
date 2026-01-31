@@ -21,6 +21,53 @@ Before you begin, make sure you have these tools installed:
    gh auth login
    ```
 
+6. **Windows Subsystem for Linux (WSL)** - For Windows users:
+   
+   **What is WSL?** WSL lets you run a Linux environment directly on Windows without a virtual machine. This gives you access to powerful Linux tools and makes development easier.
+   
+   **Install WSL:**
+   ```bash
+   wsl --install
+   ```
+   
+   After installation, restart your computer. WSL will automatically install Ubuntu by default.
+   
+   **Use WSL in VS Code:**
+   - Open VS Code
+   - Install the "WSL" extension (search for `ms-vscode-remote.remote-wsl`)
+   - Click the green button in the bottom-left corner of VS Code
+   - Select "Connect to WSL"
+   - Your terminal will now run in Linux mode
+   
+   **Install Azure CLI in WSL:**
+   ```bash
+   curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+   ```
+   
+   > 💡 **Tip:** Always verify you're installing the **latest version** of Azure CLI. After installation, run `az --version` to confirm.
+
+7. **GitHub Copilot Agent Mode Starter Kit** - Enhanced AI development setup:
+   
+   **What is it?** A powerful configuration that supercharges GitHub Copilot with custom agents and modes for better code generation.
+   
+   **Fork and Set Up:**
+   
+   1. Navigate to: [https://github.com/russrimm/github-copilot-agent-mode-starter-kit](https://github.com/russrimm/github-copilot-agent-mode-starter-kit)
+   2. Click the **Fork** button (top-right corner)
+   3. Clone your fork to your local machine:
+      ```bash
+      cd c:\repos
+      git clone https://github.com/YOUR-USERNAME/github-copilot-agent-mode-starter-kit.git
+      ```
+   4. Open the folder in VS Code:
+      ```bash
+      cd github-copilot-agent-mode-starter-kit
+      code .
+      ```
+   5. Follow the README instructions in that repository to configure custom agents
+   
+   This will give you pre-configured AI agents like "Beast Mode" for thorough development, "Plan Mode" for architecture, and more!
+
 ### Fork and Clone the Repository
 
 Follow these steps to get a local copy of this project:

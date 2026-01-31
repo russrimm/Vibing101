@@ -39,12 +39,12 @@ const wrapGlossaryTerms = (text: string): React.ReactNode => {
     const entry = (glossaryData as any)[key]
     const term = entry.term
     const regex = new RegExp(`\\b${term}\\b`, 'gi')
-    let match
+    let match: RegExpExecArray | null
 
     while ((match = regex.exec(text)) !== null) {
       // Check if this position is not already covered by a longer term
       const overlaps = matches.some(
-        (m) => match.index >= m.index && match.index < m.index + m.length
+        (m) => match!.index >= m.index && match!.index < m.index + m.length
       )
       if (!overlaps) {
         matches.push({
@@ -95,22 +95,23 @@ export const MarkdownRenderer: FC<MarkdownRendererProps> = ({
         remarkPlugins={[remarkGfm]}
         components={{
           // Code blocks with syntax highlighting
-          code({ node, inline, className, children, ...props }) {
+          code({ node, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
-            return !inline && match ? (
+            const isInline = !match
+            const { ref, ...restProps } = props
+            return !isInline && match ? (
               <SyntaxHighlighter
-                style={vscDarkPlus}
+                style={vscDarkPlus as any}
                 language={match[1]}
                 PreTag="div"
                 className="rounded-lg !bg-slate-900 !my-4"
-                {...props}
               >
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             ) : (
               <code
                 className="bg-slate-800 text-cyan-400 px-1.5 py-0.5 rounded text-sm font-mono"
-                {...props}
+                {...restProps}
               >
                 {children}
               </code>
