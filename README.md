@@ -32,8 +32,11 @@ Before you begin, make sure you have these tools installed:
 
    After installation, restart your computer. WSL will automatically install Ubuntu by default.
 
-   **Install the VS Code WSL Extension:**
-   - [Install WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+   **Install VS Code Extensions:**
+   - [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) - Includes WSL, Remote-SSH, and Dev Containers extensions
+   - Or install just the [WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) if you only need WSL support
+   
+   **Connect to WSL:**
    - Click the button in the very bottom-left corner of VS Code
    - Select "Connect to WSL"
    - Your terminal will now run in Linux mode
