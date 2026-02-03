@@ -174,15 +174,11 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         5.
                       </span>
                       <span>
-                        Navigate to{' '}
-                        <a
-                          href="https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf#file-beastmode3-chatmode-md"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-cyan-400 hover:text-cyan-300 underline"
-                        >
-                          the Beast Mode gist
-                        </a>
+                        Click the{' '}
+                        <strong className="text-white">
+                          Agent/Ask mode dropdown
+                        </strong>{' '}
+                        at the top of the GitHub Copilot chat
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -190,8 +186,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         6.
                       </span>
                       <span>
-                        Click the <strong className="text-white">Raw</strong>{' '}
-                        button in the top-right of the file preview
+                        Click{' '}
+                        <strong className="text-white">
+                          "Configure Custom Agents"
+                        </strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -199,11 +197,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         7.
                       </span>
                       <span>
-                        Save the file (
-                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                          Ctrl+S
-                        </code>
-                        )
+                        Click{' '}
+                        <strong className="text-white">
+                          "Create new custom Agent"
+                        </strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -211,15 +208,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         8.
                       </span>
                       <span>
-                        Save it to{' '}
-                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                          c:\users\&lt;yourusername&gt;\appdata\roaming\code\user\prompts
-                        </code>{' '}
-                        (replace{' '}
-                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                          &lt;yourusername&gt;
-                        </code>{' '}
-                        with your Windows username)
+                        Click{' '}
+                        <strong className="text-white">"User Data"</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -227,20 +217,20 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         9.
                       </span>
                       <span>
-                        Create the{' '}
-                        <strong className="text-white">prompts</strong> folder
-                        if it doesn't exist
+                        Enter{' '}
+                        <strong className="text-white">"Beast Mode"</strong> and
+                        press Enter
                       </span>
                     </li>
                   </ol>
                   <a
-                    href="https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf#file-beastmode3-chatmode-md"
+                    href="https://gist.githubusercontent.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf/raw/e1898331f1755aff3265d50e30106b8c6987c4f7/beastmode3.chatmode.md"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-3 px-4 py-2 bg-purple-700 text-slate-50 font-black text-sm rounded-lg hover:bg-purple-800 transition-colors shadow-lg shadow-purple-500/50 border-2 border-purple-400"
                   >
                     <span className="text-slate-50">
-                      Download Beast Mode File →
+                      Open Beast Mode Content →
                     </span>
                   </a>
                   <ol
@@ -252,10 +242,15 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         10.
                       </span>
                       <span>
-                        Save the file as{' '}
-                        <strong className="text-white">
-                          beastmode3.chatmode.md
-                        </strong>
+                        Copy all the content from the Beast Mode page (
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          Ctrl+A
+                        </code>{' '}
+                        then{' '}
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          Ctrl+C
+                        </code>
+                        )
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -263,13 +258,40 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         11.
                       </span>
                       <span>
-                        <strong className="text-white">Restart VS Code</strong>{' '}
-                        to load the new chat mode
+                        Paste the content into the{' '}
+                        <strong className="text-white">
+                          Beast Mode.agent.md
+                        </strong>{' '}
+                        file that opened in VS Code
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
                         12.
+                      </span>
+                      <span>
+                        Save the file (
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          Ctrl+S
+                        </code>
+                        )
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
+                        12.
+                      </span>
+                      <span>
+                        Save the file (
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          Ctrl+S
+                        </code>
+                        )
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400 font-semibold shrink-0">
+                        13.
                       </span>
                       <span>
                         Click on the{' '}
@@ -279,7 +301,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        13.
+                        14.
                       </span>
                       <span>
                         Select{' '}
@@ -288,7 +310,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        14.
+                        15.
                       </span>
                       <span>
                         Click{' '}
@@ -301,7 +323,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        15.
+                        16.
                       </span>
                       <span>
                         Press{' '}
@@ -313,7 +335,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        16.
+                        17.
                       </span>
                       <span>
                         Type{' '}
@@ -325,7 +347,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        17.
+                        18.
                       </span>
                       <span>
                         Add{' '}
@@ -337,7 +359,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        18.
+                        19.
                       </span>
                       <span>
                         Go to{' '}
