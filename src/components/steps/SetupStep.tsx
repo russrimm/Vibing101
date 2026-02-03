@@ -282,27 +282,6 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         13.
                       </span>
                       <span>
-                        Click on the{' '}
-                        <strong className="text-white">
-                          sprocket/gear icon ⚙️
-                        </strong>{' '}
-                        at the top of the GitHub Copilot chat window
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
-                        14.
-                      </span>
-                      <span>
-                        Select{' '}
-                        <strong className="text-white">MCP Servers</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
-                        15.
-                      </span>
-                      <span>
                         Press{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                           Ctrl+Shift+P
@@ -312,7 +291,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        16.
+                        14.
                       </span>
                       <span>
                         Type{' '}
@@ -324,7 +303,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        17.
+                        15.
                       </span>
                       <span>
                         Add{' '}
@@ -337,7 +316,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        18.
+                        16.
                       </span>
                       <span>
                         Go to{' '}
