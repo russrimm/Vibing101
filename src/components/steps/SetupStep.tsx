@@ -263,9 +263,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         11.
                       </span>
                       <span>
-                        <strong className="text-white">
-                          Restart VS Code
-                        </strong>{' '}
+                        <strong className="text-white">Restart VS Code</strong>{' '}
                         to load the new chat mode
                       </span>
                     </li>

@@ -214,13 +214,15 @@ Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough cod
 3. Select **Beast Mode** from the dropdown
 
 4. Enter your build prompt, for example:
+
 ```
 
 Create a new contact form component with validation
 
-````
+```
 
 5. Beast Mode will provide comprehensive solutions with:
+
 - Complete, production-ready code
 - Error handling and edge cases
 - Accessibility considerations
@@ -240,7 +242,7 @@ Build for production:
 
 ```bash
 npm run build
-````
+```
 
 Preview production build:
 
