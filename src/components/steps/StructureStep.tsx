@@ -834,6 +834,13 @@ START NOW
             Beast Mode is a powerful custom agent mode that provides thorough,
             production-ready code generation:
           </p>
+          <p className="text-slate-300 mb-4 text-sm">
+            MCP servers let Copilot securely connect to external tools and
+            trusted knowledge sources (for example: official docs, SDK
+            references, and project-aware helpers). You’ll install a couple for
+            this lab, and you can always add more later if you see ones that
+            look useful for future projects.
+          </p>
           <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
             <ol className="space-y-2 text-sm text-slate-300">
               <li className="flex items-start gap-2">
