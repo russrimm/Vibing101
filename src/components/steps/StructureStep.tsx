@@ -423,7 +423,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
             1. Set Up Beast Mode (Custom Chat Mode) and MCP Servers
           </h4>
           <p className="text-slate-300 mb-4 text-sm">
-            Beast Mode is a powerful custom chat mode that provides thorough, production-ready code generation:
+            Beast Mode is a powerful custom chat mode that provides thorough,
+            production-ready code generation:
           </p>
           <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
             <ol className="space-y-2 text-sm text-slate-300">
@@ -433,8 +434,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
                 </span>
                 <span>
                   In VS Code, click the{' '}
-                  <strong className="text-white">Extensions</strong> icon
-                  in the left sidebar (or press{' '}
+                  <strong className="text-white">Extensions</strong> icon in the
+                  left sidebar (or press{' '}
                   <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                     Ctrl+Shift+X
                   </code>
@@ -447,18 +448,15 @@ Build this as a complete financial request portal suitable for demonstrating a r
                 </span>
                 <span>
                   Search for{' '}
-                  <strong className="text-white">"GitHub Copilot"</strong>{' '}
-                  and click{' '}
-                  <strong className="text-white">Install</strong>
+                  <strong className="text-white">"GitHub Copilot"</strong> and
+                  click <strong className="text-white">Install</strong>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-400 font-semibold shrink-0">
                   c.
                 </span>
-                <span>
-                  Sign in with your GitHub account when prompted
-                </span>
+                <span>Sign in with your GitHub account when prompted</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-400 font-semibold shrink-0">
@@ -505,8 +503,7 @@ Build this as a complete financial request portal suitable for demonstrating a r
                   h.
                 </span>
                 <span>
-                  Click{' '}
-                  <strong className="text-white">"User Data"</strong>
+                  Click <strong className="text-white">"User Data"</strong>
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -514,8 +511,7 @@ Build this as a complete financial request portal suitable for demonstrating a r
                   i.
                 </span>
                 <span>
-                  Enter{' '}
-                  <strong className="text-white">"Beast Mode"</strong> and
+                  Enter <strong className="text-white">"Beast Mode"</strong> and
                   press Enter
                 </span>
               </li>
@@ -526,13 +522,9 @@ Build this as a complete financial request portal suitable for demonstrating a r
               rel="noopener noreferrer"
               className="inline-block mt-3 px-4 py-2 bg-purple-700 text-slate-50 font-black text-sm rounded-lg hover:bg-purple-800 transition-colors shadow-lg shadow-purple-500/50 border-2 border-purple-400"
             >
-              <span className="text-slate-50">
-                Open Beast Mode Content →
-              </span>
+              <span className="text-slate-50">Open Beast Mode Content →</span>
             </a>
-            <ol
-              className="space-y-2 text-sm text-slate-300 mt-4"
-            >
+            <ol className="space-y-2 text-sm text-slate-300 mt-4">
               <li className="flex items-start gap-2">
                 <span className="text-purple-400 font-semibold shrink-0">
                   j.
@@ -555,9 +547,7 @@ Build this as a complete financial request portal suitable for demonstrating a r
                 </span>
                 <span>
                   Paste the content into the{' '}
-                  <strong className="text-white">
-                    Beast Mode.agent.md
-                  </strong>{' '}
+                  <strong className="text-white">Beast Mode.agent.md</strong>{' '}
                   file that opened in VS Code
                 </span>
               </li>
@@ -624,9 +614,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
                   >
                     github.com/mcp
                   </a>{' '}
-                  and select{' '}
-                  <strong className="text-white">"Install"</strong> for{' '}
-                  <strong className="text-white">Context7</strong>,{' '}
+                  and select <strong className="text-white">"Install"</strong>{' '}
+                  for <strong className="text-white">Context7</strong>,{' '}
                   <strong className="text-white">Github</strong>,{' '}
                   <strong className="text-white">Microsoft Learn</strong>, and{' '}
                   <strong className="text-white">Playwright</strong>
