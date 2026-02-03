@@ -483,7 +483,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
       {/* Navigation */}
       <div className="flex justify-between items-center pt-6 border-t border-slate-200 dark:border-white/10">
         <div className="text-sm text-slate-600 dark:text-slate-400">
-          Step 1 of 5
+          Step 1 of 4
         </div>
         <button
           onClick={onNext}

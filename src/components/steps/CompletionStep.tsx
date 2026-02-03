@@ -202,7 +202,7 @@ export default function CompletionStep({
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 5 of 5</div>
+        <div className="text-sm text-slate-400">Step 4 of 4</div>
         <button
           onClick={onReset}
           className="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold shadow-lg shadow-purple-500/30"

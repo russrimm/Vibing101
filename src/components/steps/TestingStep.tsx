@@ -76,11 +76,49 @@ export default function TestingStep({
         </div>
       </div>
 
-      {/* Build for Production */}
+      {/* Run Locally */}
       <div className="mb-8">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
             2
+          </span>
+          Run Locally (Dev Server)
+        </h3>
+        <div className="ml-10">
+          <p className="text-slate-300 mb-4">
+            Start the app locally and click around to make sure it works:
+          </p>
+          <CodeBlock code="npm run dev" language="bash" />
+          <p className="text-sm text-slate-400 mt-2">
+            Then open{' '}
+            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+              http://localhost:5173
+            </code>{' '}
+            in your browser.
+          </p>
+          <div className="mt-4 p-4 bg-slate-900/30 rounded-lg border border-white/10">
+            <p className="text-sm text-slate-300">
+              If you see errors in the terminal or browser console, copy/paste
+              them into <strong className="text-white">Beast Mode</strong> and
+              ask it to fix the issues, then run{' '}
+              <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+                npm run dev
+              </code>{' '}
+              again.
+            </p>
+            <p className="text-sm text-slate-400 mt-2">
+              It’s normal to hit a handful of errors while iterating — Beast
+              Mode will keep resolving them until the app runs cleanly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Build for Production */}
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
+            3
           </span>
           Build for Production
         </h3>
@@ -103,7 +141,7 @@ export default function TestingStep({
       <div className="mb-8">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            3
+            4
           </span>
           Deploy Your App
         </h3>
@@ -162,7 +200,7 @@ export default function TestingStep({
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 4 of 5</div>
+        <div className="text-sm text-slate-400">Step 3 of 4</div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold shadow-lg shadow-green-500/30"

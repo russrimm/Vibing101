@@ -1588,7 +1588,7 @@ START NOW
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 2 of 6</div>
+        <div className="text-sm text-slate-400">Step 2 of 4</div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-cyan-700 text-slate-50 font-black text-lg rounded-lg hover:bg-cyan-800 transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400"
