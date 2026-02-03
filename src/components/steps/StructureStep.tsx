@@ -836,9 +836,8 @@ START NOW
           </p>
           <ul className="text-slate-300 mb-4 text-sm space-y-2">
             <li>
-              <strong className="text-white">Ask mode</strong>: quick
-              questions, explanations, and small suggestions (usually no file
-              edits).
+              <strong className="text-white">Ask mode</strong>: quick questions,
+              explanations, and small suggestions (usually no file edits).
             </li>
             <li>
               <strong className="text-white">Plan mode</strong>: design and
