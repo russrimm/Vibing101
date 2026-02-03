@@ -332,11 +332,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         13.
                       </span>
                       <span>
-                        Press{' '}
+                        Open VS Code Settings with{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                          Ctrl+Shift+P
-                        </code>{' '}
-                        to open the Command Palette
+                          Ctrl+,
+                        </code>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -344,11 +343,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         14.
                       </span>
                       <span>
-                        Type{' '}
+                        In the Settings search box, search for{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          "Preferences: Open User Settings (JSON)"
-                        </strong>{' '}
-                        and select it
+                          max requests
+                        </strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -356,12 +354,19 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         15.
                       </span>
                       <span>
-                        Add{' '}
+                        Set the{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                          "chat.agent.maxRequests": 200
+                          Max Requests
                         </code>{' '}
-                        to the settings file, and add a comma to end of the line
-                        before it so it's properly formatted json
+                        (setting key:{' '}
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          chat.agent.maxRequests
+                        </code>
+                        ){' '}
+                        to{' '}
+                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                          200
+                        </code>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">

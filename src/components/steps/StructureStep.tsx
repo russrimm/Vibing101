@@ -1004,11 +1004,10 @@ START NOW
                   m.
                 </span>
                 <span>
-                  Press{' '}
+                  Open VS Code Settings with{' '}
                   <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    Ctrl+Shift+P
-                  </code>{' '}
-                  to open the Command Palette
+                    Ctrl+,
+                  </code>
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -1016,11 +1015,8 @@ START NOW
                   n.
                 </span>
                 <span>
-                  Type{' '}
-                  <strong className="text-white">
-                    "Preferences: Open User Settings (JSON)"
-                  </strong>{' '}
-                  and select it
+                  In the Settings search box, search for{' '}
+                  <strong className="text-white">max requests</strong>
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -1028,12 +1024,19 @@ START NOW
                   o.
                 </span>
                 <span>
-                  Add{' '}
+                  Set the{' '}
                   <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    "chat.agent.maxRequests": 200
+                    Max Requests
                   </code>{' '}
-                  to the settings file, and add a comma to end of the line
-                  before it so it's properly formatted json
+                  (setting key:{' '}
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    chat.agent.maxRequests
+                  </code>
+                  ){' '}
+                  to{' '}
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    200
+                  </code>
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -1061,14 +1064,17 @@ START NOW
           </div>
         </div>
 
-        {/* Fork Vibing101 Repository */}
+        {/* Get Agent Mode Starter Kit Repository */}
         <div className="bg-slate-800/60 border border-cyan-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">🍴</span>
-            2. Fork the Vibing101 Repository
+            2. Get the Agent Mode Starter Kit (Fork optional)
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
-            Get your own copy of this learning platform to use as a reference:
+            For this lab, you can simply <strong className="text-white">clone</strong>{' '}
+            the starter kit repo to your machine. Forking is only needed if you
+            want to <strong className="text-white">push your changes to GitHub</strong>,
+            open pull requests, or use GitHub-based workflows.
           </p>
           <ol className="space-y-2 text-slate-300 text-sm ml-4">
             <li className="flex items-start gap-2">
@@ -1087,32 +1093,34 @@ START NOW
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">b.</span>
               <span>
-                Navigate to{' '}
-                <a
-                  href="https://github.com/russrimm/Vibing101"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 underline"
-                >
-                  github.com/russrimm/Vibing101
-                </a>
+                (Optional) If you want your own GitHub copy, fork the repo:
+                <div className="mt-1">
+                  <a
+                    href="https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 underline"
+                  >
+                    github.com/bradcstevens/github-copilot-agent-mode-starter-kit
+                  </a>
+                </div>
+                <div className="text-xs text-slate-400 mt-1">
+                  Click <strong className="text-slate-200">Fork</strong> (top-right).
+                </div>
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">c.</span>
               <span>
-                Click the <strong className="text-white">Fork</strong> button
-                (top-right corner)
+                Open the repo page on GitHub (either the original repo or your
+                fork), click{' '}
+                <strong className="text-white">Code</strong>, and copy the URL.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">d.</span>
-              <span>GitHub will create a copy in your account</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">e.</span>
               <span>
-                Clone your fork to your local machine (for screenshots, see{' '}
+                Clone it to your local machine (for screenshots, see{' '}
                 <a
                   href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"
                   target="_blank"
@@ -1123,19 +1131,20 @@ START NOW
                 </a>
                 ):
                 <div className="text-xs text-slate-400 mt-2">
-                  On your forked repo page on GitHub: click{' '}
-                  <span className="text-slate-200 font-semibold">Code</span>,
-                  copy the URL (HTTPS is easiest for beginners), then run:
+                  Tip: if you didn’t fork, the URL will look like
+                  <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400 ml-1">
+                    https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
+                  </code>
+                  . If you forked, it will include your username.
                 </div>
                 <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
                   cd C:\repos{'\n'}
-                  git clone https://github.com/YOUR-USERNAME/Vibing101.git{'\n'}
-                  cd Vibing101{'\n'}
+                  git clone https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git{'\n'}
+                  cd github-copilot-agent-mode-starter-kit{'\n'}
                   code .
                 </pre>
                 <span className="text-xs text-slate-400 mt-1 block">
-                  Replace YOUR-USERNAME with your GitHub username (or paste the
-                  exact URL you copied).
+                  If you forked, replace the clone URL with your fork’s URL.
                 </span>
               </span>
             </li>
@@ -1146,7 +1155,7 @@ START NOW
         <div className="bg-slate-800/60 border border-green-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">⚙️</span>
-            2. Enable Instruction Files in VS Code
+            3. Enable Instruction Files in VS Code
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
             Instruction files guide GitHub Copilot with project-specific rules
@@ -1177,16 +1186,13 @@ START NOW
               <span className="text-cyan-400 font-mono">b.</span>
               <span>
                 Search for:{' '}
-                <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
-                  copilot.chat.custom.instructionFiles.enabled
-                </code>
+                <strong className="text-white">Use Instruction Files</strong>
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">c.</span>
               <span>
-                Check the box to <strong className="text-white">enable</strong>{' '}
-                instruction files
+                Enable <strong className="text-white">Use Instruction Files</strong>
               </span>
             </li>
           </ol>

@@ -86,24 +86,29 @@ Before you begin, make sure you have these tools installed:
 
    This will give you pre-configured AI agents like "Beast Mode" for thorough development, "Plan Mode" for architecture, and more!
 
-### Fork and Clone the Repository
+### Clone the Repository (Fork Optional)
 
 Follow these steps to get a local copy of this project:
 
-#### 1. Fork the Repository on GitHub
+> For this lab, you can simply clone the repository to your machine. Forking is
+> only needed if you want to push your changes to GitHub, open pull requests, or
+> use GitHub-based workflows.
+
+#### Option A (Optional): Fork the Repository on GitHub
 
 1. Navigate to the repository on GitHub: https://github.com/russrimm/Vibing101
 2. Click the **Fork** button in the top-right corner of the page
 3. GitHub will create a copy of the repository in your account
 
-#### 2. Clone Your Fork to Your Local Machine
+#### Option B (Recommended for most learners): Clone to Your Local Machine
 
 For the official GitHub instructions (with screenshots), see:
 https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
-1. On your forked repository page, click the green **Code** button
+1. Open the repo page on GitHub (either the original repo or your fork) and click the green **Code** button
 2. Copy the repository URL (HTTPS is simplest for beginners; SSH also works if you’ve set it up)
-   - Example: `https://github.com/YOUR-USERNAME/Vibing101.git`
+   - Original repo example: `https://github.com/russrimm/Vibing101.git`
+   - Fork example: `https://github.com/YOUR-USERNAME/Vibing101.git`
 
 3. Open **VS Code**
 
@@ -120,10 +125,10 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/cloni
 6. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/Vibing101.git
+   git clone https://github.com/russrimm/Vibing101.git
    ```
 
-   (Replace `YOUR-USERNAME` with your actual GitHub username)
+   (If you forked, use your fork URL instead.)
 
 7. Navigate into the project folder:
    ```bash
