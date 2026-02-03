@@ -45,8 +45,8 @@ export default function StepProgress({
                         : isCurrent
                           ? 'bg-blue-500 border-blue-400 text-white shadow-lg shadow-blue-500/50'
                           : isClickable
-                            ? 'bg-slate-700 border-slate-600 text-slate-300'
-                            : 'bg-slate-800 border-slate-700 text-slate-500'
+                            ? 'bg-slate-200 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300'
+                            : 'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500'
                     }
                   `}
                 >
@@ -74,18 +74,18 @@ export default function StepProgress({
                       text-xs font-medium transition-colors
                       ${
                         isCurrent
-                          ? 'text-cyan-400'
+                          ? 'text-cyan-600 dark:text-cyan-400'
                           : isCompleted
-                            ? 'text-cyan-300'
+                            ? 'text-cyan-500 dark:text-cyan-300'
                             : isClickable
-                              ? 'text-slate-300'
-                              : 'text-slate-500'
+                              ? 'text-slate-700 dark:text-slate-300'
+                              : 'text-slate-400 dark:text-slate-500'
                       }
                     `}
                   >
                     {step.title}
                   </div>
-                  <div className="text-xs text-slate-400 mt-1 hidden sm:block">
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 hidden sm:block">
                     {step.description}
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function StepProgress({
                 <div
                   className={`
                     flex-1 h-0.5 mx-2 transition-colors
-                    ${isCompleted ? 'bg-cyan-500/50' : 'bg-slate-700'}
+                    ${isCompleted ? 'bg-cyan-500/50' : 'bg-slate-300 dark:bg-slate-700'}
                   `}
                 />
               )}

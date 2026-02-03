@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import IndustrySelector from './components/IndustrySelector'
 import LabWizard from './components/LabWizard'
+import ThemeToggle from './components/ThemeToggle'
 import { Industry } from './types/industry'
+import { useTheme } from './hooks/useTheme'
 
 function App() {
+  const { theme, toggleTheme } = useTheme()
   const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(
     null
   )
@@ -20,14 +23,15 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* LinkedIn Link Header */}
-      <header className="fixed top-0 right-0 p-4 z-50">
+    <div className="min-h-screen bg-linear-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      {/* Header with Theme Toggle and LinkedIn Link */}
+      <header className="fixed top-0 right-0 p-4 z-50 flex items-center gap-3">
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
         <a
           href="https://www.linkedin.com/in/russrimm"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-12 h-12 bg-slate-800 hover:bg-cyan-500 rounded-lg transition-colors duration-200 shadow-lg"
+          className="inline-flex items-center justify-center w-12 h-12 bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 dark:hover:bg-cyan-500 rounded-lg transition-colors duration-200 shadow-lg"
           aria-label="Visit Russell Rimmer's LinkedIn profile"
         >
           <svg
@@ -44,7 +48,12 @@ function App() {
       {!wizardStarted ? (
         <IndustrySelector onSelectIndustry={handleIndustrySelect} />
       ) : selectedIndustry ? (
-        <LabWizard industry={selectedIndustry} onReset={handleReset} />
+        <LabWizard 
+          industry={selectedIndustry} 
+          onReset={handleReset}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+        />
       ) : null}
     </div>
   )
