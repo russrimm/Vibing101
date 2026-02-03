@@ -283,8 +283,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         Click on the{' '}
-                        <strong className="text-white">sprocket/gear icon ⚙️</strong> at
-                        the top of the GitHub Copilot chat window
+                        <strong className="text-white">
+                          sprocket/gear icon ⚙️
+                        </strong>{' '}
+                        at the top of the GitHub Copilot chat window
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
