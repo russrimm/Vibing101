@@ -70,6 +70,18 @@ Here's your toolkit:
 4. **Drag**: Visual Studio Code to your Applications folder
 5. **Launch**: Open VS Code from Applications
 
+### Already have VS Code installed?
+
+Make sure you’re running the **latest version** (this lab assumes you have the newest features and fixes).
+
+1. Open VS Code
+2. Check for updates:
+   - **Mac**: **Code** → **Check for Updates…**
+   - **Windows/Linux**: **Help** → **Check for Updates**
+3. If an update is available, install it and restart VS Code
+
+> Tip: If “Check for Updates…” isn’t available, just download the newest VS Code from the website and replace the app in your Applications folder.
+
 ### ✅ Verify It Worked:
 
 - VS Code should open showing a Welcome screen

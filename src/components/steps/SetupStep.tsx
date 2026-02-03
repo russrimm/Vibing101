@@ -1,5 +1,5 @@
 import { Industry } from '../../types/industry'
-import CodeBlock from '../CodeBlock'
+import customAgentImage from '../../assets/images/customagent.png'
 
 interface SetupStepProps {
   industry: Industry
@@ -32,6 +32,12 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
               <p className="text-slate-700 dark:text-slate-300 mb-3">
                 Download and install VS Code, the editor where you'll do all
                 your work. Accept all default options during installation.
+              </p>
+              <p className="text-slate-700 dark:text-slate-300 mb-4">
+                Already have VS Code installed? Make sure it’s the latest
+                version: in VS Code, use <strong>Help → Check for Updates</strong>{' '}
+                (Windows/Linux) or <strong>Code → Check for Updates</strong>{' '}
+                (Mac).
               </p>
               <a
                 href="https://code.visualstudio.com/"
@@ -111,6 +117,12 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 Install GitHub Copilot extension, configure Beast Mode custom
                 agent, and enable MCP servers.
               </p>
+              <p className="text-slate-700 dark:text-slate-300 mb-3 text-sm">
+                Recommendation: use a GitHub account that’s covered by a
+                GitHub Enterprise plan (with Copilot enabled) or your own GitHub
+                Pro plan, so Copilot access and policies are consistent during
+                the lab.
+              </p>
               <div className="space-y-3">
                 <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
                   <ol className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
@@ -182,11 +194,11 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         </strong>
                       </span>
                     </li>
-                    <li className="flex items-center justify-center">
+                    <li className="flex items-center justify-center py-2">
                       <img
-                        src="/assets/customagent.png"
+                        src={customAgentImage}
                         alt="Configure Custom Agents menu item highlighted at the bottom of the Agent dropdown"
-                        className="rounded-xl border border-purple-500/20 shadow-lg max-w-full"
+                        className="rounded-xl border border-purple-500/20 shadow-lg w-full max-w-md max-h-72 object-contain"
                       />
                     </li>
                     <li className="flex items-start gap-2">

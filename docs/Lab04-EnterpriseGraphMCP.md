@@ -98,7 +98,10 @@ const getUserEmail = async (userId: string) => {
 
 Before starting, ensure you have:
 
-✅ **Visual Studio Code** installed  
+✅ **Visual Studio Code** installed (latest version)
+   - If you already have VS Code: update it first
+     - **Windows/Linux**: **Help → Check for Updates**
+     - **Mac**: **Code → Check for Updates…**
 ✅ **GitHub Copilot** active subscription  
 ✅ **Microsoft 365 account** (work/school or personal)  
 ✅ **Node.js** v18 or higher  
