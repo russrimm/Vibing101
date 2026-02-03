@@ -362,8 +362,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                           chat.agent.maxRequests
                         </code>
-                        ){' '}
-                        to{' '}
+                        ) to{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                           200
                         </code>

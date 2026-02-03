@@ -1032,8 +1032,7 @@ START NOW
                   <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                     chat.agent.maxRequests
                   </code>
-                  ){' '}
-                  to{' '}
+                  ) to{' '}
                   <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                     200
                   </code>
@@ -1071,9 +1070,10 @@ START NOW
             2. Get the Agent Mode Starter Kit (Fork optional)
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
-            For this lab, you can simply <strong className="text-white">clone</strong>{' '}
-            the starter kit repo to your machine. Forking is only needed if you
-            want to <strong className="text-white">push your changes to GitHub</strong>,
+            For this lab, you can simply{' '}
+            <strong className="text-white">clone</strong> the starter kit repo
+            to your machine. Forking is only needed if you want to{' '}
+            <strong className="text-white">push your changes to GitHub</strong>,
             open pull requests, or use GitHub-based workflows.
           </p>
           <ol className="space-y-2 text-slate-300 text-sm ml-4">
@@ -1105,7 +1105,8 @@ START NOW
                   </a>
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
-                  Click <strong className="text-slate-200">Fork</strong> (top-right).
+                  Click <strong className="text-slate-200">Fork</strong>{' '}
+                  (top-right).
                 </div>
               </span>
             </li>
@@ -1113,8 +1114,8 @@ START NOW
               <span className="text-cyan-400 font-mono">c.</span>
               <span>
                 Open the repo page on GitHub (either the original repo or your
-                fork), click{' '}
-                <strong className="text-white">Code</strong>, and copy the URL.
+                fork), click <strong className="text-white">Code</strong>, and
+                copy the URL.
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -1139,7 +1140,9 @@ START NOW
                 </div>
                 <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
                   cd C:\repos{'\n'}
-                  git clone https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git{'\n'}
+                  git clone
+                  https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
+                  {'\n'}
                   cd github-copilot-agent-mode-starter-kit{'\n'}
                   code .
                 </pre>
@@ -1192,7 +1195,8 @@ START NOW
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">c.</span>
               <span>
-                Enable <strong className="text-white">Use Instruction Files</strong>
+                Enable{' '}
+                <strong className="text-white">Use Instruction Files</strong>
               </span>
             </li>
           </ol>
