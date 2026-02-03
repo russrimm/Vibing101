@@ -1204,18 +1204,28 @@ START NOW
         </div>
         <ol className="space-y-3 text-slate-800 dark:text-slate-200 text-sm ml-4 mb-4">
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">1.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              1.
+            </span>
             <span>
               In VS Code, click the{' '}
-              <strong className="text-slate-900 dark:text-white">Explorer</strong> button at the top
-              of the left toolbar
+              <strong className="text-slate-900 dark:text-white">
+                Explorer
+              </strong>{' '}
+              button at the top of the left toolbar
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">2.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              2.
+            </span>
             <span>
-              Select <strong className="text-slate-900 dark:text-white">"Open Folder"</strong> and
-              create a new subfolder in the folder you created previously (ex:{' '}
+              Select{' '}
+              <strong className="text-slate-900 dark:text-white">
+                "Open Folder"
+              </strong>{' '}
+              and create a new subfolder in the folder you created previously
+              (ex:{' '}
               <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
                 C:\Repos
               </code>
@@ -1223,30 +1233,46 @@ START NOW
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">3.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              3.
+            </span>
             <span>
               Click the{' '}
-              <strong className="text-slate-900 dark:text-white">"Yes I trust the authors"</strong>{' '}
+              <strong className="text-slate-900 dark:text-white">
+                "Yes I trust the authors"
+              </strong>{' '}
               button and optionally check{' '}
-              <strong className="text-slate-900 dark:text-white">"Trust all authors"</strong>
+              <strong className="text-slate-900 dark:text-white">
+                "Trust all authors"
+              </strong>
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">4.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              4.
+            </span>
             <span>
               Make sure the agent mode is set to{' '}
-              <strong className="text-slate-900 dark:text-white">"Beast Mode"</strong>
+              <strong className="text-slate-900 dark:text-white">
+                "Beast Mode"
+              </strong>
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">5.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              5.
+            </span>
             <span>
               Right-click in the Explorer pane and click{' '}
-              <strong className="text-slate-900 dark:text-white">"New Folder"</strong>
+              <strong className="text-slate-900 dark:text-white">
+                "New Folder"
+              </strong>
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">6.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              6.
+            </span>
             <span>
               Name the folder{' '}
               <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
@@ -1255,15 +1281,24 @@ START NOW
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">7.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              7.
+            </span>
             <span>
-              Right-click on the <strong className="text-slate-900 dark:text-white">.github</strong>{' '}
+              Right-click on the{' '}
+              <strong className="text-slate-900 dark:text-white">
+                .github
+              </strong>{' '}
               folder and select{' '}
-              <strong className="text-slate-900 dark:text-white">"New Folder"</strong>
+              <strong className="text-slate-900 dark:text-white">
+                "New Folder"
+              </strong>
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">8.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              8.
+            </span>
             <span>
               Name the folder{' '}
               <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
@@ -1272,7 +1307,9 @@ START NOW
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">9.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              9.
+            </span>
             <span>
               Go to{' '}
               <a
@@ -1283,7 +1320,10 @@ START NOW
               >
                 power-apps-code-apps.instructions.md
               </a>
-              , click the <strong className="text-slate-900 dark:text-white">"Download"</strong>{' '}
+              , click the{' '}
+              <strong className="text-slate-900 dark:text-white">
+                "Download"
+              </strong>{' '}
               button (top right), then move the file into the{' '}
               <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
                 .github\instructions
@@ -1292,7 +1332,9 @@ START NOW
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">10.</span>
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              10.
+            </span>
             <span>
               Go to{' '}
               <a
@@ -1303,7 +1345,10 @@ START NOW
               >
                 typescript-5-es2022.instructions.md
               </a>
-              , click the <strong className="text-slate-900 dark:text-white">"Download"</strong>{' '}
+              , click the{' '}
+              <strong className="text-slate-900 dark:text-white">
+                "Download"
+              </strong>{' '}
               button, then move the file into the{' '}
               <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
                 .github\instructions
@@ -1318,9 +1363,9 @@ START NOW
               <span className="text-lg mt-0.5">⚠️</span>
               <span>
                 <strong>Why do this first?</strong> This setup enables Copilot
-                instruction files so your build prompt can generate and
-                maintain <strong>.github/copilot-instructions.md</strong> and
-                other standards from the very beginning.
+                instruction files so your build prompt can generate and maintain{' '}
+                <strong>.github/copilot-instructions.md</strong> and other
+                standards from the very beginning.
               </span>
             </p>
           </div>

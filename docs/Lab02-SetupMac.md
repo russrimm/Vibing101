@@ -259,6 +259,7 @@ You should see something like: `git version 2.39.2`
    ```
 
 4. **Authenticate with GitHub:**
+
    ```bash
    gh auth login
    ```

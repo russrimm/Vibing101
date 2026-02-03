@@ -35,9 +35,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
               </p>
               <p className="text-slate-700 dark:text-slate-300 mb-4">
                 Already have VS Code installed? Make sure it’s the latest
-                version: in VS Code, use <strong>Help → Check for Updates</strong>{' '}
-                (Windows/Linux) or <strong>Code → Check for Updates</strong>{' '}
-                (Mac).
+                version: in VS Code, use{' '}
+                <strong>Help → Check for Updates</strong> (Windows/Linux) or{' '}
+                <strong>Code → Check for Updates</strong> (Mac).
               </p>
               <a
                 href="https://code.visualstudio.com/"
@@ -118,10 +118,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 agent, and enable MCP servers.
               </p>
               <p className="text-slate-700 dark:text-slate-300 mb-3 text-sm">
-                Recommendation: use a GitHub account that’s covered by a
-                GitHub Enterprise plan (with Copilot enabled) or your own GitHub
-                Pro plan, so Copilot access and policies are consistent during
-                the lab.
+                Recommendation: use a GitHub account that’s covered by a GitHub
+                Enterprise plan (with Copilot enabled) or your own GitHub Pro
+                plan, so Copilot access and policies are consistent during the
+                lab.
               </p>
               <div className="space-y-3">
                 <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
