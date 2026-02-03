@@ -178,7 +178,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         <strong className="text-white">
                           Agent/Ask mode dropdown
                         </strong>{' '}
-                        at the top of the GitHub Copilot chat
+                        at the bottom of the GitHub Copilot chat
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
