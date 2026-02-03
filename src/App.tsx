@@ -48,8 +48,8 @@ function App() {
       {!wizardStarted ? (
         <IndustrySelector onSelectIndustry={handleIndustrySelect} />
       ) : selectedIndustry ? (
-        <LabWizard 
-          industry={selectedIndustry} 
+        <LabWizard
+          industry={selectedIndustry}
           onReset={handleReset}
           theme={theme}
           onToggleTheme={toggleTheme}

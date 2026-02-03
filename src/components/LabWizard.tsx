@@ -14,11 +14,7 @@ interface LabWizardProps {
   onToggleTheme: () => void
 }
 
-export type WizardStep =
-  | 'setup'
-  | 'structure'
-  | 'testing'
-  | 'completion'
+export type WizardStep = 'setup' | 'structure' | 'testing' | 'completion'
 
 const steps: { id: WizardStep; title: string; description: string }[] = [
   {
@@ -35,7 +31,12 @@ const steps: { id: WizardStep; title: string; description: string }[] = [
   { id: 'completion', title: 'Complete!', description: 'Your app is ready' },
 ]
 
-export default function LabWizard({ industry, onReset, theme, onToggleTheme }: LabWizardProps) {
+export default function LabWizard({
+  industry,
+  onReset,
+  theme,
+  onToggleTheme,
+}: LabWizardProps) {
   const [currentStep, setCurrentStep] = useState<WizardStep>('setup')
   const [completedSteps, setCompletedSteps] = useState<Set<WizardStep>>(
     new Set()
@@ -77,7 +78,9 @@ export default function LabWizard({ industry, onReset, theme, onToggleTheme }: L
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
                   {industry.sampleApp.name}
                 </h1>
-                <p className="text-sm text-cyan-600 dark:text-cyan-400">{industry.name}</p>
+                <p className="text-sm text-cyan-600 dark:text-cyan-400">
+                  {industry.name}
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-3">

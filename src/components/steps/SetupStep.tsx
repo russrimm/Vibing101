@@ -9,7 +9,9 @@ interface SetupStepProps {
 export default function SetupStep({ industry, onNext }: SetupStepProps) {
   return (
     <div className="bg-white/90 dark:bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-slate-200 dark:border-white/10">
-      <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Environment Setup</h2>
+      <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+        Environment Setup
+      </h2>
       <p className="text-slate-700 dark:text-slate-300 mb-8">
         Let's install the tools you need to build your {industry.sampleApp.name}
         . Follow each step and verify the installation before moving forward.
@@ -118,8 +120,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         In VS Code, click the{' '}
-                        <strong className="text-slate-900 dark:text-white">Extensions</strong> icon
-                        in the left sidebar (or press{' '}
+                        <strong className="text-slate-900 dark:text-white">
+                          Extensions
+                        </strong>{' '}
+                        icon in the left sidebar (or press{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                           Ctrl+Shift+X
                         </code>
@@ -132,9 +136,13 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         Search for{' '}
-                        <strong className="text-slate-900 dark:text-white">"GitHub Copilot"</strong>{' '}
+                        <strong className="text-slate-900 dark:text-white">
+                          "GitHub Copilot"
+                        </strong>{' '}
                         and click{' '}
-                        <strong className="text-slate-900 dark:text-white">Install</strong>
+                        <strong className="text-slate-900 dark:text-white">
+                          Install
+                        </strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -191,7 +199,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         Click{' '}
-                        <strong className="text-slate-900 dark:text-white">"User Data"</strong>
+                        <strong className="text-slate-900 dark:text-white">
+                          "User Data"
+                        </strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -200,8 +210,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         Enter{' '}
-                        <strong className="text-slate-900 dark:text-white">"Beast Mode"</strong> and
-                        press Enter
+                        <strong className="text-slate-900 dark:text-white">
+                          "Beast Mode"
+                        </strong>{' '}
+                        and press Enter
                       </span>
                     </li>
                   </ol>
@@ -311,11 +323,25 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                           github.com/mcp
                         </a>{' '}
                         and select{' '}
-                        <strong className="text-slate-900 dark:text-white">"Install"</strong> for
-                        both <strong className="text-slate-900 dark:text-white">Context7</strong>,{' '}
-                        <strong className="text-slate-900 dark:text-white">Github</strong>,{' '}
-                        <strong className="text-slate-900 dark:text-white">Microsoft Learn</strong>,
-                        and <strong className="text-slate-900 dark:text-white">Playwright</strong>
+                        <strong className="text-slate-900 dark:text-white">
+                          "Install"
+                        </strong>{' '}
+                        for both{' '}
+                        <strong className="text-slate-900 dark:text-white">
+                          Context7
+                        </strong>
+                        ,{' '}
+                        <strong className="text-slate-900 dark:text-white">
+                          Github
+                        </strong>
+                        ,{' '}
+                        <strong className="text-slate-900 dark:text-white">
+                          Microsoft Learn
+                        </strong>
+                        , and{' '}
+                        <strong className="text-slate-900 dark:text-white">
+                          Playwright
+                        </strong>
                       </span>
                     </li>
                   </ol>
@@ -396,7 +422,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
 
       {/* Navigation */}
       <div className="flex justify-between items-center pt-6 border-t border-slate-200 dark:border-white/10">
-        <div className="text-sm text-slate-600 dark:text-slate-400">Step 1 of 5</div>
+        <div className="text-sm text-slate-600 dark:text-slate-400">
+          Step 1 of 5
+        </div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-cyan-600 text-white font-black text-lg rounded-lg hover:bg-cyan-700 transition-colors shadow-lg border-2 border-cyan-700"
