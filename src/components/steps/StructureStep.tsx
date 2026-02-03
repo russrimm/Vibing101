@@ -416,11 +416,231 @@ Build this as a complete financial request portal suitable for demonstrating a r
           essential setup steps:
         </p>
 
+        {/* GitHub Copilot & MCP Servers Setup */}
+        <div className="bg-slate-800/60 border border-purple-500/30 rounded-lg p-5 mb-5">
+          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+            <span className="text-xl">🤖</span>
+            1. Set Up Beast Mode (Custom Chat Mode) and MCP Servers
+          </h4>
+          <p className="text-slate-300 mb-4 text-sm">
+            Beast Mode is a powerful custom chat mode that provides thorough, production-ready code generation:
+          </p>
+          <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
+            <ol className="space-y-2 text-sm text-slate-300">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  a.
+                </span>
+                <span>
+                  In VS Code, click the{' '}
+                  <strong className="text-white">Extensions</strong> icon
+                  in the left sidebar (or press{' '}
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    Ctrl+Shift+X
+                  </code>
+                  )
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  b.
+                </span>
+                <span>
+                  Search for{' '}
+                  <strong className="text-white">"GitHub Copilot"</strong>{' '}
+                  and click{' '}
+                  <strong className="text-white">Install</strong>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  c.
+                </span>
+                <span>
+                  Sign in with your GitHub account when prompted
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  d.
+                </span>
+                <span>Close the walkthrough steps window</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  e.
+                </span>
+                <span>
+                  Click the{' '}
+                  <strong className="text-white">
+                    Agent/Ask mode dropdown
+                  </strong>{' '}
+                  at the bottom of the GitHub Copilot chat
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  f.
+                </span>
+                <span>
+                  Click{' '}
+                  <strong className="text-white">
+                    "Configure Custom Agents"
+                  </strong>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  g.
+                </span>
+                <span>
+                  Click{' '}
+                  <strong className="text-white">
+                    "Create new custom Agent"
+                  </strong>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  h.
+                </span>
+                <span>
+                  Click{' '}
+                  <strong className="text-white">"User Data"</strong>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  i.
+                </span>
+                <span>
+                  Enter{' '}
+                  <strong className="text-white">"Beast Mode"</strong> and
+                  press Enter
+                </span>
+              </li>
+            </ol>
+            <a
+              href="https://gist.githubusercontent.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf/raw/e1898331f1755aff3265d50e30106b8c6987c4f7/beastmode3.chatmode.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-3 px-4 py-2 bg-purple-700 text-slate-50 font-black text-sm rounded-lg hover:bg-purple-800 transition-colors shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+            >
+              <span className="text-slate-50">
+                Open Beast Mode Content →
+              </span>
+            </a>
+            <ol
+              className="space-y-2 text-sm text-slate-300 mt-4"
+            >
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  j.
+                </span>
+                <span>
+                  Copy all the content from the Beast Mode page (
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    Ctrl+A
+                  </code>{' '}
+                  then{' '}
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    Ctrl+C
+                  </code>
+                  )
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  k.
+                </span>
+                <span>
+                  Paste the content into the{' '}
+                  <strong className="text-white">
+                    Beast Mode.agent.md
+                  </strong>{' '}
+                  file that opened in VS Code
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  l.
+                </span>
+                <span>
+                  Save the file (
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    Ctrl+S
+                  </code>
+                  )
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  m.
+                </span>
+                <span>
+                  Press{' '}
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    Ctrl+Shift+P
+                  </code>{' '}
+                  to open the Command Palette
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  n.
+                </span>
+                <span>
+                  Type{' '}
+                  <strong className="text-white">
+                    "Preferences: Open User Settings (JSON)"
+                  </strong>{' '}
+                  and select it
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  o.
+                </span>
+                <span>
+                  Add{' '}
+                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                    "chat.agent.maxRequests": 200
+                  </code>{' '}
+                  to the settings file, and add a comma to end of the line
+                  before it so it's properly formatted json
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-semibold shrink-0">
+                  p.
+                </span>
+                <span>
+                  Go to{' '}
+                  <a
+                    href="https://www.github.com/mcp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 underline"
+                  >
+                    github.com/mcp
+                  </a>{' '}
+                  and select{' '}
+                  <strong className="text-white">"Install"</strong> for{' '}
+                  <strong className="text-white">Context7</strong>,{' '}
+                  <strong className="text-white">Github</strong>,{' '}
+                  <strong className="text-white">Microsoft Learn</strong>, and{' '}
+                  <strong className="text-white">Playwright</strong>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
         {/* Fork Vibing101 Repository */}
         <div className="bg-slate-800/60 border border-cyan-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">🍴</span>
-            1. Fork the Vibing101 Repository
+            2. Fork the Vibing101 Repository
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
             Get your own copy of this learning platform to use as a reference:
@@ -428,6 +648,19 @@ Build this as a complete financial request portal suitable for demonstrating a r
           <ol className="space-y-2 text-slate-300 text-sm ml-4">
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">a.</span>
+              <span>
+                Create a folder for all your future coding projects (e.g.,{' '}
+                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
+                  C:\repos
+                </code>
+                ):
+                <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
+                  mkdir C:\repos
+                </pre>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">b.</span>
               <span>
                 Navigate to{' '}
                 <a
@@ -441,18 +674,18 @@ Build this as a complete financial request portal suitable for demonstrating a r
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">b.</span>
+              <span className="text-cyan-400 font-mono">c.</span>
               <span>
                 Click the <strong className="text-white">Fork</strong> button
                 (top-right corner)
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">c.</span>
+              <span className="text-cyan-400 font-mono">d.</span>
               <span>GitHub will create a copy in your account</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">d.</span>
+              <span className="text-cyan-400 font-mono">e.</span>
               <span>
                 Clone your fork to your local machine:
                 <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">

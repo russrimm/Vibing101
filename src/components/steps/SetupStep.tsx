@@ -330,9 +330,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         </a>{' '}
                         and select{' '}
                         <strong className="text-white">"Install"</strong> for
-                        both <strong className="text-white">Context7</strong>{' '}
-                        and{' '}
+                        both <strong className="text-white">Context7</strong>,{' '}
+                        <strong className="text-white">Github</strong>,{' '}
                         <strong className="text-white">Microsoft Learn</strong>
+                        , and <strong className="text-white">Playwright</strong>
                       </span>
                     </li>
                   </ol>
