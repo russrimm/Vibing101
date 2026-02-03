@@ -420,10 +420,10 @@ Build this as a complete financial request portal suitable for demonstrating a r
         <div className="bg-slate-800/60 border border-purple-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">🤖</span>
-            1. Set Up Beast Mode (Custom Chat Mode) and MCP Servers
+            1. Set Up Beast Mode (Custom agent mode) and MCP Servers
           </h4>
           <p className="text-slate-300 mb-4 text-sm">
-            Beast Mode is a powerful custom chat mode that provides thorough,
+            Beast Mode is a powerful custom agent mode that provides thorough,
             production-ready code generation:
           </p>
           <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
@@ -777,8 +777,8 @@ Build this as a complete financial request portal suitable for demonstrating a r
           Before building your app, set up your project folder and instruction
           files:
         </p>
-        <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-4">
-          <p className="text-sm text-blue-300 flex items-start gap-2">
+        <div className="bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 rounded-lg p-4 mb-4">
+          <p className="text-sm text-blue-800 dark:text-blue-300 flex items-start gap-2">
             <span className="text-lg mt-0.5">📚</span>
             <span>
               <strong>For more details:</strong> See{' '}
@@ -786,7 +786,7 @@ Build this as a complete financial request portal suitable for demonstrating a r
                 href="https://code.visualstudio.com/docs/copilot/customization/custom-instructions"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 underline"
+                className="text-cyan-700 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-300 underline"
               >
                 VS Code's Custom Instructions documentation
               </a>{' '}

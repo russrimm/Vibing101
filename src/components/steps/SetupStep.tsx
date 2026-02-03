@@ -182,6 +182,13 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         </strong>
                       </span>
                     </li>
+                    <li className="flex items-center justify-center">
+                      <img
+                        src="/assets/customagent.png"
+                        alt="Configure Custom Agents menu item highlighted at the bottom of the Agent dropdown"
+                        className="rounded-xl border border-purple-500/20 shadow-lg max-w-full"
+                      />
+                    </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
                         7.
@@ -256,7 +263,8 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         <strong className="text-slate-900 dark:text-white">
                           Beast Mode.agent.md
                         </strong>{' '}
-                        file that opened in VS Code
+                        file that opened in VS Code, overwriting all existing
+                        text.
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
