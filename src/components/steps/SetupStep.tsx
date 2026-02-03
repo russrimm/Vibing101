@@ -283,7 +283,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                       <span>
                         Click on the{' '}
-                        <strong className="text-white">sprocket ⚙️</strong> at
+                        <strong className="text-white">sprocket/gear icon ⚙️</strong> at
                         the top of the GitHub Copilot chat window
                       </span>
                     </li>
@@ -301,19 +301,6 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         15.
                       </span>
                       <span>
-                        Click{' '}
-                        <strong className="text-white">
-                          "Enable MCP Servers Marketplace"
-                        </strong>{' '}
-                        on the left and click{' '}
-                        <strong className="text-white">"Enable"</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
-                        16.
-                      </span>
-                      <span>
                         Press{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                           Ctrl+Shift+P
@@ -323,7 +310,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        17.
+                        16.
                       </span>
                       <span>
                         Type{' '}
@@ -335,19 +322,20 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        18.
+                        17.
                       </span>
                       <span>
                         Add{' '}
                         <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
                           "chat.agent.maxRequests": 200
                         </code>{' '}
-                        to the settings file and save
+                        to the settings file, and add a comma to end of the line
+                        before it so it's properly formatted json
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        19.
+                        18.
                       </span>
                       <span>
                         Go to{' '}
