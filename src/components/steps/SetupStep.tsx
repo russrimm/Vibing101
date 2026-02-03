@@ -279,23 +279,11 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-400 font-semibold shrink-0">
-                        12.
-                      </span>
-                      <span>
-                        Save the file (
-                        <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                          Ctrl+S
-                        </code>
-                        )
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
                         13.
                       </span>
                       <span>
                         Click on the{' '}
-                        <strong className="text-white">sprocket</strong> at the
+                        <strong className="text-white">sprocket ⚙️</strong> at the
                         top of the GitHub Copilot chat window
                       </span>
                     </li>
