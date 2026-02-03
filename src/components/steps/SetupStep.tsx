@@ -111,7 +111,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                4. Setup GitHub Copilot & MCP Servers (Required)
+                4. Setup GitHub Copilot & MCP Servers
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
                 Install GitHub Copilot extension, configure Beast Mode custom
