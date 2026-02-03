@@ -828,12 +828,34 @@ START NOW
         <div className="bg-slate-800/60 border border-purple-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">🤖</span>
-            1. Set Up Beast Mode (Custom agent mode) and MCP Servers
+            1. Set Up Copilot Modes (Ask/Plan/Agent + Beast) and MCP Servers
           </h4>
           <p className="text-slate-300 mb-4 text-sm">
-            Beast Mode is a powerful custom agent mode that provides thorough,
-            production-ready code generation:
+            You’ll use different Copilot modes depending on what you’re doing.
+            Use all of them when the situation calls for it:
           </p>
+          <ul className="text-slate-300 mb-4 text-sm space-y-2">
+            <li>
+              <strong className="text-white">Ask mode</strong>: quick
+              questions, explanations, and small suggestions (usually no file
+              edits).
+            </li>
+            <li>
+              <strong className="text-white">Plan mode</strong>: design and
+              planning before big changes (breaks work into steps you can
+              review).
+            </li>
+            <li>
+              <strong className="text-white">Agent mode</strong>: actually
+              implements changes (creates/edits files, runs commands, validates
+              results).
+            </li>
+            <li>
+              <strong className="text-white">Beast Mode</strong> (custom agent
+              mode): a more thorough style of Agent mode for “bigger” work (more
+              careful reasoning, checks, and end-to-end completion).
+            </li>
+          </ul>
           <p className="text-slate-300 mb-4 text-sm">
             MCP servers let Copilot securely connect to external tools and
             trusted knowledge sources (for example: official docs, SDK
@@ -1091,15 +1113,30 @@ START NOW
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">e.</span>
               <span>
-                Clone your fork to your local machine:
+                Clone your fork to your local machine (for screenshots, see{' '}
+                <a
+                  href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-cyan-300 underline"
+                >
+                  GitHub Docs: Cloning a repository
+                </a>
+                ):
+                <div className="text-xs text-slate-400 mt-2">
+                  On your forked repo page on GitHub: click{' '}
+                  <span className="text-slate-200 font-semibold">Code</span>,
+                  copy the URL (HTTPS is easiest for beginners), then run:
+                </div>
                 <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
-                  cd c:\repos{'\n'}
+                  cd C:\repos{'\n'}
                   git clone https://github.com/YOUR-USERNAME/Vibing101.git{'\n'}
                   cd Vibing101{'\n'}
                   code .
                 </pre>
                 <span className="text-xs text-slate-400 mt-1 block">
-                  Replace YOUR-USERNAME with your GitHub username
+                  Replace YOUR-USERNAME with your GitHub username (or paste the
+                  exact URL you copied).
                 </span>
               </span>
             </li>

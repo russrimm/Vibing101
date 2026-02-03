@@ -92,14 +92,18 @@ Follow these steps to get a local copy of this project:
 
 #### 1. Fork the Repository on GitHub
 
-1. Navigate to the repository on GitHub: `git clone https://github.com/russrimm/Vibing101.git`
+1. Navigate to the repository on GitHub: https://github.com/russrimm/Vibing101
 2. Click the **Fork** button in the top-right corner of the page
 3. GitHub will create a copy of the repository in your account
 
 #### 2. Clone Your Fork to Your Local Machine
 
+For the official GitHub instructions (with screenshots), see:
+https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+
 1. On your forked repository page, click the green **Code** button
-2. Copy the HTTPS URL (it will look like: `https://github.com/YOUR-USERNAME/Vibing101.git`)
+2. Copy the repository URL (HTTPS is simplest for beginners; SSH also works if you’ve set it up)
+   - Example: `https://github.com/YOUR-USERNAME/Vibing101.git`
 
 3. Open **VS Code**
 

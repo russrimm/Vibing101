@@ -117,6 +117,42 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 Install GitHub Copilot extension, configure Beast Mode custom
                 agent, and enable MCP servers.
               </p>
+              <div className="bg-slate-900/5 dark:bg-white/5 rounded-lg p-4 border border-slate-200 dark:border-white/10 mb-3">
+                <p className="text-slate-700 dark:text-slate-300 text-sm mb-2">
+                  You’ll switch between Copilot modes based on what you need:
+                </p>
+                <ul className="text-slate-700 dark:text-slate-300 text-sm space-y-1">
+                  <li>
+                    <strong className="text-slate-900 dark:text-white">
+                      Ask
+                    </strong>
+                    : questions and explanations
+                  </li>
+                  <li>
+                    <strong className="text-slate-900 dark:text-white">
+                      Plan
+                    </strong>
+                    : break work into steps before changing code
+                  </li>
+                  <li>
+                    <strong className="text-slate-900 dark:text-white">
+                      Agent
+                    </strong>
+                    : implement changes (edit files, run commands)
+                  </li>
+                  <li>
+                    <strong className="text-slate-900 dark:text-white">
+                      Beast Mode
+                    </strong>
+                    : a custom Agent mode for larger, end-to-end work
+                  </li>
+                </ul>
+                <p className="text-slate-700 dark:text-slate-300 text-sm mt-2">
+                  Recommendation: use all of them when appropriate — Ask to
+                  learn, Plan to stay organized, Agent to execute, and Beast
+                  Mode when you want extra thoroughness.
+                </p>
+              </div>
               <p className="text-slate-700 dark:text-slate-300 mb-3 text-sm">
                 Recommendation: use a GitHub account that’s covered by a GitHub
                 Enterprise plan (with Copilot enabled) or your own GitHub Pro
