@@ -188,32 +188,22 @@ Open a browser and navigate to `http://localhost:3000`
 
 Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough code generation and problem-solving.
 
-#### Step 1: Add Beast Mode as a Chat Mode
+#### Step 1: Install Beast Mode
 
-1. Open **GitHub Copilot Chat** in VS Code:
-   - Windows/Linux: `Ctrl+Shift+I`
-   - Mac: `Cmd+Shift+I`
+1. **Download the Beast Mode chat mode file:**
+   - Navigate to: [https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf#file-beastmode3-chatmode-md](https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf#file-beastmode3-chatmode-md)
+   - Click the **Raw** button in the top-right of the file preview
+   - Save the file (Ctrl+S or Cmd+S)
 
-2. Click the **Agent/Ask mode button** at the top of the chat panel
+2. **Save it to your VS Code prompts directory:**
+   - Navigate to: `c:\users\<yourusername>\appdata\roaming\code\user\prompts`
+   - Replace `<yourusername>` with your actual Windows username
+   - Create the `prompts` folder if it doesn't exist
+   - Save the downloaded file as `beastmode3.chatmode.md`
 
-3. Select **Configure Custom Agents**
+3. **Restart VS Code** to load the new chat mode
 
-4. Click **Create new custom agent**
-
-   > 📖 **Learn More:** For detailed instructions on creating custom agents, see the [official GitHub documentation](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents#creating-a-custom-agent-profile-in-visual-studio-code).
-
-5. Select **User Data**
-
-6. Enter **Beast Mode** as the agent name
-
-7. Paste the following Beast Mode instructions into the window:
-
-```markdown
-You are an expert developer. Provide thorough, production-ready solutions with detailed explanations. Always consider edge cases, error handling, accessibility, and best practices. Be comprehensive and leave no stone unturned.
-
-8. Save the custom agent
-
-#### Step 2: Enter the Build Prompt in Beast Mode
+#### Step 2: Use Beast Mode in Your Development Workflow
 
 1. Open **GitHub Copilot Chat** in VS Code:
    - Windows/Linux: `Ctrl+Shift+I`
