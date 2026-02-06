@@ -1,15 +1,20 @@
 import { Industry } from '../../types/industry'
+import { GlossaryTooltip } from '../GlossaryTooltip'
 
 interface CompletionStepProps {
   industry: Industry
   onReset: () => void
   onPrevious: () => void
+  stepNumber: number
+  totalSteps: number
 }
 
 export default function CompletionStep({
   industry,
   onReset,
   onPrevious,
+  stepNumber,
+  totalSteps,
 }: CompletionStepProps) {
   return (
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
@@ -22,7 +27,7 @@ export default function CompletionStep({
       </div>
 
       {/* What You Built */}
-      <div className="mb-8 bg-linear-to-r from-cyan-900/30 to-purple-900/30 border border-cyan-500/20 rounded-xl p-6">
+      <div className="mb-8 bg-linear-to-r from-cyan-900/30 to-emerald-900/30 border border-cyan-500/20 rounded-xl p-6">
         <h3 className="text-2xl font-semibold text-white mb-4">
           What You Built
         </h3>
@@ -34,7 +39,8 @@ export default function CompletionStep({
             <div>
               <p className="font-medium text-white">Modern Tech Stack</p>
               <p className="text-sm text-slate-300">
-                Vite + React + TypeScript + Tailwind
+                Vite + React + TypeScript +{' '}
+                <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>
               </p>
             </div>
           </div>
@@ -104,46 +110,46 @@ export default function CompletionStep({
         </h3>
         <ul className="space-y-2 text-sm text-slate-300 mb-4">
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Add user authentication and authorization</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Connect to a real database (Dataverse, SQL, Firebase)</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Implement role-based access control</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Add reporting and analytics dashboards</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Integrate with third-party APIs</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Add automated testing (unit, integration, e2e)</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Implement offline support with PWA</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="flex-shrink-0">•</span>
+            <span className="shrink-0">•</span>
             <span>Set up CI/CD pipeline for automated deployments</span>
           </li>
         </ul>
 
         {/* Power Apps Code First Button */}
         <div className="mt-6 pt-6 border-t border-amber-500/30">
-          <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+          <div className="bg-emerald-900/15 border border-emerald-500/30 rounded-lg p-4">
             <div className="flex items-start gap-3 mb-3">
               <span className="text-2xl">⚡</span>
               <div>
-                <h4 className="font-semibold text-purple-300 mb-1">
+                <h4 className="font-semibold text-emerald-200 mb-1">
                   Deploy as Power Apps Code-First App
                 </h4>
                 <p className="text-sm text-slate-300 mb-3">
@@ -156,7 +162,7 @@ export default function CompletionStep({
               href="https://github.com/github/awesome-copilot/blob/main/instructions/power-apps-code-apps.instructions.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-slate-50 rounded-lg hover:bg-purple-700 transition-colors font-semibold shadow-lg shadow-purple-500/30 text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-slate-50 rounded-lg hover:bg-emerald-700 transition-colors font-semibold shadow-lg shadow-emerald-500/30 text-sm"
             >
               <span>📱</span>
               <span>Deploy with Power Apps →</span>
@@ -202,10 +208,12 @@ export default function CompletionStep({
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 4 of 4</div>
+        <div className="text-sm text-slate-400">
+          Step {stepNumber} of {totalSteps}
+        </div>
         <button
           onClick={onReset}
-          className="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold shadow-lg shadow-purple-500/30"
+          className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold shadow-lg shadow-emerald-500/30"
         >
           Build Another App →
         </button>

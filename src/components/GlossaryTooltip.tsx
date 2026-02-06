@@ -126,7 +126,7 @@ export const GlossaryTooltip: FC<GlossaryTooltipProps> = ({
               className="bg-slate-800 border border-cyan-500/30 rounded-xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
             >
               {/* Header */}
-              <div className="bg-linear-to-r from-cyan-500/20 to-purple-500/20 px-4 py-3 border-b border-white/10 flex items-center justify-between">
+              <div className="bg-linear-to-r from-cyan-500/20 to-emerald-500/20 px-4 py-3 border-b border-white/10 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-2xl" aria-hidden="true">
                     {entry.emoji}

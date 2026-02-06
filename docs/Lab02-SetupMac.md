@@ -236,6 +236,48 @@ You should see something like: `git version 2.39.2`
 
 ---
 
+## Step 5.5: Enable Copilot Instruction Files (Recommended)
+
+**What are instruction files?** They’re special markdown files in your repo (like `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md`) that teach GitHub Copilot your project’s rules.
+
+This lab uses instruction files so Copilot:
+
+- Uses the right Vite + React + TypeScript patterns
+- Sets up Tailwind CSS correctly
+- Follows the project’s accessibility + design standards
+
+### Turn it on in VS Code
+
+1. Open **VS Code Settings**:
+   - **Mac**: `Code` → `Settings…` (or press `Cmd + ,`)
+
+2. In the Settings search bar, type:
+
+   ```
+   Use Instruction Files
+   ```
+
+3. Turn **Use Instruction Files** **ON**.
+
+### ✅ Verify you have the instruction files
+
+> You might not see these files until you’ve opened a project folder (like after cloning the repo). That’s normal.
+
+1. In VS Code, open the **Explorer** (file tree)
+2. Look for this folder:
+   - `.github/instructions/`
+3. You should see files like:
+   - `tailwind-v4-vite.instructions.md`
+   - `vite.instructions.md`
+   - `typescript.instructions.md`
+   - `typescript-5-es2022.instructions.md`
+   - `react.instructions.md`
+   - `power-apps-code-apps.instructions.md` (optional)
+
+🎉 **Success!** Copilot will now follow your repo’s rules while it generates code.
+
+---
+
 ## Step 6: Install GitHub Copilot CLI
 
 **What is it?** A command-line interface that brings GitHub Copilot's AI assistance to your terminal.

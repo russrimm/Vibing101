@@ -85,7 +85,7 @@ export const industries: Industry[] = [
     name: 'Manufacturing',
     description: 'Production tracking and quality control',
     icon: '🏭',
-    primaryColor: 'purple',
+    primaryColor: 'teal',
     features: [
       'Production monitoring',
       'Quality checks',
@@ -126,7 +126,7 @@ export const industries: Industry[] = [
     name: 'Financial Services',
     description: 'Request processing and approvals',
     icon: '💰',
-    primaryColor: 'indigo',
+    primaryColor: 'cyan',
     features: [
       'Request tracking',
       'Approval workflows',

@@ -14,6 +14,18 @@ interface MarkdownRendererProps {
 // Terms that should be wrapped with glossary tooltips
 const glossaryTerms = Object.keys(glossaryData)
 
+const escapeRegExp = (value: string): string =>
+  value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+const buildTermRegex = (term: string): RegExp => {
+  const escaped = escapeRegExp(term)
+  const startsWithWord = /^\w/.test(term)
+  const endsWithWord = /\w$/.test(term)
+  const prefix = startsWithWord ? '\\b' : ''
+  const suffix = endsWithWord ? '\\b' : ''
+  return new RegExp(`${prefix}${escaped}${suffix}`, 'gi')
+}
+
 // Function to wrap glossary terms in markdown content
 const wrapGlossaryTerms = (text: string): React.ReactNode => {
   if (!text) return text
@@ -38,7 +50,7 @@ const wrapGlossaryTerms = (text: string): React.ReactNode => {
   sortedTerms.forEach((key) => {
     const entry = (glossaryData as any)[key]
     const term = entry.term
-    const regex = new RegExp(`\\b${term}\\b`, 'gi')
+    const regex = buildTermRegex(term)
     let match: RegExpExecArray | null
 
     while ((match = regex.exec(text)) !== null) {
@@ -104,7 +116,7 @@ export const MarkdownRenderer: FC<MarkdownRendererProps> = ({
                 style={vscDarkPlus as any}
                 language={match[1]}
                 PreTag="div"
-                className="rounded-lg !bg-slate-900 !my-4"
+                className="rounded-lg bg-slate-900! my-4!"
               >
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
@@ -121,7 +133,7 @@ export const MarkdownRenderer: FC<MarkdownRendererProps> = ({
           // Headings
           h1({ children }) {
             return (
-              <h1 className="text-4xl font-bold text-white mb-6 mt-8 bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold mb-6 mt-8 bg-linear-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
                 {children}
               </h1>
             )

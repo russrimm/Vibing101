@@ -1,16 +1,21 @@
 import { Industry } from '../../types/industry'
 import CodeBlock from '../CodeBlock'
+import { GlossaryTooltip } from '../GlossaryTooltip'
 
 interface TestingStepProps {
   industry: Industry
   onNext: () => void
   onPrevious: () => void
+  stepNumber: number
+  totalSteps: number
 }
 
 export default function TestingStep({
   industry,
   onNext,
   onPrevious,
+  stepNumber,
+  totalSteps,
 }: TestingStepProps) {
   return (
     <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
@@ -19,60 +24,25 @@ export default function TestingStep({
         Test your {industry.sampleApp.name} and get it ready for users.
       </p>
 
-      {/* Manual Testing */}
+      {/* Install Dependencies */}
       <div className="mb-8">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
             1
           </span>
-          Manual Testing Checklist
+          Install Dependencies
         </h3>
-        <div className="ml-10 space-y-3">
-          <label className="flex items-start gap-3 p-3 bg-slate-900/30 rounded-lg hover:bg-slate-800/50 cursor-pointer border border-white/10 hover:border-cyan-500/30 transition-colors">
-            <input type="checkbox" className="mt-1" />
-            <div>
-              <p className="font-medium text-white">Create new items</p>
-              <p className="text-sm text-slate-400">
-                Test the form submission and validation
-              </p>
-            </div>
-          </label>
-          <label className="flex items-start gap-3 p-3 bg-slate-900/30 rounded-lg hover:bg-slate-800/50 cursor-pointer border border-white/10 hover:border-cyan-500/30 transition-colors">
-            <input type="checkbox" className="mt-1" />
-            <div>
-              <p className="font-medium text-white">View and search items</p>
-              <p className="text-sm text-slate-400">
-                Test the list view, filtering, and sorting
-              </p>
-            </div>
-          </label>
-          <label className="flex items-start gap-3 p-3 bg-slate-900/30 rounded-lg hover:bg-slate-800/50 cursor-pointer border border-white/10 hover:border-cyan-500/30 transition-colors">
-            <input type="checkbox" className="mt-1" />
-            <div>
-              <p className="font-medium text-white">Edit existing items</p>
-              <p className="text-sm text-slate-400">
-                Test update functionality
-              </p>
-            </div>
-          </label>
-          <label className="flex items-start gap-3 p-3 bg-slate-900/30 rounded-lg hover:bg-slate-800/50 cursor-pointer border border-white/10 hover:border-cyan-500/30 transition-colors">
-            <input type="checkbox" className="mt-1" />
-            <div>
-              <p className="font-medium text-white">Delete items</p>
-              <p className="text-sm text-slate-400">
-                Test delete with confirmation
-              </p>
-            </div>
-          </label>
-          <label className="flex items-start gap-3 p-3 bg-slate-900/30 rounded-lg hover:bg-slate-800/50 cursor-pointer border border-white/10 hover:border-cyan-500/30 transition-colors">
-            <input type="checkbox" className="mt-1" />
-            <div>
-              <p className="font-medium text-white">Mobile responsiveness</p>
-              <p className="text-sm text-slate-400">
-                Test on different screen sizes
-              </p>
-            </div>
-          </label>
+        <div className="ml-10">
+          <p className="text-slate-300 mb-4">
+            Before you run the app, install the packages it needs:
+          </p>
+          <CodeBlock code="npm install" language="bash" />
+          <p className="text-sm text-slate-400 mt-2">
+            You usually run this once when you first{' '}
+            <GlossaryTooltip term="clone">clone</GlossaryTooltip> the{' '}
+            <GlossaryTooltip term="repo">repo</GlossaryTooltip> (and again
+            anytime dependencies change).
+          </p>
         </div>
       </div>
 
@@ -200,7 +170,9 @@ export default function TestingStep({
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 3 of 4</div>
+        <div className="text-sm text-slate-400">
+          Step {stepNumber} of {totalSteps}
+        </div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold shadow-lg shadow-green-500/30"

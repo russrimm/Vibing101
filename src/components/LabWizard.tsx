@@ -42,6 +42,10 @@ export default function LabWizard({
     new Set()
   )
 
+  const currentIndex = Math.max(0, steps.findIndex((s) => s.id === currentStep))
+  const stepNumber = currentIndex + 1
+  const totalSteps = steps.length
+
   const handleNext = () => {
     const currentIndex = steps.findIndex((s) => s.id === currentStep)
     if (currentIndex < steps.length - 1) {
@@ -112,13 +116,20 @@ export default function LabWizard({
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {currentStep === 'setup' && (
-            <SetupStep industry={industry} onNext={handleNext} />
+            <SetupStep
+              industry={industry}
+              onNext={handleNext}
+              stepNumber={stepNumber}
+              totalSteps={totalSteps}
+            />
           )}
           {currentStep === 'structure' && (
             <StructureStep
               industry={industry}
               onNext={handleNext}
               onPrevious={handlePrevious}
+              stepNumber={stepNumber}
+              totalSteps={totalSteps}
             />
           )}
           {currentStep === 'testing' && (
@@ -126,6 +137,8 @@ export default function LabWizard({
               industry={industry}
               onNext={handleNext}
               onPrevious={handlePrevious}
+              stepNumber={stepNumber}
+              totalSteps={totalSteps}
             />
           )}
           {currentStep === 'completion' && (
@@ -133,6 +146,8 @@ export default function LabWizard({
               industry={industry}
               onReset={onReset}
               onPrevious={handlePrevious}
+              stepNumber={stepNumber}
+              totalSteps={totalSteps}
             />
           )}
         </div>

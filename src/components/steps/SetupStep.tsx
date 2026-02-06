@@ -1,12 +1,20 @@
 import { Industry } from '../../types/industry'
 import customAgentImage from '../../assets/images/customagent.png'
+import { GlossaryTooltip } from '../GlossaryTooltip'
 
 interface SetupStepProps {
   industry: Industry
   onNext: () => void
+  stepNumber: number
+  totalSteps: number
 }
 
-export default function SetupStep({ industry, onNext }: SetupStepProps) {
+export default function SetupStep({
+  industry,
+  onNext,
+  stepNumber,
+  totalSteps,
+}: SetupStepProps) {
   return (
     <div className="bg-white/90 dark:bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-slate-200 dark:border-white/10">
       <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
@@ -59,12 +67,13 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                2. Install Node.js (v24+)
+                2. Install <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> (v24+)
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
-                Node.js lets you run JavaScript locally and use npm to install
-                packages. Download the Windows Installer (.msi) and accept all
-                default options during installation.
+                <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> lets
+                you run JavaScript locally and use npm to install packages.
+                Download the Windows Installer (.msi) and accept all default
+                options during installation.
               </p>
               <a
                 href="https://nodejs.org/en/download/package-manager"
@@ -72,7 +81,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-green-700 text-slate-50 font-black text-lg rounded-lg hover:bg-green-800 transition-colors shadow-xl shadow-green-500/50 border-2 border-green-400"
               >
-                <span className="text-slate-50">Download Node.js →</span>
+                <span className="text-slate-50">
+                  Download <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> →
+                </span>
               </a>
             </div>
           </div>
@@ -104,9 +115,9 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
         </div>
 
         {/* GitHub Copilot */}
-        <div className="border border-purple-500/30 bg-purple-900/20 rounded-xl p-6 hover:border-purple-500/50 transition-colors">
+        <div className="border border-emerald-500/30 bg-emerald-900/15 rounded-xl p-6 hover:border-emerald-500/50 transition-colors">
           <div className="flex items-start gap-4">
-            <div className="shrink-0 w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-2xl">
+            <div className="shrink-0 w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-2xl">
               🤖
             </div>
             <div className="flex-1">
@@ -160,10 +171,10 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                 lab.
               </p>
               <div className="space-y-3">
-                <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
+                <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/20">
                   <ol className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         1.
                       </span>
                       <span>
@@ -179,7 +190,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         2.
                       </span>
                       <span>
@@ -194,7 +205,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         3.
                       </span>
                       <span>
@@ -202,13 +213,13 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         4.
                       </span>
                       <span>Close the walkthrough steps window</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         5.
                       </span>
                       <span>
@@ -220,7 +231,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         6.
                       </span>
                       <span>
@@ -234,11 +245,11 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       <img
                         src={customAgentImage}
                         alt="Configure Custom Agents menu item highlighted at the bottom of the Agent dropdown"
-                        className="rounded-xl border border-purple-500/20 shadow-lg w-full max-w-md max-h-72 object-contain"
+                        className="rounded-xl border border-emerald-500/20 shadow-lg w-full max-w-md max-h-72 object-contain"
                       />
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         7.
                       </span>
                       <span>
@@ -249,7 +260,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         8.
                       </span>
                       <span>
@@ -260,7 +271,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         9.
                       </span>
                       <span>
@@ -276,7 +287,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     href="https://gist.githubusercontent.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf/raw/e1898331f1755aff3265d50e30106b8c6987c4f7/beastmode3.chatmode.md"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-3 px-4 py-2 bg-purple-700 text-slate-50 font-black text-sm rounded-lg hover:bg-purple-800 transition-colors shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+                    className="inline-block mt-3 px-4 py-2 bg-emerald-700 text-slate-50 font-black text-sm rounded-lg hover:bg-emerald-800 transition-colors shadow-lg shadow-emerald-500/50 border-2 border-emerald-400"
                   >
                     <span className="text-slate-50">
                       Open Beast Mode Content →
@@ -287,7 +298,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                     start={10}
                   >
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         10.
                       </span>
                       <span>
@@ -303,7 +314,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         11.
                       </span>
                       <span>
@@ -316,7 +327,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         12.
                       </span>
                       <span>
@@ -328,7 +339,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         13.
                       </span>
                       <span>
@@ -339,7 +350,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         14.
                       </span>
                       <span>
@@ -350,7 +361,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         15.
                       </span>
                       <span>
@@ -369,7 +380,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-400 font-semibold shrink-0">
+                      <span className="text-emerald-400 font-semibold shrink-0">
                         16.
                       </span>
                       <span>
@@ -388,7 +399,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         </strong>{' '}
                         for both{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          Context7
+                          <GlossaryTooltip term="context7">Context7</GlossaryTooltip>
                         </strong>
                         ,{' '}
                         <strong className="text-slate-900 dark:text-white">
@@ -400,7 +411,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
                         </strong>
                         , and{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          Playwright
+                          <GlossaryTooltip term="playwright">Playwright</GlossaryTooltip>
                         </strong>
                       </span>
                     </li>
@@ -483,7 +494,7 @@ export default function SetupStep({ industry, onNext }: SetupStepProps) {
       {/* Navigation */}
       <div className="flex justify-between items-center pt-6 border-t border-slate-200 dark:border-white/10">
         <div className="text-sm text-slate-600 dark:text-slate-400">
-          Step 1 of 4
+          Step {stepNumber} of {totalSteps}
         </div>
         <button
           onClick={onNext}

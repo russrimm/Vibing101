@@ -53,30 +53,38 @@ Before you begin, make sure you have these tools installed:
 
    **What is it?** A powerful configuration that supercharges GitHub Copilot with custom agents and modes for better code generation.
 
-   **Fork and Set Up:**
-   1. Navigate to: [https://github.com/russrimm/github-copilot-agent-mode-starter-kit](https://github.com/russrimm/github-copilot-agent-mode-starter-kit)
-   2. Click the **Fork** button (top-right corner)
-   3. Clone your fork to your local machine:
+   **Clone and Set Up (Fork Optional):**
+   1. Navigate to: [https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit](https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit)
+   2. (Optional) Click **Fork** if you want your own copy on GitHub.
+   3. Clone to your local machine:
       ```bash
       cd c:\repos
-      git clone https://github.com/YOUR-USERNAME/github-copilot-agent-mode-starter-kit.git
+      git clone https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
       ```
    4. Open the folder in VS Code:
       ```bash
       cd github-copilot-agent-mode-starter-kit
       code .
       ```
-   5. **Enable instruction files in VS Code:**
+   5. **Enable instruction files in VS Code (recommended):**
       - Open VS Code Settings (Ctrl+, or Cmd+,)
-      - Search for: `github.copilot.chat.codeGeneration.useInstructionFiles`
-      - Check the box to enable it
-      - Also enable: `github.copilot.chat.agent.thinkingTool`
-   6. **Copy configuration files to your workspace:**
-      - The starter kit includes `.vscode/settings.json` with optimized Copilot settings
-      - Copy `.vscode/mcp.json` if you want pre-configured MCP server examples
-      - The `.github/instructions/` folder contains instruction files that will automatically guide Copilot
-      - The `.github/prompts/` folder contains useful prompts like `/create-plan`, `/create-tasks`, `/create-readme`
-   7. **Start using custom prompts:**
+      - Search for: **Use Instruction Files**
+      - Turn it on
+   6. **Increase Agent max requests (recommended):**
+      - In VS Code Settings (Ctrl+, or Cmd+,)
+      - Search for: **max requests**
+      - Set **Max Requests** to **200**
+    7. **Copy Copilot instruction files into your lab repo:**
+         - Source folder (from this repo):
+            `C:\repos\Vibing101\.github\instructions`
+         - Copy these files into your lab project folder at:
+            `C:\repos\LAB\.github\instructions`
+            - `tailwind-v4-vite.instructions.md`
+            - `vite.instructions.md`
+            - `typescript.instructions.md`
+            - `typescript-5-es2022.instructions.md`
+            - `react.instructions.md`
+   8. **Start using custom prompts (optional):**
       - In Copilot Chat, type `/` to see available prompts
       - Try `/create-plan` to generate a project plan
       - Try `/create-tasks` to convert plans into actionable tasks
@@ -89,6 +97,8 @@ Before you begin, make sure you have these tools installed:
 ### Clone the Repository (Fork Optional)
 
 Follow these steps to get a local copy of this project:
+
+> This repository is the **lab portal** itself. During the lab you’ll also create a separate project folder (for example `C:\repos\LAB`) using the starter kit.
 
 > For this lab, you can simply clone the repository to your machine. Forking is
 > only needed if you want to push your changes to GitHub, open pull requests, or
@@ -191,28 +201,15 @@ Start the development server:
 npm run dev
 ```
 
-Open a browser and navigate to `http://localhost:3000`
+Open a browser and navigate to `http://localhost:5173`
 
-### Using Beast Mode for Development
+### Using Agent Mode / Beast Mode
 
-Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough code generation and problem-solving.
+For this lab, you’ll do most work in **Agent** mode (so Copilot can edit files and run commands). Many learners also use a custom **Beast Mode** agent for more thorough, end-to-end changes.
 
-#### Step 1: Install Beast Mode
+To set this up, follow the in-app wizard (Environment Setup step) — it walks you through configuring a custom agent in VS Code.
 
-1. **Download the Beast Mode chat mode file:**
-   - Navigate to: [https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf#file-beastmode3-chatmode-md](https://gist.github.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf#file-beastmode3-chatmode-md)
-   - Click the **Raw** button in the top-right of the file preview
-   - Save the file (Ctrl+S or Cmd+S)
-
-2. **Save it to your VS Code prompts directory:**
-   - Navigate to: `c:\users\<yourusername>\appdata\roaming\code\user\prompts`
-   - Replace `<yourusername>` with your actual Windows username
-   - Create the `prompts` folder if it doesn't exist
-   - Save the downloaded file as `beastmode3.chatmode.md`
-
-3. **Restart VS Code** to load the new chat mode
-
-#### Step 2: Use Beast Mode in Your Development Workflow
+#### Use Beast Mode in Your Workflow
 
 1. Open **GitHub Copilot Chat** in VS Code:
    - Windows/Linux: `Ctrl+Shift+I`
@@ -221,6 +218,8 @@ Beast Mode is a powerful GitHub Copilot chat mode that enables more thorough cod
 2. At the top of the chat panel, click the **chat mode selector** (shows "Default" or your current mode)
 
 3. Select **Beast Mode** from the dropdown
+
+   If you don’t see it yet, open the mode dropdown and choose **Configure Custom Agents**, then follow the wizard’s setup steps.
 
 4. Enter your build prompt, for example:
 

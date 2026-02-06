@@ -1,19 +1,35 @@
 import { Industry } from '../../types/industry'
 import CodeBlock from '../CodeBlock'
+import { GlossaryTooltip } from '../GlossaryTooltip'
 
 interface StructureStepProps {
   industry: Industry
   onNext: () => void
   onPrevious: () => void
+  stepNumber: number
+  totalSteps: number
 }
 
 export default function StructureStep({
   industry,
   onNext,
   onPrevious,
+  stepNumber,
+  totalSteps,
 }: StructureStepProps) {
   // Special prompt for retail industry
   const retailPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
+
+SETUP (DO THIS FIRST FOR THIS VERTICAL)
+In the project folder you are building right now, create:
+- .github/instructions
+
+Then copy these 3 instruction files into that folder (repeat this step for every vertical project you create):
+- tailwind-v4-vite.instructions.md
+- react.instructions.md
+- typescript.instructions.md
+
+Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
 MISSION
 Build a fully functional, production-ready Retail Store Inventory Portal web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
@@ -149,6 +165,17 @@ START NOW
 
   const oilGasPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
 
+SETUP (DO THIS FIRST FOR THIS VERTICAL)
+In the project folder you are building right now, create:
+- .github/instructions
+
+Then copy these 3 instruction files into that folder (repeat this step for every vertical project you create):
+- tailwind-v4-vite.instructions.md
+- react.instructions.md
+- typescript.instructions.md
+
+Source: copy them from the VibeCoding101 portal repo at .github/instructions.
+
 MISSION
 Build a fully functional, production-ready Field Asset Management web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction).
 
@@ -256,6 +283,17 @@ START NOW
 3) Continue phases sequentially, updating the ledger and keeping copilot-instructions current.`
 
   const transportationPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
+
+SETUP (DO THIS FIRST FOR THIS VERTICAL)
+In the project folder you are building right now, create:
+- .github/instructions
+
+Then copy these 3 instruction files into that folder (repeat this step for every vertical project you create):
+- tailwind-v4-vite.instructions.md
+- react.instructions.md
+- typescript.instructions.md
+
+Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
 MISSION
 Build a fully functional, production-ready Transportation & Logistics “Fleet Operations Dashboard” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
@@ -404,6 +442,17 @@ START NOW
 3) Continue phases sequentially, updating the ledger and keeping copilot-instructions current.`
 
   const manufacturingPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
+
+SETUP (DO THIS FIRST FOR THIS VERTICAL)
+In the project folder you are building right now, create:
+- .github/instructions
+
+Then copy these 3 instruction files into that folder (repeat this step for every vertical project you create):
+- tailwind-v4-vite.instructions.md
+- react.instructions.md
+- typescript.instructions.md
+
+Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
 MISSION
 Build a fully functional, production-ready Manufacturing “Production Tracker” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
@@ -562,7 +611,18 @@ START NOW
 2) Execute Phases 1–2 (scaffold + governance artifacts) before any feature work.
 3) Continue phases sequentially, updating the ledger and keeping copilot-instructions current.`
 
-  const healthcarePrompt = `Objective
+  const healthcarePrompt = `SETUP (DO THIS FIRST FOR THIS VERTICAL)
+In the project folder you are building right now, create:
+- .github/instructions
+
+Then copy these 3 instruction files into that folder (repeat this step for every vertical project you create):
+- tailwind-v4-vite.instructions.md
+- react.instructions.md
+- typescript.instructions.md
+
+Source: copy them from the VibeCoding101 portal repo at .github/instructions.
+
+Objective
 Build a fully functional, production-ready patient appointment system, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
 Visual & UX Requirements
 Modern, professional red-themed UI
@@ -630,6 +690,17 @@ Ensure the app can be run, navigated, and used end-to-end
 Build this as a complete patient appointment system suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
 
   const financePrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
+
+SETUP (DO THIS FIRST FOR THIS VERTICAL)
+In the project folder you are building right now, create:
+- .github/instructions
+
+Then copy these 3 instruction files into that folder (repeat this step for every vertical project you create):
+- tailwind-v4-vite.instructions.md
+- react.instructions.md
+- typescript.instructions.md
+
+Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
 MISSION
 Build a fully functional, production-ready Financial Services “Financial Request Portal” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
@@ -814,7 +885,7 @@ START NOW
       </p>
 
       {/* Prerequisites Section */}
-      <div className="bg-linear-to-br from-purple-900/40 to-blue-900/40 border-2 border-purple-500/40 rounded-xl p-6 mb-8">
+      <div className="bg-linear-to-br from-emerald-900/35 to-blue-900/40 border-2 border-emerald-500/40 rounded-xl p-6 mb-8">
         <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
           <span className="text-3xl">🚀</span>
           Prerequisites: Set Up Your Development Environment
@@ -825,7 +896,7 @@ START NOW
         </p>
 
         {/* GitHub Copilot & MCP Servers Setup */}
-        <div className="bg-slate-800/60 border border-purple-500/30 rounded-lg p-5 mb-5">
+        <div className="bg-slate-800/60 border border-emerald-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">🤖</span>
             1. Set Up Copilot Modes (Ask/Plan/Agent + Beast) and MCP Servers
@@ -862,10 +933,10 @@ START NOW
             this lab, and you can always add more later if you see ones that
             look useful for future projects.
           </p>
-          <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
+          <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/20">
             <ol className="space-y-2 text-sm text-slate-300">
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   a.
                 </span>
                 <span>
@@ -879,7 +950,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   b.
                 </span>
                 <span>
@@ -889,19 +960,19 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   c.
                 </span>
                 <span>Sign in with your GitHub account when prompted</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   d.
                 </span>
                 <span>Close the walkthrough steps window</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   e.
                 </span>
                 <span>
@@ -913,7 +984,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   f.
                 </span>
                 <span>
@@ -924,7 +995,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   g.
                 </span>
                 <span>
@@ -935,7 +1006,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   h.
                 </span>
                 <span>
@@ -943,7 +1014,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   i.
                 </span>
                 <span>
@@ -956,13 +1027,13 @@ START NOW
               href="https://gist.githubusercontent.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf/raw/e1898331f1755aff3265d50e30106b8c6987c4f7/beastmode3.chatmode.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-3 px-4 py-2 bg-purple-700 text-slate-50 font-black text-sm rounded-lg hover:bg-purple-800 transition-colors shadow-lg shadow-purple-500/50 border-2 border-purple-400"
+              className="inline-block mt-3 px-4 py-2 bg-emerald-700 text-slate-50 font-black text-sm rounded-lg hover:bg-emerald-800 transition-colors shadow-lg shadow-emerald-500/50 border-2 border-emerald-400"
             >
               <span className="text-slate-50">Open Beast Mode Content →</span>
             </a>
             <ol className="space-y-2 text-sm text-slate-300 mt-4">
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   j.
                 </span>
                 <span>
@@ -978,7 +1049,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   k.
                 </span>
                 <span>
@@ -988,7 +1059,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   l.
                 </span>
                 <span>
@@ -1000,7 +1071,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   m.
                 </span>
                 <span>
@@ -1011,7 +1082,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   n.
                 </span>
                 <span>
@@ -1020,7 +1091,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   o.
                 </span>
                 <span>
@@ -1039,7 +1110,7 @@ START NOW
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 font-semibold shrink-0">
+                <span className="text-emerald-400 font-semibold shrink-0">
                   p.
                 </span>
                 <span>
@@ -1053,10 +1124,16 @@ START NOW
                     github.com/mcp
                   </a>{' '}
                   and select <strong className="text-white">"Install"</strong>{' '}
-                  for <strong className="text-white">Context7</strong>,{' '}
+                  for{' '}
+                  <strong className="text-white">
+                    <GlossaryTooltip term="context7">Context7</GlossaryTooltip>
+                  </strong>
+                  ,{' '}
                   <strong className="text-white">Github</strong>,{' '}
                   <strong className="text-white">Microsoft Learn</strong>, and{' '}
-                  <strong className="text-white">Playwright</strong>
+                  <strong className="text-white">
+                    <GlossaryTooltip term="playwright">Playwright</GlossaryTooltip>
+                  </strong>
                 </span>
               </li>
             </ol>
@@ -1067,11 +1144,15 @@ START NOW
         <div className="bg-slate-800/60 border border-cyan-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">🍴</span>
-            2. Get the Agent Mode Starter Kit (Fork optional)
+            2. Get the Agent Mode Starter Kit (
+            <GlossaryTooltip term="fork">Fork</GlossaryTooltip> optional)
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
             For this lab, you can simply{' '}
-            <strong className="text-white">clone</strong> the starter kit repo
+            <strong className="text-white">
+              <GlossaryTooltip term="clone">clone</GlossaryTooltip>
+            </strong>{' '}
+            the starter kit <GlossaryTooltip term="repo">repo</GlossaryTooltip>
             to your machine. Forking is only needed if you want to{' '}
             <strong className="text-white">push your changes to GitHub</strong>,
             open pull requests, or use GitHub-based workflows.
@@ -1093,7 +1174,9 @@ START NOW
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">b.</span>
               <span>
-                (Optional) If you want your own GitHub copy, fork the repo:
+                (Optional) If you want your own GitHub copy,{' '}
+                <GlossaryTooltip term="fork">fork</GlossaryTooltip> the{' '}
+                <GlossaryTooltip term="repo">repo</GlossaryTooltip>:
                 <div className="mt-1">
                   <a
                     href="https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit"
@@ -1105,7 +1188,10 @@ START NOW
                   </a>
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
-                  Click <strong className="text-slate-200">Fork</strong>{' '}
+                  Click{' '}
+                  <strong className="text-slate-200">
+                    <GlossaryTooltip term="fork">Fork</GlossaryTooltip>
+                  </strong>{' '}
                   (top-right).
                 </div>
               </span>
@@ -1158,11 +1244,11 @@ START NOW
         <div className="bg-slate-800/60 border border-green-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">⚙️</span>
-            3. Enable Instruction Files in VS Code
+            3. Enable <GlossaryTooltip term="instructionFiles">Instruction Files</GlossaryTooltip> in VS Code
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
-            Instruction files guide GitHub Copilot with project-specific rules
-            and best practices:
+            <GlossaryTooltip term="instructionFiles">Instruction files</GlossaryTooltip>{' '}
+            guide GitHub Copilot with project-specific rules and best practices:
           </p>
           <ol className="space-y-2 text-slate-300 text-sm ml-4">
             <li className="flex items-start gap-2">
@@ -1280,7 +1366,7 @@ START NOW
               and create a new subfolder in the folder you created previously
               (ex:{' '}
               <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
-                C:\Repos
+                C:\Repos\newfolder
               </code>
               )
             </span>
@@ -1316,6 +1402,19 @@ START NOW
               5.
             </span>
             <span>
+              Open the folder you just created so your VS Code Explorer is now
+              showing your new project folder (path should look like{' '}
+              <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                C:\repos\newfolder
+              </code>
+              ).
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
+              6.
+            </span>
+            <span>
               Right-click in the Explorer pane and click{' '}
               <strong className="text-slate-900 dark:text-white">
                 "New Folder"
@@ -1324,7 +1423,7 @@ START NOW
           </li>
           <li className="flex items-start gap-2">
             <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
-              6.
+              7.
             </span>
             <span>
               Name the folder{' '}
@@ -1335,7 +1434,7 @@ START NOW
           </li>
           <li className="flex items-start gap-2">
             <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
-              7.
+              8.
             </span>
             <span>
               Right-click on the{' '}
@@ -1350,7 +1449,7 @@ START NOW
           </li>
           <li className="flex items-start gap-2">
             <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
-              8.
+              9.
             </span>
             <span>
               Name the folder{' '}
@@ -1361,52 +1460,90 @@ START NOW
           </li>
           <li className="flex items-start gap-2">
             <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
-              9.
+              10.
             </span>
             <span>
-              Go to{' '}
-              <a
-                href="https://github.com/github/awesome-copilot/blob/main/instructions/power-apps-code-apps.instructions.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-700 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-300 underline"
-              >
-                power-apps-code-apps.instructions.md
-              </a>
-              , click the{' '}
-              <strong className="text-slate-900 dark:text-white">
-                "Download"
-              </strong>{' '}
-              button (top right), then move the file into the{' '}
-              <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
-                .github\instructions
-              </code>{' '}
-              folder
+              Copy this repo’s Copilot instruction files from (repeat this for every vertical project you create):
+              <div className="mt-2">
+                <code className="bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-slate-900 dark:text-slate-100">
+                  (wherever you cloned this repo)\.github\instructions
+                </code>
+              </div>
+              <div className="mt-2 text-xs text-slate-600 dark:text-slate-300">
+                Example path on Windows:
+                <code className="ml-1 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                  C:\repos\Vibing101\.github\instructions
+                </code>
+              </div>
+              <div className="mt-2">Copy these files:</div>
+              <ul className="list-disc ml-5 mt-1 space-y-1">
+                <li>
+                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                    tailwind-v4-vite.instructions.md
+                  </code>
+                  <span className="ml-2 text-slate-600 dark:text-slate-300">
+                    — Helps Copilot set up{' '}
+                    <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>
+                    CSS v4 with Vite (so your styles build and load correctly).
+                  </span>
+                </li>
+                <li>
+                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                    vite.instructions.md
+                  </code>
+                  <span className="ml-2 text-slate-600 dark:text-slate-300">
+                    — Explains how this Vite project is expected to run and build (which npm scripts to use, what “dev server” means, etc.).
+                  </span>
+                </li>
+                <li>
+                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                    typescript-5-es2022.instructions.md
+                  </code>
+                  <span className="ml-2 text-slate-600 dark:text-slate-300">
+                    — Guides Copilot to write modern TypeScript (TS 5.x targeting ES2022) with strong typing and clean patterns.
+                  </span>
+                </li>
+                <li>
+                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                    typescript.instructions.md
+                  </code>
+                  <span className="ml-2 text-slate-600 dark:text-slate-300">
+                    — More TypeScript best-practices guidance for both `.ts` and `.tsx` files.
+                  </span>
+                </li>
+                <li>
+                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                    react.instructions.md
+                  </code>
+                  <span className="ml-2 text-slate-600 dark:text-slate-300">
+                    — React + TypeScript component patterns (hooks, accessibility, and maintainable component structure).
+                  </span>
+                </li>
+                <li>
+                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
+                    power-apps-code-apps.instructions.md
+                  </code>
+                  <span className="ml-2 text-slate-600 dark:text-slate-300">
+                    — Optional: extra guidance when building “Power Apps Code Apps” style TypeScript/React projects.
+                  </span>
+                </li>
+              </ul>
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-orange-700 dark:text-orange-300 font-mono font-semibold">
-              10.
+              11.
             </span>
             <span>
-              Go to{' '}
-              <a
-                href="https://github.com/github/awesome-copilot/blob/main/instructions/typescript-5-es2022.instructions.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-700 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-300 underline"
-              >
-                typescript-5-es2022.instructions.md
-              </a>
-              , click the{' '}
-              <strong className="text-slate-900 dark:text-white">
-                "Download"
-              </strong>{' '}
-              button, then move the file into the{' '}
+              Paste them into your new lab project’s{' '}
               <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
                 .github\instructions
               </code>{' '}
-              folder
+              folder (for example:
+              <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100 ml-1">
+                C:\repos\LAB\.github\instructions
+              </code>
+              ).
             </span>
           </li>
         </ol>
@@ -1444,7 +1581,7 @@ START NOW
       </div>
 
       {/* Step 1: Enter the Prompt */}
-      <div className="bg-linear-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-xl p-6 mb-6">
+      <div className="bg-linear-to-br from-emerald-900/30 to-blue-900/30 border border-emerald-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">💬</span>
           Step 1: Enter the Build Prompt in Beast Mode
@@ -1458,7 +1595,7 @@ START NOW
       </div>
 
       {/* Step 2: Agent Builds */}
-      <div className="bg-slate-900/50 border border-purple-500/30 rounded-xl p-6 mb-6">
+      <div className="bg-slate-900/50 border border-emerald-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">✨</span>
           Step 2: Agent Builds Your Application
@@ -1542,14 +1679,15 @@ START NOW
               <code className="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">
                 copilot-instructions.md
               </code>{' '}
-              to know it should use Vite, React, TypeScript, Tailwind CSS,
+              to know it should use Vite, React, TypeScript,{' '}
+              <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip> CSS,
               proper folder structure, data management patterns, and React hooks
               - all configured automatically!
             </span>
           </p>
         </div>
-        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-          <p className="text-sm text-purple-300 flex items-start gap-2">
+        <div className="mt-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
+          <p className="text-sm text-emerald-200 flex items-start gap-2">
             <span className="text-lg mt-0.5">🎯</span>
             <span>
               <strong>This ONE prompt builds everything:</strong> Project setup,
@@ -1588,7 +1726,9 @@ START NOW
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">Step 2 of 4</div>
+        <div className="text-sm text-slate-400">
+          Step {stepNumber} of {totalSteps}
+        </div>
         <button
           onClick={onNext}
           className="px-6 py-3 bg-cyan-700 text-slate-50 font-black text-lg rounded-lg hover:bg-cyan-800 transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400"

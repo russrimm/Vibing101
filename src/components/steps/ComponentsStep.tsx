@@ -1,5 +1,6 @@
 import { Industry } from '../../types/industry'
 import CodeBlock from '../CodeBlock'
+import { GlossaryTooltip } from '../GlossaryTooltip'
 
 interface ComponentsStepProps {
   industry: Industry
@@ -124,7 +125,7 @@ export default function ComponentsStep({
       </div>
 
       {/* Step 1: Start with Simple Request */}
-      <div className="bg-linear-to-br from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-xl p-6 mb-6">
+      <div className="bg-linear-to-br from-emerald-900/30 to-blue-900/30 border border-emerald-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">💬</span>
           Step 1: Start with a Simple Request (Ask Mode)
@@ -137,11 +138,13 @@ export default function ComponentsStep({
           code={`Create a ${industry.sampleApp.name.toLowerCase()} that displays and tracks ${industry.name.toLowerCase()} data. Users should be able to view items in a list, add new items, edit existing items, and see details for each item.`}
           language="text"
         />
-        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-          <p className="text-sm text-purple-300 flex items-start gap-2">
+        <div className="mt-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
+          <p className="text-sm text-emerald-200 flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <span>
-              Notice: You don't mention React, Tailwind, TypeScript, or any
+              Notice: You don't mention React,{' '}
+              <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>,
+              TypeScript, or any
               libraries. The agent will read{' '}
               <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
                 copilot-instructions.md
@@ -153,7 +156,7 @@ export default function ComponentsStep({
       </div>
 
       {/* Step 2: Generated Prompt */}
-      <div className="bg-slate-900/50 border border-purple-500/30 rounded-xl p-6 mb-6">
+      <div className="bg-slate-900/50 border border-emerald-500/30 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
           <span className="text-2xl">✨</span>
           Step 2: Agent Generates Simple Prompt
@@ -180,8 +183,8 @@ Data fields:
 Follow the project's technical standards in copilot-instructions.md.`}
           language="text"
         />
-        <div className="mt-4 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-          <p className="text-sm text-purple-300 flex items-start gap-2">
+        <div className="mt-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
+          <p className="text-sm text-emerald-200 flex items-start gap-2">
             <span className="text-lg mt-0.5">🎯</span>
             <span>
               <strong>Key insight:</strong> The prompt mentions{' '}
@@ -193,7 +196,8 @@ Follow the project's technical standards in copilot-instructions.md.`}
                 @workspace
               </code>
               , it automatically reads that file and applies React, TypeScript,
-              Tailwind CSS, validation rules, and accessibility standards!
+              <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip> CSS,
+              validation rules, and accessibility standards!
             </span>
           </p>
         </div>
@@ -257,7 +261,8 @@ Follow the project's technical standards in copilot-instructions.md.`}
                 No technical knowledge needed:
               </strong>{' '}
               You only describe business requirements (data fields, user
-              actions, validation rules) - no React, TypeScript, or Tailwind
+              actions, validation rules) - no React, TypeScript, or{' '}
+              <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>
               knowledge required
             </div>
           </li>
@@ -268,8 +273,9 @@ Follow the project's technical standards in copilot-instructions.md.`}
                 copilot-instructions.md does the heavy lifting:
               </strong>{' '}
               This file contains all technical standards - React patterns,
-              TypeScript config, Tailwind design system, accessibility rules,
-              validation libraries
+              TypeScript config,{' '}
+              <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>
+              design system, accessibility rules, validation libraries
             </div>
           </li>
           <li className="flex items-start gap-2">

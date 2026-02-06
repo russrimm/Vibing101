@@ -1,4 +1,5 @@
 import { industries, Industry } from '../types/industry'
+import { GlossaryTooltip } from './GlossaryTooltip'
 
 interface IndustrySelectorProps {
   onSelectIndustry: (industry: Industry) => void
@@ -8,11 +9,11 @@ export default function IndustrySelector({
   onSelectIndustry,
 }: IndustrySelectorProps) {
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-100 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-blue-900 dark:to-purple-900 relative overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-slate-100 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-blue-900 dark:to-emerald-950 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl"></div>
       </div>
 
@@ -25,7 +26,7 @@ export default function IndustrySelector({
                 AI-POWERED DEVELOPMENT
               </span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-cyan-600 via-blue-600 to-purple-600 dark:from-cyan-400 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-cyan-600 via-blue-600 to-emerald-600 dark:from-cyan-400 dark:via-blue-400 dark:to-emerald-400 bg-clip-text text-transparent">
               Vibe Coding Lab
             </h1>
             <p className="text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -99,7 +100,7 @@ export default function IndustrySelector({
                 </div>
 
                 {/* CTA */}
-                <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 p-px group-hover:from-cyan-500 group-hover:to-purple-600 transition-all duration-300">
+                <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 p-px group-hover:from-cyan-500 group-hover:to-emerald-600 transition-all duration-300">
                   <div className="bg-white dark:bg-slate-900 rounded-lg px-4 py-2.5 text-center transition-all duration-300">
                     <span className="text-slate-900 dark:text-white font-bold text-sm tracking-wide drop-shadow-lg">
                       Start Building →
@@ -125,7 +126,10 @@ export default function IndustrySelector({
               <div className="w-px h-4 bg-slate-300 dark:bg-slate-600"></div>
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🎨</span>
-                <span>Tailwind CSS</span>
+                <span>
+                  <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>
+                  CSS
+                </span>
               </div>
             </div>
           </div>

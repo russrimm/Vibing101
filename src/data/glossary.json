@@ -83,12 +83,47 @@
     "example": "'npm install react' downloads React so you can use it in your project.",
     "learnMore": "https://www.npmjs.com"
   },
+  "nodejs": {
+    "term": "Node.js",
+    "emoji": "🟩",
+    "definition": "A program that lets you run JavaScript on your computer (not just in a browser). Many web dev tools (like Vite) use Node.js.",
+    "example": "When you run 'npm install' or 'npm run dev', you're using Node.js under the hood.",
+    "learnMore": "https://nodejs.org"
+  },
+  "lts": {
+    "term": "LTS",
+    "emoji": "🕒",
+    "definition": "Long-Term Support. An LTS version is a stable release that gets security fixes for a long time. Beginners should usually pick LTS because it's the most reliable.",
+    "example": "Using the latest Node.js LTS helps avoid weird tool compatibility issues.",
+    "learnMore": "https://nodejs.org/en/about/releases/"
+  },
   "git": {
     "term": "Git",
     "emoji": "🔀",
     "definition": "Version control system that tracks every change to your code. Like 'Track Changes' in Word, but way more powerful.",
     "example": "If you break something, Git lets you go back to a working version.",
     "learnMore": "https://git-scm.com"
+  },
+  "repo": {
+    "term": "Repo",
+    "emoji": "📁",
+    "definition": "Short for repository — a project folder that Git tracks. A repo usually contains your code plus files like package.json and README.md.",
+    "example": "A GitHub repo can be cloned to your computer so you can edit the code.",
+    "learnMore": "https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories"
+  },
+  "fork": {
+    "term": "Fork",
+    "emoji": "🍴",
+    "definition": "A copy of someone else's GitHub repo under your own account. You fork when you want your own version you can push changes to.",
+    "example": "Fork a starter kit repo, then make changes in your fork without affecting the original.",
+    "learnMore": "https://docs.github.com/en/get-started/quickstart/fork-a-repo"
+  },
+  "clone": {
+    "term": "Clone",
+    "emoji": "📥",
+    "definition": "Download a Git repo to your computer (including its full history). After cloning, you can open it in VS Code and start coding.",
+    "example": "'git clone https://github.com/org/repo.git' creates a local folder with the project.",
+    "learnMore": "https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"
   },
   "vscode": {
     "term": "VS Code",
@@ -97,12 +132,33 @@
     "example": "VS Code has autocomplete, debugging, and thousands of extensions.",
     "learnMore": "https://code.visualstudio.com"
   },
+  "instructionFiles": {
+    "term": "Instruction Files",
+    "emoji": "🧾",
+    "definition": "Special .md files that tell GitHub Copilot how to behave in your project (coding standards, tech choices, accessibility rules, etc.). They help keep the AI consistent.",
+    "example": "A React instruction file might require TypeScript strict mode and accessible components.",
+    "learnMore": ""
+  },
   "mcpServers": {
     "term": "MCP Servers",
     "emoji": "🚀",
     "definition": "Model Context Protocol servers that give GitHub Copilot access to specialized knowledge and up-to-date documentation.",
     "example": "Context7 server provides Copilot with current library docs, so it suggests modern patterns.",
     "learnMore": "https://github.com/mcp"
+  },
+  "context7": {
+    "term": "Context7",
+    "emoji": "📚",
+    "definition": "An MCP server that gives Copilot up-to-date library documentation and code examples. Useful when you want current APIs instead of outdated guesses.",
+    "example": "Ask Copilot to check Context7 for the latest React Router patterns.",
+    "learnMore": "https://github.com/upstash/context7"
+  },
+  "playwright": {
+    "term": "Playwright",
+    "emoji": "🎭",
+    "definition": "A tool for automated browser testing. It can click buttons, fill forms, and verify what a user would see in Chrome/Edge/Firefox.",
+    "example": "Run Playwright tests to confirm your app works after a change.",
+    "learnMore": "https://playwright.dev"
   },
   "beastMode": {
     "term": "Beast Mode",
@@ -147,10 +203,10 @@
     "learnMore": "https://react.dev/reference/react"
   },
   "tailwind": {
-    "term": "Tailwind CSS",
+    "term": "Tailwind",
     "emoji": "🎨",
-    "definition": "A utility-first CSS framework. Instead of writing CSS files, you apply style classes directly to HTML elements.",
-    "example": "<div className='bg-blue-500 text-white p-4 rounded'> styles a blue box.",
+    "definition": "A tool that helps you style your app by adding small class names right in your HTML/JSX (instead of writing lots of separate CSS files).",
+    "example": "A class like 'p-4' adds padding and 'text-white' makes text white.",
     "learnMore": "https://tailwindcss.com"
   },
   "jsx": {
