@@ -525,6 +525,20 @@ You've successfully deployed your Vibe Coding app to Azure using AI-assisted too
 
 ---
 
+## 🛠️ Troubleshooting
+
+If you get stuck, these official links cover two very common issues:
+
+- **Power Apps Code Apps: Troubleshoot adding a data source**
+  - https://learn.microsoft.com/en-us/power-apps/developer/code-apps/troubleshoot-add-datasource
+  - Use this if you’re building/deploying a Power Apps Code Apps experience and a data source/connector won’t add or authenticate.
+
+- **Microsoft Edge: Control a website’s access to the local network**
+  - https://support.microsoft.com/en-us/topic/control-a-website-s-access-to-the-local-network-in-microsoft-edge-ef7eff4c-676d-4105-935c-2acbcd841d51
+  - Use this if your app (or Power Apps Code Apps) can’t reach a localhost or on-network resource due to browser security restrictions.
+
+---
+
 ## 🔑 Key Commands Summary
 
 ```bash

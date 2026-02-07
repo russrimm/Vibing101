@@ -2,6 +2,7 @@ import { useState } from 'react'
 import IndustrySelector from './components/IndustrySelector'
 import LabWizard from './components/LabWizard'
 import ThemeToggle from './components/ThemeToggle'
+import GlossaryModal from './components/GlossaryModal'
 import { Industry } from './types/industry'
 import { useTheme } from './hooks/useTheme'
 
@@ -11,6 +12,7 @@ function App() {
     null
   )
   const [wizardStarted, setWizardStarted] = useState(false)
+  const [isGlossaryOpen, setIsGlossaryOpen] = useState(false)
 
   const handleIndustrySelect = (industry: Industry) => {
     setSelectedIndustry(industry)
@@ -26,6 +28,16 @@ function App() {
     <div className="min-h-screen bg-linear-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       {/* Header with Theme Toggle and LinkedIn Link */}
       <header className="fixed top-0 right-0 p-4 z-50 flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => setIsGlossaryOpen(true)}
+          className="inline-flex items-center justify-center h-12 px-4 bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 dark:hover:bg-cyan-500 rounded-lg transition-colors duration-200 shadow-lg"
+          aria-label="Open glossary"
+        >
+          <span className="text-sm font-black text-slate-900 dark:text-white">
+            Glossary
+          </span>
+        </button>
         <ThemeToggle theme={theme} onToggle={toggleTheme} />
         <a
           href="https://www.linkedin.com/in/russrimm"
@@ -55,6 +67,11 @@ function App() {
           onToggleTheme={toggleTheme}
         />
       ) : null}
+
+      <GlossaryModal
+        isOpen={isGlossaryOpen}
+        onClose={() => setIsGlossaryOpen(false)}
+      />
     </div>
   )
 }

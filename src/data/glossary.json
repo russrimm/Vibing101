@@ -285,5 +285,26 @@
     "definition": "Power Platform CLI - command-line tools for developing, testing, and deploying Power Platform components.",
     "example": "pac pcf init creates a new Code Component project.",
     "learnMore": "https://learn.microsoft.com/power-platform/developer/cli/introduction"
+  },
+  "csp": {
+    "term": "CSP",
+    "emoji": "🛡️",
+    "definition": "Content Security Policy. A browser security feature that controls which scripts, styles, images, and network requests your app is allowed to load. It helps protect users from attacks like cross-site scripting (XSS).",
+    "example": "If a page refuses to load a script/style from a domain, CSP is often the reason.",
+    "learnMore": "https://learn.microsoft.com/en-us/power-apps/developer/code-apps/how-to/content-security-policy"
+  },
+  "eslint": {
+    "term": "ESLint",
+    "emoji": "✅",
+    "definition": "A code linter for JavaScript/TypeScript that finds common bugs and style issues while you code. It helps keep code consistent and catches problems early.",
+    "example": "ESLint can warn when you forget to handle a promise or when a variable is never used.",
+    "learnMore": "https://eslint.org"
+  },
+  "prettier": {
+    "term": "Prettier",
+    "emoji": "✨",
+    "definition": "An automatic code formatter. It reformats your code into a consistent style so you don’t spend time arguing about spacing, quotes, or line breaks.",
+    "example": "Format-on-save makes files look consistent across a team.",
+    "learnMore": "https://prettier.io"
   }
 }

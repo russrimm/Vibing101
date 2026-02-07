@@ -5,6 +5,7 @@ interface CompletionStepProps {
   industry: Industry
   onReset: () => void
   onPrevious: () => void
+  onWhatsNext: () => void
   stepNumber: number
   totalSteps: number
 }
@@ -13,6 +14,7 @@ export default function CompletionStep({
   industry,
   onReset,
   onPrevious,
+  onWhatsNext,
   stepNumber,
   totalSteps,
 }: CompletionStepProps) {
@@ -143,14 +145,14 @@ export default function CompletionStep({
           </li>
         </ul>
 
-        {/* Power Apps Code First Button */}
+        {/* Power Apps Code Apps Button */}
         <div className="mt-6 pt-6 border-t border-amber-500/30">
           <div className="bg-emerald-900/15 border border-emerald-500/30 rounded-lg p-4">
             <div className="flex items-start gap-3 mb-3">
               <span className="text-2xl">⚡</span>
               <div>
                 <h4 className="font-semibold text-emerald-200 mb-1">
-                  Deploy as Power Apps Code-First App
+                  Deploy as Power Apps Code Apps
                 </h4>
                 <p className="text-sm text-slate-300 mb-3">
                   Transform your React app into a Power Apps custom page with
@@ -200,6 +202,55 @@ export default function CompletionStep({
         </div>
       </div>
 
+      {/* Troubleshooting */}
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold text-white mb-4">
+          🛠️ Troubleshooting
+        </h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <a
+            href="https://learn.microsoft.com/en-us/power-apps/developer/code-apps/troubleshoot-add-datasource"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
+          >
+            <p className="font-semibold text-white">
+              Power Apps Code Apps: Troubleshoot adding a data source
+            </p>
+            <p className="text-sm text-slate-400">
+              What it is: fixes datasource/connector add + auth issues.
+            </p>
+          </a>
+          <a
+            href="https://support.microsoft.com/en-us/topic/control-a-website-s-access-to-the-local-network-in-microsoft-edge-ef7eff4c-676d-4105-935c-2acbcd841d51"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-white/10 bg-slate-900/30 rounded-xl p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
+          >
+            <p className="font-semibold text-white">
+              Microsoft Edge: Control a website’s access to the local network
+            </p>
+            <p className="text-sm text-slate-400">
+              What it is: browser security setting for localhost/on-network
+              access.
+            </p>
+          </a>
+        </div>
+        <p className="text-sm text-slate-400 mt-3">
+          See also:{' '}
+          <a
+            href="https://learn.microsoft.com/en-us/power-apps/developer/code-apps/how-to/content-security-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 font-semibold"
+          >
+            CSP (Content Security Policy)
+          </a>
+          {' '}— helpful when the browser console mentions blocked scripts or
+          connections.
+        </p>
+      </div>
+
       {/* Navigation */}
       <div className="flex justify-between items-center pt-6 border-t border-white/10">
         <button
@@ -208,8 +259,17 @@ export default function CompletionStep({
         >
           ← Back
         </button>
-        <div className="text-sm text-slate-400">
-          Step {stepNumber} of {totalSteps}
+        <div className="text-sm text-slate-400 text-center">
+          <div>
+            Step {stepNumber} of {totalSteps}
+          </div>
+          <button
+            type="button"
+            onClick={onWhatsNext}
+            className="mt-2 text-cyan-400 hover:text-cyan-300 underline underline-offset-2 font-semibold"
+          >
+            What’s Next →
+          </button>
         </div>
         <button
           onClick={onReset}

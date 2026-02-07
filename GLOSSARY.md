@@ -118,6 +118,12 @@ A syntax that lets you write HTML-like code inside JavaScript. It's what React u
 
 ## Web Development Concepts
 
+### **CSP (Content Security Policy)**
+
+A browser security feature that controls what your site is allowed to load (scripts, styles, images) and where it’s allowed to connect (network requests). CSP helps protect users from attacks like cross-site scripting (XSS).
+
+**Learn more:** https://learn.microsoft.com/en-us/power-apps/developer/code-apps/how-to/content-security-policy
+
 ### **Frontend**
 
 The part of a website or app that users see and interact with. It includes all the visual elements, buttons, forms, and layouts.

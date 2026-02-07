@@ -9,7 +9,7 @@ Instructions for generating high-quality Power Apps Code Apps using TypeScript, 
 
 ## Project Context
 
-- **Power Apps Code Apps (Preview)**: Code-first web app development with Power Platform integration
+- **Power Apps Code Apps (Preview)**: Pro-developer web app development with Power Platform integration
 - **TypeScript + React**: Recommended frontend stack with Vite bundler
 - **Power Platform SDK**: @microsoft/power-apps (current version ^0.3.1) for connector integration
 - **PAC CLI**: Power Platform CLI for project management and deployment

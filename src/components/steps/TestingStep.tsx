@@ -36,6 +36,15 @@ export default function TestingStep({
           <p className="text-slate-300 mb-4">
             Before you run the app, install the packages it needs:
           </p>
+          <p className="text-sm text-slate-400 mb-3">
+            First, open the VS Code terminal:{' '}
+            <strong className="text-white">Terminal → New Terminal</strong>
+            {' '}(
+            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+              Ctrl+`
+            </code>
+            ).
+          </p>
           <CodeBlock code="npm install" language="bash" />
           <p className="text-sm text-slate-400 mt-2">
             You usually run this once when you first{' '}
@@ -76,9 +85,16 @@ export default function TestingStep({
               </code>{' '}
               again.
             </p>
+            <p className="text-sm text-slate-300 mt-3">
+              You will spend a fair amount of time in this loop. It’s normal if
+              you sometimes feel like you’ll never fix them all.
+            </p>
             <p className="text-sm text-slate-400 mt-2">
-              It’s normal to hit a handful of errors while iterating — Beast
-              Mode will keep resolving them until the app runs cleanly.
+              Try to fix all the current errors, then run{' '}
+              <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
+                npm run build
+              </code>{' '}
+              to confirm everything is actually fixed.
             </p>
           </div>
         </div>
@@ -159,6 +175,55 @@ export default function TestingStep({
               Deploy to GitHub Pages →
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* Troubleshooting */}
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
+            5
+          </span>
+          Troubleshooting
+        </h3>
+        <div className="ml-10 space-y-3">
+          <p className="text-slate-300">
+            If you hit a weird setup or browser issue, these official links are
+            worth bookmarking:
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            <a
+              href="https://learn.microsoft.com/en-us/power-apps/developer/code-apps/troubleshoot-add-datasource"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
+            >
+              <p className="font-semibold text-white">
+                Power Apps Code Apps: Troubleshoot adding a data source
+              </p>
+              <p className="text-sm text-slate-400">
+                Fix datasource/connector add + auth issues.
+              </p>
+            </a>
+            <a
+              href="https://support.microsoft.com/en-us/topic/control-a-website-s-access-to-the-local-network-in-microsoft-edge-ef7eff4c-676d-4105-935c-2acbcd841d51"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
+            >
+              <p className="font-semibold text-white">
+                Microsoft Edge: Control a website’s access to the local network
+              </p>
+              <p className="text-sm text-slate-400">
+                Helps when localhost/on-network calls are blocked.
+              </p>
+            </a>
+          </div>
+          <p className="text-sm text-slate-400">
+            If you see CSP errors in your browser console, check the{' '}
+            <GlossaryTooltip term="csp">CSP</GlossaryTooltip> docs linked from
+            the glossary.
+          </p>
         </div>
       </div>
 

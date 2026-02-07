@@ -5,7 +5,9 @@ import SetupStep from './steps/SetupStep'
 import StructureStep from './steps/StructureStep'
 import TestingStep from './steps/TestingStep'
 import CompletionStep from './steps/CompletionStep'
+import WhatsNextStep from './steps/WhatsNextStep'
 import ThemeToggle from './ThemeToggle'
+import FullChecklistModal from './FullChecklistModal'
 
 interface LabWizardProps {
   industry: Industry
@@ -14,7 +16,7 @@ interface LabWizardProps {
   onToggleTheme: () => void
 }
 
-export type WizardStep = 'setup' | 'structure' | 'testing' | 'completion'
+export type WizardStep = 'setup' | 'structure' | 'testing' | 'completion' | 'whatsnext'
 
 const steps: { id: WizardStep; title: string; description: string }[] = [
   {
@@ -29,6 +31,7 @@ const steps: { id: WizardStep; title: string; description: string }[] = [
   },
   { id: 'testing', title: 'Test & Deploy', description: 'Verify and deploy' },
   { id: 'completion', title: 'Complete!', description: 'Your app is ready' },
+  { id: 'whatsnext', title: "What's Next", description: 'More ideas & packages' },
 ]
 
 export default function LabWizard({
@@ -41,6 +44,7 @@ export default function LabWizard({
   const [completedSteps, setCompletedSteps] = useState<Set<WizardStep>>(
     new Set()
   )
+  const [isChecklistOpen, setIsChecklistOpen] = useState(false)
 
   const currentIndex = Math.max(
     0,
@@ -93,6 +97,13 @@ export default function LabWizard({
             <div className="flex items-center gap-3">
               <ThemeToggle theme={theme} onToggle={onToggleTheme} />
               <button
+                type="button"
+                onClick={() => setIsChecklistOpen(true)}
+                className="px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors border border-slate-200 dark:border-white/10 hover:border-cyan-500/50"
+              >
+                Full checklist
+              </button>
+              <button
                 onClick={onReset}
                 className="px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors border border-slate-200 dark:border-white/10 hover:border-cyan-500/50"
               >
@@ -102,6 +113,12 @@ export default function LabWizard({
           </div>
         </div>
       </header>
+
+      <FullChecklistModal
+        isOpen={isChecklistOpen}
+        onClose={() => setIsChecklistOpen(false)}
+        currentStepId={currentStep}
+      />
 
       {/* Progress Steps */}
       <div className="bg-slate-100/50 dark:bg-slate-800/30 backdrop-blur-sm border-b border-slate-200 dark:border-white/5 py-6">
@@ -146,6 +163,19 @@ export default function LabWizard({
           )}
           {currentStep === 'completion' && (
             <CompletionStep
+              industry={industry}
+              onReset={onReset}
+              onPrevious={handlePrevious}
+              onWhatsNext={() => {
+                setCompletedSteps((prev) => new Set(prev).add('completion'))
+                setCurrentStep('whatsnext')
+              }}
+              stepNumber={stepNumber}
+              totalSteps={totalSteps}
+            />
+          )}
+          {currentStep === 'whatsnext' && (
+            <WhatsNextStep
               industry={industry}
               onReset={onReset}
               onPrevious={handlePrevious}

@@ -132,6 +132,17 @@ export default function IndustrySelector({
                 </span>
               </div>
             </div>
+
+            <footer className="pt-4 text-xs text-slate-500 dark:text-slate-400">
+              <span>Vibe Coded by: Russ Rimmerman, Microsoft Cloud Solution Architect · </span>
+              <a
+                href="mailto:russ.rimmerman@microsoft.com"
+                className="text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-300 underline underline-offset-2"
+                aria-label="Email Russ Rimmerman"
+              >
+                russ.rimmerman@microsoft.com
+              </a>
+            </footer>
           </div>
         </div>
       </div>

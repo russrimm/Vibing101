@@ -20,7 +20,6 @@ export default function StructureStep({
   // Special prompt for retail industry
   const retailPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
 
-SETUP (DO THIS FIRST FOR THIS VERTICAL)
 In the project folder you are building right now, create:
 - .github/instructions
 
@@ -31,8 +30,14 @@ Then copy these 3 instruction files into that folder (repeat this step for every
 
 Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
+FRONTEND TOOLING RULES (MANDATORY)
+- Use Vite v4+ (prefer latest stable compatible with Node.js LTS). Verify the exact version; do not guess.
+- Use Tailwind CSS for all styling (utility classes). Avoid adding new CSS files / CSS modules unless absolutely necessary.
+- Use Tailwind v4 + Vite plugin setup (install tailwindcss + @tailwindcss/vite and wire the plugin in vite.config).
+- Do NOT install or configure PostCSS for Tailwind (no postcss, no autoprefixer, and do not create postcss.config.*). If anything requires PostCSS for a non-Tailwind reason, document it explicitly.
+
 MISSION
-Build a fully functional, production-ready Retail Store Inventory Portal web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
+Build a fully functional, production-ready Retail Store Inventory Portal web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code Apps / Dataverse-ready” style solution.
 
 NON-NEGOTIABLES (BLOCKING)
 1) LTS-ONLY: Use the latest Long-Term Support (LTS) version of EVERY major component (Node.js, Vite, React, TypeScript, Router, UI framework, forms/validation, charts, state). Do NOT guess versions.
@@ -40,7 +45,7 @@ NON-NEGOTIABLES (BLOCKING)
    - Pin versions explicitly in package.json (no wildcards). Add \`.nvmrc\` and \`package.json\` engines.node.
 2) REPO GOVERNANCE: Create and maintain \`.github/copilot-instructions.md\` during scaffolding (before feature implementation). Treat it as a binding contract. Keep it updated as the project evolves.
 3) PROGRESS LEDGER: Create \`PROGRESS_LEDGER.md\` in repo root during scaffolding and update it at the end of every phase (0–10). You may NOT advance phases until the current phase is marked complete and includes verification steps.
-4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single .tsx file > ~300 lines (refactor into components/hooks).
+4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single file > 500 lines (refactor into smaller modules/components).
 5) USABILITY: Mobile-first responsive design (store associates use tablets/phones), accessible UI (labels, keyboard nav, proper errors), modern professional theme (choose a cohesive retail-forward palette; document it), persistent app shell (nav/header/alerts).
 6) END-TO-END: The app must run and be usable across all required modules; no placeholder screens for required features.
 
@@ -49,10 +54,38 @@ DELIVERABLES YOU MUST CREATE IMMEDIATELY (PHASE 1–2)
   - Project summary and definition of done
   - Exact pinned versions and LTS policy
   - Folder structure rules
-  - Coding standards (TS strict, linting, max ~300 lines per .tsx)
+  - Coding standards (TS strict, linting, max 500 lines per file)
   - Data layer contract (repository interfaces + adapter pattern: mock/local ↔ Dataverse-ready)
   - Run commands
   - Feature acceptance checklist mirroring the scope below
+  - Azure instruction: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your azure_development-get_best_practices tool if available.
+  - Project awareness & context:
+    - Always read PLANNING.md if it exists at the start of a new conversation.
+    - Check TASKS.md before starting a new task; if missing, create it and add the task with today’s date.
+    - Use consistent naming conventions, file structure, and architecture patterns described in PLANNING.md.
+  - Code structure & modularity:
+    - Never create a file longer than 500 lines of code. Refactor by splitting into modules/helpers.
+    - Organize code into clearly separated modules, grouped by feature or responsibility.
+    - Use clear, consistent imports (prefer relative imports within packages).
+    - Always use camelCase for variable names.
+  - Testing & reliability:
+    - Always create Pytest unit tests for new features (functions, classes, routes, etc) when working in Python.
+    - For this TypeScript/React app, use the repo’s test stack (Vitest/React Testing Library if present) with: 1 expected-use test, 1 edge-case test, 1 failure-case test.
+    - After updating logic, update any impacted unit tests.
+    - Keep tests in a /tests folder mirroring the main app structure.
+  - Task completion:
+    - Mark completed tasks in TASKS.md immediately after finishing them.
+    - Add discovered sub-tasks/TODOs to TASKS.md under a “Discovered During Work” section.
+  - Documentation & explainability:
+    - Update README.md when features/dependencies/setup steps change.
+    - Comment non-obvious code so it’s understandable to a mid-level developer.
+    - For complex logic, add a // Reason: comment explaining why, not just what.
+  - AI behavior instructions:
+    - Never assume missing context; ask questions if uncertain.
+    - Never hallucinate libraries or functions.
+    - Always confirm file paths and module names exist before referencing them.
+    - Never delete or overwrite existing code unless explicitly instructed to, or as part of a task from TASKS.md.
+    - Always confirm these instructions are being used.
 - \`PROGRESS_LEDGER.md\` (living execution log) and enforce its phase gates.
 - Standard repo configs: tsconfig (strict), eslint, formatting baseline.
 
@@ -165,7 +198,6 @@ START NOW
 
   const oilGasPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
 
-SETUP (DO THIS FIRST FOR THIS VERTICAL)
 In the project folder you are building right now, create:
 - .github/instructions
 
@@ -176,6 +208,12 @@ Then copy these 3 instruction files into that folder (repeat this step for every
 
 Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
+FRONTEND TOOLING RULES (MANDATORY)
+- Use Vite v4+ (prefer latest stable compatible with Node.js LTS). Verify the exact version; do not guess.
+- Use Tailwind CSS for all styling (utility classes). Avoid adding new CSS files / CSS modules unless absolutely necessary.
+- Use Tailwind v4 + Vite plugin setup (install tailwindcss + @tailwindcss/vite and wire the plugin in vite.config).
+- Do NOT install or configure PostCSS for Tailwind (no postcss, no autoprefixer, and do not create postcss.config.*). If anything requires PostCSS for a non-Tailwind reason, document it explicitly.
+
 MISSION
 Build a fully functional, production-ready Field Asset Management web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction).
 
@@ -185,7 +223,7 @@ NON-NEGOTIABLES (BLOCKING)
    - Pin versions explicitly in package.json (no wildcards). Add \`.nvmrc\` and \`package.json\` engines.node.
 2) REPO GOVERNANCE: Create and maintain \`.github/copilot-instructions.md\` during scaffolding (before feature implementation). Treat it as a binding contract. Keep it updated as the project evolves.
 3) PROGRESS LEDGER: Create \`PROGRESS_LEDGER.md\` in repo root during scaffolding and update it at the end of every phase (0–10). You may NOT advance phases until the current phase is marked complete and includes verification steps.
-4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single .tsx file > ~300 lines (refactor into components/hooks).
+4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single file > 500 lines (refactor into smaller modules/components).
 5) USABILITY: Mobile-first responsive design (tablets/phones), accessible UI (labels, keyboard nav, proper errors), modern professional ORANGE theme, persistent app shell (nav/header/alerts).
 6) END-TO-END: The app must run and be usable across all modules; no placeholder screens for required features.
 
@@ -194,10 +232,38 @@ DELIVERABLES YOU MUST CREATE IMMEDIATELY (PHASE 1–2)
   - Project summary and definition of done
   - Exact pinned versions and LTS policy
   - Folder structure rules
-  - Coding standards (TS strict, linting, max ~300 lines per .tsx)
+  - Coding standards (TS strict, linting, max 500 lines per file)
   - Data layer contract (repository interfaces + adapter pattern: mock/local ↔ Dataverse-ready)
   - Run commands
   - Feature acceptance checklist mirroring the scope below
+  - Azure instruction: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your azure_development-get_best_practices tool if available.
+  - Project awareness & context:
+    - Always read PLANNING.md if it exists at the start of a new conversation.
+    - Check TASKS.md before starting a new task; if missing, create it and add the task with today’s date.
+    - Use consistent naming conventions, file structure, and architecture patterns described in PLANNING.md.
+  - Code structure & modularity:
+    - Never create a file longer than 500 lines of code. Refactor by splitting into modules/helpers.
+    - Organize code into clearly separated modules, grouped by feature or responsibility.
+    - Use clear, consistent imports (prefer relative imports within packages).
+    - Always use camelCase for variable names.
+  - Testing & reliability:
+    - Always create Pytest unit tests for new features (functions, classes, routes, etc) when working in Python.
+    - For this TypeScript/React app, use the repo’s test stack (Vitest/React Testing Library if present) with: 1 expected-use test, 1 edge-case test, 1 failure-case test.
+    - After updating logic, update any impacted unit tests.
+    - Keep tests in a /tests folder mirroring the main app structure.
+  - Task completion:
+    - Mark completed tasks in TASKS.md immediately after finishing them.
+    - Add discovered sub-tasks/TODOs to TASKS.md under a “Discovered During Work” section.
+  - Documentation & explainability:
+    - Update README.md when features/dependencies/setup steps change.
+    - Comment non-obvious code so it’s understandable to a mid-level developer.
+    - For complex logic, add a // Reason: comment explaining why, not just what.
+  - AI behavior instructions:
+    - Never assume missing context; ask questions if uncertain.
+    - Never hallucinate libraries or functions.
+    - Always confirm file paths and module names exist before referencing them.
+    - Never delete or overwrite existing code unless explicitly instructed to, or as part of a task from TASKS.md.
+    - Always confirm these instructions are being used.
 - \`PROGRESS_LEDGER.md\` (living execution log) and enforce its phase gates.
 - Standard repo configs: tsconfig (strict), eslint, formatting baseline.
 
@@ -284,7 +350,6 @@ START NOW
 
   const transportationPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
 
-SETUP (DO THIS FIRST FOR THIS VERTICAL)
 In the project folder you are building right now, create:
 - .github/instructions
 
@@ -295,8 +360,14 @@ Then copy these 3 instruction files into that folder (repeat this step for every
 
 Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
+FRONTEND TOOLING RULES (MANDATORY)
+- Use Vite v4+ (prefer latest stable compatible with Node.js LTS). Verify the exact version; do not guess.
+- Use Tailwind CSS for all styling (utility classes). Avoid adding new CSS files / CSS modules unless absolutely necessary.
+- Use Tailwind v4 + Vite plugin setup (install tailwindcss + @tailwindcss/vite and wire the plugin in vite.config).
+- Do NOT install or configure PostCSS for Tailwind (no postcss, no autoprefixer, and do not create postcss.config.*). If anything requires PostCSS for a non-Tailwind reason, document it explicitly.
+
 MISSION
-Build a fully functional, production-ready Transportation & Logistics “Fleet Operations Dashboard” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
+Build a fully functional, production-ready Transportation & Logistics “Fleet Operations Dashboard” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code Apps / Dataverse-ready” style solution.
 
 NON-NEGOTIABLES (BLOCKING)
 1) LTS-ONLY: Use the latest Long-Term Support (LTS) version of EVERY major component (Node.js, Vite, React, TypeScript, Router, UI framework, forms/validation, charts, state). Do NOT guess versions.
@@ -304,7 +375,7 @@ NON-NEGOTIABLES (BLOCKING)
    - Pin versions explicitly in package.json (no wildcards). Add \`.nvmrc\` and \`package.json\` engines.node.
 2) REPO GOVERNANCE: Create and maintain \`.github/copilot-instructions.md\` during scaffolding (before feature implementation). Treat it as a binding contract. Keep it updated as the project evolves.
 3) PROGRESS LEDGER: Create \`PROGRESS_LEDGER.md\` in repo root during scaffolding and update it at the end of every phase (0–10). You may NOT advance phases until the current phase is marked complete and includes verification steps.
-4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single .tsx file > ~300 lines (refactor into components/hooks).
+4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single file > 500 lines (refactor into smaller modules/components).
 5) USABILITY: Mobile-first responsive design (dispatchers + drivers use tablets/phones), accessible UI (labels, keyboard nav, proper errors), modern professional theme (choose a cohesive logistics-forward palette; document it), persistent app shell (nav/header/alerts).
 6) END-TO-END: The app must run and be usable across all required modules; no placeholder screens for required features.
 
@@ -313,10 +384,38 @@ DELIVERABLES YOU MUST CREATE IMMEDIATELY (PHASE 1–2)
   - Project summary and definition of done
   - Exact pinned versions and LTS policy
   - Folder structure rules
-  - Coding standards (TS strict, linting, max ~300 lines per .tsx)
+  - Coding standards (TS strict, linting, max 500 lines per file)
   - Data layer contract (repository interfaces + adapter pattern: mock/local ↔ Dataverse-ready)
   - Run commands
   - Feature acceptance checklist mirroring the scope below
+  - Azure instruction: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your azure_development-get_best_practices tool if available.
+  - Project awareness & context:
+    - Always read PLANNING.md if it exists at the start of a new conversation.
+    - Check TASKS.md before starting a new task; if missing, create it and add the task with today’s date.
+    - Use consistent naming conventions, file structure, and architecture patterns described in PLANNING.md.
+  - Code structure & modularity:
+    - Never create a file longer than 500 lines of code. Refactor by splitting into modules/helpers.
+    - Organize code into clearly separated modules, grouped by feature or responsibility.
+    - Use clear, consistent imports (prefer relative imports within packages).
+    - Always use camelCase for variable names.
+  - Testing & reliability:
+    - Always create Pytest unit tests for new features (functions, classes, routes, etc) when working in Python.
+    - For this TypeScript/React app, use the repo’s test stack (Vitest/React Testing Library if present) with: 1 expected-use test, 1 edge-case test, 1 failure-case test.
+    - After updating logic, update any impacted unit tests.
+    - Keep tests in a /tests folder mirroring the main app structure.
+  - Task completion:
+    - Mark completed tasks in TASKS.md immediately after finishing them.
+    - Add discovered sub-tasks/TODOs to TASKS.md under a “Discovered During Work” section.
+  - Documentation & explainability:
+    - Update README.md when features/dependencies/setup steps change.
+    - Comment non-obvious code so it’s understandable to a mid-level developer.
+    - For complex logic, add a // Reason: comment explaining why, not just what.
+  - AI behavior instructions:
+    - Never assume missing context; ask questions if uncertain.
+    - Never hallucinate libraries or functions.
+    - Always confirm file paths and module names exist before referencing them.
+    - Never delete or overwrite existing code unless explicitly instructed to, or as part of a task from TASKS.md.
+    - Always confirm these instructions are being used.
 - \`PROGRESS_LEDGER.md\` (living execution log) and enforce its phase gates.
 - Standard repo configs: tsconfig (strict), eslint, formatting baseline.
 
@@ -443,7 +542,6 @@ START NOW
 
   const manufacturingPrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
 
-SETUP (DO THIS FIRST FOR THIS VERTICAL)
 In the project folder you are building right now, create:
 - .github/instructions
 
@@ -454,8 +552,14 @@ Then copy these 3 instruction files into that folder (repeat this step for every
 
 Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
+FRONTEND TOOLING RULES (MANDATORY)
+- Use Vite v4+ (prefer latest stable compatible with Node.js LTS). Verify the exact version; do not guess.
+- Use Tailwind CSS for all styling (utility classes). Avoid adding new CSS files / CSS modules unless absolutely necessary.
+- Use Tailwind v4 + Vite plugin setup (install tailwindcss + @tailwindcss/vite and wire the plugin in vite.config).
+- Do NOT install or configure PostCSS for Tailwind (no postcss, no autoprefixer, and do not create postcss.config.*). If anything requires PostCSS for a non-Tailwind reason, document it explicitly.
+
 MISSION
-Build a fully functional, production-ready Manufacturing “Production Tracker” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
+Build a fully functional, production-ready Manufacturing “Production Tracker” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code Apps / Dataverse-ready” style solution.
 
 NON-NEGOTIABLES (BLOCKING)
 1) LTS-ONLY: Use the latest Long-Term Support (LTS) version of EVERY major component (Node.js, Vite, React, TypeScript, Router, UI framework, forms/validation, charts, state). Do NOT guess versions.
@@ -463,7 +567,7 @@ NON-NEGOTIABLES (BLOCKING)
   - Pin versions explicitly in package.json (no wildcards). Add \`.nvmrc\` and \`package.json\` engines.node.
 2) REPO GOVERNANCE: Create and maintain \`.github/copilot-instructions.md\` during scaffolding (before feature implementation). Treat it as a binding contract. Keep it updated as the project evolves.
 3) PROGRESS LEDGER: Create \`PROGRESS_LEDGER.md\` in repo root during scaffolding and update it at the end of every phase (0–10). You may NOT advance phases until the current phase is marked complete and includes verification steps.
-4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single .tsx file > ~300 lines (refactor into components/hooks).
+4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single file > 500 lines (refactor into smaller modules/components).
 5) USABILITY: Mobile-first responsive design (floor supervisors + operators use tablets/phones), accessible UI (labels, keyboard nav, proper errors), modern professional theme (manufacturing-forward palette; document it), persistent app shell (nav/header/alerts).
 6) END-TO-END: The app must run and be usable across all required modules; no placeholder screens for required features.
 
@@ -472,10 +576,38 @@ DELIVERABLES YOU MUST CREATE IMMEDIATELY (PHASE 1–2)
   - Project summary and definition of done
   - Exact pinned versions and LTS policy
   - Folder structure rules
-  - Coding standards (TS strict, linting, max ~300 lines per .tsx)
+  - Coding standards (TS strict, linting, max 500 lines per file)
   - Data layer contract (repository interfaces + adapter pattern: mock/local ↔ Dataverse-ready)
   - Run commands
   - Feature acceptance checklist mirroring the scope below
+  - Azure instruction: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your azure_development-get_best_practices tool if available.
+  - Project awareness & context:
+    - Always read PLANNING.md if it exists at the start of a new conversation.
+    - Check TASKS.md before starting a new task; if missing, create it and add the task with today’s date.
+    - Use consistent naming conventions, file structure, and architecture patterns described in PLANNING.md.
+  - Code structure & modularity:
+    - Never create a file longer than 500 lines of code. Refactor by splitting into modules/helpers.
+    - Organize code into clearly separated modules, grouped by feature or responsibility.
+    - Use clear, consistent imports (prefer relative imports within packages).
+    - Always use camelCase for variable names.
+  - Testing & reliability:
+    - Always create Pytest unit tests for new features (functions, classes, routes, etc) when working in Python.
+    - For this TypeScript/React app, use the repo’s test stack (Vitest/React Testing Library if present) with: 1 expected-use test, 1 edge-case test, 1 failure-case test.
+    - After updating logic, update any impacted unit tests.
+    - Keep tests in a /tests folder mirroring the main app structure.
+  - Task completion:
+    - Mark completed tasks in TASKS.md immediately after finishing them.
+    - Add discovered sub-tasks/TODOs to TASKS.md under a “Discovered During Work” section.
+  - Documentation & explainability:
+    - Update README.md when features/dependencies/setup steps change.
+    - Comment non-obvious code so it’s understandable to a mid-level developer.
+    - For complex logic, add a // Reason: comment explaining why, not just what.
+  - AI behavior instructions:
+    - Never assume missing context; ask questions if uncertain.
+    - Never hallucinate libraries or functions.
+    - Always confirm file paths and module names exist before referencing them.
+    - Never delete or overwrite existing code unless explicitly instructed to, or as part of a task from TASKS.md.
+    - Always confirm these instructions are being used.
 - \`PROGRESS_LEDGER.md\` (living execution log) and enforce its phase gates.
 - Standard repo configs: tsconfig (strict), eslint, formatting baseline.
 
@@ -611,7 +743,7 @@ START NOW
 2) Execute Phases 1–2 (scaffold + governance artifacts) before any feature work.
 3) Continue phases sequentially, updating the ledger and keeping copilot-instructions current.`
 
-  const healthcarePrompt = `SETUP (DO THIS FIRST FOR THIS VERTICAL)
+  const healthcarePrompt = `
 In the project folder you are building right now, create:
 - .github/instructions
 
@@ -621,6 +753,38 @@ Then copy these 3 instruction files into that folder (repeat this step for every
 - typescript.instructions.md
 
 Source: copy them from the VibeCoding101 portal repo at .github/instructions.
+
+Repo Governance (Required)
+- Create and maintain .github/copilot-instructions.md during scaffolding (before feature implementation). Treat it as a binding contract and keep it updated.
+- .github/copilot-instructions.md MUST include:
+  - Azure instruction: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your azure_development-get_best_practices tool if available.
+  - Project awareness & context:
+    - Always read PLANNING.md if it exists at the start of a new conversation.
+    - Check TASKS.md before starting a new task; if missing, create it and add the task with today’s date.
+    - Use consistent naming conventions, file structure, and architecture patterns described in PLANNING.md.
+  - Code structure & modularity:
+    - Never create a file longer than 500 lines of code. Refactor by splitting into modules/helpers.
+    - Organize code into clearly separated modules, grouped by feature or responsibility.
+    - Use clear, consistent imports (prefer relative imports within packages).
+    - Always use camelCase for variable names.
+  - Testing & reliability:
+    - Always create Pytest unit tests for new features (functions, classes, routes, etc) when working in Python.
+    - For this TypeScript/React app, use the repo’s test stack (Vitest/React Testing Library if present) with: 1 expected-use test, 1 edge-case test, 1 failure-case test.
+    - After updating logic, update any impacted unit tests.
+    - Keep tests in a /tests folder mirroring the main app structure.
+  - Task completion:
+    - Mark completed tasks in TASKS.md immediately after finishing them.
+    - Add discovered sub-tasks/TODOs to TASKS.md under a “Discovered During Work” section.
+  - Documentation & explainability:
+    - Update README.md when features/dependencies/setup steps change.
+    - Comment non-obvious code so it’s understandable to a mid-level developer.
+    - For complex logic, add a // Reason: comment explaining why, not just what.
+  - AI behavior instructions:
+    - Never assume missing context; ask questions if uncertain.
+    - Never hallucinate libraries or functions.
+    - Always confirm file paths and module names exist before referencing them.
+    - Never delete or overwrite existing code unless explicitly instructed to, or as part of a task from TASKS.md.
+    - Always confirm these instructions are being used.
 
 Objective
 Build a fully functional, production-ready patient appointment system, not a mock UI or partial prototype. The app must include working data models, CRUD flows, business logic, navigation, and basic persistence (mock/local or Dataverse-ready abstraction).
@@ -681,17 +845,16 @@ Architecture Expectations
 Clear data models for patients, providers, appointments, medical records, and schedules
 A thin data-access layer suitable for swapping between mock storage and Dataverse
 Reusable components and modular feature folders
-No single .tsx file should exceed ~300 lines
+No single file should exceed 500 lines
 Security considerations for sensitive data
 Delivery Expectations
 Scaffold the full app structure first (routes, layout, navigation)
 Implement features incrementally but do not skip any functional area
 Ensure the app can be run, navigated, and used end-to-end
-Build this as a complete patient appointment system suitable for demonstrating a real Power Apps Code-First solution, not just a UI showcase.`
+Build this as a complete patient appointment system suitable for demonstrating a real Power Apps Code Apps solution, not just a UI showcase.`
 
   const financePrompt = `You are GitHub Copilot running in Agent/Beast Mode with access to Context7 MCP and Microsoft Learn MCP.
 
-SETUP (DO THIS FIRST FOR THIS VERTICAL)
 In the project folder you are building right now, create:
 - .github/instructions
 
@@ -702,8 +865,14 @@ Then copy these 3 instruction files into that folder (repeat this step for every
 
 Source: copy them from the VibeCoding101 portal repo at .github/instructions.
 
+FRONTEND TOOLING RULES (MANDATORY)
+- Use Vite v4+ (prefer latest stable compatible with Node.js LTS). Verify the exact version; do not guess.
+- Use Tailwind CSS for all styling (utility classes). Avoid adding new CSS files / CSS modules unless absolutely necessary.
+- Use Tailwind v4 + Vite plugin setup (install tailwindcss + @tailwindcss/vite and wire the plugin in vite.config).
+- Do NOT install or configure PostCSS for Tailwind (no postcss, no autoprefixer, and do not create postcss.config.*). If anything requires PostCSS for a non-Tailwind reason, document it explicitly.
+
 MISSION
-Build a fully functional, production-ready Financial Services “Financial Request Portal” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code-First / Dataverse-ready” style solution.
+Build a fully functional, production-ready Financial Services “Financial Request Portal” web application (NOT a mock UI). It must include real data models, complete CRUD, business logic, navigation/app shell, and working persistence via a swappable data-access layer (mock/local now, Dataverse-ready abstraction). This should be suitable to demonstrate a real “Power Apps Code Apps / Dataverse-ready” style solution.
 
 NON-NEGOTIABLES (BLOCKING)
 1) LTS-ONLY: Use the latest Long-Term Support (LTS) version of EVERY major component (Node.js, Vite, React, TypeScript, Router, UI framework, forms/validation, charts, state). Do NOT guess versions.
@@ -711,7 +880,7 @@ NON-NEGOTIABLES (BLOCKING)
    - Pin versions explicitly in package.json (no wildcards). Add .nvmrc and package.json engines.node.
 2) REPO GOVERNANCE: Create and maintain .github/copilot-instructions.md during scaffolding (before feature implementation). Treat it as a binding contract. Keep it updated as the project evolves.
 3) PROGRESS LEDGER: Create PROGRESS_LEDGER.md in repo root during scaffolding and update it at the end of every phase (0–10). You may NOT advance phases until the current phase is marked complete and includes verification steps.
-4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single .tsx file > ~300 lines (refactor into components/hooks).
+4) ARCHITECTURE: Feature-based modular folders, reusable components, thin data layer. No single file > 500 lines (refactor into smaller modules/components).
 5) USABILITY: Mobile-first responsive design (approvers may use phones; requesters use desktop), accessible UI (labels, keyboard nav, proper errors), modern professional financial theme (trustworthy palette; document it), persistent app shell (nav/header/alerts).
 6) END-TO-END: The app must run and be usable across all required modules; no placeholder screens for required features.
 7) SECURITY MINDSET (non-auth demo): Even if auth is not implemented, design as if real users exist:
@@ -724,7 +893,7 @@ DELIVERABLES YOU MUST CREATE IMMEDIATELY (PHASE 1–2)
   - Project summary and definition of done
   - Exact pinned versions and LTS policy
   - Folder structure rules
-  - Coding standards (TS strict, linting, max ~300 lines per .tsx)
+  - Coding standards (TS strict, linting, max 500 lines per file)
   - Data layer contract (repository interfaces + adapter pattern: mock/local ↔ Dataverse-ready)
   - Run commands
   - Feature acceptance checklist mirroring the scope below
@@ -886,16 +1055,35 @@ START NOW
 
       {/* Prerequisites Section */}
       <div className="bg-linear-to-br from-emerald-900/35 to-blue-900/40 border-2 border-emerald-500/40 rounded-xl p-6 mb-8">
-        <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2">
           <span className="text-3xl">🚀</span>
-          Prerequisites: Set Up Your Development Environment
+          Prerequisites (from Step 1)
         </h3>
-        <p className="text-slate-300 mb-6">
-          Before building your {industry.sampleApp.name} app, complete these
-          essential setup steps:
+        <p className="text-slate-300 mb-4">
+          You’ll use <strong className="text-white">Beast Mode</strong> here to
+          run the build prompt. If you already completed Environment Setup,
+          you’re good — this page won’t re-teach Beast Mode or MCP setup.
         </p>
+        <div className="flex items-center gap-3 flex-wrap mb-5">
+          <button
+            type="button"
+            onClick={onPrevious}
+            className="px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-white/15 transition-colors font-semibold border border-white/10 hover:border-cyan-500/50"
+          >
+            ← Go back to Environment Setup
+          </button>
+          <p className="text-sm text-slate-300">
+            Tip: use the <strong className="text-white">Full checklist</strong>{' '}
+            button in the header to see everything in one place.
+          </p>
+        </div>
 
-        {/* GitHub Copilot & MCP Servers Setup */}
+        <details className="bg-white/5 rounded-lg border border-white/10 p-4">
+          <summary className="cursor-pointer select-none text-sm font-semibold text-white">
+            Show the detailed setup walkthrough again
+          </summary>
+          <div className="mt-4">
+            {/* GitHub Copilot & MCP Servers Setup */}
         <div className="bg-slate-800/60 border border-emerald-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">🤖</span>
@@ -954,9 +1142,21 @@ START NOW
                   b.
                 </span>
                 <span>
-                  Search for{' '}
-                  <strong className="text-white">"GitHub Copilot"</strong> and
-                  click <strong className="text-white">Install</strong>
+                  Install these extensions (search each one and click{' '}
+                  <strong className="text-white">Install</strong>):
+                  <ul className="mt-2 space-y-1">
+                    <li>
+                      <strong className="text-white">GitHub Copilot</strong>
+                    </li>
+                    <li>
+                      <strong className="text-white">
+                        Prettier - Code Formatter
+                      </strong>
+                    </li>
+                    <li>
+                      <strong className="text-white">ESLint</strong>
+                    </li>
+                  </ul>
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -1162,6 +1362,21 @@ START NOW
             <li className="flex items-start gap-2">
               <span className="text-cyan-400 font-mono">a.</span>
               <span>
+                In VS Code, open the integrated terminal:
+                <strong className="text-white"> Terminal → New Terminal</strong>{' '}
+                (shortcut:{' '}
+                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
+                  Ctrl+`
+                </code>
+                ).
+                <span className="text-xs text-slate-400 mt-1 block">
+                  These commands run in the terminal (not the search box).
+                </span>
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-400 font-mono">b.</span>
+              <span>
                 Create a folder for all your future coding projects (e.g.,{' '}
                 <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
                   C:\repos
@@ -1173,7 +1388,7 @@ START NOW
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">b.</span>
+              <span className="text-cyan-400 font-mono">c.</span>
               <span>
                 (Optional) If you want your own GitHub copy,{' '}
                 <GlossaryTooltip term="fork">fork</GlossaryTooltip> the{' '}
@@ -1198,7 +1413,7 @@ START NOW
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">c.</span>
+              <span className="text-cyan-400 font-mono">d.</span>
               <span>
                 Open the repo page on GitHub (either the original repo or your
                 fork), click <strong className="text-white">Code</strong>, and
@@ -1206,7 +1421,7 @@ START NOW
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">d.</span>
+              <span className="text-cyan-400 font-mono">e.</span>
               <span>
                 Clone it to your local machine (for screenshots, see{' '}
                 <a
@@ -1319,6 +1534,9 @@ START NOW
             </span>
           </p>
         </div>
+
+          </div>
+        </details>
       </div>
 
       {/* Step 0: Set up project infrastructure */}
@@ -1507,15 +1725,6 @@ START NOW
                 </li>
                 <li>
                   <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
-                    typescript-5-es2022.instructions.md
-                  </code>
-                  <span className="ml-2 text-slate-600 dark:text-slate-300">
-                    — Guides Copilot to write modern TypeScript (TS 5.x
-                    targeting ES2022) with strong typing and clean patterns.
-                  </span>
-                </li>
-                <li>
-                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
                     typescript.instructions.md
                   </code>
                   <span className="ml-2 text-slate-600 dark:text-slate-300">
@@ -1530,15 +1739,6 @@ START NOW
                   <span className="ml-2 text-slate-600 dark:text-slate-300">
                     — React + TypeScript component patterns (hooks,
                     accessibility, and maintainable component structure).
-                  </span>
-                </li>
-                <li>
-                  <code className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-900 dark:text-slate-100">
-                    power-apps-code-apps.instructions.md
-                  </code>
-                  <span className="ml-2 text-slate-600 dark:text-slate-300">
-                    — Optional: extra guidance when building “Power Apps Code
-                    Apps” style TypeScript/React projects.
                   </span>
                 </li>
               </ul>

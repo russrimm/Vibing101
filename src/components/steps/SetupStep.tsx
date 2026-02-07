@@ -127,8 +127,9 @@ export default function SetupStep({
                 4. Setup GitHub Copilot & MCP Servers
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
-                Install GitHub Copilot extension, configure Beast Mode custom
-                agent, and enable MCP servers.
+                Install the VS Code extensions you need (GitHub Copilot,
+                Prettier, and ESLint), configure the Beast Mode custom agent,
+                and enable MCP servers.
               </p>
               <div className="bg-slate-900/5 dark:bg-white/5 rounded-lg p-4 border border-slate-200 dark:border-white/10 mb-3">
                 <p className="text-slate-700 dark:text-slate-300 text-sm mb-2">
@@ -196,14 +197,33 @@ export default function SetupStep({
                         2.
                       </span>
                       <span>
-                        Search for{' '}
-                        <strong className="text-slate-900 dark:text-white">
-                          "GitHub Copilot"
-                        </strong>{' '}
-                        and click{' '}
+                        Install these extensions (search each one and click{' '}
                         <strong className="text-slate-900 dark:text-white">
                           Install
                         </strong>
+                        ):
+                        <ul className="mt-2 space-y-1">
+                          <li>
+                            <a
+                              href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-300 underline underline-offset-2 font-semibold"
+                            >
+                              GitHub Copilot Chat
+                            </a>
+                          </li>
+                          <li>
+                            <strong className="text-slate-900 dark:text-white">
+                              Prettier - Code Formatter
+                            </strong>
+                          </li>
+                          <li>
+                            <strong className="text-slate-900 dark:text-white">
+                              ESLint
+                            </strong>
+                          </li>
+                        </ul>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
