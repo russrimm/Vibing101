@@ -67,7 +67,8 @@ export default function SetupStep({
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                2. Install <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> (v24+)
+                2. Install{' '}
+                <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> (v24+)
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
                 <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> lets
@@ -82,7 +83,8 @@ export default function SetupStep({
                 className="inline-block px-6 py-3 bg-green-700 text-slate-50 font-black text-lg rounded-lg hover:bg-green-800 transition-colors shadow-xl shadow-green-500/50 border-2 border-green-400"
               >
                 <span className="text-slate-50">
-                  Download <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> →
+                  Download{' '}
+                  <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> →
                 </span>
               </a>
             </div>
@@ -399,7 +401,9 @@ export default function SetupStep({
                         </strong>{' '}
                         for both{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          <GlossaryTooltip term="context7">Context7</GlossaryTooltip>
+                          <GlossaryTooltip term="context7">
+                            Context7
+                          </GlossaryTooltip>
                         </strong>
                         ,{' '}
                         <strong className="text-slate-900 dark:text-white">
@@ -411,7 +415,9 @@ export default function SetupStep({
                         </strong>
                         , and{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          <GlossaryTooltip term="playwright">Playwright</GlossaryTooltip>
+                          <GlossaryTooltip term="playwright">
+                            Playwright
+                          </GlossaryTooltip>
                         </strong>
                       </span>
                     </li>

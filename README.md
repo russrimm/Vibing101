@@ -74,16 +74,16 @@ Before you begin, make sure you have these tools installed:
       - In VS Code Settings (Ctrl+, or Cmd+,)
       - Search for: **max requests**
       - Set **Max Requests** to **200**
-    7. **Copy Copilot instruction files into your lab repo:**
-         - Source folder (from this repo):
-            `C:\repos\Vibing101\.github\instructions`
-         - Copy these files into your lab project folder at:
-            `C:\repos\LAB\.github\instructions`
-            - `tailwind-v4-vite.instructions.md`
-            - `vite.instructions.md`
-            - `typescript.instructions.md`
-            - `typescript-5-es2022.instructions.md`
-            - `react.instructions.md`
+   7. **Copy Copilot instruction files into your lab repo:**
+      - Source folder (from this repo):
+        `C:\repos\Vibing101\.github\instructions`
+      - Copy these files into your lab project folder at:
+        `C:\repos\LAB\.github\instructions`
+        - `tailwind-v4-vite.instructions.md`
+        - `vite.instructions.md`
+        - `typescript.instructions.md`
+        - `typescript-5-es2022.instructions.md`
+        - `react.instructions.md`
    8. **Start using custom prompts (optional):**
       - In Copilot Chat, type `/` to see available prompts
       - Try `/create-plan` to generate a project plan

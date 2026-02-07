@@ -1128,11 +1128,12 @@ START NOW
                   <strong className="text-white">
                     <GlossaryTooltip term="context7">Context7</GlossaryTooltip>
                   </strong>
-                  ,{' '}
-                  <strong className="text-white">Github</strong>,{' '}
+                  , <strong className="text-white">Github</strong>,{' '}
                   <strong className="text-white">Microsoft Learn</strong>, and{' '}
                   <strong className="text-white">
-                    <GlossaryTooltip term="playwright">Playwright</GlossaryTooltip>
+                    <GlossaryTooltip term="playwright">
+                      Playwright
+                    </GlossaryTooltip>
                   </strong>
                 </span>
               </li>
@@ -1244,10 +1245,16 @@ START NOW
         <div className="bg-slate-800/60 border border-green-500/30 rounded-lg p-5 mb-5">
           <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
             <span className="text-xl">⚙️</span>
-            3. Enable <GlossaryTooltip term="instructionFiles">Instruction Files</GlossaryTooltip> in VS Code
+            3. Enable{' '}
+            <GlossaryTooltip term="instructionFiles">
+              Instruction Files
+            </GlossaryTooltip>{' '}
+            in VS Code
           </h4>
           <p className="text-slate-300 mb-3 text-sm">
-            <GlossaryTooltip term="instructionFiles">Instruction files</GlossaryTooltip>{' '}
+            <GlossaryTooltip term="instructionFiles">
+              Instruction files
+            </GlossaryTooltip>{' '}
             guide GitHub Copilot with project-specific rules and best practices:
           </p>
           <ol className="space-y-2 text-slate-300 text-sm ml-4">
@@ -1463,7 +1470,8 @@ START NOW
               10.
             </span>
             <span>
-              Copy this repo’s Copilot instruction files from (repeat this for every vertical project you create):
+              Copy this repo’s Copilot instruction files from (repeat this for
+              every vertical project you create):
               <div className="mt-2">
                 <code className="bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-slate-900 dark:text-slate-100">
                   (wherever you cloned this repo)\.github\instructions
@@ -1492,7 +1500,9 @@ START NOW
                     vite.instructions.md
                   </code>
                   <span className="ml-2 text-slate-600 dark:text-slate-300">
-                    — Explains how this Vite project is expected to run and build (which npm scripts to use, what “dev server” means, etc.).
+                    — Explains how this Vite project is expected to run and
+                    build (which npm scripts to use, what “dev server” means,
+                    etc.).
                   </span>
                 </li>
                 <li>
@@ -1500,7 +1510,8 @@ START NOW
                     typescript-5-es2022.instructions.md
                   </code>
                   <span className="ml-2 text-slate-600 dark:text-slate-300">
-                    — Guides Copilot to write modern TypeScript (TS 5.x targeting ES2022) with strong typing and clean patterns.
+                    — Guides Copilot to write modern TypeScript (TS 5.x
+                    targeting ES2022) with strong typing and clean patterns.
                   </span>
                 </li>
                 <li>
@@ -1508,7 +1519,8 @@ START NOW
                     typescript.instructions.md
                   </code>
                   <span className="ml-2 text-slate-600 dark:text-slate-300">
-                    — More TypeScript best-practices guidance for both `.ts` and `.tsx` files.
+                    — More TypeScript best-practices guidance for both `.ts` and
+                    `.tsx` files.
                   </span>
                 </li>
                 <li>
@@ -1516,7 +1528,8 @@ START NOW
                     react.instructions.md
                   </code>
                   <span className="ml-2 text-slate-600 dark:text-slate-300">
-                    — React + TypeScript component patterns (hooks, accessibility, and maintainable component structure).
+                    — React + TypeScript component patterns (hooks,
+                    accessibility, and maintainable component structure).
                   </span>
                 </li>
                 <li>
@@ -1524,7 +1537,8 @@ START NOW
                     power-apps-code-apps.instructions.md
                   </code>
                   <span className="ml-2 text-slate-600 dark:text-slate-300">
-                    — Optional: extra guidance when building “Power Apps Code Apps” style TypeScript/React projects.
+                    — Optional: extra guidance when building “Power Apps Code
+                    Apps” style TypeScript/React projects.
                   </span>
                 </li>
               </ul>

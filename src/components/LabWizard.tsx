@@ -42,7 +42,10 @@ export default function LabWizard({
     new Set()
   )
 
-  const currentIndex = Math.max(0, steps.findIndex((s) => s.id === currentStep))
+  const currentIndex = Math.max(
+    0,
+    steps.findIndex((s) => s.id === currentStep)
+  )
   const stepNumber = currentIndex + 1
   const totalSteps = steps.length
 

@@ -144,8 +144,7 @@ export default function ComponentsStep({
             <span>
               Notice: You don't mention React,{' '}
               <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>,
-              TypeScript, or any
-              libraries. The agent will read{' '}
+              TypeScript, or any libraries. The agent will read{' '}
               <code className="text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">
                 copilot-instructions.md
               </code>{' '}
