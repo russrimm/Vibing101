@@ -134,7 +134,10 @@ export default function IndustrySelector({
             </div>
 
             <footer className="pt-4 text-xs text-slate-500 dark:text-slate-400">
-              <span>Vibe Coded by: Russ Rimmerman, Microsoft Cloud Solution Architect · </span>
+              <span>
+                Vibe Coded by: Russ Rimmerman, Microsoft Cloud Solution
+                Architect ·{' '}
+              </span>
               <a
                 href="mailto:russ.rimmerman@microsoft.com"
                 className="text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-300 underline underline-offset-2"

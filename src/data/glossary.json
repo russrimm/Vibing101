@@ -306,5 +306,194 @@
     "definition": "An automatic code formatter. It reformats your code into a consistent style so you don’t spend time arguing about spacing, quotes, or line breaks.",
     "example": "Format-on-save makes files look consistent across a team.",
     "learnMore": "https://prettier.io"
+  },
+  "azureStaticWebApps": {
+    "term": "Azure Static Web Apps",
+    "emoji": "🌐",
+    "definition": "A hosting service for static front-end apps (and optional APIs) that integrates with GitHub for automatic builds and deployments.",
+    "example": "Push to GitHub, and Azure Static Web Apps builds your Vite app and deploys it to a public URL.",
+    "learnMore": "https://learn.microsoft.com/azure/static-web-apps/"
+  },
+  "githubPages": {
+    "term": "GitHub Pages",
+    "emoji": "📄",
+    "definition": "Free static hosting from a GitHub repository. Great for demos, docs, and simple front-end apps.",
+    "example": "Deploy your built site so it’s available at https://<user>.github.io/<repo>/.",
+    "learnMore": "https://pages.github.com/"
+  },
+  "crud": {
+    "term": "CRUD",
+    "emoji": "🧾",
+    "definition": "Create, Read, Update, Delete — the four basic operations most apps perform on data.",
+    "example": "A products screen usually supports CRUD: add a product, view it, edit it, and delete it.",
+    "learnMore": "https://en.wikipedia.org/wiki/Create,_read,_update_and_delete"
+  },
+  "authentication": {
+    "term": "Authentication",
+    "emoji": "🔐",
+    "definition": "Proving who a user is (sign-in).",
+    "example": "Signing in with Microsoft, Google, or email/password.",
+    "learnMore": "https://learn.microsoft.com/security/zero-trust/develop/identity-authentication"
+  },
+  "authorization": {
+    "term": "Authorization",
+    "emoji": "🛂",
+    "definition": "Determining what an authenticated user is allowed to do (permissions).",
+    "example": "Admins can delete records; viewers can only read.",
+    "learnMore": "https://learn.microsoft.com/azure/architecture/guide/security/authorization"
+  },
+  "rbac": {
+    "term": "role-based access control",
+    "emoji": "🎟️",
+    "definition": "A common authorization approach where permissions come from roles (Admin, Manager, Viewer, etc.).",
+    "example": "If your role is Viewer, the Delete button is hidden and the API blocks deletes.",
+    "learnMore": "https://learn.microsoft.com/azure/role-based-access-control/overview"
+  },
+  "sql": {
+    "term": "SQL",
+    "emoji": "🗃️",
+    "definition": "Structured Query Language — the standard language used to query and manage relational databases.",
+    "example": "SELECT * FROM Customers WHERE Country = 'USA';",
+    "learnMore": "https://learn.microsoft.com/sql/sql-server/what-is-sql-server"
+  },
+  "firebase": {
+    "term": "Firebase",
+    "emoji": "🔥",
+    "definition": "A Google platform for building apps quickly, including hosted databases, authentication, storage, and hosting.",
+    "example": "Use Firebase Auth for login and Firestore to store app data.",
+    "learnMore": "https://firebase.google.com/"
+  },
+  "pwa": {
+    "term": "PWA",
+    "emoji": "📲",
+    "definition": "Progressive Web App — a website that can behave more like an app (installable icon, offline support, caching, etc.).",
+    "example": "Your app can load even when the network is flaky, using cached assets.",
+    "learnMore": "https://web.dev/progressive-web-apps/"
+  },
+  "unitTests": {
+    "term": "unit tests",
+    "emoji": "🧪",
+    "definition": "Tests that verify small pieces of code (functions/components) in isolation.",
+    "example": "A unit test checks that a validator rejects an invalid email.",
+    "learnMore": "https://vitest.dev/"
+  },
+  "integrationTests": {
+    "term": "integration tests",
+    "emoji": "🧩",
+    "definition": "Tests that verify multiple pieces work together (components + data + APIs), usually with some real wiring.",
+    "example": "Render a page, click Save, and verify the API call and UI state update.",
+    "learnMore": "https://testing-library.com/"
+  },
+  "e2e": {
+    "term": "E2E",
+    "emoji": "🧭",
+    "definition": "End-to-end testing — tests that drive the app like a real user (browser automation).",
+    "example": "Open the app, log in, create a record, and verify it shows up in the list.",
+    "learnMore": "https://playwright.dev/"
+  },
+  "pdfLib": {
+    "term": "pdf-lib",
+    "emoji": "📄",
+    "definition": "A JavaScript library for creating and editing PDF files in the browser or Node.js.",
+    "example": "Generate an invoice PDF and let the user download it.",
+    "learnMore": "https://www.npmjs.com/package/pdf-lib"
+  },
+  "jspdf": {
+    "term": "jspdf",
+    "emoji": "🖨️",
+    "definition": "A popular library for generating PDFs in the browser.",
+    "example": "Export a receipt or simple report as a PDF.",
+    "learnMore": "https://www.npmjs.com/package/jspdf"
+  },
+  "reactPdfRenderer": {
+    "term": "@react-pdf/renderer",
+    "emoji": "⚛️",
+    "definition": "A React-based way to generate PDFs using React components and styling.",
+    "example": "Build a PDF document using React components like <Text> and <View>.",
+    "learnMore": "https://www.npmjs.com/package/@react-pdf/renderer"
+  },
+  "docxPkg": {
+    "term": "docx",
+    "emoji": "📝",
+    "definition": "A library for creating .docx Word documents using TypeScript/JavaScript.",
+    "example": "Generate a compliance letter or summary document.",
+    "learnMore": "https://www.npmjs.com/package/docx"
+  },
+  "docxtemplater": {
+    "term": "docxtemplater",
+    "emoji": "📋",
+    "definition": "A library for filling Word document templates (.docx) with data.",
+    "example": "Create a template with placeholders like {name} and fill it from form data.",
+    "learnMore": "https://www.npmjs.com/package/docxtemplater"
+  },
+  "three": {
+    "term": "three",
+    "emoji": "🧊",
+    "definition": "Three.js — a 3D graphics library for the web.",
+    "example": "Render a 3D product viewer in your app.",
+    "learnMore": "https://www.npmjs.com/package/three"
+  },
+  "reactThreeFiber": {
+    "term": "@react-three/fiber",
+    "emoji": "🧶",
+    "definition": "A React renderer for Three.js, letting you build 3D scenes using React components.",
+    "example": "Use React components to compose lights, meshes, and cameras.",
+    "learnMore": "https://www.npmjs.com/package/@react-three/fiber"
+  },
+  "reactThreeDrei": {
+    "term": "@react-three/drei",
+    "emoji": "🧰",
+    "definition": "A helper library with useful components and utilities for @react-three/fiber.",
+    "example": "Drop in orbit controls, loaders, and ready-made primitives.",
+    "learnMore": "https://www.npmjs.com/package/@react-three/drei"
+  },
+  "recharts": {
+    "term": "recharts",
+    "emoji": "📈",
+    "definition": "A charting library built for React, with composable chart components.",
+    "example": "Add a sales trend line chart or a category pie chart.",
+    "learnMore": "https://www.npmjs.com/package/recharts"
+  },
+  "chartjs": {
+    "term": "chart.js",
+    "emoji": "📊",
+    "definition": "A widely used JavaScript charting library.",
+    "example": "Render bar charts, line charts, and doughnut charts.",
+    "learnMore": "https://www.npmjs.com/package/chart.js"
+  },
+  "tanstackReactTable": {
+    "term": "@tanstack/react-table",
+    "emoji": "🧾",
+    "definition": "A headless table library for building powerful data tables in React.",
+    "example": "Sortable columns, pagination, filtering, and row selection.",
+    "learnMore": "https://www.npmjs.com/package/@tanstack/react-table"
+  },
+  "reactHookForm": {
+    "term": "react-hook-form",
+    "emoji": "🧾",
+    "definition": "A popular React library for building forms with good performance and great ergonomics.",
+    "example": "Handle validation, errors, and form state with minimal re-renders.",
+    "learnMore": "https://www.npmjs.com/package/react-hook-form"
+  },
+  "zod": {
+    "term": "zod",
+    "emoji": "🧷",
+    "definition": "A TypeScript-first schema validation library. It validates data at runtime and can infer TypeScript types from schemas.",
+    "example": "Validate a form payload and show friendly errors when something is missing or invalid.",
+    "learnMore": "https://www.npmjs.com/package/zod"
+  },
+  "tanstackReactQuery": {
+    "term": "@tanstack/react-query",
+    "emoji": "⚡",
+    "definition": "A library for data fetching, caching, retries, and managing server state in React.",
+    "example": "Fetch a list of items, cache it, and automatically refetch when it becomes stale.",
+    "learnMore": "https://www.npmjs.com/package/@tanstack/react-query"
+  },
+  "zustand": {
+    "term": "zustand",
+    "emoji": "🐻",
+    "definition": "A small, fast state management library for React.",
+    "example": "Store global UI state like theme, filters, or user preferences.",
+    "learnMore": "https://www.npmjs.com/package/zustand"
   }
 }

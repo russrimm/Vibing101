@@ -21,7 +21,8 @@ export default function SetupStep({
         Environment Setup
       </h2>
       <p className="text-slate-700 dark:text-slate-300 mb-8">
-        Let's install the tools you need to build your {industry.sampleApp.name}
+        Let&apos;s install the tools you need to build your{' '}
+        {industry.sampleApp.name}
         . Follow each step and verify the installation before moving forward.
       </p>
 
@@ -35,15 +36,22 @@ export default function SetupStep({
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                1. Install Visual Studio Code
+                1. Install{' '}
+                <GlossaryTooltip term="vscode">
+                  Visual Studio Code
+                </GlossaryTooltip>
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
-                Download and install VS Code, the editor where you'll do all
-                your work. Accept all default options during installation.
+                Download and install{' '}
+                <GlossaryTooltip term="vscode">VS Code</GlossaryTooltip>, the
+                editor where you&apos;ll do all your work. Accept all default
+                options during installation.
               </p>
               <p className="text-slate-700 dark:text-slate-300 mb-4">
-                Already have VS Code installed? Make sure it’s the latest
-                version: in VS Code, use{' '}
+                Already have{' '}
+                <GlossaryTooltip term="vscode">VS Code</GlossaryTooltip>{' '}
+                installed? Make sure it’s the latest version: in{' '}
+                <GlossaryTooltip term="vscode">VS Code</GlossaryTooltip>, use{' '}
                 <strong>Help → Check for Updates</strong> (Windows/Linux) or{' '}
                 <strong>Code → Check for Updates</strong> (Mac).
               </p>
@@ -72,8 +80,10 @@ export default function SetupStep({
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
                 <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> lets
-                you run JavaScript locally and use npm to install packages.
-                Download the Windows Installer (.msi) and accept all default
+                you run JavaScript locally and use{' '}
+                <GlossaryTooltip term="npm">npm</GlossaryTooltip> to install
+                packages.
+                Download the Windows Installer (.msi) and accept all
                 options during installation.
               </p>
               <a
@@ -99,10 +109,11 @@ export default function SetupStep({
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                3. Install Git
+                3. Install <GlossaryTooltip term="git">Git</GlossaryTooltip>
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
-                Git tracks your code changes and lets you save your work.
+                <GlossaryTooltip term="git">Git</GlossaryTooltip> tracks your
+                code changes and lets you save your work.
               </p>
               <a
                 href="https://git-scm.com/downloads"
@@ -127,9 +138,13 @@ export default function SetupStep({
                 4. Setup GitHub Copilot & MCP Servers
               </h3>
               <p className="text-slate-700 dark:text-slate-300 mb-3">
-                Install the VS Code extensions you need (GitHub Copilot,
-                Prettier, and ESLint), configure the Beast Mode custom agent,
-                and enable MCP servers.
+                Install the{' '}
+                <GlossaryTooltip term="vscode">VS Code</GlossaryTooltip>{' '}
+                extensions you need (GitHub Copilot,{' '}
+                <GlossaryTooltip term="prettier">Prettier</GlossaryTooltip>, and{' '}
+                <GlossaryTooltip term="eslint">ESLint</GlossaryTooltip>),
+                configure the Beast Mode custom agent, and enable{' '}
+                <GlossaryTooltip term="mcpServers">MCP servers</GlossaryTooltip>.
               </p>
               <div className="bg-slate-900/5 dark:bg-white/5 rounded-lg p-4 border border-slate-200 dark:border-white/10 mb-3">
                 <p className="text-slate-700 dark:text-slate-300 text-sm mb-2">
@@ -259,7 +274,7 @@ export default function SetupStep({
                       <span>
                         Click{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          "Configure Custom Agents"
+                          Configure Custom Agents
                         </strong>
                       </span>
                     </li>
@@ -277,7 +292,7 @@ export default function SetupStep({
                       <span>
                         Click{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          "Create new custom Agent"
+                          Create new custom Agent
                         </strong>
                       </span>
                     </li>
@@ -288,7 +303,7 @@ export default function SetupStep({
                       <span>
                         Click{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          "User Data"
+                          User Data
                         </strong>
                       </span>
                     </li>
@@ -299,7 +314,7 @@ export default function SetupStep({
                       <span>
                         Enter{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          "Beast Mode"
+                          Beast Mode
                         </strong>{' '}
                         and press Enter
                       </span>
@@ -417,7 +432,7 @@ export default function SetupStep({
                         </a>{' '}
                         and select{' '}
                         <strong className="text-slate-900 dark:text-white">
-                          "Install"
+                          Install
                         </strong>{' '}
                         for both{' '}
                         <strong className="text-slate-900 dark:text-white">
@@ -442,6 +457,19 @@ export default function SetupStep({
                       </span>
                     </li>
                   </ol>
+                </div>
+
+                <div className="mt-3 bg-slate-900/5 dark:bg-white/5 rounded-lg p-4 border border-slate-200 dark:border-white/10">
+                  <p className="text-sm text-slate-700 dark:text-slate-300">
+                    Note: after installing{' '}
+                    <GlossaryTooltip term="context7">Context7</GlossaryTooltip>,
+                    VS Code may show a banner at the top asking for an API key.
+                    Press{' '}
+                    <strong className="text-slate-900 dark:text-white">
+                      Esc
+                    </strong>{' '}
+                    to dismiss it unless you already have a key.
+                  </p>
                 </div>
               </div>
             </div>
@@ -505,7 +533,7 @@ export default function SetupStep({
                   <div>
                     <p className="font-medium mb-1">Why MCP Servers?</p>
                     <p className="text-slate-400">
-                      MCP (Model Context Protocol) servers extend Copilot's
+                      MCP (Model Context Protocol) servers extend Copilot&apos;s
                       knowledge with real-time access to documentation, ensuring
                       code suggestions use the latest APIs and best practices.
                     </p>

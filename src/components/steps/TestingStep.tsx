@@ -38,8 +38,7 @@ export default function TestingStep({
           </p>
           <p className="text-sm text-slate-400 mb-3">
             First, open the VS Code terminal:{' '}
-            <strong className="text-white">Terminal → New Terminal</strong>
-            {' '}(
+            <strong className="text-white">Terminal → New Terminal</strong> (
             <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
               Ctrl+`
             </code>
@@ -135,7 +134,10 @@ export default function TestingStep({
           {/* Azure Static Web Apps */}
           <div className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors">
             <h4 className="font-semibold text-white mb-2">
-              Azure Static Web Apps (Recommended)
+              <GlossaryTooltip term="azureStaticWebApps">
+                Azure Static Web Apps
+              </GlossaryTooltip>{' '}
+              (Recommended)
             </h4>
             <p className="text-sm text-slate-300 mb-3">
               Enterprise hosting with Azure integration
@@ -157,7 +159,9 @@ export default function TestingStep({
 
           {/* GitHub Pages */}
           <div className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors">
-            <h4 className="font-semibold text-white mb-2">GitHub Pages</h4>
+            <h4 className="font-semibold text-white mb-2">
+              <GlossaryTooltip term="githubPages">GitHub Pages</GlossaryTooltip>
+            </h4>
             <p className="text-sm text-slate-300 mb-3">
               Free hosting directly from your GitHub repository
             </p>

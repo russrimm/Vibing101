@@ -125,8 +125,9 @@ export default function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
                   />
                 </div>
                 <div className="text-xs text-slate-600 dark:text-slate-400">
-                  Showing <span className="font-semibold">{filtered.length}</span>{' '}
-                  of <span className="font-semibold">{entries.length}</span>
+                  Showing{' '}
+                  <span className="font-semibold">{filtered.length}</span> of{' '}
+                  <span className="font-semibold">{entries.length}</span>
                 </div>
               </div>
 
@@ -181,8 +182,8 @@ export default function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
               {filtered.length === 0 && (
                 <div className="mt-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
                   <p className="text-sm text-amber-800 dark:text-amber-200">
-                    No matches. Try searching for "Vite", "Node.js", "Tailwind",
-                    or "CSP".
+                    No matches. Try searching for Vite, Node.js, Tailwind, or{' '}
+                    CSP.
                   </p>
                 </div>
               )}

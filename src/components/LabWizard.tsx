@@ -16,7 +16,12 @@ interface LabWizardProps {
   onToggleTheme: () => void
 }
 
-export type WizardStep = 'setup' | 'structure' | 'testing' | 'completion' | 'whatsnext'
+export type WizardStep =
+  | 'setup'
+  | 'structure'
+  | 'testing'
+  | 'completion'
+  | 'whatsnext'
 
 const steps: { id: WizardStep; title: string; description: string }[] = [
   {
@@ -31,7 +36,11 @@ const steps: { id: WizardStep; title: string; description: string }[] = [
   },
   { id: 'testing', title: 'Test & Deploy', description: 'Verify and deploy' },
   { id: 'completion', title: 'Complete!', description: 'Your app is ready' },
-  { id: 'whatsnext', title: "What's Next", description: 'More ideas & packages' },
+  {
+    id: 'whatsnext',
+    title: "What's Next",
+    description: 'More ideas & packages',
+  },
 ]
 
 export default function LabWizard({

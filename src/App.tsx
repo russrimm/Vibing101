@@ -3,6 +3,7 @@ import IndustrySelector from './components/IndustrySelector'
 import LabWizard from './components/LabWizard'
 import ThemeToggle from './components/ThemeToggle'
 import GlossaryModal from './components/GlossaryModal'
+import AboutModal from './components/AboutModal'
 import { Industry } from './types/industry'
 import { useTheme } from './hooks/useTheme'
 
@@ -13,6 +14,7 @@ function App() {
   )
   const [wizardStarted, setWizardStarted] = useState(false)
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false)
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
 
   const handleIndustrySelect = (industry: Industry) => {
     setSelectedIndustry(industry)
@@ -26,8 +28,18 @@ function App() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-      {/* Header with Theme Toggle and LinkedIn Link */}
+      {/* Header with About, Glossary, Theme Toggle, and LinkedIn Link */}
       <header className="fixed top-0 right-0 p-4 z-50 flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => setIsAboutOpen(true)}
+          className="inline-flex items-center justify-center h-12 px-4 bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 dark:hover:bg-cyan-500 rounded-lg transition-colors duration-200 shadow-lg"
+          aria-label="Open about"
+        >
+          <span className="text-sm font-black text-slate-900 dark:text-white">
+            About
+          </span>
+        </button>
         <button
           type="button"
           onClick={() => setIsGlossaryOpen(true)}
@@ -72,6 +84,8 @@ function App() {
         isOpen={isGlossaryOpen}
         onClose={() => setIsGlossaryOpen(false)}
       />
+
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
     </div>
   )
 }

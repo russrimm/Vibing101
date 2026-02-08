@@ -1,4 +1,5 @@
 import { Industry } from '../../types/industry'
+import { GlossaryTooltip } from '../GlossaryTooltip'
 
 interface WhatsNextStepProps {
   industry: Industry
@@ -58,7 +59,7 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                pdf-lib
+                <GlossaryTooltip term="pdfLib">pdf-lib</GlossaryTooltip>
               </a>
               <span className="text-slate-400"> — create/edit PDFs in JS</span>
             </li>
@@ -69,9 +70,12 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                jspdf
+                <GlossaryTooltip term="jspdf">jspdf</GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — PDF generation in browser</span>
+              <span className="text-slate-400">
+                {' '}
+                — PDF generation in browser
+              </span>
             </li>
             <li>
               <a
@@ -80,9 +84,14 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                @react-pdf/renderer
+                <GlossaryTooltip term="reactPdfRenderer">
+                  @react-pdf/renderer
+                </GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — React-style PDF rendering</span>
+              <span className="text-slate-400">
+                {' '}
+                — React-style PDF rendering
+              </span>
             </li>
           </ul>
         </section>
@@ -100,9 +109,12 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                docx
+                <GlossaryTooltip term="docxPkg">docx</GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — create .docx files in TS/JS</span>
+              <span className="text-slate-400">
+                {' '}
+                — create .docx files in TS/JS
+              </span>
             </li>
             <li>
               <a
@@ -111,15 +123,22 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                docxtemplater
+                <GlossaryTooltip term="docxtemplater">
+                  docxtemplater
+                </GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — fill templates with data</span>
+              <span className="text-slate-400">
+                {' '}
+                — fill templates with data
+              </span>
             </li>
           </ul>
         </section>
 
         <section className="border border-white/10 bg-slate-900/30 rounded-xl p-5 hover:border-cyan-500/40 transition-colors">
-          <h3 className="text-lg font-semibold text-white mb-2">🧊 3D & Visuals</h3>
+          <h3 className="text-lg font-semibold text-white mb-2">
+            🧊 3D & Visuals
+          </h3>
           <p className="text-sm text-slate-400 mb-3">
             Add 3D models, interactive scenes, or “wow” visuals.
           </p>
@@ -131,7 +150,7 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                three
+                <GlossaryTooltip term="three">three</GlossaryTooltip>
               </a>
               <span className="text-slate-400"> — core 3D engine</span>
             </li>
@@ -142,9 +161,14 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                @react-three/fiber
+                <GlossaryTooltip term="reactThreeFiber">
+                  @react-three/fiber
+                </GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — React renderer for Three.js</span>
+              <span className="text-slate-400">
+                {' '}
+                — React renderer for Three.js
+              </span>
             </li>
             <li>
               <a
@@ -153,15 +177,22 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                @react-three/drei
+                <GlossaryTooltip term="reactThreeDrei">
+                  @react-three/drei
+                </GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — useful helpers/components</span>
+              <span className="text-slate-400">
+                {' '}
+                — useful helpers/components
+              </span>
             </li>
           </ul>
         </section>
 
         <section className="border border-white/10 bg-slate-900/30 rounded-xl p-5 hover:border-cyan-500/40 transition-colors">
-          <h3 className="text-lg font-semibold text-white mb-2">📊 Charts & Dashboards</h3>
+          <h3 className="text-lg font-semibold text-white mb-2">
+            📊 Charts & Dashboards
+          </h3>
           <p className="text-sm text-slate-400 mb-3">
             Add analytics charts, trends, KPIs, and drill-down views.
           </p>
@@ -173,9 +204,12 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                recharts
+                <GlossaryTooltip term="recharts">recharts</GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — React charting components</span>
+              <span className="text-slate-400">
+                {' '}
+                — React charting components
+              </span>
             </li>
             <li>
               <a
@@ -184,9 +218,12 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                chart.js
+                <GlossaryTooltip term="chartjs">chart.js</GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — popular charting library</span>
+              <span className="text-slate-400">
+                {' '}
+                — popular charting library
+              </span>
             </li>
             <li>
               <a
@@ -195,7 +232,9 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                @tanstack/react-table
+                <GlossaryTooltip term="tanstackReactTable">
+                  @tanstack/react-table
+                </GlossaryTooltip>
               </a>
               <span className="text-slate-400"> — powerful data tables</span>
             </li>
@@ -203,7 +242,9 @@ export default function WhatsNextStep({
         </section>
 
         <section className="border border-white/10 bg-slate-900/30 rounded-xl p-5 hover:border-cyan-500/40 transition-colors">
-          <h3 className="text-lg font-semibold text-white mb-2">🧾 Forms & Validation</h3>
+          <h3 className="text-lg font-semibold text-white mb-2">
+            🧾 Forms & Validation
+          </h3>
           <p className="text-sm text-slate-400 mb-3">
             Improve input UX, validation, and error messages.
           </p>
@@ -215,7 +256,9 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                react-hook-form
+                <GlossaryTooltip term="reactHookForm">
+                  react-hook-form
+                </GlossaryTooltip>
               </a>
               <span className="text-slate-400"> — ergonomic form state</span>
             </li>
@@ -226,15 +269,20 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                zod
+                <GlossaryTooltip term="zod">zod</GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — schema validation (great with TS)</span>
+              <span className="text-slate-400">
+                {' '}
+                — schema validation (great with TS)
+              </span>
             </li>
           </ul>
         </section>
 
         <section className="border border-white/10 bg-slate-900/30 rounded-xl p-5 hover:border-cyan-500/40 transition-colors">
-          <h3 className="text-lg font-semibold text-white mb-2">⚡ Data Fetching & Caching</h3>
+          <h3 className="text-lg font-semibold text-white mb-2">
+            ⚡ Data Fetching & Caching
+          </h3>
           <p className="text-sm text-slate-400 mb-3">
             Cleaner API calls, retries, caching, loading states.
           </p>
@@ -246,7 +294,9 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                @tanstack/react-query
+                <GlossaryTooltip term="tanstackReactQuery">
+                  @tanstack/react-query
+                </GlossaryTooltip>
               </a>
               <span className="text-slate-400"> — server-state management</span>
             </li>
@@ -257,9 +307,12 @@ export default function WhatsNextStep({
                 rel="noopener noreferrer"
                 className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
               >
-                zustand
+                <GlossaryTooltip term="zustand">zustand</GlossaryTooltip>
               </a>
-              <span className="text-slate-400"> — lightweight client state</span>
+              <span className="text-slate-400">
+                {' '}
+                — lightweight client state
+              </span>
             </li>
           </ul>
         </section>

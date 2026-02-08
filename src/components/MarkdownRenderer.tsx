@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, cloneElement, createElement, isValidElement } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -24,6 +24,36 @@ const buildTermRegex = (term: string): RegExp => {
   const prefix = startsWithWord ? '\\b' : ''
   const suffix = endsWithWord ? '\\b' : ''
   return new RegExp(`${prefix}${escaped}${suffix}`, 'gi')
+}
+
+const wrapGlossaryInChildren = (children: React.ReactNode): React.ReactNode => {
+  const processChild = (child: React.ReactNode): React.ReactNode => {
+    if (typeof child === 'string') {
+      return wrapGlossaryTerms(child)
+    }
+
+    if (Array.isArray(child)) {
+      return child.map(processChild)
+    }
+
+    if (isValidElement(child)) {
+      // Avoid wrapping inside code blocks/inline code and links.
+      if (child.type === 'code' || child.type === 'a') {
+        return child
+      }
+
+      if ('children' in child.props) {
+        return cloneElement(child, {
+          ...child.props,
+          children: processChild(child.props.children),
+        })
+      }
+    }
+
+    return child
+  }
+
+  return processChild(children)
 }
 
 // Function to wrap glossary terms in markdown content
@@ -134,40 +164,30 @@ export const MarkdownRenderer: FC<MarkdownRendererProps> = ({
           h1({ children }) {
             return (
               <h1 className="text-4xl font-bold mb-6 mt-8 bg-linear-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                {children}
+                {wrapGlossaryInChildren(children)}
               </h1>
             )
           },
           h2({ children }) {
             return (
               <h2 className="text-3xl font-bold text-white mb-4 mt-8 border-b border-white/10 pb-2">
-                {children}
+                {wrapGlossaryInChildren(children)}
               </h2>
             )
           },
           h3({ children }) {
             return (
               <h3 className="text-2xl font-bold text-white mb-3 mt-6">
-                {children}
+                {wrapGlossaryInChildren(children)}
               </h3>
             )
           },
 
           // Paragraphs with glossary term wrapping
           p({ children }) {
-            const processChildren = (child: any): any => {
-              if (typeof child === 'string') {
-                return wrapGlossaryTerms(child)
-              }
-              if (Array.isArray(child)) {
-                return child.map(processChildren)
-              }
-              return child
-            }
-
             return (
               <p className="text-slate-300 leading-relaxed mb-4">
-                {processChildren(children)}
+                {wrapGlossaryInChildren(children)}
               </p>
             )
           },
@@ -202,14 +222,20 @@ export const MarkdownRenderer: FC<MarkdownRendererProps> = ({
             )
           },
           li({ children }) {
-            return <li className="leading-relaxed">{children}</li>
+            return createElement(
+              'li',
+              { className: 'leading-relaxed' },
+              wrapGlossaryInChildren(children)
+            )
           },
 
           // Blockquotes
           blockquote({ children }) {
             return (
               <blockquote className="border-l-4 border-cyan-500 bg-cyan-500/10 pl-4 py-3 my-4 rounded-r-lg">
-                <div className="text-slate-300 italic">{children}</div>
+                <div className="text-slate-300 italic">
+                  {wrapGlossaryInChildren(children)}
+                </div>
               </blockquote>
             )
           },
@@ -244,13 +270,15 @@ export const MarkdownRenderer: FC<MarkdownRendererProps> = ({
           th({ children }) {
             return (
               <th className="px-4 py-3 text-left text-sm font-semibold text-cyan-400">
-                {children}
+                {wrapGlossaryInChildren(children)}
               </th>
             )
           },
           td({ children }) {
             return (
-              <td className="px-4 py-3 text-sm text-slate-300">{children}</td>
+              <td className="px-4 py-3 text-sm text-slate-300">
+                {wrapGlossaryInChildren(children)}
+              </td>
             )
           },
 

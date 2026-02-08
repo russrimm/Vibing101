@@ -113,15 +113,28 @@ export default function CompletionStep({
         <ul className="space-y-2 text-sm text-slate-300 mb-4">
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
-            <span>Add user authentication and authorization</span>
+            <span>
+              Add user{' '}
+              <GlossaryTooltip term="authentication">authentication</GlossaryTooltip>{' '}
+              and{' '}
+              <GlossaryTooltip term="authorization">authorization</GlossaryTooltip>
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
-            <span>Connect to a real database (Dataverse, SQL, Firebase)</span>
+            <span>
+              Connect to a real database (
+              <GlossaryTooltip term="dataverse">Dataverse</GlossaryTooltip>,{' '}
+              <GlossaryTooltip term="sql">SQL</GlossaryTooltip>,{' '}
+              <GlossaryTooltip term="firebase">Firebase</GlossaryTooltip>)
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
-            <span>Implement role-based access control</span>
+            <span>
+              Implement{' '}
+              <GlossaryTooltip term="rbac">role-based access control</GlossaryTooltip>
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
@@ -129,19 +142,33 @@ export default function CompletionStep({
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
-            <span>Integrate with third-party APIs</span>
+            <span>
+              Integrate with third-party <GlossaryTooltip term="api">APIs</GlossaryTooltip>
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
-            <span>Add automated testing (unit, integration, e2e)</span>
+            <span>
+              Add automated testing (
+              <GlossaryTooltip term="unitTests">unit tests</GlossaryTooltip>,{' '}
+              <GlossaryTooltip term="integrationTests">
+                integration tests
+              </GlossaryTooltip>
+              , <GlossaryTooltip term="e2e">E2E</GlossaryTooltip>)
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
-            <span>Implement offline support with PWA</span>
+            <span>
+              Implement offline support with <GlossaryTooltip term="pwa">PWA</GlossaryTooltip>
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
-            <span>Set up CI/CD pipeline for automated deployments</span>
+            <span>
+              Set up <GlossaryTooltip term="cicd">CI/CD</GlossaryTooltip> pipeline for
+              automated deployments
+            </span>
           </li>
         </ul>
 
@@ -245,8 +272,8 @@ export default function CompletionStep({
             className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 font-semibold"
           >
             CSP (Content Security Policy)
-          </a>
-          {' '}— helpful when the browser console mentions blocked scripts or
+          </a>{' '}
+          — helpful when the browser console mentions blocked scripts or
           connections.
         </p>
       </div>

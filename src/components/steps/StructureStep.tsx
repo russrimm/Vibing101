@@ -1084,457 +1084,477 @@ START NOW
           </summary>
           <div className="mt-4">
             {/* GitHub Copilot & MCP Servers Setup */}
-        <div className="bg-slate-800/60 border border-emerald-500/30 rounded-lg p-5 mb-5">
-          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-            <span className="text-xl">🤖</span>
-            1. Set Up Copilot Modes (Ask/Plan/Agent + Beast) and MCP Servers
-          </h4>
-          <p className="text-slate-300 mb-4 text-sm">
-            You’ll use different Copilot modes depending on what you’re doing.
-            Use all of them when the situation calls for it:
-          </p>
-          <ul className="text-slate-300 mb-4 text-sm space-y-2">
-            <li>
-              <strong className="text-white">Ask mode</strong>: quick questions,
-              explanations, and small suggestions (usually no file edits).
-            </li>
-            <li>
-              <strong className="text-white">Plan mode</strong>: design and
-              planning before big changes (breaks work into steps you can
-              review).
-            </li>
-            <li>
-              <strong className="text-white">Agent mode</strong>: actually
-              implements changes (creates/edits files, runs commands, validates
-              results).
-            </li>
-            <li>
-              <strong className="text-white">Beast Mode</strong> (custom agent
-              mode): a more thorough style of Agent mode for “bigger” work (more
-              careful reasoning, checks, and end-to-end completion).
-            </li>
-          </ul>
-          <p className="text-slate-300 mb-4 text-sm">
-            MCP servers let Copilot securely connect to external tools and
-            trusted knowledge sources (for example: official docs, SDK
-            references, and project-aware helpers). You’ll install a couple for
-            this lab, and you can always add more later if you see ones that
-            look useful for future projects.
-          </p>
-          <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/20">
-            <ol className="space-y-2 text-sm text-slate-300">
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  a.
-                </span>
-                <span>
-                  In VS Code, click the{' '}
-                  <strong className="text-white">Extensions</strong> icon in the
-                  left sidebar (or press{' '}
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    Ctrl+Shift+X
-                  </code>
-                  )
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  b.
-                </span>
-                <span>
-                  Install these extensions (search each one and click{' '}
-                  <strong className="text-white">Install</strong>):
-                  <ul className="mt-2 space-y-1">
-                    <li>
-                      <strong className="text-white">GitHub Copilot</strong>
-                    </li>
-                    <li>
+            <div className="bg-slate-800/60 border border-emerald-500/30 rounded-lg p-5 mb-5">
+              <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <span className="text-xl">🤖</span>
+                1. Set Up Copilot Modes (Ask/Plan/Agent + Beast) and MCP Servers
+              </h4>
+              <p className="text-slate-300 mb-4 text-sm">
+                You’ll use different Copilot modes depending on what you’re
+                doing. Use all of them when the situation calls for it:
+              </p>
+              <ul className="text-slate-300 mb-4 text-sm space-y-2">
+                <li>
+                  <strong className="text-white">Ask mode</strong>: quick
+                  questions, explanations, and small suggestions (usually no
+                  file edits).
+                </li>
+                <li>
+                  <strong className="text-white">Plan mode</strong>: design and
+                  planning before big changes (breaks work into steps you can
+                  review).
+                </li>
+                <li>
+                  <strong className="text-white">Agent mode</strong>: actually
+                  implements changes (creates/edits files, runs commands,
+                  validates results).
+                </li>
+                <li>
+                  <strong className="text-white">Beast Mode</strong> (custom
+                  agent mode): a more thorough style of Agent mode for “bigger”
+                  work (more careful reasoning, checks, and end-to-end
+                  completion).
+                </li>
+              </ul>
+              <p className="text-slate-300 mb-4 text-sm">
+                MCP servers let Copilot securely connect to external tools and
+                trusted knowledge sources (for example: official docs, SDK
+                references, and project-aware helpers). You’ll install a couple
+                for this lab, and you can always add more later if you see ones
+                that look useful for future projects.
+              </p>
+              <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/20">
+                <ol className="space-y-2 text-sm text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      a.
+                    </span>
+                    <span>
+                      In VS Code, click the{' '}
+                      <strong className="text-white">Extensions</strong> icon in
+                      the left sidebar (or press{' '}
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        Ctrl+Shift+X
+                      </code>
+                      )
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      b.
+                    </span>
+                    <span>
+                      Install these extensions (search each one and click{' '}
+                      <strong className="text-white">Install</strong>):
+                      <ul className="mt-2 space-y-1">
+                        <li>
+                          <strong className="text-white">GitHub Copilot</strong>
+                        </li>
+                        <li>
+                          <strong className="text-white">
+                            Prettier - Code Formatter
+                          </strong>
+                        </li>
+                        <li>
+                          <strong className="text-white">ESLint</strong>
+                        </li>
+                      </ul>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      c.
+                    </span>
+                    <span>Sign in with your GitHub account when prompted</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      d.
+                    </span>
+                    <span>Close the walkthrough steps window</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      e.
+                    </span>
+                    <span>
+                      Click the{' '}
                       <strong className="text-white">
-                        Prettier - Code Formatter
+                        Agent/Ask mode dropdown
+                      </strong>{' '}
+                      at the bottom of the GitHub Copilot chat
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      f.
+                    </span>
+                    <span>
+                      Click{' '}
+                      <strong className="text-white">
+                        Configure Custom Agents
                       </strong>
-                    </li>
-                    <li>
-                      <strong className="text-white">ESLint</strong>
-                    </li>
-                  </ul>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  c.
-                </span>
-                <span>Sign in with your GitHub account when prompted</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  d.
-                </span>
-                <span>Close the walkthrough steps window</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  e.
-                </span>
-                <span>
-                  Click the{' '}
-                  <strong className="text-white">
-                    Agent/Ask mode dropdown
-                  </strong>{' '}
-                  at the bottom of the GitHub Copilot chat
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  f.
-                </span>
-                <span>
-                  Click{' '}
-                  <strong className="text-white">
-                    "Configure Custom Agents"
-                  </strong>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  g.
-                </span>
-                <span>
-                  Click{' '}
-                  <strong className="text-white">
-                    "Create new custom Agent"
-                  </strong>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  h.
-                </span>
-                <span>
-                  Click <strong className="text-white">"User Data"</strong>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  i.
-                </span>
-                <span>
-                  Enter <strong className="text-white">"Beast Mode"</strong> and
-                  press Enter
-                </span>
-              </li>
-            </ol>
-            <a
-              href="https://gist.githubusercontent.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf/raw/e1898331f1755aff3265d50e30106b8c6987c4f7/beastmode3.chatmode.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-3 px-4 py-2 bg-emerald-700 text-slate-50 font-black text-sm rounded-lg hover:bg-emerald-800 transition-colors shadow-lg shadow-emerald-500/50 border-2 border-emerald-400"
-            >
-              <span className="text-slate-50">Open Beast Mode Content →</span>
-            </a>
-            <ol className="space-y-2 text-sm text-slate-300 mt-4">
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  j.
-                </span>
-                <span>
-                  Copy all the content from the Beast Mode page (
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    Ctrl+A
-                  </code>{' '}
-                  then{' '}
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    Ctrl+C
-                  </code>
-                  )
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  k.
-                </span>
-                <span>
-                  Paste the content into the{' '}
-                  <strong className="text-white">Beast Mode.agent.md</strong>{' '}
-                  file that opened in VS Code
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  l.
-                </span>
-                <span>
-                  Save the file (
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    Ctrl+S
-                  </code>
-                  )
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  m.
-                </span>
-                <span>
-                  Open VS Code Settings with{' '}
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    Ctrl+,
-                  </code>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  n.
-                </span>
-                <span>
-                  In the Settings search box, search for{' '}
-                  <strong className="text-white">max requests</strong>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  o.
-                </span>
-                <span>
-                  Set the{' '}
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    Max Requests
-                  </code>{' '}
-                  (setting key:{' '}
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    chat.agent.maxRequests
-                  </code>
-                  ) to{' '}
-                  <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
-                    200
-                  </code>
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  p.
-                </span>
-                <span>
-                  Go to{' '}
-                  <a
-                    href="https://www.github.com/mcp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-400 hover:text-cyan-300 underline"
-                  >
-                    github.com/mcp
-                  </a>{' '}
-                  and select <strong className="text-white">"Install"</strong>{' '}
-                  for{' '}
-                  <strong className="text-white">
-                    <GlossaryTooltip term="context7">Context7</GlossaryTooltip>
-                  </strong>
-                  , <strong className="text-white">Github</strong>,{' '}
-                  <strong className="text-white">Microsoft Learn</strong>, and{' '}
-                  <strong className="text-white">
-                    <GlossaryTooltip term="playwright">
-                      Playwright
-                    </GlossaryTooltip>
-                  </strong>
-                </span>
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        {/* Get Agent Mode Starter Kit Repository */}
-        <div className="bg-slate-800/60 border border-cyan-500/30 rounded-lg p-5 mb-5">
-          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-            <span className="text-xl">🍴</span>
-            2. Get the Agent Mode Starter Kit (
-            <GlossaryTooltip term="fork">Fork</GlossaryTooltip> optional)
-          </h4>
-          <p className="text-slate-300 mb-3 text-sm">
-            For this lab, you can simply{' '}
-            <strong className="text-white">
-              <GlossaryTooltip term="clone">clone</GlossaryTooltip>
-            </strong>{' '}
-            the starter kit <GlossaryTooltip term="repo">repo</GlossaryTooltip>
-            to your machine. Forking is only needed if you want to{' '}
-            <strong className="text-white">push your changes to GitHub</strong>,
-            open pull requests, or use GitHub-based workflows.
-          </p>
-          <ol className="space-y-2 text-slate-300 text-sm ml-4">
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">a.</span>
-              <span>
-                In VS Code, open the integrated terminal:
-                <strong className="text-white"> Terminal → New Terminal</strong>{' '}
-                (shortcut:{' '}
-                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
-                  Ctrl+`
-                </code>
-                ).
-                <span className="text-xs text-slate-400 mt-1 block">
-                  These commands run in the terminal (not the search box).
-                </span>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">b.</span>
-              <span>
-                Create a folder for all your future coding projects (e.g.,{' '}
-                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
-                  C:\repos
-                </code>
-                ):
-                <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
-                  mkdir C:\repos
-                </pre>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">c.</span>
-              <span>
-                (Optional) If you want your own GitHub copy,{' '}
-                <GlossaryTooltip term="fork">fork</GlossaryTooltip> the{' '}
-                <GlossaryTooltip term="repo">repo</GlossaryTooltip>:
-                <div className="mt-1">
-                  <a
-                    href="https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-400 hover:text-cyan-300 underline"
-                  >
-                    github.com/bradcstevens/github-copilot-agent-mode-starter-kit
-                  </a>
-                </div>
-                <div className="text-xs text-slate-400 mt-1">
-                  Click{' '}
-                  <strong className="text-slate-200">
-                    <GlossaryTooltip term="fork">Fork</GlossaryTooltip>
-                  </strong>{' '}
-                  (top-right).
-                </div>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">d.</span>
-              <span>
-                Open the repo page on GitHub (either the original repo or your
-                fork), click <strong className="text-white">Code</strong>, and
-                copy the URL.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">e.</span>
-              <span>
-                Clone it to your local machine (for screenshots, see{' '}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      g.
+                    </span>
+                    <span>
+                      Click{' '}
+                      <strong className="text-white">
+                        Create new custom Agent
+                      </strong>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      h.
+                    </span>
+                    <span>
+                      Click <strong className="text-white">User Data</strong>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      i.
+                    </span>
+                    <span>
+                      Enter <strong className="text-white">Beast Mode</strong>{' '}
+                      and press Enter
+                    </span>
+                  </li>
+                </ol>
                 <a
-                  href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"
+                  href="https://gist.githubusercontent.com/burkeholland/88af0249c4b6aff3820bf37898c8bacf/raw/e1898331f1755aff3265d50e30106b8c6987c4f7/beastmode3.chatmode.md"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 underline"
+                  className="inline-block mt-3 px-4 py-2 bg-emerald-700 text-slate-50 font-black text-sm rounded-lg hover:bg-emerald-800 transition-colors shadow-lg shadow-emerald-500/50 border-2 border-emerald-400"
                 >
-                  GitHub Docs: Cloning a repository
+                  <span className="text-slate-50">
+                    Open Beast Mode Content →
+                  </span>
                 </a>
-                ):
-                <div className="text-xs text-slate-400 mt-2">
-                  Tip: if you didn’t fork, the URL will look like
-                  <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400 ml-1">
-                    https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
-                  </code>
-                  . If you forked, it will include your username.
-                </div>
-                <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
-                  cd C:\repos{'\n'}
-                  git clone
-                  https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
-                  {'\n'}
-                  cd github-copilot-agent-mode-starter-kit{'\n'}
-                  code .
-                </pre>
-                <span className="text-xs text-slate-400 mt-1 block">
-                  If you forked, replace the clone URL with your fork’s URL.
+                <ol className="space-y-2 text-sm text-slate-300 mt-4">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      j.
+                    </span>
+                    <span>
+                      Copy all the content from the Beast Mode page (
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        Ctrl+A
+                      </code>{' '}
+                      then{' '}
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        Ctrl+C
+                      </code>
+                      )
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      k.
+                    </span>
+                    <span>
+                      Paste the content into the{' '}
+                      <strong className="text-white">
+                        Beast Mode.agent.md
+                      </strong>{' '}
+                      file that opened in VS Code
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      l.
+                    </span>
+                    <span>
+                      Save the file (
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        Ctrl+S
+                      </code>
+                      )
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      m.
+                    </span>
+                    <span>
+                      Open VS Code Settings with{' '}
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        Ctrl+,
+                      </code>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      n.
+                    </span>
+                    <span>
+                      In the Settings search box, search for{' '}
+                      <strong className="text-white">max requests</strong>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      o.
+                    </span>
+                    <span>
+                      Set the{' '}
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        Max Requests
+                      </code>{' '}
+                      (setting key:{' '}
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        chat.agent.maxRequests
+                      </code>
+                      ) to{' '}
+                      <code className="bg-slate-800 px-1.5 py-0.5 rounded text-cyan-400">
+                        200
+                      </code>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 font-semibold shrink-0">
+                      p.
+                    </span>
+                    <span>
+                      Go to{' '}
+                      <a
+                        href="https://www.github.com/mcp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:text-cyan-300 underline"
+                      >
+                        github.com/mcp
+                      </a>{' '}
+                      and select{' '}
+                      <strong className="text-white">"Install"</strong> for{' '}
+                      <strong className="text-white">
+                        <GlossaryTooltip term="context7">
+                          Context7
+                        </GlossaryTooltip>
+                      </strong>
+                      , <strong className="text-white">Github</strong>,{' '}
+                      <strong className="text-white">Microsoft Learn</strong>,
+                      and{' '}
+                      <strong className="text-white">
+                        <GlossaryTooltip term="playwright">
+                          Playwright
+                        </GlossaryTooltip>
+                      </strong>
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            {/* Get Agent Mode Starter Kit Repository */}
+            <div className="bg-slate-800/60 border border-cyan-500/30 rounded-lg p-5 mb-5">
+              <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <span className="text-xl">🍴</span>
+                2. Get the Agent Mode Starter Kit (
+                <GlossaryTooltip term="fork">Fork</GlossaryTooltip> optional)
+              </h4>
+              <p className="text-slate-300 mb-3 text-sm">
+                For this lab, you can simply{' '}
+                <strong className="text-white">
+                  <GlossaryTooltip term="clone">clone</GlossaryTooltip>
+                </strong>{' '}
+                the starter kit{' '}
+                <GlossaryTooltip term="repo">repo</GlossaryTooltip>
+                to your machine. Forking is only needed if you want to{' '}
+                <strong className="text-white">
+                  push your changes to GitHub
+                </strong>
+                , open pull requests, or use GitHub-based workflows.
+              </p>
+              <ol className="space-y-2 text-slate-300 text-sm ml-4">
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">a.</span>
+                  <span>
+                    In VS Code, open the integrated terminal:
+                    <strong className="text-white">
+                      {' '}
+                      Terminal → New Terminal
+                    </strong>{' '}
+                    (shortcut:{' '}
+                    <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
+                      Ctrl+`
+                    </code>
+                    ).
+                    <span className="text-xs text-slate-400 mt-1 block">
+                      These commands run in the terminal (not the search box).
+                    </span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">b.</span>
+                  <span>
+                    Create a folder for all your future coding projects (e.g.,{' '}
+                    <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
+                      C:\repos
+                    </code>
+                    ):
+                    <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
+                      mkdir C:\repos
+                    </pre>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">c.</span>
+                  <span>
+                    (Optional) If you want your own GitHub copy,{' '}
+                    <GlossaryTooltip term="fork">fork</GlossaryTooltip> the{' '}
+                    <GlossaryTooltip term="repo">repo</GlossaryTooltip>:
+                    <div className="mt-1">
+                      <a
+                        href="https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:text-cyan-300 underline"
+                      >
+                        github.com/bradcstevens/github-copilot-agent-mode-starter-kit
+                      </a>
+                    </div>
+                    <div className="text-xs text-slate-400 mt-1">
+                      Click{' '}
+                      <strong className="text-slate-200">
+                        <GlossaryTooltip term="fork">Fork</GlossaryTooltip>
+                      </strong>{' '}
+                      (top-right).
+                    </div>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">d.</span>
+                  <span>
+                    Open the repo page on GitHub (either the original repo or
+                    your fork), click{' '}
+                    <strong className="text-white">Code</strong>, and copy the
+                    URL.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">e.</span>
+                  <span>
+                    Clone it to your local machine (for screenshots, see{' '}
+                    <a
+                      href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:text-cyan-300 underline"
+                    >
+                      GitHub Docs: Cloning a repository
+                    </a>
+                    ):
+                    <div className="text-xs text-slate-400 mt-2">
+                      Tip: if you didn’t fork, the URL will look like
+                      <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400 ml-1">
+                        https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
+                      </code>
+                      . If you forked, it will include your username.
+                    </div>
+                    <pre className="bg-slate-900 px-3 py-2 rounded text-cyan-400 mt-2 overflow-x-auto">
+                      cd C:\repos{'\n'}
+                      git clone
+                      https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
+                      {'\n'}
+                      cd github-copilot-agent-mode-starter-kit{'\n'}
+                      code .
+                    </pre>
+                    <span className="text-xs text-slate-400 mt-1 block">
+                      If you forked, replace the clone URL with your fork’s URL.
+                    </span>
+                  </span>
+                </li>
+              </ol>
+            </div>
+
+            {/* Enable Instruction Files */}
+            <div className="bg-slate-800/60 border border-green-500/30 rounded-lg p-5 mb-5">
+              <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <span className="text-xl">⚙️</span>
+                3. Enable{' '}
+                <GlossaryTooltip term="instructionFiles">
+                  Instruction Files
+                </GlossaryTooltip>{' '}
+                in VS Code
+              </h4>
+              <p className="text-slate-300 mb-3 text-sm">
+                <GlossaryTooltip term="instructionFiles">
+                  Instruction files
+                </GlossaryTooltip>{' '}
+                guide GitHub Copilot with project-specific rules and best
+                practices:
+              </p>
+              <ol className="space-y-2 text-slate-300 text-sm ml-4">
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">a.</span>
+                  <span>
+                    Open VS Code Settings:
+                    <ul className="ml-4 mt-1 space-y-1 text-xs">
+                      <li>
+                        • Windows/Linux:{' '}
+                        <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
+                          Ctrl+,
+                        </kbd>
+                      </li>
+                      <li>
+                        • Mac:{' '}
+                        <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
+                          Cmd+,
+                        </kbd>
+                      </li>
+                    </ul>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">b.</span>
+                  <span>
+                    Search for:{' '}
+                    <strong className="text-white">
+                      Use Instruction Files
+                    </strong>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-cyan-400 font-mono">c.</span>
+                  <span>
+                    Enable{' '}
+                    <strong className="text-white">
+                      Use Instruction Files
+                    </strong>
+                  </span>
+                </li>
+              </ol>
+              <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 mt-3">
+                <p className="text-xs text-blue-300 flex items-start gap-2">
+                  <span className="text-base mt-0.5">💡</span>
+                  <span>
+                    <strong>What are instruction files?</strong> These are
+                    special markdown files (like{' '}
+                    <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
+                      .github/copilot-instructions.md
+                    </code>
+                    ) that tell GitHub Copilot about your project's coding
+                    standards, architecture patterns, and design system.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mt-5">
+              <p className="text-sm text-green-300 flex items-start gap-2">
+                <span className="text-lg mt-0.5">✅</span>
+                <span>
+                  <strong>You're ready!</strong> Once you've completed these
+                  prerequisites, you can proceed with building your{' '}
+                  {industry.sampleApp.name} application below.
                 </span>
-              </span>
-            </li>
-          </ol>
-        </div>
-
-        {/* Enable Instruction Files */}
-        <div className="bg-slate-800/60 border border-green-500/30 rounded-lg p-5 mb-5">
-          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-            <span className="text-xl">⚙️</span>
-            3. Enable{' '}
-            <GlossaryTooltip term="instructionFiles">
-              Instruction Files
-            </GlossaryTooltip>{' '}
-            in VS Code
-          </h4>
-          <p className="text-slate-300 mb-3 text-sm">
-            <GlossaryTooltip term="instructionFiles">
-              Instruction files
-            </GlossaryTooltip>{' '}
-            guide GitHub Copilot with project-specific rules and best practices:
-          </p>
-          <ol className="space-y-2 text-slate-300 text-sm ml-4">
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">a.</span>
-              <span>
-                Open VS Code Settings:
-                <ul className="ml-4 mt-1 space-y-1 text-xs">
-                  <li>
-                    • Windows/Linux:{' '}
-                    <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
-                      Ctrl+,
-                    </kbd>
-                  </li>
-                  <li>
-                    • Mac:{' '}
-                    <kbd className="bg-slate-900 px-1.5 py-0.5 rounded">
-                      Cmd+,
-                    </kbd>
-                  </li>
-                </ul>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">b.</span>
-              <span>
-                Search for:{' '}
-                <strong className="text-white">Use Instruction Files</strong>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">c.</span>
-              <span>
-                Enable{' '}
-                <strong className="text-white">Use Instruction Files</strong>
-              </span>
-            </li>
-          </ol>
-          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 mt-3">
-            <p className="text-xs text-blue-300 flex items-start gap-2">
-              <span className="text-base mt-0.5">💡</span>
-              <span>
-                <strong>What are instruction files?</strong> These are special
-                markdown files (like{' '}
-                <code className="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">
-                  .github/copilot-instructions.md
-                </code>
-                ) that tell GitHub Copilot about your project's coding
-                standards, architecture patterns, and design system.
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mt-5">
-          <p className="text-sm text-green-300 flex items-start gap-2">
-            <span className="text-lg mt-0.5">✅</span>
-            <span>
-              <strong>You're ready!</strong> Once you've completed these
-              prerequisites, you can proceed with building your{' '}
-              {industry.sampleApp.name} application below.
-            </span>
-          </p>
-        </div>
-
+              </p>
+            </div>
           </div>
         </details>
       </div>
@@ -1926,7 +1946,8 @@ START NOW
               </code>{' '}
               in the terminal. This command automatically updates packages to
               secure versions and applies breaking changes if needed to fix
-              security issues.
+              security issues. (That command uses{' '}
+              <GlossaryTooltip term="npm">npm</GlossaryTooltip>.)
             </span>
           </p>
         </div>
