@@ -22,8 +22,8 @@ export default function SetupStep({
       </h2>
       <p className="text-slate-700 dark:text-slate-300 mb-8">
         Let&apos;s install the tools you need to build your{' '}
-        {industry.sampleApp.name}
-        . Follow each step and verify the installation before moving forward.
+        {industry.sampleApp.name}. Follow each step and verify the installation
+        before moving forward.
       </p>
 
       {/* Tools List */}
@@ -82,8 +82,7 @@ export default function SetupStep({
                 <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> lets
                 you run JavaScript locally and use{' '}
                 <GlossaryTooltip term="npm">npm</GlossaryTooltip> to install
-                packages.
-                Download the Windows Installer (.msi) and accept all
+                packages. Download the Windows Installer (.msi) and accept all
                 options during installation.
               </p>
               <a
@@ -144,7 +143,8 @@ export default function SetupStep({
                 <GlossaryTooltip term="prettier">Prettier</GlossaryTooltip>, and{' '}
                 <GlossaryTooltip term="eslint">ESLint</GlossaryTooltip>),
                 configure the Beast Mode custom agent, and enable{' '}
-                <GlossaryTooltip term="mcpServers">MCP servers</GlossaryTooltip>.
+                <GlossaryTooltip term="mcpServers">MCP servers</GlossaryTooltip>
+                .
               </p>
               <div className="bg-slate-900/5 dark:bg-white/5 rounded-lg p-4 border border-slate-200 dark:border-white/10 mb-3">
                 <p className="text-slate-700 dark:text-slate-300 text-sm mb-2">

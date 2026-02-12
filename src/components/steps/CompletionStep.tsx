@@ -115,9 +115,13 @@ export default function CompletionStep({
             <span className="shrink-0">•</span>
             <span>
               Add user{' '}
-              <GlossaryTooltip term="authentication">authentication</GlossaryTooltip>{' '}
+              <GlossaryTooltip term="authentication">
+                authentication
+              </GlossaryTooltip>{' '}
               and{' '}
-              <GlossaryTooltip term="authorization">authorization</GlossaryTooltip>
+              <GlossaryTooltip term="authorization">
+                authorization
+              </GlossaryTooltip>
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -133,7 +137,9 @@ export default function CompletionStep({
             <span className="shrink-0">•</span>
             <span>
               Implement{' '}
-              <GlossaryTooltip term="rbac">role-based access control</GlossaryTooltip>
+              <GlossaryTooltip term="rbac">
+                role-based access control
+              </GlossaryTooltip>
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -143,7 +149,8 @@ export default function CompletionStep({
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
             <span>
-              Integrate with third-party <GlossaryTooltip term="api">APIs</GlossaryTooltip>
+              Integrate with third-party{' '}
+              <GlossaryTooltip term="api">APIs</GlossaryTooltip>
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -160,14 +167,15 @@ export default function CompletionStep({
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
             <span>
-              Implement offline support with <GlossaryTooltip term="pwa">PWA</GlossaryTooltip>
+              Implement offline support with{' '}
+              <GlossaryTooltip term="pwa">PWA</GlossaryTooltip>
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="shrink-0">•</span>
             <span>
-              Set up <GlossaryTooltip term="cicd">CI/CD</GlossaryTooltip> pipeline for
-              automated deployments
+              Set up <GlossaryTooltip term="cicd">CI/CD</GlossaryTooltip>{' '}
+              pipeline for automated deployments
             </span>
           </li>
         </ul>
