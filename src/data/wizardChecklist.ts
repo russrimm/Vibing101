@@ -20,127 +20,133 @@ export interface ChecklistSection {
 export const WIZARD_CHECKLIST: ChecklistSection[] = [
   {
     stepId: 'setup',
-    title: 'Environment Setup',
+    title: 'Set up your workspace',
     items: [
       {
-        id: 'setup-vscode',
-        text: 'Install Visual Studio Code (latest stable)',
-      },
-      {
-        id: 'setup-node',
-        text: 'Install Node.js (v24+ recommended in this lab)',
-      },
-      {
-        id: 'setup-git',
-        text: 'Install Git',
-      },
-      {
-        id: 'setup-copilot',
-        text: 'Install GitHub Copilot Chat extension and sign in',
-      },
-      {
-        id: 'setup-prettier',
-        text: 'Install the “Prettier - Code Formatter” VS Code extension',
-      },
-      {
-        id: 'setup-eslint',
-        text: 'Install the “ESLint” VS Code extension',
-      },
-      {
-        id: 'setup-beast',
-        text: 'Configure the “Beast Mode” custom agent',
+        id: 'setup-desktop-response',
+        text: 'I received a reply in the GitHub Copilot desktop app',
         detail:
-          'Create the agent, paste the Beast Mode content into Beast Mode.agent.md, and save.',
+          'Use the approved desktop app, not VS Code, Copilot CLI, or GitHub Desktop. Resolve access or quota errors first.',
       },
       {
-        id: 'setup-maxrequests',
-        text: 'Set chat.agent.maxRequests to 200',
+        id: 'setup-tool-versions',
+        text: 'I verified Node.js, npm, and Git in my local session',
+        detail:
+          'Record the output of node --version, npm --version, and git --version. The lab baseline is Node.js 24 LTS.',
       },
       {
-        id: 'setup-mcp',
-        text: 'Install MCP servers (Context7, GitHub, Microsoft Learn, Playwright)',
+        id: 'setup-local-workspace',
+        text: 'I verified the actual local session workspace',
+        detail:
+          'Record the path and any worktree. It is a dedicated learner project, not the portal or an unrelated folder.',
+      },
+      {
+        id: 'setup-permissions',
+        text: 'I know what I will allow and when to pause',
+        detail:
+          'Review each command and target. Do not blindly approve deletion, secrets access, publishing, deployment, or unrelated changes.',
       },
     ],
   },
   {
     stepId: 'structure',
-    title: 'Project Structure',
+    title: 'Plan and build in small steps',
     items: [
       {
-        id: 'structure-prereq',
-        text: 'Confirm Step 1 is complete (tools + Copilot + Beast Mode + MCP)',
+        id: 'structure-small-plan',
+        text: 'I agreed on one record type and four small increments',
+        detail:
+          'Only id, name, and status; synthetic data; list, add, update/search/filter, then browser storage. No cloud or accounts.',
       },
       {
-        id: 'structure-open-chat',
-        text: 'Open GitHub Copilot Chat and switch to Beast Mode',
+        id: 'structure-preview',
+        text: 'I opened the actual preview URL and saw the two sample records',
+        detail:
+          'Check the heading and New/Done statuses in the generated app. Read Vite’s Local URL; do not assume port 5173.',
       },
       {
-        id: 'structure-prompt',
-        text: 'Paste the build prompt for your selected industry',
+        id: 'structure-add-validation',
+        text: 'I added a valid record and verified blank/spaces-only names were rejected',
+        detail:
+          'Add your named test record once. Invalid submits show a useful error without increasing the record count.',
       },
       {
-        id: 'structure-approve',
-        text: 'Approve Agent actions during the build (Allow and Review / Allow and Skip)',
+        id: 'structure-status-search',
+        text: 'I verified status changes and combined search/filter results',
+        detail:
+          'Change the test record to In progress; search by lowercase name; Done gives no matches; All with cleared search restores the list.',
       },
       {
-        id: 'structure-verify',
-        text: 'Verify the app scaffolds correctly (files created, app runs)',
+        id: 'structure-refresh',
+        text: 'I refreshed and verified my saved record/status without duplicate samples',
+        detail:
+          'Use the same browser profile and exact origin. localStorage is not a database, secure store, or off-device backup.',
       },
     ],
   },
   {
     stepId: 'testing',
-    title: 'Test & Deploy',
+    title: 'Test, review, and save',
     items: [
-      { id: 'testing-install', text: 'Run npm install' },
       {
-        id: 'testing-dev',
-        text: 'Run npm run dev and verify the app in the browser',
+        id: 'testing-acceptance',
+        text: 'I recorded passing results for every acceptance-table row',
+        detail:
+          'Samples, valid add, blank/spaces rejection, status update, search, combined filter, cleared controls, and refresh.',
       },
       {
-        id: 'testing-fix',
-        text: 'If you hit errors, paste them into Beast Mode and iterate',
+        id: 'testing-keyboard-mobile',
+        text: 'I checked keyboard controls and a narrow viewport',
+        detail:
+          'Visible focus, useful field errors, no keyboard trap, readable controls at 375px or a recorded approximate narrow window. Not a full accessibility audit.',
       },
-      { id: 'testing-build', text: 'Run npm run build' },
       {
-        id: 'testing-deploy',
-        text: 'Deploy (Azure Static Web Apps or GitHub Pages)',
+        id: 'testing-build-lint',
+        text: 'I verified build and lint both finished with exit code 0',
+        detail:
+          'Run npm run build and npm run lint in the actual learner workspace. Read both outputs; do not weaken checks to hide failures.',
+      },
+      {
+        id: 'testing-reviewed-commit',
+        text: 'I reviewed the files and verified an intentional local Git commit',
+        detail:
+          'Inspect new and changed files, exclude secrets/generated files, review the staged diff, record git log -1 --oneline and git status --short. No push or deployment.',
       },
     ],
   },
   {
     stepId: 'completion',
-    title: 'Complete!',
+    title: 'Reflect on your local prototype',
     items: [
       {
-        id: 'completion-review',
-        text: 'Review what you built and key features',
+        id: 'completion-explain',
+        text: 'I explained the app and its limits (optional reflection)',
+        detail:
+          'Completion means learner-reported local checks, not deployment, certification, compliance, or production readiness.',
       },
       {
-        id: 'completion-next',
-        text: 'Pick a next enhancement (auth, real database, CI/CD, tests, etc.)',
-      },
-      {
-        id: 'completion-repeat',
-        text: 'Optionally build another app/industry',
+        id: 'completion-return',
+        text: 'I recorded how to return to my saved work (optional reflection)',
+        detail:
+          'Keep the project/session, actual workspace, branch, commit ID, and browser origin. Preserve work before removing a worktree session.',
       },
     ],
   },
   {
     stepId: 'whatsnext',
-    title: "What's Next",
+    title: 'Optional extensions',
     items: [
       {
-        id: 'whatsnext-pick',
-        text: 'Pick one upgrade to implement (PDF/DOCX export, charts, 3D, etc.)',
+        id: 'whatsnext-one-improvement',
+        text: 'I planned one local improvement with a measurable test (optional)',
+        detail:
+          'Keep the working core commit. This extension is not required for completion.',
       },
       {
-        id: 'whatsnext-iterate',
-        text: 'Implement in small steps and validate with npm run build',
-      },
-      {
-        id: 'whatsnext-ship',
-        text: 'Deploy again after the upgrade (Azure Static Web Apps, etc.)',
+        id: 'whatsnext-recheck',
+        text: 'I verified and reviewed a new local checkpoint (optional)',
+        detail:
+          'Repeat affected browser checks, build, and lint. Publishing or cloud integration requires a separate permissions, cost, and privacy review.',
       },
     ],
   },

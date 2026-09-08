@@ -1,90 +1,119 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import IndustrySelector from './components/IndustrySelector'
 import LabWizard from './components/LabWizard'
 import ThemeToggle from './components/ThemeToggle'
 import GlossaryModal from './components/GlossaryModal'
 import AboutModal from './components/AboutModal'
-import { Industry } from './types/industry'
+import { industries } from './types/industry'
 import { useTheme } from './hooks/useTheme'
+import { useLabProgress } from './hooks/useLabProgress'
+import { emptyIndustryProgress } from './lib/labProgress'
 
 function App() {
-  const { theme, toggleTheme } = useTheme()
-  const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(
-    null
-  )
-  const [wizardStarted, setWizardStarted] = useState(false)
+  const { theme, toggleTheme, warning: themeWarning } = useTheme()
+  const { data, warning, navigate, updateIndustry, resetIndustry } =
+    useLabProgress()
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false)
   const [isAboutOpen, setIsAboutOpen] = useState(false)
+  const mainRef = useRef<HTMLElement>(null)
+  const industry = industries.find((item) => item.id === data.activeIndustry)
+  const progress = industry
+    ? (data.byIndustry[industry.id] ?? emptyIndustryProgress())
+    : null
+  const routeKey = `${industry?.id ?? ''}:${progress?.currentStep ?? ''}`
+  const previousRoute = useRef(window.location.hash ? '' : routeKey)
 
-  const handleIndustrySelect = (industry: Industry) => {
-    setSelectedIndustry(industry)
-    setWizardStarted(true)
-  }
-
-  const handleReset = () => {
-    setSelectedIndustry(null)
-    setWizardStarted(false)
-  }
+  useEffect(() => {
+    if (previousRoute.current === routeKey) return
+    previousRoute.current = routeKey
+    const lesson = document.getElementById(window.location.hash.slice(1))
+    if (lesson && mainRef.current?.contains(lesson)) {
+      lesson.focus()
+      lesson.scrollIntoView()
+    } else {
+      mainRef.current?.querySelector('h1')?.focus()
+      window.scrollTo({ top: 0 })
+    }
+  }, [routeKey])
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-      {/* Header with About, Glossary, Theme Toggle, and LinkedIn Link */}
-      <header className="fixed top-0 right-0 p-4 z-50 flex items-center gap-3">
-        <button
-          type="button"
-          onClick={() => setIsAboutOpen(true)}
-          className="inline-flex items-center justify-center h-12 px-4 bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 dark:hover:bg-cyan-500 rounded-lg transition-colors duration-200 shadow-lg"
-          aria-label="Open about"
-        >
-          <span className="text-sm font-black text-slate-900 dark:text-white">
-            About
-          </span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setIsGlossaryOpen(true)}
-          className="inline-flex items-center justify-center h-12 px-4 bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 dark:hover:bg-cyan-500 rounded-lg transition-colors duration-200 shadow-lg"
-          aria-label="Open glossary"
-        >
-          <span className="text-sm font-black text-slate-900 dark:text-white">
-            Glossary
-          </span>
-        </button>
-        <ThemeToggle theme={theme} onToggle={toggleTheme} />
-        <a
-          href="https://www.linkedin.com/in/russrimm"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-12 h-12 bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 dark:hover:bg-cyan-500 rounded-lg transition-colors duration-200 shadow-lg"
-          aria-label="Visit Russell Rimmer's LinkedIn profile"
-        >
-          <svg
-            className="w-6 h-6 text-white"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-white">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4 focus:text-slate-900"
+      >
+        Skip to lab content
+      </a>
+      <header className="border-b border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+          <a
+            href="?"
+            onClick={(event) => {
+              if (
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+              )
+                return
+              event.preventDefault()
+              navigate(null)
+            }}
+            className="font-bold hover:text-cyan-700 dark:hover:text-cyan-300"
           >
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-        </a>
+            Vibe Coding Lab
+          </a>
+          <nav aria-label="Lab help" className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setIsAboutOpen(true)}
+              className="rounded-lg px-3 py-3 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              About
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsGlossaryOpen(true)}
+              className="rounded-lg px-3 py-3 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              Glossary
+            </button>
+            <ThemeToggle theme={theme} onToggle={toggleTheme} />
+          </nav>
+        </div>
       </header>
 
-      {!wizardStarted ? (
-        <IndustrySelector onSelectIndustry={handleIndustrySelect} />
-      ) : selectedIndustry ? (
-        <LabWizard
-          industry={selectedIndustry}
-          onReset={handleReset}
-          theme={theme}
-          onToggleTheme={toggleTheme}
-        />
-      ) : null}
+      {(warning || themeWarning) && (
+        <div
+          role="alert"
+          className="mx-auto max-w-7xl p-4 text-amber-900 dark:text-amber-200"
+        >
+          {warning || themeWarning}
+        </div>
+      )}
+
+      <main id="main-content" ref={mainRef} tabIndex={-1}>
+        {industry && progress ? (
+          <LabWizard
+            industry={industry}
+            progress={progress}
+            onReset={() => navigate(null)}
+            onNavigate={(step) => navigate(industry.id, step)}
+            onUpdate={(update) => updateIndustry(industry.id, update)}
+            onClearProgress={() => resetIndustry(industry.id)}
+          />
+        ) : (
+          <IndustrySelector
+            onSelectIndustry={(selected) => navigate(selected.id)}
+            savedProgress={data.byIndustry}
+          />
+        )}
+      </main>
 
       <GlossaryModal
         isOpen={isGlossaryOpen}
         onClose={() => setIsGlossaryOpen(false)}
       />
-
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
     </div>
   )

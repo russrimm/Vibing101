@@ -1,300 +1,172 @@
-import { FC, cloneElement, createElement, isValidElement } from 'react'
+import { Children, isValidElement, type ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { GlossaryTooltip } from './GlossaryTooltip'
-import glossaryData from '../data/glossary.json'
+import CodeBlock from './CodeBlock'
 
 interface MarkdownRendererProps {
   content: string
   className?: string
 }
 
-// Terms that should be wrapped with glossary tooltips
-const glossaryTerms = Object.keys(glossaryData)
-
-const escapeRegExp = (value: string): string =>
-  value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-
-const buildTermRegex = (term: string): RegExp => {
-  const escaped = escapeRegExp(term)
-  const startsWithWord = /^\w/.test(term)
-  const endsWithWord = /\w$/.test(term)
-  const prefix = startsWithWord ? '\\b' : ''
-  const suffix = endsWithWord ? '\\b' : ''
-  return new RegExp(`${prefix}${escaped}${suffix}`, 'gi')
+const lessonLinks: Record<string, { step: string; anchor: string }> = {
+  'lab-00-prerequisites.md': { step: 'setup', anchor: 'lab-00' },
+  'lab-01-plan.md': { step: 'structure', anchor: 'lab-01' },
+  'lab-02-build.md': { step: 'structure', anchor: 'lab-02' },
+  'lab-03-test-and-save.md': { step: 'testing', anchor: 'lab-03' },
+  'lab-04-completion.md': { step: 'completion', anchor: 'lab-04' },
+  'lab-05-next-steps.md': { step: 'whatsnext', anchor: 'lab-05' },
 }
 
-const wrapGlossaryInChildren = (children: React.ReactNode): React.ReactNode => {
-  const processChild = (child: React.ReactNode): React.ReactNode => {
-    if (typeof child === 'string') {
-      return wrapGlossaryTerms(child)
-    }
-
-    if (Array.isArray(child)) {
-      return child.map(processChild)
-    }
-
-    if (isValidElement(child)) {
-      // Avoid wrapping inside code blocks/inline code and links.
-      if (child.type === 'code' || child.type === 'a') {
-        return child
-      }
-
-      if ('children' in child.props) {
-        return cloneElement(child, {
-          ...child.props,
-          children: processChild(child.props.children),
-        })
-      }
-    }
-
-    return child
+function resolveLessonLink(href: string | undefined): string | undefined {
+  if (!href || /^[a-z][a-z0-9+.-]*:|^#/i.test(href)) return href
+  const lesson = lessonLinks[href]
+  const industry = new URLSearchParams(window.location.search).get('industry')
+  if (lesson && industry) {
+    return `?industry=${encodeURIComponent(industry)}&step=${lesson.step}#${lesson.anchor}`
   }
-
-  return processChild(children)
+  return href.includes('.md')
+    ? new URL(href, 'https://github.com/russrimm/Vibing101/blob/main/docs/')
+        .href
+    : href
 }
 
-// Function to wrap glossary terms in markdown content
-const wrapGlossaryTerms = (text: string): React.ReactNode => {
-  if (!text) return text
-
-  // Sort terms by length (longest first) to match longer terms before shorter ones
-  const sortedTerms = [...glossaryTerms].sort((a, b) => {
-    const termA = (glossaryData as any)[a].term
-    const termB = (glossaryData as any)[b].term
-    return termB.length - termA.length
-  })
-
-  const result: React.ReactNode[] = []
-  let lastIndex = 0
-  const matches: {
-    index: number
-    term: string
-    key: string
-    length: number
-  }[] = []
-
-  // Find all term matches
-  sortedTerms.forEach((key) => {
-    const entry = (glossaryData as any)[key]
-    const term = entry.term
-    const regex = buildTermRegex(term)
-    let match: RegExpExecArray | null
-
-    while ((match = regex.exec(text)) !== null) {
-      // Check if this position is not already covered by a longer term
-      const overlaps = matches.some(
-        (m) => match!.index >= m.index && match!.index < m.index + m.length
-      )
-      if (!overlaps) {
-        matches.push({
-          index: match.index,
-          term: match[0],
-          key,
-          length: match[0].length,
-        })
-      }
-    }
-  })
-
-  // Sort matches by index
-  matches.sort((a, b) => a.index - b.index)
-
-  // Build result with wrapped terms
-  matches.forEach((match, i) => {
-    // Add text before match
-    if (match.index > lastIndex) {
-      result.push(text.substring(lastIndex, match.index))
-    }
-
-    // Add wrapped term
-    result.push(
-      <GlossaryTooltip key={`${match.key}-${i}`} term={match.key}>
-        {match.term}
-      </GlossaryTooltip>
-    )
-
-    lastIndex = match.index + match.length
-  })
-
-  // Add remaining text
-  if (lastIndex < text.length) {
-    result.push(text.substring(lastIndex))
-  }
-
-  return result.length > 0 ? result : text
-}
-
-export const MarkdownRenderer: FC<MarkdownRendererProps> = ({
+export function MarkdownRenderer({
   content,
   className = '',
-}) => {
+}: MarkdownRendererProps) {
   return (
-    <div className={`prose prose-invert prose-cyan max-w-none ${className}`}>
+    <div
+      className={`min-w-0 break-words text-slate-800 dark:text-slate-200 ${className}`}
+    >
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          // Code blocks with syntax highlighting
-          code({ node, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '')
-            const isInline = !match
-            const { ref, ...restProps } = props
-            return !isInline && match ? (
-              <SyntaxHighlighter
-                style={vscDarkPlus as any}
-                language={match[1]}
-                PreTag="div"
-                className="rounded-lg bg-slate-900! my-4!"
-              >
-                {String(children).replace(/\n$/, '')}
-              </SyntaxHighlighter>
-            ) : (
-              <code
-                className="bg-slate-800 text-cyan-400 px-1.5 py-0.5 rounded text-sm font-mono"
-                {...restProps}
-              >
+          pre({ children }) {
+            const block = Children.toArray(children)[0]
+            if (
+              isValidElement<{ children?: ReactNode; className?: string }>(
+                block
+              )
+            ) {
+              const language =
+                block.props.className?.replace('language-', '') ?? 'text'
+              return (
+                <CodeBlock
+                  code={String(block.props.children ?? '').replace(/\n$/, '')}
+                  language={language}
+                />
+              )
+            }
+            return (
+              <pre className="my-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-slate-100">
+                {children}
+              </pre>
+            )
+          },
+          code({ children }) {
+            return (
+              <code className="rounded bg-slate-200 px-1 py-0.5 text-sm text-slate-900 dark:bg-slate-700 dark:text-slate-100">
                 {children}
               </code>
             )
           },
-
-          // Headings
           h1({ children }) {
+            const number = /Lab (\d{2})/.exec(String(children))?.[1]
             return (
-              <h1 className="text-4xl font-bold mb-6 mt-8 bg-linear-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                {wrapGlossaryInChildren(children)}
-              </h1>
+              <h2
+                id={number ? `lab-${number}` : undefined}
+                tabIndex={-1}
+                className="mb-5 mt-4 text-3xl font-bold"
+              >
+                {children}
+              </h2>
             )
           },
           h2({ children }) {
             return (
-              <h2 className="text-3xl font-bold text-white mb-4 mt-8 border-b border-white/10 pb-2">
-                {wrapGlossaryInChildren(children)}
-              </h2>
-            )
-          },
-          h3({ children }) {
-            return (
-              <h3 className="text-2xl font-bold text-white mb-3 mt-6">
-                {wrapGlossaryInChildren(children)}
+              <h3 className="mb-3 mt-8 border-b border-slate-300 pb-2 text-2xl font-bold dark:border-slate-600">
+                {children}
               </h3>
             )
           },
-
-          // Paragraphs with glossary term wrapping
-          p({ children }) {
-            return (
-              <p className="text-slate-300 leading-relaxed mb-4">
-                {wrapGlossaryInChildren(children)}
-              </p>
-            )
+          h3({ children }) {
+            return <h4 className="mb-3 mt-6 text-xl font-bold">{children}</h4>
           },
-
-          // Links
+          h4({ children }) {
+            return <h5 className="mb-2 mt-4 text-lg font-bold">{children}</h5>
+          },
+          p({ children }) {
+            return <p className="mb-4 leading-relaxed">{children}</p>
+          },
           a({ href, children }) {
+            const target = resolveLessonLink(href)
+            const external =
+              target?.startsWith('https://') || target?.startsWith('http://')
             return (
               <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 hover:decoration-cyan-400 transition-colors"
+                href={target}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
+                className="text-cyan-800 underline underline-offset-2 hover:text-cyan-950 dark:text-cyan-300 dark:hover:text-cyan-200"
               >
                 {children}
               </a>
             )
           },
-
-          // Lists
           ul({ children }) {
             return (
-              <ul className="list-disc list-inside text-slate-300 space-y-2 mb-4 ml-4">
+              <ul className="mb-4 ml-6 list-outside list-disc space-y-2">
                 {children}
               </ul>
             )
           },
-          ol({ children }) {
+          ol({ children, start }) {
             return (
-              <ol className="list-decimal list-inside text-slate-300 space-y-2 mb-4 ml-4">
+              <ol
+                start={start}
+                className="mb-4 ml-6 list-outside list-decimal space-y-3"
+              >
                 {children}
               </ol>
             )
           },
           li({ children }) {
-            return createElement(
-              'li',
-              { className: 'leading-relaxed' },
-              wrapGlossaryInChildren(children)
-            )
+            return <li className="pl-1 leading-relaxed">{children}</li>
           },
-
-          // Blockquotes
           blockquote({ children }) {
             return (
-              <blockquote className="border-l-4 border-cyan-500 bg-cyan-500/10 pl-4 py-3 my-4 rounded-r-lg">
-                <div className="text-slate-300 italic">
-                  {wrapGlossaryInChildren(children)}
-                </div>
+              <blockquote className="my-4 rounded-r-lg border-l-4 border-cyan-700 bg-cyan-50 p-4 dark:bg-slate-700">
+                {children}
               </blockquote>
             )
           },
-
-          // Tables
           table({ children }) {
             return (
-              <div className="overflow-x-auto my-6">
-                <table className="min-w-full border-collapse border border-white/10 rounded-lg overflow-hidden">
+              <div className="my-5 overflow-x-auto">
+                <table className="w-full border-collapse text-left text-sm">
                   {children}
                 </table>
               </div>
             )
           },
-          thead({ children }) {
-            return (
-              <thead className="bg-slate-800 border-b border-white/10">
-                {children}
-              </thead>
-            )
-          },
-          tbody({ children }) {
-            return <tbody className="bg-slate-900/50">{children}</tbody>
-          },
-          tr({ children }) {
-            return (
-              <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                {children}
-              </tr>
-            )
-          },
           th({ children }) {
             return (
-              <th className="px-4 py-3 text-left text-sm font-semibold text-cyan-400">
-                {wrapGlossaryInChildren(children)}
+              <th className="border border-slate-400 bg-slate-100 p-3 font-semibold dark:bg-slate-800">
+                {children}
               </th>
             )
           },
           td({ children }) {
             return (
-              <td className="px-4 py-3 text-sm text-slate-300">
-                {wrapGlossaryInChildren(children)}
+              <td className="border border-slate-400 p-3 align-top">
+                {children}
               </td>
             )
           },
-
-          // Horizontal rule
           hr() {
-            return <hr className="border-white/10 my-8" />
-          },
-
-          // Strong/Bold
-          strong({ children }) {
-            return <strong className="font-bold text-white">{children}</strong>
-          },
-
-          // Emphasis/Italic
-          em({ children }) {
-            return <em className="italic text-cyan-300">{children}</em>
+            return (
+              <hr className="my-6 border-slate-300 dark:border-slate-600" />
+            )
           },
         }}
       >

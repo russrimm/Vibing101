@@ -6,6 +6,7 @@ interface ThemeToggleProps {
 export default function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
   return (
     <button
+      type="button"
       onClick={onToggle}
       className="inline-flex items-center justify-center w-12 h-12 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 rounded-lg transition-colors duration-200 shadow-lg"
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
@@ -13,6 +14,7 @@ export default function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
       {theme === 'dark' ? (
         // Sun icon for light mode
         <svg
+          aria-hidden="true"
           className="w-6 h-6 text-yellow-500"
           fill="none"
           stroke="currentColor"
@@ -29,6 +31,7 @@ export default function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
       ) : (
         // Moon icon for dark mode
         <svg
+          aria-hidden="true"
           className="w-6 h-6 text-slate-700"
           fill="none"
           stroke="currentColor"
