@@ -1,288 +1,84 @@
 # VibeCoding101
 
-**Welcome to the future of coding!** This is an interactive learning experience designed for non-professional coders who want to build real applications using AI-assisted development. No prior coding experience required—just bring your curiosity and let AI handle the heavy lifting. Learn "vibe coding" where you guide the AI to create modern, professional web applications without writing code from scratch.
+Build and verify a small local app with the **GitHub Copilot desktop app**. No coding experience is assumed. You guide the AI, review its changes, and check what actually works.
 
-## Getting Started
+## Learners: start here
 
-### Prerequisites
+**Allow 60–90 minutes after setup** (setup may take 20–40 minutes or longer if access needs approval). Start with Retail, or choose one of [six bounded use cases](docs/use-cases.md).
 
-**New to coding?** Check out the [Glossary](GLOSSARY.md) for definitions of all technical terms used in this guide.
+1. [Set up the desktop app, tools, and a separate learner folder](docs/lab-00-prerequisites.md).
+2. [Plan one record type and four small increments](docs/lab-01-plan.md).
+3. [Scaffold, preview, and build one feature at a time](docs/lab-02-build.md).
+4. [Test positive and negative cases, review, and save a local commit](docs/lab-03-test-and-save.md).
+5. [Explain the result and its limits](docs/lab-04-completion.md).
+6. [Choose an optional extension](docs/lab-05-next-steps.md), or stop at your completed core lab.
 
-Before you begin, make sure you have these tools installed:
+**Required:** a GitHub account with a Copilot plan, a supported computer, internet, Node.js 24 LTS with npm, Git, and a browser. Get the desktop app from its [official download page](https://github.com/features/ai/github-app). It is generally available for Windows, macOS, and Linux; this course gives Windows/macOS setup steps. Check your organization's installation/app policy and your plan's usage limits before the workshop.
 
-1. **Visual Studio Code** - Download from [https://code.visualstudio.com/](https://code.visualstudio.com/)
-2. **Node.js** (LTS version recommended) - Download from [https://nodejs.org/](https://nodejs.org/)
-3. **Git** - Download from [https://git-scm.com/](https://git-scm.com/)
-4. **GitHub Account** - Sign up at [https://github.com/](https://github.com/)
-5. **GitHub Copilot CLI** - Install using winget:
+**Not required:** VS Code, Copilot CLI, GitHub Desktop, WSL, custom agents, MCP servers, Microsoft 365, Azure, or public deployment. Do not install a similarly named product as a substitute for the Copilot desktop app.
 
-   ```bash
-   winget install GitHub.Copilot.CLI
-   ```
+The learning loop is **plan → small scaffold → preview → implement one feature → verify → save**. All records are synthetic. A local prototype is not a production system, a compliance claim, or a publicly deployed app.
 
-6. **Windows Subsystem for Linux (WSL)** - For Windows users:
+### Two different projects
 
-   **What is WSL?** WSL lets you run a Linux environment directly on Windows without a virtual machine. This gives you access to powerful Linux tools and makes development easier.
+- **Learning portal:** this repository displays instructions and tracks learner-reported checkpoints.
+- **Your learner app:** a new, empty, dedicated folder selected in a local Copilot desktop session. Do not scaffold inside the portal repository.
 
-   **Install WSL:**
+The session may use a separate **worktree**, so check its actual working directory. Follow the generated app's actual preview URL rather than assuming port 5173. Keep the portal and generated app in separate browser tabs.
 
-   ```bash
-   wsl --install
-   ```
+The portal's checklist is your report of evidence, not an automated inspection of your app. Browser-stored progress and sample records are not durable cross-device backups.
 
-   After installation, restart your computer. WSL will automatically install Ubuntu by default.
+Need a definition? See the [plain-English glossary](GLOSSARY.md).
 
-   **Install VS Code Extensions:**
-   - [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) - Includes WSL, Remote-SSH, and Dev Containers extensions
-   - Or install just the [WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) if you only need WSL support
+## Maintainers: run this learning portal locally
 
-   **Connect to WSL:**
-   - Click the button in the very bottom-left corner of VS Code
-   - Select "Connect to WSL"
-   - Your terminal will now run in Linux mode
+These commands run **the portal**, not the app learners build. A fork, cloud account, or push is not needed for local use.
 
-   **Install Azure CLI in WSL:**
+1. Open PowerShell on Windows or Terminal on macOS. Navigate to a parent folder where you keep projects.
+2. **Terminal commands — one line at a time:**
 
-   ```bash
-   curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-   ```
-
-   > 💡 **Tip:** Always verify you're installing the **latest version** of Azure CLI. After installation, run `az --version` to confirm.
-
-7. **GitHub Copilot Agent Mode Starter Kit** - Enhanced AI development setup:
-
-   **What is it?** A powerful configuration that supercharges GitHub Copilot with custom agents and modes for better code generation.
-
-   **Clone and Set Up (Fork Optional):**
-   1. Navigate to: [https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit](https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit)
-   2. (Optional) Click **Fork** if you want your own copy on GitHub.
-   3. Clone to your local machine:
-      ```bash
-      cd c:\repos
-      git clone https://github.com/bradcstevens/github-copilot-agent-mode-starter-kit.git
-      ```
-   4. Open the folder in VS Code:
-      ```bash
-      cd github-copilot-agent-mode-starter-kit
-      code .
-      ```
-   5. **Enable instruction files in VS Code (recommended):**
-      - Open VS Code Settings (Ctrl+, or Cmd+,)
-      - Search for: **Use Instruction Files**
-      - Turn it on
-   6. **Increase Agent max requests (recommended):**
-      - In VS Code Settings (Ctrl+, or Cmd+,)
-      - Search for: **max requests**
-      - Set **Max Requests** to **200**
-   7. **Copy Copilot instruction files into your lab repo:**
-      - Source folder (from this repo):
-        `C:\repos\Vibing101\.github\instructions`
-      - Copy these files into your lab project folder at:
-        `C:\repos\LAB\.github\instructions`
-        - `tailwind-v4-vite.instructions.md`
-        - `vite.instructions.md`
-        - `typescript.instructions.md`
-        - `typescript-5-es2022.instructions.md`
-        - `react.instructions.md`
-   8. **Start using custom prompts (optional):**
-      - In Copilot Chat, type `/` to see available prompts
-      - Try `/create-plan` to generate a project plan
-      - Try `/create-tasks` to convert plans into actionable tasks
-      - Try `/create-readme` to generate documentation
-
-   > **What you get:** Pre-configured prompts, instruction files that teach Copilot your standards, templates for planning/tasks, and MCP server configurations. The Memory Bank system enables sophisticated workflows with different complexity levels!
-
-   This will give you pre-configured AI agents like "Beast Mode" for thorough development, "Plan Mode" for architecture, and more!
-
-### Clone the Repository (Fork Optional)
-
-Follow these steps to get a local copy of this project:
-
-> This repository is the **lab portal** itself. During the lab you’ll also create a separate project folder (for example `C:\repos\LAB`) using the starter kit.
-
-> For this lab, you can simply clone the repository to your machine. Forking is
-> only needed if you want to push your changes to GitHub, open pull requests, or
-> use GitHub-based workflows.
-
-#### Option A (Optional): Fork the Repository on GitHub
-
-1. Navigate to the repository on GitHub: https://github.com/russrimm/Vibing101
-2. Click the **Fork** button in the top-right corner of the page
-3. GitHub will create a copy of the repository in your account
-
-#### Option B (Recommended for most learners): Clone to Your Local Machine
-
-For the official GitHub instructions (with screenshots), see:
-https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
-
-1. Open the repo page on GitHub (either the original repo or your fork) and click the green **Code** button
-2. Copy the repository URL (HTTPS is simplest for beginners; SSH also works if you’ve set it up)
-   - Original repo example: `https://github.com/russrimm/Vibing101.git`
-   - Fork example: `https://github.com/YOUR-USERNAME/Vibing101.git`
-
-3. Open **VS Code**
-
-4. Open the **integrated terminal** in VS Code:
-   - Click `Terminal` in the top menu → `New Terminal`
-   - Or use keyboard shortcut: `` Ctrl+` `` (backtick)
-
-5. Navigate to where you want to store the project:
-
-   ```bash
-   cd c:\repos
-   ```
-
-6. Clone the repository:
-
-   ```bash
+   ```text
    git clone https://github.com/russrimm/Vibing101.git
-   ```
-
-   (If you forked, use your fork URL instead.)
-
-7. Navigate into the project folder:
-   ```bash
    cd Vibing101
+   npm ci
+   npm run dev
    ```
 
-#### 3. Open the Project in VS Code
+3. Expect Vite to print `Local:` and a URL. Open that exact URL in your browser.
+4. Optionally add this cloned folder as a local project in the Copilot desktop app to maintain the portal. Keep learner builds in a different project.
+5. In a second terminal in the portal folder, run the existing checks:
 
-If you're not already in VS Code with the project open:
+   ```text
+   npm run lint
+   npm run build
+   npm run test:e2e
+   ```
 
-1. In VS Code, click `File` → `Open Folder`
-2. Navigate to `c:\repos\Vibing101` (or wherever you cloned it)
-3. Click **Select Folder**
+   Each successful command exits with code 0. If Playwright reports a missing Chromium executable, run `npx playwright install chromium`, then retry the tests. Do not treat missing browsers as a passing test. On Windows with Edge already installed, the repository also supports this PowerShell alternative:
 
-You should now see the project files in the Explorer sidebar on the left.
+   ```powershell
+   $env:PLAYWRIGHT_CHANNEL = 'msedge'
+   npm run test:e2e
+   ```
 
-### Installation
+   This chooses Edge for that terminal's test runs; it does not install a new browser.
 
-```bash
-npm install
-```
+6. To inspect built files locally, run `npm run preview` and open its printed URL. This still does not publish the portal.
 
-### Install and Start MCP Servers
+### Where the curriculum lives
 
-This project uses Model Context Protocol (MCP) servers to enhance GitHub Copilot's capabilities.
+- `docs/lab-00-prerequisites.md` through `docs/lab-05-next-steps.md`: canonical modules, also rendered in the portal.
+- `src/data/curriculum.ts`: imports those modules and adapts Retail examples for the selected use case.
+- `src/types/industry.ts`: six small use-case definitions.
+- `src/data/wizardChecklist.ts`: checkpoint IDs, labels, and evidence descriptions.
+- `src/components/steps`: stage presentation; shared checklist behavior belongs to the wizard.
+- `src/data/glossary.json`: definitions used by portal glossary UI.
+- [Curriculum review and release checks](docs/lab-review.md): findings, changes, and outstanding validation.
 
-#### 1. Install MCP Servers
+### Optional and historical documents
 
-1. Navigate to the MCP marketplace: [https://github.com/mcp](https://github.com/mcp)
-
-2. Click the **Install** button for these recommended servers:
-   - **Context7** - For up-to-date library documentation
-   - **Microsoft Learn** - For official Microsoft/Azure documentation
-   - Any other MCP servers that interest you
-
-3. Follow the installation prompts in VS Code
-
-#### 2. Verify MCP Servers Are Running
-
-**Important:** Always verify your MCP servers are running before starting development.
-
-1. Open the **Command Palette** (`Ctrl+Shift+P` or `Cmd+Shift+P`)
-2. Type and select: **MCP: List Servers**
-3. You should see a list of active MCP servers with their status
-
-✅ **Running servers will show as "Running"**  
-❌ **If servers show as "Disconnected", restart them using MCP: List Servers, select the MCP, and select _Start Server_**
-
-> **Pro Tip:** Check server status whenever you:
->
-> - Open VS Code for a new session
-> - Notice Copilot isn't responding as expected
-> - Start working on the project after a break
-
-### Development
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open a browser and navigate to `http://localhost:5173`
-
-### Using Agent Mode / Beast Mode
-
-For this lab, you’ll do most work in **Agent** mode (so Copilot can edit files and run commands). Many learners also use a custom **Beast Mode** agent for more thorough, end-to-end changes.
-
-To set this up, follow the in-app wizard (Environment Setup step) — it walks you through configuring a custom agent in VS Code.
-
-#### Use Beast Mode in Your Workflow
-
-1. Open **GitHub Copilot Chat** in VS Code:
-   - Windows/Linux: `Ctrl+Shift+I`
-   - Mac: `Cmd+Shift+I`
-
-2. At the top of the chat panel, click the **chat mode selector** (shows "Default" or your current mode)
-
-3. Select **Beast Mode** from the dropdown
-
-   If you don’t see it yet, open the mode dropdown and choose **Configure Custom Agents**, then follow the wizard’s setup steps.
-
-4. Enter your build prompt, for example:
-
-```
-
-Create a new contact form component with validation
-
-```
-
-5. Beast Mode will provide comprehensive solutions with:
-
-- Complete, production-ready code
-- Error handling and edge cases
-- Accessibility considerations
-- TypeScript type safety
-- Detailed explanations
-
-> **Pro Tip:** Use Beast Mode when you need:
->
-> - Complete feature implementations
-> - Complex problem solving
-> - Production-ready code with all best practices
-> - Thorough explanations and documentation
-
-### Build
-
-Build for production:
-
-```bash
-npm run build
-```
-
-### Troubleshooting
-
-If you get stuck, these official links cover two very common issues:
-
-- Power Apps Code Apps: Troubleshoot adding a data source
-  - https://learn.microsoft.com/en-us/power-apps/developer/code-apps/troubleshoot-add-datasource
-  - Use this when you’re building/deploying a Power Apps Code Apps experience and a data source/connector won’t add or authenticate.
-- Microsoft Edge: Control a website’s access to the local network
-  - https://support.microsoft.com/en-us/topic/control-a-website-s-access-to-the-local-network-in-microsoft-edge-ef7eff4c-676d-4105-935c-2acbcd841d51
-  - Use this when your app (or Power Apps Code Apps) can’t reach a localhost or on-network resource due to browser security restrictions.
-
-Preview production build:
-
-```bash
-npm run preview
-```
-
-## Project Structure
-
-```
-src/
-├── components/          # Reusable UI components
-│   ├── Button/         # Button component with barrel export
-│   │   ├── Button.tsx
-│   │   └── index.ts
-├── assets/             # Static assets (images, SVGs)
-├── App.tsx             # Main application component
-├── main.tsx            # Application entry point
-└── index.css           # Global styles with Tailwind imports
-```
+Older filenames remain as redirects or clearly labeled advanced design references, not alternate beginner routes. Graph, service-health, AI assistant, and [deployment planning](docs/Lab09-DeployToAzure.md) require separate technical/access reviews. No cloud resources are provisioned by following the core course.
 
 ## License
 
-MIT
+The repository's existing documentation identifies the license as MIT. A standalone license file is not currently included; maintainers should confirm licensing before redistribution.

@@ -1,154 +1,145 @@
-import { industries, Industry } from '../types/industry'
-import { GlossaryTooltip } from './GlossaryTooltip'
+import { industries, type Industry, type IndustryType } from '../types/industry'
+import { isCoreComplete, type IndustryProgress } from '../lib/labProgress'
 
 interface IndustrySelectorProps {
   onSelectIndustry: (industry: Industry) => void
+  savedProgress: Partial<Record<IndustryType, IndustryProgress>>
 }
+
+const suggestedOrder = [...industries].sort(
+  (left, right) => Number(right.id === 'retail') - Number(left.id === 'retail')
+)
 
 export default function IndustrySelector({
   onSelectIndustry,
+  savedProgress,
 }: IndustrySelectorProps) {
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-100 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-blue-900 dark:to-emerald-950 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl"></div>
+    <div className="mx-auto max-w-7xl px-4 py-10">
+      <div className="mb-8 max-w-3xl">
+        <p className="mb-3 text-sm font-semibold text-cyan-800 dark:text-cyan-300">
+          A first app with the GitHub Copilot desktop app
+        </p>
+        <h1 tabIndex={-1} className="mb-4 text-4xl font-bold sm:text-5xl">
+          Guide the AI. Build small. Check the result.
+        </h1>
+        <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+          Vibe coding is a development approach where AI agents handle most
+          coding while you guide and verify. You will plan, build, test, and
+          save one small web app. No coding experience is needed.
+        </p>
       </div>
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
-              <span className="text-cyan-600 dark:text-cyan-400 text-sm font-semibold tracking-wide">
-                AI-POWERED DEVELOPMENT
-              </span>
-            </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-cyan-600 via-blue-600 to-emerald-600 dark:from-cyan-400 dark:via-blue-400 dark:to-emerald-400 bg-clip-text text-transparent">
-              Vibe Coding Lab
-            </h1>
-            <p className="text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Build a functional web app for your industry in minutes using
-              AI-powered coding. Select your industry to get started with a
-              customized template.
-            </p>
-          </div>
+      <section
+        aria-labelledby="before-starting"
+        className="mb-8 rounded-xl border border-slate-300 bg-white p-5 dark:border-slate-600 dark:bg-slate-800"
+      >
+        <h2 id="before-starting" className="text-xl font-bold">
+          Before you start
+        </h2>
+        <p className="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
+          Allow 60-90 minutes after setup; first-time installation may take
+          longer. You need a computer, internet, Node.js 24 LTS, Git, and access
+          to the GitHub Copilot desktop app with a working signed-in session.
+          Confirm app availability and any Copilot usage costs with your
+          facilitator before the workshop.
+        </p>
+        <p className="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
+          This browser portal is your guide, not the app you will build. Keep it
+          open beside Copilot and create your learner app in a separate empty
+          folder. No VS Code, WSL, custom agents, MCP servers, or cloud
+          deployment are required. Use fictional data only.
+        </p>
+        <p className="mt-3 text-sm">
+          <a
+            href="https://github.com/features/ai/github-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-cyan-800 underline hover:text-cyan-950 dark:text-cyan-300 dark:hover:text-cyan-200"
+          >
+            Download the GitHub Copilot app
+          </a>
+          {' | '}
+          <a
+            href="https://docs.github.com/en/copilot/get-started/quickstart-copilot-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-cyan-800 underline hover:text-cyan-950 dark:text-cyan-300 dark:hover:text-cyan-200"
+          >
+            Official setup and account requirements
+          </a>
+        </p>
+      </section>
 
-          {/* Industry Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industries.map((industry) => (
-              <button
-                key={industry.id}
-                onClick={() => onSelectIndustry(industry)}
-                className="group bg-white/90 dark:bg-white/5 backdrop-blur-xl rounded-2xl border border-slate-200 dark:border-white/10 hover:border-cyan-500/50 
-                         transition-all duration-500 hover:scale-105 hover:bg-white dark:hover:bg-white/10
-                         p-6 text-left shadow-xl hover:shadow-cyan-500/20 hover:shadow-2xl"
-              >
-                {/* Icon with Glow */}
-                <div className="relative mb-6">
-                  <div className="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="text-6xl relative z-10 transform group-hover:scale-110 transition-transform duration-300">
-                    {industry.icon}
-                  </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
-                  {industry.name}
-                </h3>
-
-                {/* Description */}
-                <p className="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
-                  {industry.description}
-                </p>
-
-                {/* Sample App Info */}
-                <div className="bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-3 mb-4 backdrop-blur-sm">
-                  <p className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 mb-1 uppercase tracking-wide">
-                    You'll build:
-                  </p>
-                  <p className="text-sm text-slate-800 dark:text-slate-200 font-medium">
-                    {industry.sampleApp.name}
-                  </p>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-2 mb-6">
-                  {industry.features.slice(0, 3).map((feature, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center text-sm text-slate-700 dark:text-slate-300"
-                    >
-                      <div className="w-5 h-5 mr-2 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-3 h-3 text-cyan-600 dark:text-cyan-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 p-px group-hover:from-cyan-500 group-hover:to-emerald-600 transition-all duration-300">
-                  <div className="bg-white dark:bg-slate-900 rounded-lg px-4 py-2.5 text-center transition-all duration-300">
-                    <span className="text-slate-900 dark:text-white font-bold text-sm tracking-wide drop-shadow-lg">
-                      Start Building →
-                    </span>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Bottom Info */}
-          <div className="mt-16 text-center space-y-4">
-            <div className="flex items-center justify-center gap-6 text-slate-600 dark:text-slate-400 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">🤖</span>
-                <span>GitHub Copilot</span>
-              </div>
-              <div className="w-px h-4 bg-slate-300 dark:bg-slate-600"></div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">⚡</span>
-                <span>Vite + React</span>
-              </div>
-              <div className="w-px h-4 bg-slate-300 dark:bg-slate-600"></div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">🎨</span>
-                <span>
-                  <GlossaryTooltip term="tailwind">Tailwind</GlossaryTooltip>
-                  CSS
+      <h2 className="mb-2 text-2xl font-bold">Choose one use case</h2>
+      <p className="mb-6 text-slate-700 dark:text-slate-300">
+        Each follows the same beginner workflow. Retail is a familiar starting
+        point. You can switch without losing another use case&apos;s progress.
+      </p>
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {suggestedOrder.map((industry) => {
+          const saved = savedProgress[industry.id]
+          return (
+            <a
+              key={industry.id}
+              href={`?industry=${industry.id}&step=${saved?.currentStep ?? 'setup'}`}
+              onClick={(event) => {
+                if (
+                  event.metaKey ||
+                  event.ctrlKey ||
+                  event.shiftKey ||
+                  event.altKey
+                )
+                  return
+                event.preventDefault()
+                onSelectIndustry(industry)
+              }}
+              className="flex flex-col rounded-xl border border-slate-300 bg-white p-5 text-left transition-colors hover:border-cyan-600 hover:bg-cyan-50 dark:border-slate-600 dark:bg-slate-800 dark:hover:border-cyan-400 dark:hover:bg-slate-700"
+            >
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <span aria-hidden="true" className="text-3xl">
+                  {industry.icon}
                 </span>
+                {industry.id === 'retail' && (
+                  <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-bold text-cyan-900 dark:bg-cyan-900 dark:text-cyan-100">
+                    Recommended first
+                  </span>
+                )}
               </div>
-            </div>
-
-            <footer className="pt-4 text-xs text-slate-500 dark:text-slate-400">
-              <span>
-                Vibe Coded by: Russ Rimmerman, Microsoft Cloud Solution
-                Architect ·{' '}
+              <h3 className="text-xl font-bold">{industry.name}</h3>
+              <p className="mt-2 font-semibold text-cyan-800 dark:text-cyan-300">
+                {industry.sampleApp.name}
+              </p>
+              <p className="my-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                {industry.description}
+              </p>
+              <ul className="mb-5 list-inside list-disc space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                {industry.features.slice(0, 3).map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+              <span className="mt-auto font-bold text-cyan-800 dark:text-cyan-300">
+                {saved
+                  ? isCoreComplete(saved.checkedItems)
+                    ? 'Review completed lab'
+                    : 'Resume this lab'
+                  : 'Start this lab'}
               </span>
-              <a
-                href="mailto:russ.rimmerman@microsoft.com"
-                className="text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-300 underline underline-offset-2"
-                aria-label="Email Russ Rimmerman"
-              >
-                russ.rimmerman@microsoft.com
-              </a>
-            </footer>
-          </div>
-        </div>
+            </a>
+          )
+        })}
       </div>
+      <footer className="mt-10 text-sm text-slate-600 dark:text-slate-300">
+        Created by Russ Rimmerman.{' '}
+        <a
+          href="https://www.linkedin.com/in/russrimm"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-cyan-700 dark:hover:text-cyan-300"
+        >
+          About the author
+        </a>
+      </footer>
     </div>
   )
 }

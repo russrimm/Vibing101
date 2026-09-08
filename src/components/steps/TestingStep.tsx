@@ -1,11 +1,14 @@
-import { Industry } from '../../types/industry'
-import CodeBlock from '../CodeBlock'
-import { GlossaryTooltip } from '../GlossaryTooltip'
+import type { ReactNode } from 'react'
+import type { Industry } from '../../types/industry'
+import { curriculumModules } from '../../data/curriculum'
+import CurriculumStage, { stageButtonClass } from './CurriculumStage'
 
 interface TestingStepProps {
   industry: Industry
   onNext: () => void
   onPrevious: () => void
+  canContinue: boolean
+  checkpoints?: ReactNode
   stepNumber: number
   totalSteps: number
 }
@@ -14,241 +17,38 @@ export default function TestingStep({
   industry,
   onNext,
   onPrevious,
+  canContinue,
+  checkpoints,
   stepNumber,
   totalSteps,
 }: TestingStepProps) {
   return (
-    <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/10">
-      <h2 className="text-3xl font-bold text-white mb-4">Test & Deploy</h2>
-      <p className="text-slate-300 mb-8">
-        Test your {industry.sampleApp.name} and get it ready for users.
+    <CurriculumStage
+      industry={industry}
+      content={curriculumModules.testing}
+      stepNumber={stepNumber}
+      totalSteps={totalSteps}
+      checkpoints={checkpoints}
+    >
+      <p
+        id="testing-continue-help"
+        className="w-full text-slate-700 dark:text-slate-300"
+      >
+        Record only checks you performed. Complete the evidence checklist above
+        to continue.
       </p>
-
-      {/* Install Dependencies */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            1
-          </span>
-          Install Dependencies
-        </h3>
-        <div className="ml-10">
-          <p className="text-slate-300 mb-4">
-            Before you run the app, install the packages it needs:
-          </p>
-          <p className="text-sm text-slate-400 mb-3">
-            First, open the VS Code terminal:{' '}
-            <strong className="text-white">Terminal → New Terminal</strong> (
-            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-              Ctrl+`
-            </code>
-            ).
-          </p>
-          <CodeBlock code="npm install" language="bash" />
-          <p className="text-sm text-slate-400 mt-2">
-            You usually run this once when you first{' '}
-            <GlossaryTooltip term="clone">clone</GlossaryTooltip> the{' '}
-            <GlossaryTooltip term="repo">repo</GlossaryTooltip> (and again
-            anytime dependencies change).
-          </p>
-        </div>
-      </div>
-
-      {/* Run Locally */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            2
-          </span>
-          Run Locally (Dev Server)
-        </h3>
-        <div className="ml-10">
-          <p className="text-slate-300 mb-4">
-            Start the app locally and click around to make sure it works:
-          </p>
-          <CodeBlock code="npm run dev" language="bash" />
-          <p className="text-sm text-slate-400 mt-2">
-            Then open{' '}
-            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-              http://localhost:5173
-            </code>{' '}
-            in your browser.
-          </p>
-          <div className="mt-4 p-4 bg-slate-900/30 rounded-lg border border-white/10">
-            <p className="text-sm text-slate-300">
-              If you see errors in the terminal or browser console, copy/paste
-              them into <strong className="text-white">Beast Mode</strong> and
-              ask it to fix the issues, then run{' '}
-              <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-                npm run dev
-              </code>{' '}
-              again.
-            </p>
-            <p className="text-sm text-slate-300 mt-3">
-              You will spend a fair amount of time in this loop. It’s normal if
-              you sometimes feel like you’ll never fix them all.
-            </p>
-            <p className="text-sm text-slate-400 mt-2">
-              Try to fix all the current errors, then run{' '}
-              <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-                npm run build
-              </code>{' '}
-              to confirm everything is actually fixed.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Build for Production */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            3
-          </span>
-          Build for Production
-        </h3>
-        <div className="ml-10">
-          <p className="text-slate-300 mb-4">
-            Create an optimized production build:
-          </p>
-          <CodeBlock code="npm run build" language="bash" />
-          <p className="text-sm text-slate-400 mt-2">
-            This creates a{' '}
-            <code className="bg-slate-700 px-2 py-1 rounded text-cyan-400">
-              dist/
-            </code>{' '}
-            folder with optimized files ready to deploy.
-          </p>
-        </div>
-      </div>
-
-      {/* Deploy Options */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            4
-          </span>
-          Deploy Your App
-        </h3>
-        <div className="ml-10 grid gap-4 md:grid-cols-2">
-          {/* Azure Static Web Apps */}
-          <div className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors">
-            <h4 className="font-semibold text-white mb-2">
-              <GlossaryTooltip term="azureStaticWebApps">
-                Azure Static Web Apps
-              </GlossaryTooltip>{' '}
-              (Recommended)
-            </h4>
-            <p className="text-sm text-slate-300 mb-3">
-              Enterprise hosting with Azure integration
-            </p>
-            <ol className="text-sm text-slate-400 space-y-1 list-decimal list-inside">
-              <li>Create resource</li>
-              <li>Connect GitHub</li>
-              <li>Configure build</li>
-            </ol>
-            <a
-              href="https://azure.microsoft.com/services/app-service/static/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-3 text-sm text-cyan-400 hover:text-cyan-300 font-medium"
-            >
-              Deploy to Azure →
-            </a>
-          </div>
-
-          {/* GitHub Pages */}
-          <div className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors">
-            <h4 className="font-semibold text-white mb-2">
-              <GlossaryTooltip term="githubPages">GitHub Pages</GlossaryTooltip>
-            </h4>
-            <p className="text-sm text-slate-300 mb-3">
-              Free hosting directly from your GitHub repository
-            </p>
-            <ol className="text-sm text-slate-400 space-y-1 list-decimal list-inside">
-              <li>Enable GitHub Pages</li>
-              <li>Configure branch</li>
-              <li>Publish</li>
-            </ol>
-            <a
-              href="https://pages.github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-3 text-sm text-cyan-400 hover:text-cyan-300 font-medium"
-            >
-              Deploy to GitHub Pages →
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Troubleshooting */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-          <span className="shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg shadow-cyan-500/30">
-            5
-          </span>
-          Troubleshooting
-        </h3>
-        <div className="ml-10 space-y-3">
-          <p className="text-slate-300">
-            If you hit a weird setup or browser issue, these official links are
-            worth bookmarking:
-          </p>
-          <div className="grid gap-3 md:grid-cols-2">
-            <a
-              href="https://learn.microsoft.com/en-us/power-apps/developer/code-apps/troubleshoot-add-datasource"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
-            >
-              <p className="font-semibold text-white">
-                Power Apps Code Apps: Troubleshoot adding a data source
-              </p>
-              <p className="text-sm text-slate-400">
-                Fix datasource/connector add + auth issues.
-              </p>
-            </a>
-            <a
-              href="https://support.microsoft.com/en-us/topic/control-a-website-s-access-to-the-local-network-in-microsoft-edge-ef7eff4c-676d-4105-935c-2acbcd841d51"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/10 bg-slate-900/30 rounded-lg p-4 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-colors"
-            >
-              <p className="font-semibold text-white">
-                Microsoft Edge: Control a website’s access to the local network
-              </p>
-              <p className="text-sm text-slate-400">
-                Helps when localhost/on-network calls are blocked.
-              </p>
-            </a>
-          </div>
-          <p className="text-sm text-slate-400">
-            If you see CSP errors in your browser console, check the{' '}
-            <GlossaryTooltip term="csp">CSP</GlossaryTooltip> docs linked from
-            the glossary.
-          </p>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <div className="flex justify-between items-center pt-6 border-t border-white/10">
-        <button
-          onClick={onPrevious}
-          className="px-6 py-3 text-slate-300 hover:bg-slate-700/50 rounded-lg transition-colors font-semibold"
-        >
-          ← Back
-        </button>
-        <div className="text-sm text-slate-400">
-          Step {stepNumber} of {totalSteps}
-        </div>
-        <button
-          onClick={onNext}
-          className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold shadow-lg shadow-green-500/30"
-        >
-          Complete! →
-        </button>
-      </div>
-    </div>
+      <button type="button" onClick={onPrevious} className={stageButtonClass}>
+        Back: Plan and build
+      </button>
+      <button
+        type="button"
+        onClick={onNext}
+        disabled={!canContinue}
+        aria-describedby="testing-continue-help"
+        className={stageButtonClass}
+      >
+        Finish core lab
+      </button>
+    </CurriculumStage>
   )
 }

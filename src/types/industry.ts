@@ -13,6 +13,11 @@ export interface Industry {
   icon: string
   primaryColor: string
   features: string[]
+  recommended?: boolean
+  recordLabel: string
+  sampleNames: [string, string]
+  newRecordName: string
+  scopeNote: string
   sampleApp: {
     name: string
     description: string
@@ -20,123 +25,121 @@ export interface Industry {
   }
 }
 
+const practiceFeatures = [
+  'Add a record with validation',
+  'Change status',
+  'Search and filter',
+  'Keep changes after refresh',
+]
+
 export const industries: Industry[] = [
   {
     id: 'oil-gas-energy',
     name: 'Oil, Gas & Energy',
-    description: 'Manage assets, maintenance, and safety inspections',
+    description: 'Practice tracking fictional equipment checks',
     icon: '⚡',
     primaryColor: 'orange',
-    features: [
-      'Asset tracking',
-      'Maintenance scheduling',
-      'Safety inspections',
-      'Equipment monitoring',
-    ],
+    features: [...practiceFeatures],
+    recordLabel: 'equipment check',
+    sampleNames: ['Demo pump check', 'Demo valve check'],
+    newRecordName: 'Demo gauge check',
+    scopeNote:
+      'Fictional equipment checks only; no live telemetry, safety decisions, operating instructions, or compliance claims.',
     sampleApp: {
-      name: 'Field Asset Manager',
-      description: 'Track and manage field equipment and maintenance schedules',
-      entities: [
-        'Equipment',
-        'Maintenance Records',
-        'Inspection Reports',
-        'Work Orders',
-      ],
+      name: 'Equipment Check Practice',
+      description: 'A local checklist for made-up equipment checks',
+      entities: ['Equipment checks'],
     },
   },
   {
     id: 'retail',
     name: 'Retail',
-    description: 'Inventory management and customer orders',
+    description: 'A small fictional stock-item board; recommended first',
     icon: '🛒',
     primaryColor: 'blue',
-    features: [
-      'Inventory tracking',
-      'Order management',
-      'Customer profiles',
-      'Sales analytics',
-    ],
+    features: [...practiceFeatures],
+    recommended: true,
+    recordLabel: 'stock item',
+    sampleNames: ['Notebook pack', 'Desk organizer'],
+    newRecordName: 'Blue notebook',
+    scopeNote:
+      'Fictional stock items only; no customer details, payments, live stock control, or purchasing.',
     sampleApp: {
-      name: 'Store Inventory Portal',
-      description: 'Manage inventory levels, orders, and customer information',
-      entities: ['Products', 'Orders', 'Customers', 'Inventory Locations'],
+      name: 'Store Inventory Practice',
+      description: 'A local board for fictional stock items',
+      entities: ['Stock items'],
     },
   },
   {
     id: 'transportation',
     name: 'Transportation & Logistics',
-    description: 'Fleet management and shipment tracking',
+    description: 'Practice tracking made-up delivery preparation tasks',
     icon: '🚚',
     primaryColor: 'green',
-    features: [
-      'Vehicle tracking',
-      'Route optimization',
-      'Delivery scheduling',
-      'Driver management',
-    ],
+    features: [...practiceFeatures],
+    recordLabel: 'delivery task',
+    sampleNames: ['Demo parcel labels', 'Demo crate packing'],
+    newRecordName: 'Demo box sorting',
+    scopeNote:
+      'Fictional delivery tasks only; no driver details, addresses, GPS tracking, route optimization, or live dispatch.',
     sampleApp: {
-      name: 'Fleet Operations Dashboard',
-      description: 'Monitor vehicles, routes, and delivery schedules',
-      entities: ['Vehicles', 'Drivers', 'Routes', 'Deliveries'],
+      name: 'Delivery Task Practice',
+      description: 'A local board for made-up delivery preparation',
+      entities: ['Delivery tasks'],
     },
   },
   {
     id: 'manufacturing',
     name: 'Manufacturing',
-    description: 'Production tracking and quality control',
+    description: 'Practice tracking fictional workshop work items',
     icon: '🏭',
     primaryColor: 'teal',
-    features: [
-      'Production monitoring',
-      'Quality checks',
-      'Material tracking',
-      'Workflow management',
-    ],
+    features: [...practiceFeatures],
+    recordLabel: 'work item',
+    sampleNames: ['Demo label batch', 'Demo packing batch'],
+    newRecordName: 'Demo carton batch',
+    scopeNote:
+      'Fictional work items only; no machine control, safety procedures, quality certification, or production decisions.',
     sampleApp: {
-      name: 'Production Tracker',
-      description: 'Track production lines, materials, and quality metrics',
-      entities: [
-        'Production Lines',
-        'Materials',
-        'Quality Reports',
-        'Work Orders',
-      ],
+      name: 'Workshop Task Practice',
+      description: 'A local board for made-up workshop tasks',
+      entities: ['Work items'],
     },
   },
   {
     id: 'healthcare',
     name: 'Healthcare',
-    description: 'Patient scheduling and records management',
+    description: 'Practice tracking fictional clinic supply requests',
     icon: '🏥',
     primaryColor: 'red',
-    features: [
-      'Appointment scheduling',
-      'Patient records',
-      'Resource allocation',
-      'Compliance tracking',
-    ],
+    features: [...practiceFeatures],
+    recordLabel: 'supply request',
+    sampleNames: ['Demo clipboard request', 'Demo folder request'],
+    newRecordName: 'Demo label request',
+    scopeNote:
+      'Fictional clinic supplies only; no patients, health records, appointments, diagnosis, treatment, or compliance claims.',
     sampleApp: {
-      name: 'Patient Appointment System',
-      description: 'Schedule appointments and manage patient information',
-      entities: ['Patients', 'Appointments', 'Providers', 'Medical Records'],
+      name: 'Clinic Supply Practice',
+      description: 'A local board for fictional non-clinical supplies',
+      entities: ['Supply requests'],
     },
   },
   {
     id: 'finance',
     name: 'Financial Services',
-    description: 'Request processing and approvals',
+    description: 'Practice tracking fictional internal office requests',
     icon: '💰',
     primaryColor: 'cyan',
-    features: [
-      'Request tracking',
-      'Approval workflows',
-      'Document management',
-      'Reporting',
-    ],
+    features: [...practiceFeatures],
+    recordLabel: 'internal request',
+    sampleNames: ['Demo report layout', 'Demo meeting agenda'],
+    newRecordName: 'Demo training request',
+    scopeNote:
+      'Fictional internal requests only; no payments, account details, financial advice, approval authority, or compliance claims.',
     sampleApp: {
-      name: 'Financial Request Portal',
-      description: 'Submit and track financial requests and approvals',
-      entities: ['Requests', 'Approvals', 'Documents', 'Audit Logs'],
+      name: 'Internal Request Practice',
+      description: 'A local board for fictional office requests',
+      entities: ['Internal requests'],
     },
   },
 ]

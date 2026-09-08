@@ -2,34 +2,39 @@ import { useEffect, useState } from 'react'
 
 type Theme = 'light' | 'dark'
 
-export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Check localStorage first
-    const savedTheme = localStorage.getItem('theme') as Theme | null
-    if (savedTheme) return savedTheme
+function initialTheme(): Theme {
+  try {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'dark' || saved === 'light') return saved
+  } catch (error) {
+    console.warn('Theme preference could not be read:', error)
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+}
 
-    // Check system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  })
+export function useTheme() {
+  const [theme, setTheme] = useState<Theme>(initialTheme)
+  const [warning, setWarning] = useState('')
 
   useEffect(() => {
-    const root = document.documentElement
-
-    if (theme === 'dark') {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    try {
+      localStorage.setItem('theme', theme)
+      setWarning('')
+    } catch (error) {
+      console.warn('Theme preference could not be saved:', error)
+      setWarning(
+        'Browser storage is unavailable. Theme and lab progress may not survive a refresh.'
+      )
     }
-
-    localStorage.setItem('theme', theme)
   }, [theme])
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
+  return {
+    theme,
+    warning,
+    toggleTheme: () =>
+      setTheme((previous) => (previous === 'dark' ? 'light' : 'dark')),
   }
-
-  return { theme, toggleTheme }
 }

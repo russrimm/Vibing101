@@ -16,14 +16,14 @@
   "vite": {
     "term": "Vite",
     "emoji": "⚡",
-    "definition": "A lightning-fast build tool that starts your development server instantly and updates your changes in milliseconds. Much faster than older tools!",
+    "definition": "A tool that runs a local development server and builds browser files from source. Follow its actual preview URL; the port can change.",
     "example": "When you save a file, Vite shows your changes almost immediately.",
     "learnMore": "https://vitejs.dev"
   },
   "typescript": {
     "term": "TypeScript",
     "emoji": "📘",
-    "definition": "JavaScript with type safety. It catches errors before you even run your code, making development faster and less buggy.",
+    "definition": "JavaScript with type checks that catch some mistakes before running code. It does not replace browser tests or runtime input validation.",
     "example": "TypeScript knows if you're trying to use a number as text and warns you.",
     "learnMore": "https://www.typescriptlang.org"
   },
@@ -52,7 +52,7 @@
     "term": "Azure",
     "emoji": "☁️",
     "definition": "Microsoft's cloud computing platform. Think of it as renting powerful computers and services from Microsoft instead of buying and maintaining your own.",
-    "example": "Deploy your web app to Azure so anyone can access it on the internet.",
+    "example": "An approved deployment can host a website; who can access it depends on its configuration. Cloud use needs a separate cost and permissions review.",
     "learnMore": "https://azure.microsoft.com"
   },
   "tenant": {
@@ -72,8 +72,8 @@
   "environmentVariables": {
     "term": "Environment Variables",
     "emoji": "🔧",
-    "definition": "Secret configuration values that change based on where your code runs (development vs production). Never put passwords directly in code!",
-    "example": "VITE_API_KEY stores your API key separately from your code.",
+    "definition": "Configuration supplied to a program. Environment variables are not automatically secret: VITE_ values can be included in browser-delivered files.",
+    "example": "VITE_APP_NAME may hold a public title. Never put passwords or API keys in VITE_ variables, even in an ignored .env.local file.",
     "learnMore": "https://vitejs.dev/guide/env-and-mode.html"
   },
   "npm": {
@@ -93,8 +93,8 @@
   "lts": {
     "term": "LTS",
     "emoji": "🕒",
-    "definition": "Long-Term Support. An LTS version is a stable release that gets security fixes for a long time. Beginners should usually pick LTS because it's the most reliable.",
-    "example": "Using the latest Node.js LTS helps avoid weird tool compatibility issues.",
+    "definition": "Long-Term Support: a release support policy used by some projects. Not every library has an LTS release.",
+    "example": "This lab uses Node.js 24 LTS. Choose compatible stable React and Vite packages and preserve their resolved versions in the lockfile.",
     "learnMore": "https://nodejs.org/en/about/releases/"
   },
   "git": {
@@ -121,15 +121,15 @@
   "clone": {
     "term": "Clone",
     "emoji": "📥",
-    "definition": "Download a Git repo to your computer (including its full history). After cloning, you can open it in VS Code and start coding.",
+    "definition": "Make a local copy of a Git repository and its history. Add the folder as a local project in the Copilot desktop app if you want to work on it there.",
     "example": "'git clone https://github.com/org/repo.git' creates a local folder with the project.",
     "learnMore": "https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository"
   },
   "vscode": {
     "term": "VS Code",
     "emoji": "💻",
-    "definition": "Visual Studio Code - a free, powerful code editor from Microsoft. It's where you'll write, edit, and run your code.",
-    "example": "VS Code has autocomplete, debugging, and thousands of extensions.",
+    "definition": "Visual Studio Code is a separate code editor. This course uses the GitHub Copilot desktop app instead; VS Code is not required.",
+    "example": "An instruction to open a VS Code extension is not an instruction for the Copilot desktop app.",
     "learnMore": "https://code.visualstudio.com"
   },
   "instructionFiles": {
@@ -142,8 +142,8 @@
   "mcpServers": {
     "term": "MCP Servers",
     "emoji": "🚀",
-    "definition": "Model Context Protocol servers that give GitHub Copilot access to specialized knowledge and up-to-date documentation.",
-    "example": "Context7 server provides Copilot with current library docs, so it suggests modern patterns.",
+    "definition": "External tools connected to an AI client through Model Context Protocol. They may expose data or actions and need a permissions review. Not required for the beginner lab.",
+    "example": "A documentation tool can return references; a connected tool does not guarantee generated code is correct.",
     "learnMore": "https://github.com/mcp"
   },
   "context7": {
@@ -163,15 +163,15 @@
   "beastMode": {
     "term": "Beast Mode",
     "emoji": "🦁",
-    "definition": "GitHub Copilot's power mode for complex tasks. It provides thorough, production-ready solutions with detailed explanations.",
-    "example": "Use Beast Mode when building complete features or solving complex problems.",
+    "definition": "A name used for custom agent instructions, not a built-in guarantee of quality, security, or production readiness. It is not required for this lab.",
+    "example": "Use the desktop app's normal local session and verify each small change instead of installing a custom agent.",
     "learnMore": ""
   },
   "planMode": {
     "term": "Plan Mode",
     "emoji": "📋",
-    "definition": "A strategic approach to prompting where you describe the entire architecture before building. Gets AI thinking about the big picture.",
-    "example": "Describe your whole app structure, then let AI generate each piece.",
+    "definition": "An approach where Copilot proposes work for review before implementation. Ask for a small plan with observable checks; app mode labels can vary by build.",
+    "example": "Plan one record type and four small increments. Do not create files until the plan is approved.",
     "learnMore": ""
   },
   "component": {
@@ -495,5 +495,96 @@
     "definition": "A small, fast state management library for React.",
     "example": "Store global UI state like theme, filters, or user preferences.",
     "learnMore": "https://www.npmjs.com/package/zustand"
+  },
+  "copilotDesktop": {
+    "term": "GitHub Copilot desktop app",
+    "emoji": "💻",
+    "definition": "The desktop AI coding app used in this course for local project sessions, prompts, and change review. It is not GitHub Desktop, Copilot CLI, or the VS Code extension.",
+    "example": "Install from GitHub's official download page, sign in, and verify a chat reply before starting the lab.",
+    "learnMore": "https://docs.github.com/en/copilot/get-started/quickstart-copilot-app"
+  },
+  "terminal": {
+    "term": "Terminal",
+    "emoji": "⌨️",
+    "definition": "A text window that runs commands on your computer. It is different from Copilot chat and your web browser.",
+    "example": "Use PowerShell on Windows, Terminal on macOS, or /terminal in an active desktop session, then run node --version.",
+    "learnMore": ""
+  },
+  "session": {
+    "term": "Session",
+    "emoji": "💬",
+    "definition": "A conversation and working context in the Copilot desktop app. The beginner lab uses a local session.",
+    "example": "Keep one session for the learner app and check its actual working directory before running commands.",
+    "learnMore": ""
+  },
+  "worktree": {
+    "term": "Worktree",
+    "emoji": "🌿",
+    "definition": "A separate checkout of a Git repository. A desktop session may work here instead of in the original project folder.",
+    "example": "Use the session's actual path for commands and reviews. Preserve its work before removing the session.",
+    "learnMore": "https://git-scm.com/docs/git-worktree"
+  },
+  "scaffold": {
+    "term": "Scaffold",
+    "emoji": "🧱",
+    "definition": "The smallest set of files and settings needed to run an app.",
+    "example": "Create one page with two sample records, preview it, and only then add a form.",
+    "learnMore": ""
+  },
+  "acceptanceCriteria": {
+    "term": "Acceptance criteria",
+    "emoji": "✅",
+    "definition": "Observable results you use to decide whether a feature works. A claim from the AI is not the same as checking the result yourself.",
+    "example": "Submitting a spaces-only name shows an error and does not add a record.",
+    "learnMore": ""
+  },
+  "syntheticData": {
+    "term": "Synthetic data",
+    "emoji": "🧪",
+    "definition": "Completely made-up data used for practice, not copied from people or business systems.",
+    "example": "Demo clipboard request is a fictional supply request, not a patient record.",
+    "learnMore": ""
+  },
+  "localStorage": {
+    "term": "localStorage",
+    "emoji": "🗃️",
+    "definition": "Browser storage that can keep records after refresh for one profile and origin. It can be cleared and is not secure storage, cross-device sync, or backup.",
+    "example": "A changed port or another browser can show a separate set of records.",
+    "learnMore": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+  },
+  "origin": {
+    "term": "Origin",
+    "emoji": "🌐",
+    "definition": "The scheme, host, and port of a website address. Browser storage is separated by origin.",
+    "example": "http://localhost:5173 and http://localhost:5174 use different storage.",
+    "learnMore": "https://developer.mozilla.org/en-US/docs/Glossary/Origin"
+  },
+  "lockfile": {
+    "term": "Lockfile",
+    "emoji": "📦",
+    "definition": "A file that records resolved package versions. Keep package-lock.json to reproduce an npm dependency tree.",
+    "example": "npm ci restores the recorded dependencies without choosing a new dependency tree.",
+    "learnMore": "https://docs.npmjs.com/cli/configuring-npm/package-lock-json"
+  },
+  "diff": {
+    "term": "Diff",
+    "emoji": "🔎",
+    "definition": "A view of added and removed content. Review it before accepting or committing changes; inspect new files too.",
+    "example": "Confirm a form fix did not remove validation or change unrelated files.",
+    "learnMore": "https://git-scm.com/docs/git-diff"
+  },
+  "commit": {
+    "term": "Commit",
+    "emoji": "📌",
+    "definition": "A saved snapshot in local Git history. A commit does not push, publish, deploy, or create an off-device backup.",
+    "example": "After reviewing the staged files, save a local checkpoint and record its ID.",
+    "learnMore": "https://git-scm.com/docs/git-commit"
+  },
+  "exitCode": {
+    "term": "Exit code",
+    "emoji": "🔢",
+    "definition": "A number returned by a finished command. Usually 0 means success and a nonzero number means failure.",
+    "example": "Record exit code 0 for both npm run build and npm run lint, after reading their output.",
+    "learnMore": ""
   }
 }

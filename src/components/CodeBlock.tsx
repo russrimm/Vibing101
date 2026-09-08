@@ -24,9 +24,11 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
     if (resetTimerRef.current !== undefined) {
       window.clearTimeout(resetTimerRef.current)
     }
-    resetTimerRef.current = window.setTimeout(() => {
-      setCopyState('idle')
-    }, 1500)
+    if (state === 'copied') {
+      resetTimerRef.current = window.setTimeout(() => {
+        setCopyState('idle')
+      }, 1500)
+    }
   }
 
   const copyWithFallback = async (text: string): Promise<void> => {
@@ -35,6 +37,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
       return
     }
 
+    const previousFocus = document.activeElement
     const textarea = document.createElement('textarea')
     textarea.value = text
     textarea.setAttribute('readonly', '')
@@ -45,10 +48,13 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
     document.body.appendChild(textarea)
     textarea.select()
 
-    const success = document.execCommand('copy')
-    document.body.removeChild(textarea)
-    if (!success) {
-      throw new Error('execCommand copy failed')
+    try {
+      if (!document.execCommand('copy')) {
+        throw new Error('execCommand copy failed')
+      }
+    } finally {
+      textarea.remove()
+      if (previousFocus instanceof HTMLElement) previousFocus.focus()
     }
   }
 
@@ -62,12 +68,15 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
   }
 
   return (
-    <div className="relative">
-      <div className="absolute top-2 right-2">
+    <div className="my-4 min-w-0 overflow-hidden rounded-lg border border-slate-600 bg-slate-900 text-slate-100">
+      <div className="flex items-center justify-between gap-3 border-b border-slate-600 px-4 py-2">
+        <span className="text-xs font-semibold">
+          {language === 'text' ? 'Text to copy' : language}
+        </span>
         <button
+          type="button"
           onClick={handleCopy}
-          disabled={copyState !== 'idle'}
-          className="px-4 py-2 text-sm bg-cyan-700! hover:bg-cyan-800! disabled:bg-emerald-700! disabled:cursor-default text-white! font-black rounded-lg transition-colors shadow-xl shadow-cyan-500/50 border-2 border-cyan-400! disabled:border-emerald-400!"
+          className="rounded-lg bg-cyan-800 px-4 py-2 text-sm font-semibold text-white hover:bg-cyan-700"
           title={
             copyState === 'copied'
               ? 'Copied to clipboard'
@@ -76,7 +85,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
                 : 'Copy to clipboard'
           }
         >
-          <span className="text-white!">
+          <span aria-live="polite">
             {copyState === 'copied'
               ? 'Copied!'
               : copyState === 'error'
@@ -85,9 +94,19 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
           </span>
         </button>
       </div>
-      <pre className="bg-slate-900! text-slate-300! p-4 rounded-lg overflow-x-auto border border-white/10">
+      <pre
+        tabIndex={0}
+        aria-label={`${language} content`}
+        className="overflow-x-auto p-4 text-sm leading-relaxed"
+      >
         <code className={`language-${language}`}>{code}</code>
       </pre>
+      {copyState === 'error' && (
+        <p role="alert" className="px-4 pb-3 text-sm text-amber-200">
+          Clipboard access was blocked. Select the text above and copy it
+          manually.
+        </p>
+      )}
     </div>
   )
 }
