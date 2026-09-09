@@ -27,7 +27,7 @@ We will list two samples, add one record, change its status, search/filter the l
 1. Return to the **same local Copilot desktop session** from setup. Choose **Plan** in the mode dropdown below the prompt field.
 2. **Chat prompt — planning only:**
 
-   ```text
+   ```prompt
    Help me plan a beginner practice app called Store Inventory Practice.
    It tracks one record type: stock item, with id, name, and status.
    Use only synthetic data. Start with Notebook pack (New) and Desk organizer (Done).

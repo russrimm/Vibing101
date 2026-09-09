@@ -1,11 +1,21 @@
-import { Children, isValidElement, type ReactNode } from 'react'
+import { Children, isValidElement, memo, type ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import CodeBlock from './CodeBlock'
+import GlossaryTooltip from './GlossaryTooltip'
+import { glossarySegments } from '../lib/glossary'
+import {
+  headingSlug,
+  lessonOutline,
+  type LessonHeading,
+} from '../lib/lessonOutline'
+import { followLessonLink, readingMode } from '../lib/readerNavigation'
 
 interface MarkdownRendererProps {
   content: string
   className?: string
+  explainTerms?: boolean
+  headings?: LessonHeading[]
 }
 
 const lessonLinks: Record<string, { step: string; anchor: string }> = {
@@ -15,14 +25,22 @@ const lessonLinks: Record<string, { step: string; anchor: string }> = {
   'lab-03-test-and-save.md': { step: 'testing', anchor: 'lab-03' },
   'lab-04-completion.md': { step: 'completion', anchor: 'lab-04' },
   'lab-05-next-steps.md': { step: 'whatsnext', anchor: 'lab-05' },
+  'lab-06-instructions-and-skills.md': { step: 'whatsnext', anchor: 'lab-06' },
+  'lab-07-mcp.md': { step: 'whatsnext', anchor: 'lab-07' },
 }
 
 function resolveLessonLink(href: string | undefined): string | undefined {
   if (!href || /^[a-z][a-z0-9+.-]*:|^#/i.test(href)) return href
-  const lesson = lessonLinks[href]
+  const [file, fragment] = href.split('#')
+  const lesson = file ? lessonLinks[file] : undefined
   const industry = new URLSearchParams(window.location.search).get('industry')
   if (lesson && industry) {
-    return `?industry=${encodeURIComponent(industry)}&step=${lesson.step}#${lesson.anchor}`
+    const anchor = fragment
+      ? `${lesson.anchor}-${headingSlug(fragment)}`
+      : lesson.anchor
+    const reader =
+      readingMode(window.location.search) === 'guided' ? '&reader=guided' : ''
+    return `?industry=${encodeURIComponent(industry)}&step=${lesson.step}${reader}#${anchor}`
   }
   return href.includes('.md')
     ? new URL(href, 'https://github.com/russrimm/Vibing101/blob/main/docs/')
@@ -33,7 +51,24 @@ function resolveLessonLink(href: string | undefined): string | undefined {
 export function MarkdownRenderer({
   content,
   className = '',
+  explainTerms = true,
+  headings,
 }: MarkdownRendererProps) {
+  const outline = headings ?? lessonOutline(content)
+  const explain = (children: ReactNode) =>
+    Children.map(children, (child) =>
+      typeof child === 'string' && explainTerms
+        ? glossarySegments(child).map((segment, index) =>
+            segment.term ? (
+              <GlossaryTooltip key={index} term={segment.term}>
+                {segment.text}
+              </GlossaryTooltip>
+            ) : (
+              segment.text
+            )
+          )
+        : child
+    )
   return (
     <div
       className={`min-w-0 break-words text-slate-800 dark:text-slate-200 ${className}`}
@@ -70,11 +105,14 @@ export function MarkdownRenderer({
               </code>
             )
           },
-          h1({ children }) {
-            const number = /Lab (\d{2})/.exec(String(children))?.[1]
+          h1({ children, node }) {
             return (
               <h2
-                id={number ? `lab-${number}` : undefined}
+                id={
+                  outline.find(
+                    (item) => item.line === node?.position?.start.line
+                  )?.id
+                }
                 tabIndex={-1}
                 className="mb-5 mt-4 text-3xl font-bold"
               >
@@ -82,21 +120,47 @@ export function MarkdownRenderer({
               </h2>
             )
           },
-          h2({ children }) {
+          h2({ children, node }) {
             return (
-              <h3 className="mb-3 mt-8 border-b border-slate-300 pb-2 text-2xl font-bold dark:border-slate-600">
+              <h3
+                id={
+                  outline.find(
+                    (item) => item.line === node?.position?.start.line
+                  )?.id
+                }
+                tabIndex={-1}
+                className="mb-3 mt-8 border-b border-slate-300 pb-2 text-2xl font-bold dark:border-slate-600"
+              >
                 {children}
               </h3>
             )
           },
-          h3({ children }) {
-            return <h4 className="mb-3 mt-6 text-xl font-bold">{children}</h4>
+          h3({ children, node }) {
+            return (
+              <h4
+                id={
+                  outline.find(
+                    (item) => item.line === node?.position?.start.line
+                  )?.id
+                }
+                tabIndex={-1}
+                className="mb-3 mt-6 text-xl font-bold"
+              >
+                {children}
+              </h4>
+            )
           },
           h4({ children }) {
             return <h5 className="mb-2 mt-4 text-lg font-bold">{children}</h5>
           },
           p({ children }) {
-            return <p className="mb-4 leading-relaxed">{children}</p>
+            return <p className="mb-4 leading-relaxed">{explain(children)}</p>
+          },
+          strong({ children }) {
+            return <strong>{explain(children)}</strong>
+          },
+          em({ children }) {
+            return <em>{explain(children)}</em>
           },
           a({ href, children }) {
             const target = resolveLessonLink(href)
@@ -105,6 +169,11 @@ export function MarkdownRenderer({
             return (
               <a
                 href={target}
+                onClick={
+                  target?.startsWith('?industry=')
+                    ? followLessonLink
+                    : undefined
+                }
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noopener noreferrer' : undefined}
                 className="text-cyan-800 underline underline-offset-2 hover:text-cyan-950 dark:text-cyan-300 dark:hover:text-cyan-200"
@@ -131,7 +200,7 @@ export function MarkdownRenderer({
             )
           },
           li({ children }) {
-            return <li className="pl-1 leading-relaxed">{children}</li>
+            return <li className="pl-1 leading-relaxed">{explain(children)}</li>
           },
           blockquote({ children }) {
             return (
@@ -159,7 +228,7 @@ export function MarkdownRenderer({
           td({ children }) {
             return (
               <td className="border border-slate-400 p-3 align-top">
-                {children}
+                {explain(children)}
               </td>
             )
           },
@@ -176,4 +245,4 @@ export function MarkdownRenderer({
   )
 }
 
-export default MarkdownRenderer
+export default memo(MarkdownRenderer)

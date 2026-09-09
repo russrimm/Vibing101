@@ -1,5 +1,10 @@
 import { industries, type Industry, type IndustryType } from '../types/industry'
-import { isCoreComplete, type IndustryProgress } from '../lib/labProgress'
+import {
+  isCoreComplete,
+  labHref,
+  type IndustryProgress,
+} from '../lib/labProgress'
+import GlossaryTooltip from './GlossaryTooltip'
 
 interface IndustrySelectorProps {
   onSelectIndustry: (industry: Industry) => void
@@ -38,17 +43,29 @@ export default function IndustrySelector({
           Before you start
         </h2>
         <p className="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
-          Allow 60-90 minutes after setup; first-time installation may take
-          longer. You need a computer, internet, Node.js 24 LTS, Git, and access
-          to the GitHub Copilot desktop app with a working signed-in session.
-          Confirm app availability and any Copilot usage costs with your
-          facilitator before the workshop.
+          Allow 60-90 minutes after setup, plus 30-60 minutes for a first
+          installation. We walk you through it; nothing needs to be installed
+          before you start reading. You need a computer, internet,{' '}
+          <GlossaryTooltip term="nodejs">Node.js</GlossaryTooltip> 24{' '}
+          <GlossaryTooltip term="lts">LTS</GlossaryTooltip>,{' '}
+          <GlossaryTooltip term="git">Git</GlossaryTooltip>, and access to the
+          GitHub Copilot desktop app with a working signed-in session. Confirm
+          app availability and any Copilot usage costs with your facilitator
+          before the workshop.
         </p>
         <p className="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
           This browser portal is your guide, not the app you will build. Keep it
           open beside Copilot and create your learner app in a separate empty
           folder. No VS Code, WSL, custom agents, MCP servers, or cloud
           deployment are required. Use fictional data only.
+        </p>
+        <p className="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
+          Start with Retail and build one small app. Then learn project
+          instructions, reusable{' '}
+          <GlossaryTooltip term="skills">skills</GlossaryTooltip>, and a
+          read-only <GlossaryTooltip term="mcpServers">MCP</GlossaryTooltip>{' '}
+          documentation connection in separate optional walkthroughs. Hover,
+          focus, or tap dotted-underlined words for plain-English explanations.
         </p>
         <p className="mt-3 text-sm">
           <a
@@ -82,7 +99,11 @@ export default function IndustrySelector({
           return (
             <a
               key={industry.id}
-              href={`?industry=${industry.id}&step=${saved?.currentStep ?? 'setup'}`}
+              href={labHref(
+                industry.id,
+                saved?.currentStep ?? 'setup',
+                saved?.reading?.[saved.currentStep]
+              )}
               onClick={(event) => {
                 if (
                   event.metaKey ||

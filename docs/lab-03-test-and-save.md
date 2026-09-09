@@ -39,7 +39,7 @@
 
 1. Keep the preview server running. In the **same desktop session**, ask Copilot to run the following, or use a **second terminal** in its actual working directory:
 
-   ```text
+   ```terminal
    npm run build
    npm run lint
    ```
@@ -66,7 +66,7 @@
 
 1. Click **Changes** above the prompt box in the desktop app. A **diff** shows what was added and removed. If that view is unavailable, ask Copilot to show the changed files, or open `/terminal` in the active session and run:
 
-   ```text
+   ```terminal
    git status --short
    git diff --stat
    git diff
@@ -79,10 +79,10 @@
 ## Step 5: Make an intentional local checkpoint
 
 1. A **Git commit** records a snapshot locally. It does **not** push to GitHub, back up the computer, or deploy the app.
-2. If Git says this is not a repository, confirm the learner folder again, then ask Copilot to initialize Git **only there**. If it requests an author identity, configure it for this repository only, using an identity you approve. Do not change global settings by default.
+2. If Git says this is not a repository, confirm the learner folder again, then ask Copilot to run `git init` **only there**. If Git requests an author identity, use the instructions below before retrying. Do not initialize a repository inside another project or change global settings by default.
 3. **Chat prompt:**
 
-   ```text
+   ```prompt
    Prepare a local Git checkpoint for this learner app only.
    Show the repository root, branch, and proposed file list. Do not stage
    unrelated files, node_modules, dist, private .env files, or secrets.
@@ -94,13 +94,41 @@
 4. Review the staged content (`git diff --cached`), then explicitly approve the local commit with message **feat: build local practice tracker**. This is your permission to save, not to publish. Do not choose **Create PR** for this local-only checkpoint.
 5. **Terminal commands, or ask Copilot to run and show their output:**
 
-   ```text
+   ```terminal
    git log -1 --oneline
    git status --short
    ```
 
 6. **Verify:** the latest commit has your intended message. Status is empty for a fully committed learner app, or every remaining file is understood and intentionally uncommitted. Record the commit ID and the actual workspace path.
 7. If the session uses a separate worktree, keep that session/worktree available until you have arranged a durable local copy or reviewed merge with your facilitator. A commit exists in Git, but a session cleanup can make an unmerged branch harder to find. Do not delete your session as a cleanup shortcut.
+
+### If Git asks who you are
+
+1. This identity labels your commits; it is **not** your password or a sign-in command. In your browser, open **GitHub → Settings → Emails**. If you want to keep your address private, copy the exact GitHub-provided no-reply address shown there. Do not invent an address from your username.
+2. In the terminal for the confirmed learner repository, replace the two placeholders below with your approved name and email. Keep the double quotes. Run one line at a time:
+
+   ```terminal
+   git config --local user.name "YOUR CHOSEN NAME"
+   git config --local user.email "YOUR APPROVED EMAIL OR GITHUB NO-REPLY ADDRESS"
+   git config --local --get user.name
+   git config --local --get user.email
+   ```
+
+3. **Expected:** the last two commands print the values you chose. Do not leave the placeholder words in your configuration. `--local` limits these settings to this repository, not every project on your computer.
+4. Return to the reviewed commit step. If a work policy requires signed commits or a managed identity, ask your facilitator to help rather than disabling that policy.
+
+### Know what each save actually does
+
+| Action | Where the result lives | What it does not do |
+| --- | --- | --- |
+| Save a file | Your working folder | Does not create Git history |
+| Stage a file | Your proposed next commit | Does not commit or upload it |
+| Commit | Local Git history | Does not back up to GitHub |
+| Push | A configured remote repository | Does not automatically publish a website |
+
+The beginner course stops at a **local commit**. Keep the folder and record the workspace/branch/commit ID. Do not click Publish, Push, or Create PR merely to dismiss a prompt.
+
+**Official references:** [first-time Git setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup), [GitHub commit email](https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address).
 
 ## Common issues
 

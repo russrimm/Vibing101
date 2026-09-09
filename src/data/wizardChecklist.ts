@@ -137,6 +137,36 @@ export const WIZARD_CHECKLIST: ChecklistSection[] = [
     title: 'Optional extensions',
     items: [
       {
+        id: 'whatsnext-project-rules',
+        text: 'I checked project instructions and their scope (optional)',
+        detail:
+          'Lab 06: inspect the learner project settings, not global App instructions, and review a response against the local/fictional-data boundary.',
+      },
+      {
+        id: 'whatsnext-skill-loaded',
+        text: 'I observed beginner-review being discovered and loaded (optional)',
+        detail:
+          'Lab 06: record the actual SKILL.md path and load/read action. A matching opening sentence alone is not proof.',
+      },
+      {
+        id: 'whatsnext-skill-evidence',
+        text: 'I checked the skill report against real evidence (optional)',
+        detail:
+          'Lab 06: distinguish tool-observed and learner-reported results; missing checks remain NOT RUN.',
+      },
+      {
+        id: 'whatsnext-mcp-citations',
+        text: 'I observed MCP search/fetch and checked its citations (optional)',
+        detail:
+          'Lab 07: record learn-docs-practice scope, actual tool results and source URLs; check transport, authentication, cost and the private-data boundary. A manual web search is not an MCP pass.',
+      },
+      {
+        id: 'whatsnext-mcp-removed',
+        text: 'I removed or disabled only my practice MCP connection (optional)',
+        detail:
+          'Lab 07: inspect available tools after removal/restart. Keep other connections, project files and the working local app unchanged.',
+      },
+      {
         id: 'whatsnext-one-improvement',
         text: 'I planned one local improvement with a measurable test (optional)',
         detail:

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import type { Industry } from '../../types/industry'
 import { curriculumModules } from '../../data/curriculum'
 import CurriculumStage, { stageButtonClass } from './CurriculumStage'
+import SetupReadiness from '../SetupReadiness'
 
 interface SetupStepProps {
   industry: Industry
@@ -26,7 +27,12 @@ export default function SetupStep({
       content={curriculumModules.setup}
       stepNumber={stepNumber}
       totalSteps={totalSteps}
-      checkpoints={checkpoints}
+      checkpoints={
+        <>
+          <SetupReadiness />
+          {checkpoints}
+        </>
+      }
     >
       <p
         id="setup-continue-help"

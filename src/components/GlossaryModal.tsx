@@ -1,29 +1,18 @@
 import { useMemo, useState } from 'react'
 import { ExternalLink, Search, X } from 'lucide-react'
-import glossaryData from '../data/glossary.json'
+import { glossary } from '../lib/glossary'
 import Modal from './Modal'
-
-interface GlossaryEntry {
-  term: string
-  emoji: string
-  definition: string
-  example?: string
-  learnMore?: string
-}
 
 interface GlossaryModalProps {
   isOpen: boolean
   onClose: () => void
 }
 
-type GlossaryRecord = Record<string, GlossaryEntry>
-
 export default function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
   const [query, setQuery] = useState('')
 
   const entries = useMemo(() => {
-    const record = glossaryData as GlossaryRecord
-    return Object.entries(record)
+    return Object.entries(glossary)
       .map(([key, value]) => ({ key, ...value }))
       .sort((a, b) => a.term.localeCompare(b.term))
   }, [])

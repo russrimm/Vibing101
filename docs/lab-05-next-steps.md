@@ -10,6 +10,18 @@
 - Preserve a known working version.
 - Separate a local learning extension from a real deployment.
 
+## Choose your next learning goal
+
+You do not need to install everything. Read one module, finish its checks, and stop before adding the next tool.
+
+| Goal | Walkthrough | What you will verify |
+| --- | --- | --- |
+| Make Copilot follow project rules and a repeatable review recipe | [Lab 06: Instructions and skills](lab-06-instructions-and-skills.md) | Correct project scope, skill discovery/load, honest evidence table |
+| Give Copilot one public documentation source | [Lab 07: MCP](lab-07-mcp.md) | Real search/fetch calls, supported citations, no private data, connection removal |
+| Improve your local app | Continue with Step 1 below | One small feature and its tests |
+
+The tool modules are readable before core completion, but finishing your first local app before adding tools is recommended. A plugin, skill, or MCP connection is not required to be a successful beginner.
+
 ## Step 1: Choose one local extension
 
 1. Pick **one**:
@@ -20,7 +32,7 @@
 2. Avoid a second entity, account system, or library unless the chosen improvement genuinely requires it.
 3. **Chat prompt:**
 
-   ```text
+   ```prompt
    I have a verified local Store Inventory Practice prototype.
    Plan one extension: [choose a single improvement above].
    State what will change, what must stay unchanged, and one positive and

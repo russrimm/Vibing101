@@ -5,6 +5,17 @@ interface CodeBlockProps {
   language: string
 }
 
+const destinations: Record<string, string> = {
+  prompt: 'Copilot chat - send this request',
+  terminal: 'Terminal - run one line at a time',
+  powershell: 'PowerShell - run one line at a time',
+  bash: 'macOS/Linux terminal - run one line at a time',
+  markdown: 'File content - save at the path in this step',
+  json: 'Configuration - review before saving',
+  output: 'Example output - do not run',
+  text: 'Text to copy',
+}
+
 export default function CodeBlock({ code, language }: CodeBlockProps) {
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>(
     'idle'
@@ -71,7 +82,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
     <div className="my-4 min-w-0 overflow-hidden rounded-lg border border-slate-600 bg-slate-900 text-slate-100">
       <div className="flex items-center justify-between gap-3 border-b border-slate-600 px-4 py-2">
         <span className="text-xs font-semibold">
-          {language === 'text' ? 'Text to copy' : language}
+          {destinations[language] ?? language}
         </span>
         <button
           type="button"
@@ -97,7 +108,9 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
       <pre
         tabIndex={0}
         aria-label={`${language} content`}
-        className="overflow-x-auto p-4 text-sm leading-relaxed"
+        className={`overflow-x-auto p-4 text-sm leading-relaxed ${
+          language === 'prompt' ? 'whitespace-pre-wrap break-words' : ''
+        }`}
       >
         <code className={`language-${language}`}>{code}</code>
       </pre>

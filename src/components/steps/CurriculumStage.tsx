@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import type { Industry } from '../../types/industry'
 import { personalizeCurriculum } from '../../data/curriculum'
-import MarkdownRenderer from '../MarkdownRenderer'
+import LessonReader from '../LessonReader'
 
 interface CurriculumStageProps {
   industry: Industry
@@ -23,6 +23,7 @@ export default function CurriculumStage({
   checkpoints,
   children,
 }: CurriculumStageProps) {
+  const personalized = personalizeCurriculum(content, industry)
   return (
     <section className="min-w-0 rounded-2xl border border-slate-300 bg-white p-4 shadow-lg sm:p-8 dark:border-slate-600 dark:bg-slate-800">
       {stepNumber !== undefined && totalSteps !== undefined && (
@@ -30,7 +31,7 @@ export default function CurriculumStage({
           Stage {stepNumber} of {totalSteps} · {industry.sampleApp.name}
         </p>
       )}
-      <MarkdownRenderer content={personalizeCurriculum(content, industry)} />
+      <LessonReader content={personalized} />
       {checkpoints && <div className="mt-8">{checkpoints}</div>}
       {children && (
         <div className="mt-8 flex flex-wrap items-center gap-3">{children}</div>
