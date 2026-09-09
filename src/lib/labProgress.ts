@@ -1,5 +1,6 @@
 import { WIZARD_CHECKLIST, type WizardStepId } from '../data/wizardChecklist'
 import { industries, type IndustryType } from '../types/industry'
+import { isReadingAnchor, type ReadingPosition } from './readerNavigation'
 
 export const PROGRESS_KEY = 'vibe-lab-progress-v1'
 export const CORE_STEPS: WizardStepId[] = ['setup', 'structure', 'testing']
@@ -8,6 +9,7 @@ export interface IndustryProgress {
   currentStep: WizardStepId
   checkedItems: string[]
   notes: string
+  reading?: Partial<Record<WizardStepId, ReadingPosition>>
 }
 
 export interface LabProgress {
@@ -22,6 +24,16 @@ export function emptyIndustryProgress(): IndustryProgress {
 
 export function emptyLabProgress(): LabProgress {
   return { version: 1, activeIndustry: null, byIndustry: {} }
+}
+
+export function labHref(
+  id: IndustryType,
+  step: WizardStepId,
+  position?: ReadingPosition
+) {
+  const params = new URLSearchParams({ industry: id, step })
+  if (position?.mode === 'guided') params.set('reader', 'guided')
+  return `?${params}${position?.anchor ? `#${position.anchor}` : ''}`
 }
 
 export function isIndustryId(value: unknown): value is IndustryType {
@@ -51,7 +63,7 @@ export function canViewStep(
   stepId: WizardStepId,
   checkedItems: string[]
 ): boolean {
-  return CORE_STEPS.includes(stepId) || isCoreComplete(checkedItems)
+  return stepId !== 'completion' || isCoreComplete(checkedItems)
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -95,6 +107,23 @@ export function parseProgress(raw: string): LabProgress {
         : 'testing',
       checkedItems: [...new Set(entry.checkedItems)],
       notes: entry.notes,
+    }
+    if (entry.reading !== undefined) {
+      if (!isRecord(entry.reading))
+        throw new Error('Invalid saved reading position')
+      const reading: IndustryProgress['reading'] = {}
+      for (const [step, position] of Object.entries(entry.reading)) {
+        if (
+          !isStepId(step) ||
+          !isRecord(position) ||
+          (position.mode !== 'full' && position.mode !== 'guided') ||
+          !isReadingAnchor(position.anchor)
+        ) {
+          throw new Error('Invalid saved reading position')
+        }
+        reading[step] = { mode: position.mode, anchor: position.anchor }
+      }
+      byIndustry[id].reading = reading
     }
   }
 

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type { Industry } from '../../types/industry'
 import { curriculumModules } from '../../data/curriculum'
 import CurriculumStage, { stageButtonClass } from './CurriculumStage'
@@ -8,6 +9,8 @@ interface WhatsNextStepProps {
   onPrevious: () => void
   stepNumber: number
   totalSteps: number
+  coreComplete: boolean
+  checkpoints?: ReactNode
 }
 
 export default function WhatsNextStep({
@@ -16,6 +19,8 @@ export default function WhatsNextStep({
   onPrevious,
   stepNumber,
   totalSteps,
+  coreComplete,
+  checkpoints,
 }: WhatsNextStepProps) {
   return (
     <CurriculumStage
@@ -23,9 +28,10 @@ export default function WhatsNextStep({
       content={curriculumModules.whatsnext}
       stepNumber={stepNumber}
       totalSteps={totalSteps}
+      checkpoints={checkpoints}
     >
       <button type="button" onClick={onPrevious} className={stageButtonClass}>
-        Back to completion
+        {coreComplete ? 'Back to completion' : 'Back to test and save'}
       </button>
       <button type="button" onClick={onReset} className={stageButtonClass}>
         Choose another use case

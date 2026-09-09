@@ -6,12 +6,14 @@ import {
   emptyLabProgress,
   isIndustryId,
   isStepId,
+  labHref,
   parseProgress,
   type IndustryProgress,
   type LabProgress,
 } from '../lib/labProgress'
 import type { WizardStepId } from '../data/wizardChecklist'
 import type { IndustryType } from '../types/industry'
+import { readingAnchor, readingMode } from '../lib/readerNavigation'
 
 function readInitialProgress(): { data: LabProgress; warning: string } {
   let data = emptyLabProgress()
@@ -33,6 +35,33 @@ function applyLocation(data: LabProgress): LabProgress {
   if (!isIndustryId(id)) return { ...data, activeIndustry: null }
   const progress = data.byIndustry[id] ?? emptyIndustryProgress()
   const step = params.get('step')
+  const rejectedStep =
+    isStepId(step) && !canViewStep(step, progress.checkedItems)
+  const currentStep =
+    isStepId(step) && canViewStep(step, progress.checkedItems)
+      ? step
+      : progress.currentStep
+  const savedPosition = progress.reading?.[currentStep]
+  const position = rejectedStep
+    ? (savedPosition ?? {
+        mode: readingMode(window.location.search),
+        anchor: '',
+      })
+    : {
+        mode: readingMode(window.location.search),
+        anchor: readingAnchor(
+          new URL(window.location.href),
+          savedPosition?.anchor
+        ),
+      }
+  if (
+    !rejectedStep &&
+    data.activeIndustry === id &&
+    progress.currentStep === currentStep &&
+    savedPosition?.mode === position.mode &&
+    savedPosition.anchor === position.anchor
+  )
+    return data
   return {
     ...data,
     activeIndustry: id,
@@ -40,10 +69,8 @@ function applyLocation(data: LabProgress): LabProgress {
       ...data.byIndustry,
       [id]: {
         ...progress,
-        currentStep:
-          isStepId(step) && canViewStep(step, progress.checkedItems)
-            ? step
-            : progress.currentStep,
+        currentStep,
+        reading: { ...progress.reading, [currentStep]: position },
       },
     },
   }
@@ -90,9 +117,11 @@ export function useLabProgress() {
       }
     }
     window.addEventListener('popstate', onPopState)
+    window.addEventListener('hashchange', onPopState)
     window.addEventListener('storage', onStorage)
     return () => {
       window.removeEventListener('popstate', onPopState)
+      window.removeEventListener('hashchange', onPopState)
       window.removeEventListener('storage', onStorage)
     }
   }, [])
@@ -103,6 +132,23 @@ export function useLabProgress() {
       ? data.byIndustry[data.activeIndustry]
       : undefined
     if (data.activeIndustry && progress) {
+      const requestedStep = url.searchParams.get('step')
+      if (
+        isStepId(requestedStep) &&
+        !canViewStep(requestedStep, progress.checkedItems)
+      ) {
+        const restored = new URL(
+          labHref(
+            data.activeIndustry,
+            progress.currentStep,
+            progress.reading?.[progress.currentStep]
+          ),
+          url
+        )
+        window.history.replaceState(null, '', restored)
+        window.dispatchEvent(new PopStateEvent('popstate'))
+        return
+      }
       url.searchParams.set('industry', data.activeIndustry)
       url.searchParams.set('step', progress.currentStep)
     } else {
@@ -121,23 +167,19 @@ export function useLabProgress() {
     if (next && step && canViewStep(step, next.checkedItems)) {
       next.currentStep = step
     }
-    const url = new URL(window.location.href)
-    url.hash = ''
-    url.searchParams.delete('industry')
-    url.searchParams.delete('step')
-    if (id && next) {
-      url.searchParams.set('industry', id)
-      url.searchParams.set('step', next.currentStep)
+    const position = next?.reading?.[next.currentStep] ?? {
+      mode:
+        id === data.activeIndustry
+          ? readingMode(window.location.search)
+          : 'full',
+      anchor: '',
     }
+    const url = new URL(
+      id && next ? labHref(id, next.currentStep, position) : '?',
+      window.location.href
+    )
     window.history.pushState(null, '', url)
-    setData((previous) => ({
-      ...previous,
-      activeIndustry: id,
-      byIndustry:
-        id && next
-          ? { ...previous.byIndustry, [id]: next }
-          : previous.byIndustry,
-    }))
+    setData((previous) => applyLocation(previous))
   }
 
   const updateIndustry = (
@@ -161,8 +203,11 @@ export function useLabProgress() {
     url.hash = ''
     url.searchParams.set('industry', id)
     url.searchParams.set('step', 'setup')
+    url.searchParams.delete('reader')
+    url.searchParams.delete('section')
     window.history.replaceState(null, '', url)
     updateIndustry(id, emptyIndustryProgress())
+    window.dispatchEvent(new PopStateEvent('popstate'))
   }
 
   return { data, warning, navigate, updateIndustry, resetIndustry }

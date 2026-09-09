@@ -1,6 +1,7 @@
 import type { WizardStepId } from '../data/wizardChecklist'
 import type { IndustryType } from '../types/industry'
-import { CORE_STEPS } from '../lib/labProgress'
+import { labHref, type IndustryProgress } from '../lib/labProgress'
+import { readingMode } from '../lib/readerNavigation'
 
 interface StepProgressProps {
   steps: { id: WizardStepId; title: string }[]
@@ -9,6 +10,7 @@ interface StepProgressProps {
   completedSteps: Set<WizardStepId>
   coreComplete: boolean
   onStepClick: (stepId: WizardStepId) => void
+  reading?: IndustryProgress['reading']
 }
 
 export default function StepProgress({
@@ -18,12 +20,13 @@ export default function StepProgress({
   completedSteps,
   coreComplete,
   onStepClick,
+  reading,
 }: StepProgressProps) {
   return (
     <nav aria-label="Lab steps">
       <ol className="grid grid-cols-2 gap-2 sm:grid-cols-5">
         {steps.map((step, index) => {
-          const available = CORE_STEPS.includes(step.id) || coreComplete
+          const available = step.id !== 'completion' || coreComplete
           const current = currentStep === step.id
           const label = `${index + 1}. ${step.title}`
           const style = `block h-full rounded-lg border p-3 text-sm ${
@@ -35,7 +38,14 @@ export default function StepProgress({
             <li key={step.id}>
               {available ? (
                 <a
-                  href={`?industry=${industryId}&step=${step.id}`}
+                  href={labHref(
+                    industryId,
+                    step.id,
+                    reading?.[step.id] ?? {
+                      mode: readingMode(window.location.search),
+                      anchor: '',
+                    }
+                  )}
                   aria-current={current ? 'step' : undefined}
                   onClick={(event) => {
                     if (

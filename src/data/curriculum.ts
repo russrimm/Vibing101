@@ -4,6 +4,8 @@ import build from '../../docs/lab-02-build.md?raw'
 import testing from '../../docs/lab-03-test-and-save.md?raw'
 import completion from '../../docs/lab-04-completion.md?raw'
 import nextSteps from '../../docs/lab-05-next-steps.md?raw'
+import skills from '../../docs/lab-06-instructions-and-skills.md?raw'
+import mcp from '../../docs/lab-07-mcp.md?raw'
 import { industries, type Industry } from '../types/industry'
 
 export const curriculumModules = {
@@ -11,7 +13,7 @@ export const curriculumModules = {
   structure: `${plan}\n\n---\n\n${build}`,
   testing,
   completion,
-  whatsnext: nextSteps,
+  whatsnext: `${nextSteps}\n\n---\n\n${skills}\n\n---\n\n${mcp}`,
 }
 
 /** Keep standalone Retail instructions readable while personalizing the portal. */

@@ -4,12 +4,14 @@ interface CheckpointPanelProps {
   section: ChecklistSection
   checkedItems: string[]
   onToggle: (id: string, checked: boolean) => void
+  optional?: boolean
 }
 
 export default function CheckpointPanel({
   section,
   checkedItems,
   onToggle,
+  optional = false,
 }: CheckpointPanelProps) {
   const count = section.items.filter((item) =>
     checkedItems.includes(item.id)
@@ -21,12 +23,13 @@ export default function CheckpointPanel({
       className="mb-6 rounded-xl border border-cyan-700/40 bg-white p-5 dark:bg-slate-800"
     >
       <h2 id="checkpoint-title" tabIndex={-1} className="text-xl font-bold">
-        Your checkpoints
+        {optional ? 'Optional checkpoints' : 'Your checkpoints'}
       </h2>
       <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
         Use the lesson above. Check each box only after you see the expected
         result in your own project. These are your confirmations, not automated
         checks by this portal.
+        {optional && ' These optional checks do not affect core completion.'}
       </p>
       <p role="status" className="my-3 text-sm font-semibold">
         {count} of {section.items.length} confirmed

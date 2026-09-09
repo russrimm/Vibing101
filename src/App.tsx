@@ -8,6 +8,7 @@ import { industries } from './types/industry'
 import { useTheme } from './hooks/useTheme'
 import { useLabProgress } from './hooks/useLabProgress'
 import { emptyIndustryProgress } from './lib/labProgress'
+import { auxiliaryReaderHref, followLessonLink } from './lib/readerNavigation'
 
 function App() {
   const { theme, toggleTheme, warning: themeWarning } = useTheme()
@@ -39,7 +40,17 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-white">
       <a
-        href="#main-content"
+        href={auxiliaryReaderHref(
+          'main-content',
+          progress?.reading?.[progress.currentStep]
+        )}
+        onClick={(event) => {
+          followLessonLink(event)
+          if (event.defaultPrevented) {
+            mainRef.current?.focus()
+            mainRef.current?.scrollIntoView()
+          }
+        }}
         className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4 focus:text-slate-900"
       >
         Skip to lab content

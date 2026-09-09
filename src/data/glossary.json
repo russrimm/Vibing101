@@ -79,7 +79,7 @@
   "npm": {
     "term": "npm",
     "emoji": "📦",
-    "definition": "Node Package Manager - a huge library of free code packages that you can use in your projects. Why reinvent the wheel?",
+    "definition": "The package manager and script runner included with Node.js. It downloads reusable code and runs commands defined by a project's package.json. Packages can run code during installation, so review what you install.",
     "example": "'npm install react' downloads React so you can use it in your project.",
     "learnMore": "https://www.npmjs.com"
   },
@@ -503,12 +503,71 @@
     "example": "Install from GitHub's official download page, sign in, and verify a chat reply before starting the lab.",
     "learnMore": "https://docs.github.com/en/copilot/get-started/quickstart-copilot-app"
   },
+  "github": {
+    "term": "GitHub",
+    "emoji": "🐙",
+    "definition": "A website for hosting code and collaborating. Git is the local history tool; GitHub is an online service. A GitHub account is also used to sign in to Copilot.",
+    "example": "You can save a local Git commit without uploading your app to GitHub.",
+    "learnMore": "https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github"
+  },
+  "branch": {
+    "term": "Branch",
+    "emoji": "🌿",
+    "definition": "A named line of work in Git. It lets you keep one set of changes separate from another until you choose to combine them.",
+    "example": "Record the branch name with your commit ID so you can return to the same work.",
+    "learnMore": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell"
+  },
+  "markdown": {
+    "term": "Markdown",
+    "emoji": "📝",
+    "definition": "Plain text with simple formatting markers. A # starts a heading, and a dash starts a list item. Markdown files usually end in .md.",
+    "example": "A SKILL.md file describes a reusable task for Copilot. The filename must not end in .md.txt.",
+    "learnMore": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax"
+  },
+  "json": {
+    "term": "JSON",
+    "emoji": "🧾",
+    "definition": "A text format for structured settings or data. Names and text values use double quotes; commas separate entries. Ordinary JSON does not allow comments or trailing commas.",
+    "example": "An MCP configuration contains a server name, connection type, and address. Preserve existing entries when adding one.",
+    "learnMore": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON"
+  },
+  "skills": {
+    "term": "Agent skills",
+    "emoji": "🧰",
+    "definition": "Reusable task instructions in a folder containing SKILL.md. Copilot can load a relevant skill when needed. A skill is not a new model, a permission grant, or proof that its advice is correct.",
+    "example": "A locally written review skill asks for expected versus actual test results and labels unrun checks as NOT RUN.",
+    "learnMore": "https://docs.github.com/en/copilot/concepts/agents/about-agent-skills"
+  },
   "terminal": {
     "term": "Terminal",
     "emoji": "⌨️",
     "definition": "A text window that runs commands on your computer. It is different from Copilot chat and your web browser.",
     "example": "Use PowerShell on Windows, Terminal on macOS, or /terminal in an active desktop session, then run node --version.",
     "learnMore": ""
+  },
+  "prompt": {
+    "term": "Prompt",
+    "emoji": "💬",
+    "definition": "A request you send to an AI assistant in chat. A useful prompt says what you want, what must not change, and how you will check the result.",
+    "example": "Ask for one labeled Name field, then try both a real name and a blank name."
+  },
+  "workspace": {
+    "term": "Workspace",
+    "emoji": "📁",
+    "definition": "The folder where a session reads files and runs commands. A terminal's working directory is the folder it currently uses. Check it before changing anything.",
+    "example": "Your learner app and this learning portal must be in different folders."
+  },
+  "dependency": {
+    "term": "Dependency",
+    "emoji": "📦",
+    "definition": "A reusable code package needed by an app or its development tools. Installing dependencies downloads other people's code; use approved sources.",
+    "example": "npm install downloads the packages listed in package.json."
+  },
+  "localhost": {
+    "term": "Localhost",
+    "emoji": "🏠",
+    "definition": "An address meaning this computer. A localhost preview is not a public website and will not show your app on someone else's computer.",
+    "example": "Open the exact Local URL printed by Vite on the computer running the app."
   },
   "session": {
     "term": "Session",

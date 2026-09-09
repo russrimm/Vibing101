@@ -1,5 +1,73 @@
 # Beginner curriculum review
 
+## Local handoff review — 2026-09-09
+
+The final code review identified and corrected two guided-reader resume bugs. A checkpoint or skip-link URL now includes its associated section, so refresh, Back/Forward, and opening the link in a fresh browser context retain the intended reading position. Older auxiliary bookmarks without that query parameter use the saved per-stage position. Navigating to completion before core evidence is confirmed now restores the current stage's saved position instead of recording `lab-04` under the wrong stage.
+
+A follow-up keyboard review also found that intercepting the landing-page skip link prevented native focus movement. The skip link now explicitly focuses main content while preserving its section-aware URL. New regressions cover all three cases, including unchanged notes and completion gating.
+
+These corrections touch `src/App.tsx`, `src/components/LabWizard.tsx`, `src/components/LessonReader.tsx`, `src/hooks/useLabProgress.ts`, new `src/hooks/useReadingPosition.ts`, `src/lib/readerNavigation.ts`, and `tests/reader.spec.ts`. The shared reading-position context supplies the existing progress store to the reader; it does not create a second persistence store or store evidence in URLs.
+
+**Final local results:** all **47/47** Playwright tests passed using installed Microsoft Edge. `npm run lint` and `npm run build` both exited 0. The build reports a non-fatal main-chunk size advisory (about 576 KB uncompressed). This supersedes the earlier test counts below. Live deployment, hosted CI, fresh OS installers, and actual desktop sign-in/trust rehearsal were not performed or implied by these results.
+
+## Focused reading and resume — 2026-09-09 follow-up
+
+Long setup and optional-tool lessons now offer **Read one step at a time** alongside the existing full view. The reader partitions the canonical Markdown at module overviews, numbered steps, and the closing reference section. It does not summarize, rewrite, or omit instructions. Substeps and fenced examples stay inside their parent step, and both views share the original heading IDs.
+
+The current section and reading mode are optional additions to the existing per-use-case progress record, separately keyed by stage. Older saved progress remains valid. Normal internal lesson links use in-page navigation to retain in-memory notes when browser storage is unavailable; modified link clicks still support new tabs. Bookmark URLs and evidence exports carry a reading location, not notes or completion claims. The completion gate still depends exclusively on the core evidence checklist.
+
+The follow-up changes `src/components/LessonReader.tsx` (new), `src/lib/readerNavigation.ts` (new), `src/lib/lessonOutline.ts`, `src/components/MarkdownRenderer.tsx`, `src/components/CodeBlock.tsx`, `src/components/steps/CurriculumStage.tsx`, `src/hooks/useLabProgress.ts`, `src/lib/labProgress.ts`, `src/components/StepProgress.tsx`, `src/components/IndustrySelector.tsx`, `src/components/LabWizard.tsx`, `tests/reader.spec.ts` (new), `README.md`, `docs/lab-00-prerequisites.md`, and this review record.
+
+Regression coverage checks line-for-line reconstruction of all eight modules, heading identity, complete code fences, navigation/history/reload, per-stage/use-case resume and reset, unchanged evidence gating, stale-link recovery, clipboard content (allowing native Windows CRLF conversion), blocked-storage notes, export URLs, and light/dark responsive accessibility. These checks apply to the portal reader, not to a fresh Copilot desktop installation or a learner's generated app. The installer and desktop-rehearsal limitations below remain unchanged. The existing blockquote side border remains an intentional quotation/tip convention.
+
+The production preview was inspected at desktop and mobile sizes. Chat prompts now wrap on narrow screens without inserting new characters into the copied text; terminal commands and file examples retain their original layout. Screenshots are retained in the session artifacts, not as a claim of desktop-app testing.
+
+**Follow-up results:** the combined suite passed 42/42 tests using installed Microsoft Edge. After adding mobile prompt wrapping, all 17 targeted reader, clipboard, help, and responsive checks passed, including the new mobile-copy regression. Build and lint exit 0. The final suite contains 43 tests; the last run was the targeted subset, not a claimed fresh 43-test full run. The build still reports its non-fatal main-chunk advisory (about 575 KB uncompressed).
+
+## Beginner walkthrough expansion — 2026-09-09
+
+The current route remains one small local app, with **Retail recommended first**. It now teaches the initial terminal interaction, separate Windows/macOS tool installation, GitHub account setup, repository-local Git identity, project rules, a script-free review skill, and one public documentation MCP connection. Skills and MCP are separate optional modules, not prerequisites for the first working app.
+
+### Reader and accuracy fixes
+
+- `src/components/MarkdownRenderer.tsx`: the previous glossary tooltip was not connected to lesson prose. It now annotates beginner terms without changing links, code, or copyable content.
+- `src/components/GlossaryTooltip.tsx`: replaced a non-focusable clickable span and looping animation with an accessible, nonmodal definition popover. Hover, keyboard focus, touch, Escape, outside dismissal, unique IDs, and focus return use the existing Floating UI library.
+- `src/lib/lessonOutline.ts`: one heading map drives rendered anchors and lesson navigation. It ignores fenced file headings and handles CRLF as well as LF. A Windows-line-ending failure found during the new link regression was fixed.
+- `src/components/SetupReadiness.tsx`: added a text-only version-output helper with explicit limits, inline recovery advice, error focus, and no automatic checkpoint completion.
+- `src/components/CodeBlock.tsx`: copyable boxes now distinguish chat requests, terminal commands, configuration/file content, and example output.
+- Optional modules can be read before core completion; only the completion page remains gated. Optional confirmations persist and export, but never substitute for core evidence.
+- Desktop project instructions can be backed by `.github/github-app.yml`, distinct from `.github/copilot-instructions.md`. The lesson now explains UI write-back, configuration trust, and review of any scripts rather than assuming settings never change Git files.
+- The existing side border on Markdown blockquotes is retained as an intentional quotation/tip convention, not used as decorative card styling. Definition popovers have no continuous animation.
+
+### Current verification record
+
+| Surface | Evidence obtained in this revision | Boundary |
+| --- | --- | --- |
+| Official desktop guidance | Fetched GitHub's quickstart, customization, slash-command, skill-format and shared MCP configuration documentation on 2026-09-09 | This verifies documented labels and formats, not installation/sign-in/trust behavior on every app build |
+| Published scaffold command | Fresh artifact folder; exact `create-vite@8.3.0` command, install, build and lint all exited 0 on Windows with Node 24.19.0, npm 11.17.0 and Git 2.53.0.windows.4 | This rehearsal checks the starter, not a sequential AI-generated final app or a fresh OS installation |
+| Resolved learner packages | React 19.2.8, TypeScript 5.9.3, Vite 7.3.6 and ESLint 9.39.5 | Generator pinning does not pin every future dependency resolution; preserve the generated lockfile |
+| Live public MCP endpoint | Initialized `https://learn.microsoft.com/api/mcp`; discovered tools; successfully called `microsoft_docs_search` and `microsoft_docs_fetch` without credentials | Protocol-level check, not an end-to-end desktop Customize/install/remove rehearsal |
+| MCP claims | Returned official Learn overview confirms Streamable HTTP, no authentication, no server charge, and public documentation only | Copilot/model costs remain separate; tools and server behavior may change |
+| Portal regressions | 32/32 Playwright tests passed using installed Microsoft Edge: core journeys, term matching, hover/focus/touch, clipboard integrity, heading links, local output checks, optional progress/export and responsive accessibility | Automated browser tests do not prove learner-machine readiness or full WCAG conformance |
+| Build and lint | `npm run build` and `npm run lint` both exited 0; no automated WCAG A/AA violations on covered light/dark views, including open help and optional modules; no page overflow at 320, 375 or 768 pixels | Vite reports a non-fatal main-chunk size advisory (about 568 KB uncompressed); no conformance or performance certification is claimed |
+| Production presentation | Built preview rendered setup, an open definition, and the mobile MCP module without runtime errors; screenshots retained in the session artifacts | Screenshots are of this learning portal, not the Copilot desktop app |
+
+**Still requires human rehearsal:** fresh Windows and macOS installers; account/organization onboarding; desktop project instructions and skill discovery/load on the installed build; desktop MCP trust, enable/disable controls; and a complete first-time learner session. Do not call this universally verified or 100% accurate. The optional skill explicitly labels unrun checks **NOT RUN**, and the MCP route labels unavailable or unobserved tools **NOT VERIFIED**.
+
+### Files changed in this expansion
+
+| Area | Files |
+| --- | --- |
+| Learner documentation | `README.md`, `GLOSSARY.md`, `docs/lab-00-prerequisites.md`, `docs/lab-01-plan.md`, `docs/lab-02-build.md`, `docs/lab-03-test-and-save.md`, `docs/lab-05-next-steps.md`, new `docs/lab-06-instructions-and-skills.md`, new `docs/lab-07-mcp.md`, `docs/lab-review.md` |
+| Reader and help | `src/components/CodeBlock.tsx`, `src/components/GlossaryModal.tsx`, `src/components/GlossaryTooltip.tsx`, `src/components/MarkdownRenderer.tsx`, new `src/components/SetupReadiness.tsx`, `src/components/steps/CurriculumStage.tsx`, `src/components/steps/SetupStep.tsx`, `src/index.css` |
+| Navigation and evidence | `src/components/IndustrySelector.tsx`, `src/components/LabWizard.tsx`, `src/components/StepProgress.tsx`, `src/components/CheckpointPanel.tsx`, `src/components/steps/WhatsNextStep.tsx`, `src/lib/labProgress.ts`, `src/data/wizardChecklist.ts` |
+| Content and pure helpers | `src/data/curriculum.ts`, `src/data/glossary.json`, new `src/lib/glossary.ts`, new `src/lib/lessonOutline.ts`, new `src/lib/setupChecks.ts` |
+| Regression coverage | new `tests/beginner.spec.ts`, `tests/documentation.spec.ts` |
+
+The earlier review below is retained as historical evidence; its dates and counts describe that revision, not an additional verification of the new skill/MCP modules.
+
+---
+
 **Review date:** 2026-09-07. **Target:** first-time learners using the GitHub Copilot desktop app, not VS Code, CLI, or GitHub Desktop.
 
 ## Executive assessment

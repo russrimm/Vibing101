@@ -2,6 +2,8 @@
 
 You do not need to memorize these terms. Return to [the course](README.md) and look one up when you need it.
 
+In the portal, dotted-underlined words also have definitions on hover, keyboard focus, or tap. Press Escape to close a definition; **Hide word explanations** returns to plain prose. The searchable **Glossary** stays available either way.
+
 ## The three places you work
 
 - **GitHub Copilot desktop app:** the AI coding app used for this course. You create a local project session, send prompts, review changes, and inspect results. Use the [official download page](https://github.com/features/ai/github-app) and follow your organization's installation policy. It is not GitHub Desktop, Copilot CLI, or the VS Code extension.
@@ -33,6 +35,10 @@ You do not need to memorize these terms. Return to [the course](README.md) and l
 - **Dependency:** a package your app or its development tools need.
 - **Lockfile:** a record of resolved dependency versions (`package-lock.json` for npm). Keep it so later installs can reproduce that dependency tree.
 - **Instruction file:** project guidance an AI may read. Instructions for the learning portal are not automatically appropriate for your small learner app.
+- **Markdown:** plain text with formatting marks, such as `#` for a heading. Files end in `.md`, not `.md.txt`.
+- **YAML frontmatter:** a short settings block between `---` lines at the beginning of a Markdown file. A skill uses it to declare its name and description.
+- **JSON:** structured text used for data and settings. Use double quotes around names/text; ordinary JSON does not allow comments or trailing commas.
+- **PATH:** a list of folders searched by the terminal to find a command. Reopening a terminal after installation helps it see updated PATH settings.
 
 ## The local web app
 
@@ -65,6 +71,7 @@ You do not need to memorize these terms. Return to [the course](README.md) and l
 - **Branch:** a named line of work in Git.
 - **Merge:** combine work from branches after reviewing the changes.
 - **GitHub:** an online service for hosting repositories and collaboration.
+- **Two-factor authentication:** a second proof of identity at sign-in, such as an authenticator code. Recovery codes belong in safe storage, never in chat or evidence notes.
 - **Clone:** make a local copy of a Git repository and its history.
 - **Fork:** create a separate copy of a repository on GitHub. Not required for this local lab.
 - **Push / pull:** send commits to, or fetch and integrate work from, a remote repository. Neither happens just because you made a local commit.
@@ -78,6 +85,12 @@ You do not need to memorize these terms. Return to [the course](README.md) and l
 - **Cloud / Azure:** remotely hosted computing services; use requires separate permission, cost, and privacy planning.
 - **Deployment:** publishing or running an app in a target environment. It is not required for core completion.
 - **MCP:** a protocol for connecting AI clients to external tools. A tool connection does not automatically connect the generated app to data.
+- **Agent skill:** a folder containing `SKILL.md`, and optionally resources or scripts. Copilot loads it for a matching task. Skills are not guaranteed to be used or correct; [Lab 06](docs/lab-06-instructions-and-skills.md) teaches discovery and evidence checks with a script-free local example.
+- **Plugin:** an installable bundle of customizations that can include skills, agents, hooks, or MCP tools. Review all included capabilities, not only its name.
+- **Streamable HTTP:** a network transport used by remote MCP servers. [Lab 07](docs/lab-07-mcp.md) uses a public documentation endpoint, not a local server process.
+- **Read-only tool:** a tool intended to retrieve rather than change data. Its provider still receives your query, so do not send private content.
+- **Citation:** a source link supporting a claim. Open it and compare the actual text; a real link does not make every claim true.
+- **Hallucination:** a plausible AI statement that lacks support or is wrong. Ask for actual results and leave missing evidence **NOT RUN** or **NOT VERIFIED**.
 - **Microsoft Graph:** an API for Microsoft 365 data with endpoint-specific permissions and account support.
 - **Environment variable:** configuration supplied to a program. It is not automatically secret. Values prefixed `VITE_` can be bundled into browser files; never store credentials there.
 - **Custom agent / Beast Mode:** user-defined behavior or instructions, not a built-in guarantee of quality, security, or production readiness. Not required.

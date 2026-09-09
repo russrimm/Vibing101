@@ -14,7 +14,7 @@
 1. Check that the current desktop session still points to your learner workspace. Review your plan, then select **Interactive** in the mode dropdown below the prompt field so you can check each increment before the next one.
 2. Review the following **terminal commands**. Run them only in the new learner workspace, with no existing app files. Ask Copilot to run these exact commands there, or run them yourself in a terminal opened at that path—**not both**:
 
-   ```text
+   ```terminal
    npm exec --yes --package=create-vite@8.3.0 -- create-vite . --template react-ts --no-interactive --no-rolldown
    npm install
    npm run build
@@ -26,7 +26,7 @@
 5. **Verify:** the workspace contains `package.json`, `package-lock.json`, `index.html`, and a `src` folder. Its scripts are `dev` (`vite`), `build` (`tsc -b && vite build`), `lint` (`eslint .`), and `preview` (`vite preview`). Use the starter's existing `npm run lint`; do not add another lint tool.
 6. Now use this **chat prompt** to make the first small change:
 
-   ```text
+   ```prompt
    Implement only increment 1 of our agreed Store Inventory Practice plan.
    First confirm the current workspace and inspect any existing files.
    I just created the React/TypeScript starter with create-vite 8.3.0.
@@ -51,7 +51,7 @@
 
 1. **Chat prompt:**
 
-   ```text
+   ```prompt
    In this session's actual working directory, run npm run dev and keep the
    local dev server running for our preview. Use a loopback-only address,
    not --host 0.0.0.0. Show the exact Local URL from Vite's output.
@@ -68,7 +68,7 @@
 
 1. **Chat prompt:**
 
-   ```text
+   ```prompt
    Implement only increment 2 in Store Inventory Practice.
    Add a labeled Name input and an Add record button.
    Trim the name; reject an empty or whitespace-only name with an inline error
@@ -89,7 +89,7 @@
 
 1. **Chat prompt:**
 
-   ```text
+   ```prompt
    Implement only increment 3.
    Give each record a labeled status select: New, In progress, Done.
    Add a labeled Search by name field (case-insensitive substring match)
@@ -110,7 +110,7 @@
 
 1. **Chat prompt:**
 
-   ```text
+   ```prompt
    Implement only increment 4.
    Persist the full records array to localStorage with the key vibe-practice-retail-v1.
    Load and validate stored data safely before the first save, including unique
@@ -134,7 +134,7 @@
 1. Copy the exact error from the failing command or describe the browser behavior. Remove private paths or secrets before sharing.
 2. **Chat prompt — replace the bracketed parts:**
 
-   ```text
+   ```prompt
    I am testing Store Inventory Practice in the same local workspace.
    Action: [the exact command or browser steps].
    Expected: [the specific result].
